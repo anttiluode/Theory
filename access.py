@@ -14,6 +14,14 @@ own family loses it), subtract the mean of all remaining words, and give the hel
 family whose centroid is closest in angle. The same is done for kingdoms. Chance is 1/families
 and 1/kingdoms.
 
+Two harder readers sit between that one and the model's own answers:
+- unseen-family kingdom: the held-out word's whole family is removed before the kingdom
+  centroids are built, so a family the reader never saw must be placed (genuine coarse
+  abstraction rather than recognising a familiar family cluster);
+- category word: no labelled examples at all. The word goes to the family whose own name
+  ("tree", "bird", ...), read as an item in the same frame, lies closest. This asks whether the
+  cluster is linked to the word for it, which the native yes/no reader needs as well.
+
 It runs at every depth and every checkpoint, next to the model's own printed-word category
 accuracy from timeline.py (the native reader). Prediction, fixed before the run: at step 1000,
 the prototype reader is well above chance at the middle layers while the native reader is not.
@@ -49,19 +57,56 @@ def prototype_reader(X, labels):
     return ok / n
 
 
+def unseen_family_reader(X, fams, kings):
+    """Kingdom of a word whose whole family is held out: centroids come from the other families
+    only, so the reader must place a family it has never seen."""
+    n = len(fams)
+    ok = 0
+    for i in range(n):
+        keep = [j for j in range(n) if fams[j] != fams[i]]
+        mu = X[keep].mean(0)
+        sims = {}
+        for k in set(kings):
+            idx = [j for j in keep if kings[j] == k]
+            if idx:
+                sims[k] = float(torch.nn.functional.cosine_similarity(X[i] - mu, X[idx].mean(0) - mu, dim=0))
+        ok += max(sims, key=sims.get) == kings[i]
+    return ok / n
+
+
+def name_reader(X, labels, N, names):
+    """Family by the closest category *word* ("tree", "bird", ...), read as an item in the same
+    frame; each set is centred on its own mean. No labelled examples at all."""
+    mu, nu = X.mean(0), N.mean(0)
+    ok = 0
+    for i in range(len(labels)):
+        s = torch.nn.functional.cosine_similarity((X[i] - mu)[None], N - nu, dim=1)
+        ok += names[int(s.argmax())] == labels[i]
+    return ok / len(labels)
+
+
 def one(r, tree):
     words = [w for w, _, _ in tree.leaves]
     S = r.states(words)
     lf = [f for _, f, _ in tree.leaves]
     lk = [k for _, _, k in tree.leaves]
-    fam, king = {}, {}
+    names = [f for f in tree.fam if r.single(f)]
+    NS = r.states(names)
+    named = [i for i, f in enumerate(lf) if f in names]
+    fam, king, unseen, name = {}, {}, {}, {}
     for l in range(-1, r.n_layers):
         X = torch.stack([S[w][l + 1] for w in words])
         X = X - X.mean(1, keepdim=True)            # what a LayerNorm sees
         fam[l] = prototype_reader(X, lf)
         king[l] = prototype_reader(X, lk)
-    return dict(family=fam, kingdom=king, n=len(words), chance_family=1 / len(set(lf)),
-                chance_kingdom=1 / len(set(lk)))
+        unseen[l] = unseen_family_reader(X, lf, lk)
+        if len(names) >= 2:
+            N = torch.stack([NS[f][l + 1] for f in names])
+            N = N - N.mean(1, keepdim=True)
+            name[l] = name_reader(X[named], [lf[i] for i in named], N, names)
+    return dict(family=fam, kingdom=king, kingdom_unseen_family=unseen, name=name, names=names,
+                n=len(words), n_named=len(named), chance_family=1 / len(set(lf)),
+                chance_kingdom=1 / len(set(lk)), chance_name=1 / max(1, len(names)))
 
 
 def run(load_fn, steps, out, native=None, log=print, min_leaves=3):
@@ -70,7 +115,7 @@ def run(load_fn, steps, out, native=None, log=print, min_leaves=3):
     rep = json.loads(path.read_text()) if path.exists() else dict(steps={})
     tree = None
     for s in steps:
-        if str(s) in rep["steps"]:
+        if "name" in rep["steps"].get(str(s), {}):
             continue
         r = load_fn(s)
         if tree is None:
@@ -85,7 +130,8 @@ def run(load_fn, steps, out, native=None, log=print, min_leaves=3):
         best_l = max(res["family"], key=res["family"].get)
         log(f"step {s:>6}: prototype reader, family {res['family'][-1]:.2f} at the embedding, "
             f"{mid:.2f} at layer {L // 2}, best {res['family'][best_l]:.2f} (layer {best_l}); "
-            f"kingdom {res['kingdom'][L // 2]:.2f} at layer {L // 2} | native "
+            f"kingdom {res['kingdom'][L // 2]:.2f}, unseen-family kingdom {res['kingdom_unseen_family'][L // 2]:.2f}, "
+            f"by category word {res['name'].get(L // 2, float('nan')):.2f} ({len(res['names'])} names) | native "
             f"{'n/a' if nat is None else f'{nat:.2f}'} | chance {res['chance_family']:.2f} / "
             f"{res['chance_kingdom']:.2f}")
         path.write_text(json.dumps(rep, default=float))

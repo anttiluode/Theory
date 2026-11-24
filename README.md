@@ -22,6 +22,8 @@ So what lifts the category is getting closer to the family average, not anything
 - *When Qwen reads "oak, pine" itself,* it keeps both identities (retention 0.94). Under the category question it is about 30 times less moved by swapping pine for elm than the identity question is. One input, two different residues, depending on the question.
 - Its own overshoot is smaller (+1.3 nats) and does not track the manufactured blend pair by pair.
 
+**After access.py ([results](#results-accesspy-on-pythia-410m)): the map comes before the reader, and the reader never catches up.** At step 1000, a prototype reader with nothing to tune classifies held-out words into the right family 78% of the time (chance 12.5%). Pythia's own answers are at 8%. From step 4000 to the end the outside reader stays at 94–97% at the middle layer, and the model's own answers never pass 58%.
+
 **After the first timeline run ([results](#results-timelinepy-on-pythia-410m)):** coarse came first. In Pythia-410m the kingdom level appears at step 512, the family level at step 1000, and both are fixed by step 2000, about 1.4% of training. The token embeddings get the same tree roughly ten times later. One caveat matters: trees and birds were dropped for tokenization, so the plant kingdom held only vegetables. A rerun keeping 3-leaf families, now the default, fixes that.
 
 ## 1. Symmetry decides the basis (known)
@@ -117,6 +119,7 @@ python3.13 access.py
 In Pythia the tree's geometry is there by step 1000 while the model's own answers are below chance. access.py gives the same states to the simplest external reader. A prototype reader holds out one word, builds each family's centroid from the rest, and picks the closest centroid by angle. It has nothing to tune and never sees the held-out word.
 - **Prediction, fixed before the run:** at step 1000 this reader is well above chance at the middle layers while the native reader is not. That would be a map before a reader.
 - **If it fails:** the geometry is real but not yet usable on unseen words.
+- **Two harder readers.** The kingdom of a word whose whole family the reader never saw, and the family whose *name* ("tree") lies closest, with no labelled examples at all.
 
 ### timeline.py: does the tree grow coarse-first? (Pythia, about an hour plus downloads)
 
@@ -312,6 +315,42 @@ The file is [`runs/timeline_EleutherAI_pythia-410m_min3/timeline.json`](runs/tim
 - **The embedding still lags the layers by several thousand steps.**
 - **Prediction 2 cannot be scored strictly.** Native category accuracy peaks at 0.58 (chance 0.125 with 8 families) and never crosses the 0.6 trigger. After step 4000, the sibling move has the higher mean at every checkpoint, with the CI above 0 everywhere except step 8000 (again).
 - **The gap between map and reader is plain.** From step 1000 the geometry is at z 13. The model's own answers reach their best only at step 4000 and then drift down to 0.2–0.4. The same states, moved toward their siblings, read 0.83–0.92 at the end. access.py asks whether an external reader can already use the map at step 1000.
+
+## Results: access.py on Pythia-410m
+
+Run on 24 Nov 2026. The file is [`runs/access_EleutherAI_pythia-410m_min3/access.json`](runs/access_EleutherAI_pythia-410m_min3/access.json). It used the 36 words of the rerun timeline. The prototype reader is leave-one-word-out nearest centroid by angle. Chance is 0.125 for 8 families and 0.33 for 3 kingdoms. "Native" is the model's own printed-word answer from timeline.py.
+
+| step | native family | prototype family: emb | layer 6 | layer 12 | layer 23 | prototype kingdom, layer 12 |
+|---|---|---|---|---|---|---|
+| 0 | 0.19 | 0.06 | 0.11 | 0.08 | 0.17 | 0.31 |
+| 128 | 0.08 | 0.06 | 0.06 | 0.06 | 0.14 | 0.39 |
+| 512 | 0.08 | 0.14 | 0.31 | **0.44** | 0.36 | 0.64 |
+| 1000 | **0.08** | 0.36 | 0.75 | **0.78** | 0.75 | 0.89 |
+| 2000 | 0.19 | 0.81 | 0.83 | 0.86 | 0.78 | 0.92 |
+| 4000 | 0.58 | 0.86 | 0.94 | 0.94 | 0.92 | 0.97 |
+| 8000 | 0.47 | 0.92 | 0.94 | 0.97 | 0.86 | 0.97 |
+| 16000 | 0.42 | 0.86 | 0.94 | 0.97 | 0.92 | 1.00 |
+| 33000 | 0.22 | 0.89 | 0.94 | 0.97 | 0.92 | 1.00 |
+| 66000 | 0.31 | 0.94 | 0.97 | 0.97 | 0.92 | 1.00 |
+| 100000 | 0.33 | 0.89 | 0.97 | 0.94 | 0.94 | 1.00 |
+| 143000 | 0.39 | 0.92 | 0.97 | 0.97 | 0.94 | 1.00 |
+
+**The prediction is met.**
+- At step 1000 the prototype reader gets 28/36 held-out words into the right family at layer 12. Chance is 4.5 words.
+- The model's own answers get 3/36.
+- Already at step 512 the reader is at 3.5 times chance, while the native reader is below chance.
+
+**The gap does not close.**
+- The outside reader is at 0.94–0.97 from step 4000 to the end.
+- The native reader peaks at 0.58 and then drifts down to 0.2–0.4.
+- In Astra's table that is the last row: the question format is a persistent bottleneck, not only a developmental delay. For a base model of this size answering yes/no in a few-shot frame, the map is nearly perfect and the reading is poor.
+- The embedding follows the layers again: 0.36 at step 1000, 0.81 at 2000.
+
+**What the outside reader is given that the native reader is not.** It has labelled examples: 35 other words with their families. The native reader has to link each cluster to the *English word* for it ("tree") and also follow the question format. So the gap mixes at least two things. The rerun separates them with two readers between these two:
+- **Unseen-family kingdom.** The held-out word's whole family is removed before the kingdom centroids are built (Astra's control). This tests whether the coarse level is a real abstraction or the recognition of a familiar family cluster.
+- **Category word.** There are no labelled examples. The word goes to the family whose own name, read as an item in the same frame, lies closest. This tests whether the cluster is linked to the word for it.
+
+If the category-word reader rises late, near step 4000, while the prototype reader is high at 1000, then the delay is in linking the map to names. Getting a native yes/no reader on top of that is a further step. `python3.13 access.py` reruns everything with both readers. Old steps are recomputed, because they lack the new readers.
 
 ## What this repo is not
 
