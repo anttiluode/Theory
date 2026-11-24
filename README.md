@@ -4,6 +4,8 @@ What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluo
 
 ## Did we find something? The blunt version
 
+**The write-up of everything so far is in [FINDINGS.md](FINDINGS.md).**
+
 **We found a clean, controlled effect, not a discovery.** In frozen Qwen3-1.7B, moving a word 75% of the way toward the average of its siblings raised category evidence for all 22 held-out words. Exact identity fell from 22/22 to 3/22. Moving toward the category word did not do this, and a random move did the opposite. ([note](https://github.com/anttiluode/RakeisuusClaude/blob/main/HIERARCHICAL_GEOMETRY.md))
 
 Most of it is what the known mathematics predicts. Below is that mathematics, and exactly which parts are known and which are not.
@@ -23,6 +25,8 @@ So what lifts the category is getting closer to the family average, not anything
 - Its own overshoot is smaller (+1.3 nats) and does not track the manufactured blend pair by pair.
 
 **After access.py ([results](#results-accesspy-on-pythia-410m)): the map comes before the reader, and the reader never catches up.** At step 1000, a prototype reader with nothing to tune classifies held-out words into the right family 78% of the time (chance 12.5%). Pythia's own answers are at 8%. From step 4000 to the end the outside reader stays at 94–97% at the middle layer, and the model's own answers never pass 58%.
+
+**After the second access run:** the outside reader also places never-seen families into the right kingdom (86% at step 1000). It links words to their category's own name ("tree", 69% at step 1000, 97–100% later) with no labelled examples. So Pythia knows and names its categories long before, and long after, it can answer a yes/no question about them. The order is map, then names, then answers. Details are in [FINDINGS.md §7](FINDINGS.md#7-map-before-reader-pythia-410m).
 
 **After the first timeline run ([results](#results-timelinepy-on-pythia-410m)):** coarse came first. In Pythia-410m the kingdom level appears at step 512, the family level at step 1000, and both are fixed by step 2000, about 1.4% of training. The token embeddings get the same tree roughly ten times later. One caveat matters: trees and birds were dropped for tokenization, so the plant kingdom held only vegetables. A rerun keeping 3-leaf families, now the default, fixes that.
 
