@@ -34,6 +34,10 @@ SHOTS = ("Item: rose. Is it a flower? yes\n"
          "Item: wolf. Is it an animal? yes\n"
          "Item: cup. Is it a cup? yes\n"
          "Item: lion. Is it a tiger? no\n")
+# The RakeisuusClaude frame, for instruct models only: chat template, zero-shot.
+CHAT_USER = "Item: {w}\n\n{q} Answer yes or no."
+CHAT_PREFIX = "Answer:"
+FRAMES = ("shots", "chat")
 
 
 def article(x):
@@ -75,8 +79,12 @@ def find_layers(model):
 
 
 class Reader:
-    def __init__(self, model, tok, device, name):
-        self.model, self.tok, self.device, self.name = model.eval(), tok, device, name
+    def __init__(self, model, tok, device, name, frame="shots"):
+        if frame not in FRAMES:
+            raise SystemExit(f"unknown frame {frame!r}; use one of {FRAMES}")
+        if frame == "chat" and not getattr(tok, "chat_template", None):
+            raise SystemExit("the chat frame needs a model with a chat template (base models: use --frame shots)")
+        self.model, self.tok, self.device, self.name, self.frame = model.eval(), tok, device, name, frame
         for p in self.model.parameters():
             p.requires_grad_(False)
         self.layers = find_layers(model)
@@ -84,6 +92,9 @@ class Reader:
         pad = getattr(tok, "pad_token_id", None)
         self.pad = pad if pad is not None else (getattr(tok, "eos_token_id", None) or 0)
         self.yes, self.no = self._first_ids(["yes", "Yes"]), self._first_ids(["no", "No"])
+        if frame == "chat":                    # as in RakeisuusClaude: with and without the space
+            self.yes = sorted(set(self.yes) | set(self._bare_ids(["yes", "Yes"])))
+            self.no = sorted(set(self.no) | set(self._bare_ids(["no", "No"])))
         if not self.yes or not self.no or set(self.yes) & set(self.no):
             raise SystemExit("STOP: yes/no are not clean single tokens")
         # RMSNorm reads the raw vector's direction; LayerNorm reads it after removing the
@@ -100,13 +111,32 @@ class Reader:
                 out.add(ids[0])
         return sorted(out)
 
+    def _bare_ids(self, words):
+        out = []
+        for w in words:
+            ids = self.tok(w, add_special_tokens=False)["input_ids"]
+            if len(ids) == 1:
+                out.append(ids[0])
+        return out
+
     def band(self, end=None):
         return (-1, end if end is not None else min(self.n_layers - 1, round(12 * self.n_layers / 28)))
 
     def prompt(self, word, q):
         """Token ids and the item word's position, or None if the word is not one token."""
-        text = SHOTS + f"Item: {word}. {q}"
-        ws = text.rindex("Item: " + word + ".") + len("Item: ")
+        if self.frame == "chat":
+            user = CHAT_USER.format(w=word, q=q.replace("Is it", "Is the item above", 1))
+            msgs = [{"role": "user", "content": user}]
+            try:
+                text = self.tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True,
+                                                    enable_thinking=False)
+            except TypeError:
+                text = self.tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+            text += CHAT_PREFIX
+            ws = text.rindex("Item: " + word + "\n") + len("Item: ")
+        else:
+            text = SHOTS + f"Item: {word}. {q}"
+            ws = text.rindex("Item: " + word + ".") + len("Item: ")
         we = ws + len(word)
         enc = self.tok(text, add_special_tokens=False, return_offsets_mapping=True)
         hit = [i for i, (a, b) in enumerate(enc["offset_mapping"]) if a < we and b > ws]
@@ -276,7 +306,7 @@ def perm_p(a, b, n=2000, seed=0):
 
 
 # ================================================================ loading
-def load(name, device, dtype=torch.float32, revision=None):
+def load(name, device, dtype=torch.float32, revision=None, frame="shots"):
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(name, revision=revision)
     kw = dict(revision=revision) if revision else {}
@@ -284,7 +314,7 @@ def load(name, device, dtype=torch.float32, revision=None):
         model = AutoModelForCausalLM.from_pretrained(name, dtype=dtype, **kw)
     except TypeError:
         model = AutoModelForCausalLM.from_pretrained(name, torch_dtype=dtype, **kw)
-    return Reader(model.to(device), tok, device, name + (f"@{revision}" if revision else ""))
+    return Reader(model.to(device), tok, device, name + (f"@{revision}" if revision else ""), frame)
 
 
 class StubTokenizer:
@@ -312,10 +342,16 @@ class StubTokenizer:
     def decode(self, ids):
         return "".join(self.vocab[i] for i in ids)
 
+    chat_template = "stub"
 
-def load_stub(arch="qwen", layers=6, d=64, seed=0):
+    def apply_chat_template(self, msgs, tokenize=False, add_generation_prompt=True, **kw):
+        return "".join(f"<{m['role']}>\n{m['content']}\n" for m in msgs) + "<assistant>\n"
+
+
+def load_stub(arch="qwen", layers=6, d=64, seed=0, frame="shots"):
     words = [w for _, ws in FAMILIES.values() for w in ws]
-    texts = [SHOTS, SLOT, "Item: . Is it? yes no Yes No a an made by people musical instrument"] + \
+    texts = [SHOTS, SLOT, CHAT_USER, CHAT_PREFIX, "<user> <assistant> the item above",
+             "Item: . Is it? yes no Yes No a an made by people musical instrument"] + \
         words + list(FAMILIES) + ["plant", "animal"]
     tok = StubTokenizer(texts)
     torch.manual_seed(seed)
@@ -330,7 +366,7 @@ def load_stub(arch="qwen", layers=6, d=64, seed=0):
         cfg = GPTNeoXConfig(vocab_size=len(tok.vocab), hidden_size=d, intermediate_size=2 * d,
                             num_hidden_layers=layers, num_attention_heads=4, max_position_embeddings=512)
         model = GPTNeoXForCausalLM(cfg)
-    return Reader(model, tok, "cpu", f"stub-{arch}")
+    return Reader(model, tok, "cpu", f"stub-{arch}", frame)
 
 
 def plumbing_test(r):

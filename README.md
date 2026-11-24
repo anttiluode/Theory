@@ -6,7 +6,9 @@ What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluo
 
 **We found a clean, controlled effect, not a discovery.** In frozen Qwen3-1.7B, moving a word 75% of the way toward the average of its siblings raised category evidence for all 22 held-out words. Exact identity fell from 22/22 to 3/22. Moving toward the category word did not do this, and a random move did the opposite. ([note](https://github.com/anttiluode/RakeisuusClaude/blob/main/HIERARCHICAL_GEOMETRY.md))
 
-Most of it is what the known mathematics predicts. Below is that mathematics, and exactly which parts are known and which are not. Two parts could still be new: a measured overshoot that the geometry may or may not fully explain, and a timeline of the tree growing during training that nobody has measured this way, as far as we know. Both are runnable here.
+Most of it is what the known mathematics predicts. Below is that mathematics, and exactly which parts are known and which are not.
+
+**After the first chord.py run (24 Nov 2026, [results](#results-chordpy-on-qwen3-17b-few-shot-frame)):** the shared-plus-private picture held up, and the parts that could have been new did not show up. In the few-shot frame, a fake sibling made of the family average plus random noise reads as the category as strongly as a real word, and blends with it overshoot exactly as much. The "louder kind" shrank to about 1% of the scale and does not follow the normalization gain. One open question remains: whether the louder kind belongs to the chat frame RakeisuusClaude used. `chord.py --frame chat` tests that. The training timeline is still unrun.
 
 ## 1. Symmetry decides the basis (known)
 
@@ -55,7 +57,8 @@ A passive dendritic fork with two identical branches does this exact Haar step. 
 
 ```
 python3.13 chord.py --self-test
-python3.13 chord.py
+python3.13 chord.py                  (plain few-shot frame)
+python3.13 chord.py --frame chat     (RakeisuusClaude's chat frame; results go to runs/Qwen_Qwen3-1.7B_chat/)
 ```
 
 | Part | What it measures | What would count |
@@ -82,6 +85,34 @@ Predictions, fixed before any run:
 2. Once printed category accuracy passes 0.6, the sibling move beats the matched random move at every later checkpoint.
 
 If fine structure comes before coarse, the coarse-first explanation is wrong for this model. Results go to `runs/timeline_<model>/timeline.json`, and a stopped run resumes where it left off.
+
+## Results: chord.py on Qwen3-1.7B, few-shot frame
+
+Run on 24 Nov 2026 (RTX 3060, 524 s). The file is [`Qwen_Qwen3-1.7B/chord.json`](Qwen_Qwen3-1.7B/chord.json). The run used 46 single-token leaves in 8 families, with the clamp from the embedding through layer 12. Six leaves were dropped because they are not one token: birch, willow, spruce, sparrow, parrot and swan. Calibrated category evidence for the unedited words is large: a median of 15.9 nats, ranging from 11.1 to 20.1.
+
+**A. Sibling move against a same-length random move.** Criterion: clearly more leaves rise, and the paired CI is above 0. **Half met.**
+- Category evidence rose for 26/46 leaves under the sibling move and 20/46 under the random move.
+- Mean change: siblings +0.28 nats [+0.03, +0.53], random −0.54 [−0.92, −0.20]. The paired difference is +0.82 [+0.39, +1.27], so the CI part is met.
+- The count part is not: 26 against 20 is not "clearly more". The effect is uneven across families. Trees rose 5/5 and tools 4/6; vegetables, birds, fish and vehicles show essentially nothing.
+- RakeisuusClaude's 22/22 does not reproduce in this frame.
+- Identity is where the two moves really differ. The sibling move erased exact identity for 29/46 leaves (46 → 17); the same-length random move erased none (46 → 46). That is the arithmetic of §2: the sibling move removes exactly the private part, and a random direction of the same length barely touches it.
+- Category itself never broke: 46/46 correct after the sibling move and 45/46 after the random move.
+
+**B. Overshoot against chord gain.** Criterion: a positive correlation with p < 0.05. **Not met.**
+- Across 110 sibling pairs, a 50/50 blend sat above the straight line between its ends by +0.12 nats [+0.06, +0.18], under 1% of the evidence scale. It was above the line for 61/110 pairs and above both ends for 21/110 (19%), against 77% in RakeisuusClaude.
+- Spearman(g, overshoot) = −0.01, permutation p = 0.92.
+- Caveat: g varied little (1.09 to 1.18), so this test is weak. Still, nothing here points to normalization as the source of the small overshoot that remains.
+
+**C. Real sibling against a synthetic sibling.** Criterion: real siblings overshoot more. **Not met; this is the clearest result.**
+- A synthetic sibling is the family mean plus a random private part of the same size. It reads as the category almost exactly as strongly as a real member: a median of 15.7 nats, against 15.9 for the real words.
+- Blends with it overshoot by the same amount: synthetic +0.13 [+0.05, +0.22], real +0.12. The difference is −0.01 [−0.10, +0.07].
+- So in this band, category evidence is carried by the family average alone. What a word's private part contains adds nothing that sums up across siblings. The interesting outcome, "private parts carry shared signal", is ruled out at this resolution.
+
+**What it means.** The Haar picture of §1–2 describes this model well: family mean equals category, residue equals identity. The mechanism named in §2 for the overshoot (normalization stretching a chord) is not supported. But in this frame there is also little overshoot left to explain.
+
+The plain unknown is the frame. RakeisuusClaude used Qwen's chat template, zero-shot, with "Is the item above a …?" questions; this run used plain few-shot text. `--frame chat` repeats all three parts in that frame:
+- If A goes back to nearly all leaves rising and B back to most blends beating both ends, the louder kind is a property of the chat frame, not of the word states.
+- If not, the earlier 22/22 and 77% came from that smaller word set (22 held-out words, 22 blends), not from anything general.
 
 ## What this repo is not
 

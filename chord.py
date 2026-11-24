@@ -3,6 +3,7 @@
     python chord.py --self-test
     python chord.py                         (Qwen3-1.7B, the RakeisuusClaude checkpoint)
     python chord.py --model EleutherAI/pythia-1b
+    python chord.py --frame chat            (the RakeisuusClaude chat frame, instruct models only)
 
 Three parts, all on every single-token leaf (nothing is fitted, so there is no train/test split):
 
@@ -55,7 +56,7 @@ def run(r, out, log=print, band_end=None, seed=20261124):
     S = r.states(words)
     log(f"{r.name}: {r.n_layers} layers, band {band}, {len(words)} leaves in {len(tree.fam)} families; "
         f"dropped (not one token): {', '.join(tree.dropped) or 'none'}")
-    rep = dict(model=r.name, band=band, centered_norm=r.centered, families={f: ws for f, (_, ws) in tree.fam.items()},
+    rep = dict(model=r.name, frame=r.frame, band=band, centered_norm=r.centered, families={f: ws for f, (_, ws) in tree.fam.items()},
                dropped=tree.dropped)
     own = {}
     for w, f, _ in tree.leaves:
@@ -151,16 +152,16 @@ def run(r, out, log=print, band_end=None, seed=20261124):
 
 
 def self_test():
-    for arch in ("qwen", "neox"):
-        r = C.load_stub(arch)
+    for arch, frame in (("qwen", "shots"), ("neox", "shots"), ("qwen", "chat")):
+        r = C.load_stub(arch, frame=frame)
         C.plumbing_test(r)
-        rep = run(r, Path("runs/selftest_" + arch), log=lambda *a: None)
+        rep = run(r, Path(f"runs/selftest_{arch}_{frame}"), log=lambda *a: None)
         assert rep["A"]["n"] > 0 and rep["B"]["n_pairs"] > 0
         # the chord gain is 1 at the ends and >= 1 in between (triangle inequality)
         S = r.states(["oak", "pine"])
         assert abs(chord_gain(S, "oak", "pine", 0.0, r.band(), r.centered) - 1) < 1e-5
         assert chord_gain(S, "oak", "pine", 0.5, r.band(), r.centered) >= 1 - 1e-6
-    print("self-test passed (stub Qwen2 and GPT-NeoX); numbers from random models mean nothing")
+    print("self-test passed (stub Qwen2 and GPT-NeoX, both frames); numbers from random models mean nothing")
 
 
 def main():
@@ -169,12 +170,15 @@ def main():
     ap.add_argument("--revision", default=None)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     ap.add_argument("--band-end", type=int, default=None)
+    ap.add_argument("--frame", choices=C.FRAMES, default="shots",
+                    help="shots: plain few-shot text (default); chat: the RakeisuusClaude chat frame")
     ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args()
     if a.self_test:
         return self_test()
-    r = C.load(a.model, a.device, torch.float32, a.revision)
-    run(r, Path("runs") / (r.name.replace("/", "_").replace("@", "_")), band_end=a.band_end)
+    r = C.load(a.model, a.device, torch.float32, a.revision, a.frame)
+    name = r.name.replace("/", "_").replace("@", "_") + ("" if a.frame == "shots" else "_" + a.frame)
+    run(r, Path("runs") / name, band_end=a.band_end)
 
 
 if __name__ == "__main__":
