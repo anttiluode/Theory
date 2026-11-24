@@ -1,6 +1,6 @@
 # Theory
 
-What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluode/RakeisuusClaude) is, mathematically, and two experiments that could kill each part of that explanation.
+What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluode/RakeisuusClaude) is, mathematically, and the experiments that could kill each part of that explanation.
 
 ## Did we find something? The blunt version
 
@@ -8,7 +8,14 @@ What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluo
 
 Most of it is what the known mathematics predicts. Below is that mathematics, and exactly which parts are known and which are not.
 
-**After the first chord.py run (24 Nov 2026, [results](#results-chordpy-on-qwen3-17b-few-shot-frame)):** the shared-plus-private picture held up, and the parts that could have been new did not show up. In the few-shot frame, a fake sibling made of the family average plus random noise reads as the category as strongly as a real word, and blends with it overshoot exactly as much. The "louder kind" shrank to about 1% of the scale and does not follow the normalization gain. One open question remains: whether the louder kind belongs to the chat frame RakeisuusClaude used. `chord.py --frame chat` tests that.
+**After the first chord.py run (24 Nov 2026, [results](#results-chordpy-on-qwen3-17b-few-shot-frame)):** the shared-plus-private picture held up, and the parts that could have been new did not show up. In the few-shot frame, a fake sibling made of the family average plus random noise reads as the category as strongly as a real word, and blends with it overshoot exactly as much. The "louder kind" shrank to about 1% of the scale and does not follow the normalization gain. One open question remained: whether the louder kind belongs to the chat frame RakeisuusClaude used.
+
+**After the chat-frame run ([results](#results-chordpy-on-qwen3-17b-chat-frame)): it does.** In the chat frame the effect is back in full:
+- The sibling move raised category evidence for 46/46 words; the same-length random move raised it for 2/46.
+- 80% of sibling blends beat both of their ends.
+- It still does not follow the normalization gain, and the fake sibling (family average plus noise) does it just as well.
+
+So what lifts the category is getting closer to the family average, not anything the siblings' private parts hold. Psychology has a name for this, the prototype effect: a never-seen average is classified better than the members it was made from. Part D of `chord.py` measures that curve directly, and `fork.py` asks whether Qwen builds the average itself when it reads two words.
 
 **After the first timeline run ([results](#results-timelinepy-on-pythia-410m)):** coarse came first. In Pythia-410m the kingdom level appears at step 512, the family level at step 1000, and both are fixed by step 2000, about 1.4% of training. The token embeddings get the same tree roughly ten times later. One caveat matters: trees and birds were dropped for tokenization, so the plant kingdom held only vegetables. A rerun keeping 3-leaf families, now the default, fixes that.
 
@@ -68,8 +75,32 @@ python3.13 chord.py --frame chat     (RakeisuusClaude's chat frame; results go t
 | **A** | The pending control: each leaf 75% toward its siblings, against a random move of the **same length as the sibling move** at every layer. | The sibling move raises category evidence for clearly more leaves than the random move, with the paired difference's CI above 0. Otherwise the RakeisuusClaude random comparison was carried by its mismatched length. |
 | **B** | Every sibling pair, blended at ¼, ½ and ¾. The overshoot of category evidence above the straight line between the ends, against the chord gain g. | A positive rank correlation between g and the overshoot (permutation p < 0.05) supports the normalization explanation. No correlation means the bend comes from somewhere else. |
 | **C** | Real sibling against a **synthetic** sibling: family mean plus a random private part of the same size, sharing nothing else with *a*. | Equal overshoot at equal g means pure geometry. Real siblings overshooting more means their private parts carry something that adds up. That would be the interesting outcome, and the one not predicted by anything above. |
+| **D** | The typicality curve: the siblings' mean *m* plus λ times the word's own residue, λ = 1.5, 1, ½, ¼, 0, and the same with a random residue of the same length. | If category evidence falls with distance from *m* along both curves alike, the effect is a prototype effect: distance from *m* in any direction costs category. Identity should survive only on the real curve. |
 
 It uses every single-token leaf (no fitting, so no train/test split), the plain few-shot frame of `common.py`, and the clamp from the embedding through layer ≈ 12/28 of the depth. Results go to `runs/<model>/chord.json`.
+
+### fork.py: does Qwen build the average itself? (Qwen3-1.7B, minutes)
+
+```
+python3.13 fork.py --self-test
+python3.13 fork.py                 (chat frame; results in runs/Qwen_Qwen3-1.7B_chat/fork.json)
+```
+
+Everything above *manufactures* the abstraction by writing a blended state into one position. Here nothing is clamped. Qwen reads "Items: oak, pine" in a normal forward pass, and attention does whatever pooling it does. This is the reader-sets-the-conductance fork. The inputs all have the same length, so more tokens cannot pass for more evidence:
+
+| Input | What it tests |
+|---|---|
+| oak, oak | repeated identity |
+| pine, pine | another repeated identity |
+| oak, pine (and pine, oak) | shared category, different identities |
+| oak, salmon | different identities and categories |
+
+Each input is asked the category question ("Are both of the items above trees?") and an identity question for every family member ("Is one of the items above a pine?").
+
+1. **Overshoot at equal length.** Does "oak, pine" read as more tree than both "oak, oak" and "pine, pine"? A yes does *not* locate the bend: attention weights, the per-position MLPs and later blocks could each produce it. It says only whether the model's own fork shows the effect.
+2. **Identity kept.** In the same "oak, pine" context, is "pine" still available when asked? Retention is 1 when pine is as available as in "pine, pine". The manufactured average lost identity (9/46 in the chat frame); a fork that depends on the query would not.
+3. **Query dependence.** Swap pine for elm. Under the category question the answer should barely move. Under "Is one of the items a pine?" it should move a lot. The same input is then a sieve whose residue depends on the question.
+4. **Attention, descriptive only.** From the answer position: how much attention each layer's heads put on the two items, and what share goes to the second item, under the category question and under the identity question about it. An even share is a balanced fork. These are weights, not interventions, so they do not prove what does the work. Locating the bend causally needs head or position interventions, the next step if 1–3 come out clean.
 
 ### timeline.py: does the tree grow coarse-first? (Pythia, about an hour plus downloads)
 
@@ -87,11 +118,11 @@ Predictions, fixed before any run:
 1. The kingdom and family excess rise early in training (coarse first). The family excess may then fall back as leaves pull apart.
 2. Once printed category accuracy passes 0.6, the sibling move beats the matched random move at every later checkpoint.
 
-If fine structure comes before coarse, the coarse-first explanation is wrong for this model. Results go to `runs/timeline_<model>/timeline.json`, and a stopped run resumes where it left off.
+If fine structure comes before coarse, the coarse-first explanation is wrong for this model. Results go to `runs/timeline_<model>_min3/timeline.json`, and a stopped run resumes where it left off.
 
 ## Results: chord.py on Qwen3-1.7B, few-shot frame
 
-Run on 24 Nov 2026 (RTX 3060, 524 s). The file is [`Qwen_Qwen3-1.7B/chord.json`](Qwen_Qwen3-1.7B/chord.json). The run used 46 single-token leaves in 8 families, with the clamp from the embedding through layer 12. Six leaves were dropped because they are not one token: birch, willow, spruce, sparrow, parrot and swan. Calibrated category evidence for the unedited words is large: a median of 15.9 nats, ranging from 11.1 to 20.1.
+Run on 24 Nov 2026 (RTX 3060, 524 s). The file is [`runs/Qwen_Qwen3-1.7B/chord.json`](runs/Qwen_Qwen3-1.7B/chord.json). The run used 46 single-token leaves in 8 families, with the clamp from the embedding through layer 12. Six leaves were dropped because they are not one token: birch, willow, spruce, sparrow, parrot and swan. Calibrated category evidence for the unedited words is large: a median of 15.9 nats, ranging from 11.1 to 20.1.
 
 **A. Sibling move against a same-length random move.** Criterion: clearly more leaves rise, and the paired CI is above 0. **Half met.**
 - Category evidence rose for 26/46 leaves under the sibling move and 20/46 under the random move.
@@ -117,9 +148,38 @@ The plain unknown is the frame. RakeisuusClaude used Qwen's chat template, zero-
 - If A goes back to nearly all leaves rising and B back to most blends beating both ends, the louder kind is a property of the chat frame, not of the word states.
 - If not, the earlier 22/22 and 77% came from that smaller word set (22 held-out words, 22 blends), not from anything general.
 
+## Results: chord.py on Qwen3-1.7B, chat frame
+
+Run on 24 Nov 2026 (235 s). The file is [`runs/Qwen_Qwen3-1.7B_chat/chord.json`](runs/Qwen_Qwen3-1.7B_chat/chord.json). This is RakeisuusClaude's frame: Qwen's chat template, zero-shot, "Is the item above a …? Answer yes or no." The words, band and clamp are the same as in the few-shot run. Calibrated category evidence is much larger: a median of 38.1 nats, ranging from 11.2 to 44.1.
+
+| | few-shot frame | chat frame |
+|---|---|---|
+| A: category rose, sibling move / same-length random | 26 / 20 of 46 | **46 / 2** of 46 |
+| A: mean change, sibling / random (nats) | +0.28 / −0.54 | **+4.75 / −4.63** |
+| A: sibling − random, 95% CI | +0.82 [+0.39, +1.27] | **+9.38 [+6.89, +12.31]** |
+| A: exact identity, own → sibling move / random move | 46 → 17 / 46 | 46 → 9 / 43 |
+| B: 50/50 blend above both ends | 21 / 110 | **88 / 110** |
+| B: above the straight line (nats) | +0.12 [+0.06, +0.18] | +2.87 [+2.28, +3.56] |
+| B: Spearman(chord gain, overshoot) | −0.01, p = 0.92 | +0.11, p = 0.28 |
+| C: overshoot, real − synthetic sibling | −0.01 [−0.10, +0.07] | +0.20 [−0.17, +0.64] |
+
+**A: met, fully.** The sibling move raised category evidence in every family, 46/46 words, against 2/46 for the random move. The RakeisuusClaude 22/22 was not an artifact of the length-mismatched control. It belongs to this frame.
+
+**B: the overshoot is back, but normalization is not its cause.** 80% of blends beat both ends, matching the 77% seen before. The chord gain still predicts nothing about which pairs overshoot. The overshoot is largest for trees (+8.4 nats) and birds (+6.7), and smallest for tools (+0.6) and instruments (+1.0).
+
+**C: the content of the private parts does not matter.** The fake sibling, family mean plus a random residue of the right size, overshoots as much as a real one. The difference of +0.20 nats has a CI that includes 0.
+
+**What it means.** The few-shot run said category lives in the family mean. The chat run adds that, in this frame, **every step away from the family mean costs category, in any direction.** A random move of a given length lowers category evidence by 4.6 nats. Taking the same length off the word's own residue raises it by 4.75. Blending two siblings, real or fake, shrinks the residue, so the blend reads as more of the category than either end.
+
+That is the classic prototype effect of category learning: the never-shown average of a category's exemplars is classified as well as or better than the exemplars themselves (Posner and Keele 1968). As far as we know, it has not been shown this way, by moving a model's own internal states.
+
+In the few-shot frame the same move barely matters. There the random move costs only 0.54 nats, so that read-out is about nine times flatter around the prototype. One caveat: each frame's states are captured in that frame's own context, so this is not quite "same states, different reader".
+
+The open part is the shape of the curve, and whether it is the same for every direction away from the mean. Part D measures it, and `python3.13 chord.py --frame chat` reruns A–D together.
+
 ## Results: timeline.py on Pythia-410m
 
-Run on 24 Nov 2026, 12 checkpoints. The file is [`timeline_EleutherAI_pythia-410m/timeline.json`](timeline_EleutherAI_pythia-410m/timeline.json).
+Run on 24 Nov 2026, 12 checkpoints. The file is [`runs/timeline_EleutherAI_pythia-410m/timeline.json`](runs/timeline_EleutherAI_pythia-410m/timeline.json).
 - **Word set.** 30 leaves in 6 families. Trees and birds fell below 4 one-token leaves and were dropped, so the plant kingdom is vegetables only, and its kingdom split is the same as its family split.
 - **Columns.** "Excess" is the Haar share above 200 random relabelings, with z in brackets. "Mid" is layer 12 of 24 and "emb" is the token embedding. "Cat" columns are the fraction of words whose own family question wins among the 6 family questions; chance is 0.17. "Sib − rnd" is in nats, with its 95% CI.
 

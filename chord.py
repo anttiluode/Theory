@@ -24,6 +24,11 @@ C  Real versus synthetic sibling. Replace b by s = family mean + (a random direc
    b's private part. If the overshoot is pure normalization geometry, synthetic siblings
    overshoot as much as real ones at the same g. If real siblings overshoot more, their
    private parts carry something that adds up.
+
+D  The typicality curve. Keep the siblings' mean m and scale the word's residue r = h - m:
+   m + lam * r for lam = 1.5 (caricature), 1, 0.5, 0.25, 0 (pure prototype), and the same with
+   a random residue of the same length. If category evidence depends only on how far the state
+   is from m, both curves fall together as lam grows; identity survives only with the real one.
 """
 import argparse
 import itertools
@@ -36,6 +41,7 @@ import torch
 import common as C
 
 T_BLEND = (0.25, 0.5, 0.75)
+LAMBDAS = (1.5, 1.0, 0.5, 0.25, 0.0)
 
 
 def chord_gain(S, a, b, t, band, centered):
@@ -88,6 +94,41 @@ def run(r, out, log=print, band_end=None, seed=20261124):
     log(f"   mean change: siblings {f2(A['d_cat_sib'])}, random {f2(A['d_cat_rnd'])}, "
         f"difference {f2(A['sib_minus_rnd'])}")
     log(f"   exact identity: own {A['identity_own']}, siblings {A['identity_sib']}, random {A['identity_rnd']}")
+
+    # ---- D: the typicality curve. h = m + lam * r, with r the word's own residue from the
+    # mean m of its siblings, or a random residue of the same length at every layer.
+    rowsD = []
+    for i, (w, f, _) in enumerate(tree.leaves):
+        qs = tree.questions(f)
+        others = [x for x in tree.fam[f][1] if x != w]
+        m = sum(S[x] for x in others) / len(others)
+        res = S[w] - m
+        g = torch.Generator().manual_seed(seed + 1000 + i)
+        u = torch.randn(res.shape, generator=g)
+        rnd = u * (res.norm(dim=1, keepdim=True) / u.norm(dim=1, keepdim=True).clamp_min(1e-12))
+        row = dict(word=w, family=f, real={}, random={})
+        for lam in LAMBDAS:
+            for kind, rr in (("real", res), ("random", rnd)):
+                if kind == "random" and lam == 0:
+                    row[kind][lam] = row["real"][lam]
+                    continue
+                j = own[w] if (kind == "real" and lam == 1) else \
+                    tree.judge(w, r.calibrated(w, qs, C.blend(S, [(1.0, m + lam * rr)], band)))
+                row[kind][lam] = j
+        rowsD.append(row)
+    D = dict(rows=rowsD, lambdas=LAMBDAS, curve={})
+    log(f"\nD  typicality curve: m + lam * residue, m = mean of the siblings (lam 1 real = the word itself)")
+    log(f"   {'lam':>5s} | {'cat change, real residue':>26s} {'id':>5s} | {'cat change, random residue':>28s} {'id':>5s}")
+    for lam in LAMBDAS:
+        c = {}
+        for kind in ("real", "random"):
+            c[kind] = dict(d_cat=C.boot([x[kind][lam]["cat"] - own[x["word"]]["cat"] for x in rowsD]),
+                           cat_ok=sum(x[kind][lam]["cat_ok"] for x in rowsD),
+                           identity=sum(x[kind][lam]["leaf_ok"] for x in rowsD))
+        D["curve"][lam] = c
+        log(f"   {lam:5.2f} | {f2(c['real']['d_cat']):>26s} {c['real']['identity']:>3d}/{len(rowsD)} | "
+            f"{f2(c['random']['d_cat']):>28s} {c['random']['identity']:>3d}/{len(rowsD)}")
+    rep["D"] = D
 
     # ---- B and C: all sibling pairs
     rowsB = []

@@ -306,10 +306,13 @@ def perm_p(a, b, n=2000, seed=0):
 
 
 # ================================================================ loading
-def load(name, device, dtype=torch.float32, revision=None, frame="shots"):
+def load(name, device, dtype=torch.float32, revision=None, frame="shots", attn=None):
+    """attn="eager" when attention weights are needed (fork.py)."""
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(name, revision=revision)
     kw = dict(revision=revision) if revision else {}
+    if attn:
+        kw["attn_implementation"] = attn
     try:
         model = AutoModelForCausalLM.from_pretrained(name, dtype=dtype, **kw)
     except TypeError:
@@ -348,11 +351,11 @@ class StubTokenizer:
         return "".join(f"<{m['role']}>\n{m['content']}\n" for m in msgs) + "<assistant>\n"
 
 
-def load_stub(arch="qwen", layers=6, d=64, seed=0, frame="shots"):
+def load_stub(arch="qwen", layers=6, d=64, seed=0, frame="shots", extra=()):
     words = [w for _, ws in FAMILIES.values() for w in ws]
     texts = [SHOTS, SLOT, CHAT_USER, CHAT_PREFIX, "<user> <assistant> the item above",
              "Item: . Is it? yes no Yes No a an made by people musical instrument"] + \
-        words + list(FAMILIES) + ["plant", "animal"]
+        words + list(FAMILIES) + ["plant", "animal"] + list(extra)
     tok = StubTokenizer(texts)
     torch.manual_seed(seed)
     if arch == "qwen":
@@ -360,11 +363,13 @@ def load_stub(arch="qwen", layers=6, d=64, seed=0, frame="shots"):
         cfg = Qwen2Config(vocab_size=len(tok.vocab), hidden_size=d, intermediate_size=2 * d,
                           num_hidden_layers=layers, num_attention_heads=4, num_key_value_heads=2,
                           max_position_embeddings=512, tie_word_embeddings=True)
+        cfg._attn_implementation = "eager"
         model = Qwen2ForCausalLM(cfg)
     else:
         from transformers import GPTNeoXConfig, GPTNeoXForCausalLM
         cfg = GPTNeoXConfig(vocab_size=len(tok.vocab), hidden_size=d, intermediate_size=2 * d,
                             num_hidden_layers=layers, num_attention_heads=4, max_position_embeddings=512)
+        cfg._attn_implementation = "eager"
         model = GPTNeoXForCausalLM(cfg)
     return Reader(model, tok, "cpu", f"stub-{arch}", frame)
 
