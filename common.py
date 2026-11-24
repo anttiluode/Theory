@@ -225,7 +225,7 @@ class Reader:
 
 # ================================================================ the tree for one model
 class Tree:
-    def __init__(self, reader, max_leaves=MAX_LEAVES):
+    def __init__(self, reader, max_leaves=MAX_LEAVES, min_leaves=MIN_LEAVES):
         self.fam, self.dropped = {}, []
         for f, (k, cands) in FAMILIES.items():
             kept = []
@@ -233,7 +233,7 @@ class Tree:
                 if len(kept) == max_leaves:
                     break
                 (kept if reader.single(w) else self.dropped).append(w)
-            if len(kept) >= MIN_LEAVES:
+            if len(kept) >= min_leaves:
                 self.fam[f] = (k, kept)
         self.kingdoms = sorted({k for k, _ in self.fam.values()})
         self.leaves = [(w, f, k) for f, (k, ws) in self.fam.items() for w in ws]

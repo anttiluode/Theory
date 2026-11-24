@@ -8,7 +8,9 @@ What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluo
 
 Most of it is what the known mathematics predicts. Below is that mathematics, and exactly which parts are known and which are not.
 
-**After the first chord.py run (24 Nov 2026, [results](#results-chordpy-on-qwen3-17b-few-shot-frame)):** the shared-plus-private picture held up, and the parts that could have been new did not show up. In the few-shot frame, a fake sibling made of the family average plus random noise reads as the category as strongly as a real word, and blends with it overshoot exactly as much. The "louder kind" shrank to about 1% of the scale and does not follow the normalization gain. One open question remains: whether the louder kind belongs to the chat frame RakeisuusClaude used. `chord.py --frame chat` tests that. The training timeline is still unrun.
+**After the first chord.py run (24 Nov 2026, [results](#results-chordpy-on-qwen3-17b-few-shot-frame)):** the shared-plus-private picture held up, and the parts that could have been new did not show up. In the few-shot frame, a fake sibling made of the family average plus random noise reads as the category as strongly as a real word, and blends with it overshoot exactly as much. The "louder kind" shrank to about 1% of the scale and does not follow the normalization gain. One open question remains: whether the louder kind belongs to the chat frame RakeisuusClaude used. `chord.py --frame chat` tests that.
+
+**After the first timeline run ([results](#results-timelinepy-on-pythia-410m)):** coarse came first. In Pythia-410m the kingdom level appears at step 512, the family level at step 1000, and both are fixed by step 2000, about 1.4% of training. The token embeddings get the same tree roughly ten times later. One caveat matters: trees and birds were dropped for tokenization, so the plant kingdom held only vegetables. A rerun keeping 3-leaf families, now the default, fixes that.
 
 ## 1. Symmetry decides the basis (known)
 
@@ -73,7 +75,8 @@ It uses every single-token leaf (no fitting, so no train/test split), the plain 
 
 ```
 python3.13 timeline.py --self-test
-python3.13 timeline.py
+python3.13 timeline.py                 (keeps families with 3+ one-token leaves; results in runs/timeline_<model>_min3/)
+python3.13 timeline.py --min-leaves 4  (the first run's word set)
 ```
 
 This uses EleutherAI's Pythia-410m at 12 training checkpoints (`--steps` and `--model EleutherAI/pythia-1b` change that). Each checkpoint is about 0.9 GB to download, once. It records:
@@ -113,6 +116,49 @@ Run on 24 Nov 2026 (RTX 3060, 524 s). The file is [`Qwen_Qwen3-1.7B/chord.json`]
 The plain unknown is the frame. RakeisuusClaude used Qwen's chat template, zero-shot, with "Is the item above a …?" questions; this run used plain few-shot text. `--frame chat` repeats all three parts in that frame:
 - If A goes back to nearly all leaves rising and B back to most blends beating both ends, the louder kind is a property of the chat frame, not of the word states.
 - If not, the earlier 22/22 and 77% came from that smaller word set (22 held-out words, 22 blends), not from anything general.
+
+## Results: timeline.py on Pythia-410m
+
+Run on 24 Nov 2026, 12 checkpoints. The file is [`timeline_EleutherAI_pythia-410m/timeline.json`](timeline_EleutherAI_pythia-410m/timeline.json).
+- **Word set.** 30 leaves in 6 families. Trees and birds fell below 4 one-token leaves and were dropped, so the plant kingdom is vegetables only, and its kingdom split is the same as its family split.
+- **Columns.** "Excess" is the Haar share above 200 random relabelings, with z in brackets. "Mid" is layer 12 of 24 and "emb" is the token embedding. "Cat" columns are the fraction of words whose own family question wins among the 6 family questions; chance is 0.17. "Sib − rnd" is in nats, with its 95% CI.
+
+| step | mid kingdom | mid family | emb kingdom | emb family | printed cat | sibling-moved cat | random-moved cat | cat rose: sib / rnd | sib − rnd | identity: own → sib |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | +0.000 (0.0) | +0.000 (0.1) | +0.005 | −0.005 | 0.23 | 0.30 | 0.23 | 12 / 18 | −0.00 | 0.20 → 0.20 |
+| 128 | +0.004 (0.6) | +0.003 (0.5) | +0.005 | −0.005 | 0.10 | 0.00 | 0.10 | 9 / 19 | −0.00 | 0.13 → 0.20 |
+| 512 | **+0.065 (5.7)** | +0.022 (1.4) | +0.007 | −0.004 | 0.10 | 0.00 | 0.17 | 23 / 9 | +0.02 [+0.01, +0.02] | 0.07 → 0.20 |
+| 1000 | +0.146 (12.8) | **+0.077 (4.9)** | +0.014 | +0.001 | 0.10 | 0.13 | 0.10 | 5 / 25 | −0.17 [−0.21, −0.13] | 0.17 → 0.20 |
+| 2000 | +0.128 (11.5) | +0.093 (6.5) | +0.028 | +0.016 | 0.23 | 0.30 | 0.10 | 21 / 12 | +0.08 [+0.05, +0.12] | 0.33 → 0.23 |
+| 4000 | +0.119 (12.9) | +0.090 (7.2) | +0.045 | +0.033 | **0.70** | 0.67 | 0.60 | 27 / 7 | +0.22 [+0.17, +0.26] | 0.87 → 0.33 |
+| 8000 | +0.118 (13.3) | +0.075 (6.2) | +0.057 | +0.043 | 0.57 | 0.70 | 0.50 | 19 / 16 | +0.05 [−0.01, +0.12] | 1.00 → 0.27 |
+| 16000 | +0.124 (14.4) | +0.077 (6.6) | +0.063 | +0.051 | 0.50 | 0.87 | 0.43 | 22 / 9 | +0.09 [+0.03, +0.14] | 1.00 → 0.27 |
+| 33000 | +0.122 (13.6) | +0.076 (6.6) | +0.063 | +0.050 | 0.27 | 0.67 | 0.23 | 28 / 16 | +0.19 [+0.15, +0.23] | 1.00 → 0.30 |
+| 66000 | +0.123 (13.5) | +0.078 (6.6) | +0.063 | +0.049 | 0.40 | 0.70 | 0.33 | 22 / 17 | +0.10 [+0.06, +0.15] | 0.47 → 0.23 |
+| 100000 | +0.121 (13.0) | +0.082 (7.0) | +0.063 | +0.048 | 0.47 | **1.00** | 0.43 | 28 / 12 | +0.23 [+0.17, +0.29] | 0.73 → 0.33 |
+| 143000 | +0.120 (13.0) | +0.085 (7.2) | +0.063 | +0.047 | 0.50 | **1.00** | 0.50 | 26 / 11 | +0.24 [+0.19, +0.29] | 0.93 → 0.30 |
+
+**Prediction 1 (coarse first): met, with the caveat above.**
+- At every depth, the kingdom split shows up one checkpoint before the family split.
+  - Layers 6–23: kingdom z ≈ 5 at step 512 while family z ≈ 1; family reaches z ≈ 5 at step 1000.
+  - Embedding: kingdom z 6.5 at step 1000 while family z 0.3.
+- The kingdom share overshoots, peaking at step 1000, then settles about 15% lower (+0.146 → +0.12). The leaf share rises slightly to match. That is the predicted "falls back as leaves pull apart", but it is small.
+- **After step 2000 the geometry is frozen.** The remaining 98.6% of training changes it by about 0.01.
+- **The embedding table lags the layers.** Its tree reaches its plateau only around step 16000, about ten times later. At step 1000 the word position at layer 6 already carries +0.14 kingdom excess, but the embedding it was computed from carries +0.014. Nothing else feeds that position the word's identity, because the few-shot text before it is the same for every word. So early in training the tree is *computed* from the word by the first blocks, and only later *written into* the embedding table.
+- One search found coarse-to-fine category learning shown in a vision model trained on child's-view video, and in Saxe et al.'s linear networks. It found nothing measuring it this way, by Haar level, across Pythia checkpoints, as far as we know.
+
+**Prediction 2 (once printed category accuracy passes 0.6, the sibling move beats random at every later checkpoint): met on the mean, missed once on the CI.**
+- Accuracy first passes 0.6 at step 4000. At all 7 later checkpoints the sibling move's mean is higher. The CI is above 0 at 6 of the 7; at step 8000 it is −0.01 to +0.12.
+- Step 1000 shows the opposite (−0.17), but there the model cannot read categories at all (printed 0.10, below chance).
+
+**The striking line, and its limit.** In the last two checkpoints, the sibling-moved state picks the right family for 30/30 words, while the printed words manage 15/30. The same-length random move stays at 0.43–0.50. In shared-plus-private terms, this is denoising: each word's private part leaks into the family questions, and averaging over siblings removes the leak.
+
+The limit is that Pythia-410m barely uses this frame. Calibrated category evidence for the printed words has a median of 0.00 nats at the end, and 0.20 after the sibling move. These are rankings among small margins, not confident answers. The printed accuracy also swings between 0.27 and 0.70 across checkpoints while the geometry stays flat, which says the read-out, not the representation, is what varies.
+
+**Next.**
+- Rerun with the 3-leaf rule, so trees and birds come back and the plant kingdom has two families. Results go to a separate folder: `python3.13 timeline.py`.
+- Refine around the transition with `--steps 64,128,256,512,1000,2000,3000`; Pythia has nothing between 512 and 1000.
+- If PolyPythias seeds (`EleutherAI/pythia-410m-seed1` and so on) load with `--model`, a second seed tells whether the 512/1000 order is fixed or luck.
 
 ## What this repo is not
 

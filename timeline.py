@@ -22,6 +22,7 @@ EleutherAI published Pythia's intermediate checkpoints as Hugging Face branches
    category evidence more than the matched random move at every later checkpoint.
 
 Checkpoints download once each (about 0.9 GB for 410m, 2 GB for 1b).
+Pythia's early checkpoints are log-spaced (step 1, 2, 4 ... 512), then every 1000.
 """
 import argparse
 import gc
@@ -116,7 +117,7 @@ def one(r, tree, log, band_end=None):
     return dict(model=r.name, layers=layers, geometry=geo, behaviour=beh)
 
 
-def run(load_fn, steps, out, log=print, band_end=None):
+def run(load_fn, steps, out, log=print, band_end=None, min_leaves=3):
     out.mkdir(parents=True, exist_ok=True)
     path = out / "timeline.json"
     rep = json.loads(path.read_text()) if path.exists() else dict(steps={})
@@ -128,8 +129,11 @@ def run(load_fn, steps, out, log=print, band_end=None):
         t0 = time.time()
         r = load_fn(s)
         if tree is None:                       # the tokenizer is the same at every checkpoint
-            tree = C.Tree(r)
-            rep["families"] = {f: ws for f, (_, ws) in tree.fam.items()}
+            tree = C.Tree(r, min_leaves=min_leaves)
+            fams = {f: ws for f, (_, ws) in tree.fam.items()}
+            if rep.get("families", fams) != fams:
+                raise SystemExit(f"{path} was made with a different word set; move it away or use another --min-leaves")
+            rep["families"] = fams
             rep["dropped"] = tree.dropped
             log(f"{len(tree.leaves)} leaves in {len(tree.fam)} families; dropped: {', '.join(tree.dropped) or 'none'}")
         res = one(r, tree, log, band_end)
@@ -166,13 +170,16 @@ def main():
     ap.add_argument("--steps", default=",".join(map(str, STEPS)))
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     ap.add_argument("--band-end", type=int, default=None)
+    ap.add_argument("--min-leaves", type=int, default=3,
+                    help="keep a family with at least this many one-token leaves (3 keeps trees and birds in Pythia)")
     ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args()
     if a.self_test:
         return self_test()
     steps = [int(s) for s in a.steps.split(",") if s.strip()]
     load_fn = lambda s: C.load(a.model, a.device, torch.float32, revision=f"step{s}")
-    run(load_fn, steps, Path("runs") / ("timeline_" + a.model.replace("/", "_")), band_end=a.band_end)
+    name = "timeline_" + a.model.replace("/", "_") + ("" if a.min_leaves == 4 else f"_min{a.min_leaves}")
+    run(load_fn, steps, Path("runs") / name, band_end=a.band_end, min_leaves=a.min_leaves)
 
 
 if __name__ == "__main__":
