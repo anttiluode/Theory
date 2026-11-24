@@ -17,6 +17,11 @@ Most of it is what the known mathematics predicts. Below is that mathematics, an
 
 So what lifts the category is getting closer to the family average, not anything the siblings' private parts hold. Psychology has a name for this, the prototype effect: a never-seen average is classified better than the members it was made from. Part D of `chord.py` measures that curve directly, and `fork.py` asks whether Qwen builds the average itself when it reads two words.
 
+**After part D and fork.py ([D](#part-d-the-typicality-curve-chat-frame), [fork](#results-forkpy-on-qwen3-17b-chat-frame)):**
+- *Distance from the prototype is not the whole story.* A word's own private part costs far less category than a random one of the same length, and halving it keeps identity (45/46) while giving most of the category gain. This is the anti-caricature of face-space research.
+- *When Qwen reads "oak, pine" itself,* it keeps both identities (retention 0.94). Under the category question it is about 30 times less moved by swapping pine for elm than the identity question is. One input, two different residues, depending on the question.
+- Its own overshoot is smaller (+1.3 nats) and does not track the manufactured blend pair by pair.
+
 **After the first timeline run ([results](#results-timelinepy-on-pythia-410m)):** coarse came first. In Pythia-410m the kingdom level appears at step 512, the family level at step 1000, and both are fixed by step 2000, about 1.4% of training. The token embeddings get the same tree roughly ten times later. One caveat matters: trees and birds were dropped for tokenization, so the plant kingdom held only vegetables. A rerun keeping 3-leaf families, now the default, fixes that.
 
 ## 1. Symmetry decides the basis (known)
@@ -102,6 +107,17 @@ Each input is asked the category question ("Are both of the items above trees?")
 3. **Query dependence.** Swap pine for elm. Under the category question the answer should barely move. Under "Is one of the items a pine?" it should move a lot. The same input is then a sieve whose residue depends on the question.
 4. **Attention, descriptive only.** From the answer position: how much attention each layer's heads put on the two items, and what share goes to the second item, under the category question and under the identity question about it. An even share is a balanced fork. These are weights, not interventions, so they do not prove what does the work. Locating the bend causally needs head or position interventions, the next step if 1–3 come out clean.
 
+### access.py: is the map there before the model can read it? (Pythia, minutes, downloads cached)
+
+```
+python3.13 access.py --self-test
+python3.13 access.py
+```
+
+In Pythia the tree's geometry is there by step 1000 while the model's own answers are below chance. access.py gives the same states to the simplest external reader. A prototype reader holds out one word, builds each family's centroid from the rest, and picks the closest centroid by angle. It has nothing to tune and never sees the held-out word.
+- **Prediction, fixed before the run:** at step 1000 this reader is well above chance at the middle layers while the native reader is not. That would be a map before a reader.
+- **If it fails:** the geometry is real but not yet usable on unseen words.
+
 ### timeline.py: does the tree grow coarse-first? (Pythia, about an hour plus downloads)
 
 ```
@@ -177,6 +193,59 @@ In the few-shot frame the same move barely matters. There the random move costs 
 
 The open part is the shape of the curve, and whether it is the same for every direction away from the mean. Part D measures it, and `python3.13 chord.py --frame chat` reruns A–D together.
 
+### Part D: the typicality curve (chat frame)
+
+Same run, rerun with D. The table shows the category change against the word itself (nats, 95% CI) and exact identity, for the siblings' mean plus λ times a residue:
+
+| λ | real residue: category | identity | random residue: category | identity |
+|---|---|---|---|---|
+| 1.5 (caricature) | −7.04 [−9.58, −4.91] | 46/46 | −13.91 [−17.55, −10.75] | 5/46 |
+| 1 | 0 (the word) | 46/46 | −4.20 [−6.86, −1.78] | 1/46 |
+| 0.5 | **+4.09 [+2.61, +5.92]** | **45/46** | +2.01 [+0.33, +4.07] | 4/46 |
+| 0.25 | +4.75 [+3.10, +6.81] | 9/46 | +3.78 [+2.16, +5.85] | 4/46 |
+| 0 (prototype) | +4.55 [+2.84, +6.64] | 5/46 | +4.55 [+2.84, +6.64] | 5/46 |
+
+**The prediction that both curves fall together is half right.**
+- Both fall monotonically with distance from the prototype, so distance matters.
+- But the word's real residue costs much less category than a random residue of the same length: 0 against −4.2 at λ = 1, and −7.0 against −13.9 at λ = 1.5. A real word's private part lies mostly in directions the category read-out tolerates. A random part does not.
+- So it is not a pure prototype effect. It is distance from the norm, weighted by direction.
+
+**Identity is a threshold; category saturates.**
+- Identity survives down to λ = 0.5 and collapses between 0.5 and 0.25.
+- Category gets 86% of its total gain by λ = 0.5.
+- So half the residue gives a word that is both recognisably itself and strongly typical. Face-space research calls this the **anti-caricature**: faces are coded as deviations from a norm, with identity read along the deviation and typicality falling with its length. Caricatures (λ > 1) stay recognisable but read as less typical (Valentine 1991; norm-based single neurons in monkey IT, Leopold, Bondar and Giese 2006).
+- Qwen's word states behave the same way. As far as we know, this word-level face space has not been measured by moving a model's own states.
+
+## Results: fork.py on Qwen3-1.7B, chat frame
+
+Run on 24 Nov 2026 (54 s). The file is [`runs/Qwen_Qwen3-1.7B_chat/fork.json`](runs/Qwen_Qwen3-1.7B_chat/fork.json). It used 46 leaves and 110 sibling pairs, with both orders averaged. Nothing is clamped.
+
+**1. Overshoot at equal length: present, smaller, and not the same effect.**
+- "oak, pine" read above the line between "oak, oak" and "pine, pine" by +1.27 nats [+0.33, +2.22], and above both for 64/110 pairs.
+- The manufactured blend gave +2.87 and 88/110.
+- Pair by pair, the two overshoots are uncorrelated (Spearman 0.00). The families differ too:
+  - natural: trees, tools and instruments up; vegetables and birds down;
+  - manufactured: trees and birds largest.
+- Order matters more than the overshoot: |cat(a, b) − cat(b, a)| = 3.13 nats.
+- So the model's own reading of two siblings is not the manufactured average. One plausible ordinary reason: "both are trees" is simply better supported by two different trees than by one tree said twice.
+- The other-kingdom control behaves: "oak, salmon" read below "oak, oak" for 44/46.
+
+**2. Identity kept: yes, almost fully.**
+- In the pair, the model said yes for a present item 220/220 times and no for an absent one 185/220 times.
+- Retention is a median of 0.94, a mean of 0.92 [0.90, 0.93].
+- The manufactured average kept identity for 9/46.
+
+**3. Query dependence: strong.**
+- Swapping the second sibling for another moved the category answer by a median of 1.21 nats. It moved "Is one of the items a pine?" by 36.19. The identity question moved more in 826/840 swaps.
+- For scale, swapping in an other-kingdom item moves the category answer 26.97.
+- Under the category question the model is about 20 times less sensitive to *which* sibling than to *which kingdom*. Under the identity question the same difference is decisive.
+- One input, read through two sieves; what counts as residue depends on the question. This is what Astra predicted, and it is the clean result of the run.
+
+**4. Attention: measured at the wrong place.**
+- The answer position puts at most 0.7% of its attention directly on the two items. It reads them through intermediate positions, such as the question's own tokens.
+- Its share on the second item drops from 0.5 to 0.2–0.4 in the middle layers, under both questions alike.
+- The fork, if there is one, sits earlier in the sequence. Finding it needs attention from every position after the items, then an intervention on the heads found.
+
 ## Results: timeline.py on Pythia-410m
 
 Run on 24 Nov 2026, 12 checkpoints. The file is [`runs/timeline_EleutherAI_pythia-410m/timeline.json`](runs/timeline_EleutherAI_pythia-410m/timeline.json).
@@ -216,9 +285,33 @@ Run on 24 Nov 2026, 12 checkpoints. The file is [`runs/timeline_EleutherAI_pythi
 The limit is that Pythia-410m barely uses this frame. Calibrated category evidence for the printed words has a median of 0.00 nats at the end, and 0.20 after the sibling move. These are rankings among small margins, not confident answers. The printed accuracy also swings between 0.27 and 0.70 across checkpoints while the geometry stays flat, which says the read-out, not the representation, is what varies.
 
 **Next.**
-- Rerun with the 3-leaf rule, so trees and birds come back and the plant kingdom has two families. Results go to a separate folder: `python3.13 timeline.py`.
+- Rerun with the 3-leaf rule, so trees and birds come back and the plant kingdom has two families. Done; see below.
 - Refine around the transition with `--steps 64,128,256,512,1000,2000,3000`; Pythia has nothing between 512 and 1000.
 - If PolyPythias seeds (`EleutherAI/pythia-410m-seed1` and so on) load with `--model`, a second seed tells whether the 512/1000 order is fixed or luck.
+
+### Rerun with trees and birds back (`--min-leaves 3`)
+
+The file is [`runs/timeline_EleutherAI_pythia-410m_min3/timeline.json`](runs/timeline_EleutherAI_pythia-410m_min3/timeline.json). It used 36 leaves in 8 families; trees and birds have 3 leaves each, and the plant kingdom now has two families.
+
+| step | mid kingdom (z) | mid family (z) | layer 6 kingdom / family z | emb kingdom / family z | printed cat | sibling-moved cat | sib − rnd |
+|---|---|---|---|---|---|---|---|
+| 0 | −0.001 (−0.2) | +0.002 (0.4) | −0.2 / 0.2 | 0.6 / 0.0 | 0.19 | 0.25 | −0.00 |
+| 128 | +0.002 (0.4) | −0.003 (−0.3) | 0.3 / −0.2 | 0.5 / 0.0 | 0.08 | 0.00 | −0.00 |
+| 512 | **+0.052 (5.5)** | +0.022 (1.5) | **4.8** / 0.9 | 1.0 / 0.5 | 0.08 | 0.00 | +0.02 |
+| 1000 | +0.133 (13.2) | **+0.073 (4.4)** | 12.9 / 5.4 | **4.9** / 2.2 | 0.08 | 0.11 | −0.15 |
+| 2000 | +0.120 (13.2) | +0.097 (6.3) | 13.1 / 8.1 | 9.6 / 5.8 | 0.19 | 0.25 | +0.07 [+0.03, +0.11] |
+| 4000 | +0.103 (13.1) | +0.101 (8.3) | 13.7 / 9.3 | 12.2 / 8.0 | **0.58** | 0.56 | +0.20 [+0.15, +0.24] |
+| 8000 | +0.110 (14.1) | +0.085 (6.9) | 14.6 / 7.8 | 13.2 / 8.0 | 0.47 | 0.67 | +0.04 [−0.02, +0.09] |
+| 16000 | +0.113 (15.3) | +0.084 (7.1) | 15.4 / 8.4 | 12.6 / 8.7 | 0.42 | 0.81 | +0.07 [+0.02, +0.11] |
+| 33000 | +0.111 (14.3) | +0.086 (7.0) | 16.0 / 8.3 | 12.4 / 9.6 | 0.22 | 0.64 | +0.17 [+0.12, +0.21] |
+| 66000 | +0.117 (15.4) | +0.085 (7.0) | 17.2 / 7.5 | 12.7 / 9.2 | 0.31 | 0.44 | +0.10 [+0.05, +0.14] |
+| 100000 | +0.115 (14.9) | +0.089 (7.2) | 16.5 / 8.1 | 13.0 / 9.2 | 0.33 | 0.92 | +0.23 [+0.17, +0.29] |
+| 143000 | +0.113 (14.6) | +0.092 (7.5) | 16.7 / 8.3 | 13.1 / 9.0 | 0.39 | 0.83 | +0.21 [+0.15, +0.26] |
+
+- **Coarse first survives the fix.** The kingdom level comes one checkpoint before the family level at every depth. It is at step 512 in the layers (z ≈ 5 against ≈ 1). In the embedding, at step 1000 kingdom z is 4.9 and family z is 2.2.
+- **The embedding still lags the layers by several thousand steps.**
+- **Prediction 2 cannot be scored strictly.** Native category accuracy peaks at 0.58 (chance 0.125 with 8 families) and never crosses the 0.6 trigger. After step 4000, the sibling move has the higher mean at every checkpoint, with the CI above 0 everywhere except step 8000 (again).
+- **The gap between map and reader is plain.** From step 1000 the geometry is at z 13. The model's own answers reach their best only at step 4000 and then drift down to 0.2–0.4. The same states, moved toward their siblings, read 0.83–0.92 at the end. access.py asks whether an external reader can already use the map at step 1000.
 
 ## What this repo is not
 
