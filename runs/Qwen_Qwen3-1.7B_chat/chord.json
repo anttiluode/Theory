@@ -1624,6 +1624,4637 @@
   "identity_rnd": 43,
   "n": 46
  },
+ "D": {
+  "rows": [
+   {
+    "word": "oak",
+    "family": "tree",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 19.790002822875977,
+      "top": -4.847196578979492,
+      "leaf": 19.029711723327637,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.10606575012207,
+      "top": 4.781115531921387,
+      "leaf": 18.36780548095703,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 33.300089836120605,
+      "top": 34.69764709472656,
+      "leaf": 17.16886854171753,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.101922035217285,
+      "top": 38.53586769104004,
+      "leaf": 0.15112686157226562,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 29.116695880889893,
+      "top": 39.271766662597656,
+      "leaf": 1.263967514038086,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 6.061342239379883,
+      "top": 29.87406635284424,
+      "leaf": 1.5077667236328125,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 12.375638961791992,
+      "top": 32.79984664916992,
+      "leaf": -0.7571792602539062,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 19.412307262420654,
+      "top": 37.27530288696289,
+      "leaf": 1.0836811065673828,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 24.65459108352661,
+      "top": 38.65690231323242,
+      "leaf": 1.2780494689941406,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 29.116695880889893,
+      "top": 39.271766662597656,
+      "leaf": 1.263967514038086,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "maple",
+    "family": "tree",
+    "real": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": -0.8194522857666016,
+      "top": 10.818178653717041,
+      "leaf": 26.22597312927246,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 11.430425643920898,
+      "top": 24.100507736206055,
+      "leaf": 33.755699157714844,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 26.35616111755371,
+      "top": 36.341543197631836,
+      "leaf": 31.196049690246582,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.283976554870605,
+      "top": 38.61045265197754,
+      "leaf": -0.9934959411621094,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.163164138793945,
+      "top": 39.17966079711914,
+      "leaf": -0.7898712158203125,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 1.1142864227294922,
+      "top": 31.626007080078125,
+      "leaf": 3.5897064208984375,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 15.511792182922363,
+      "top": 36.82717514038086,
+      "leaf": -2.6716976165771484,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.611083984375,
+      "top": 39.334171295166016,
+      "leaf": -1.6181278228759766,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.75421905517578,
+      "top": 39.66073226928711,
+      "leaf": -1.091156005859375,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.163164138793945,
+      "top": 39.17966079711914,
+      "leaf": -0.7898712158203125,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "pine",
+    "family": "tree",
+    "real": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 1.912008285522461,
+      "top": 24.584486961364746,
+      "leaf": 32.50342273712158,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 11.159439086914062,
+      "top": 35.16578674316406,
+      "leaf": 35.439571380615234,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 27.36856174468994,
+      "top": 38.873613357543945,
+      "leaf": 35.97110652923584,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.25107765197754,
+      "top": 38.96345138549805,
+      "leaf": -0.06925773620605469,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 32.169267654418945,
+      "top": 37.5791015625,
+      "leaf": 3.363801956176758,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": -0.6509742736816406,
+      "top": 17.138931274414062,
+      "leaf": 1.2738914489746094,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 0.11391258239746094,
+      "top": 22.2889084815979,
+      "leaf": -0.8780078887939453,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 12.614997863769531,
+      "top": 27.193004608154297,
+      "leaf": 0.2132129669189453,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 26.831696033477783,
+      "top": 32.94246292114258,
+      "leaf": 1.6994152069091797,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 32.169267654418945,
+      "top": 37.5791015625,
+      "leaf": 3.363801956176758,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "elm",
+    "family": "tree",
+    "real": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 1.2747135162353516,
+      "top": 28.27711009979248,
+      "leaf": 37.39510631561279,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 22.77334213256836,
+      "top": 36.23961639404297,
+      "leaf": 40.95904541015625,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.70987606048584,
+      "top": 38.92053985595703,
+      "leaf": 43.37525939941406,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.559650421142578,
+      "top": 38.99450492858887,
+      "leaf": 0.7112216949462891,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 30.3177809715271,
+      "top": 37.006038665771484,
+      "leaf": -0.32759666442871094,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": -0.44396018981933594,
+      "top": 15.722035884857178,
+      "leaf": -1.6787986755371094,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 2.868122100830078,
+      "top": 21.28655195236206,
+      "leaf": -1.3852310180664062,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 23.67525625228882,
+      "top": 30.97241973876953,
+      "leaf": -0.40574073791503906,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 29.061166763305664,
+      "top": 34.75097846984863,
+      "leaf": -0.29878997802734375,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 30.3177809715271,
+      "top": 37.006038665771484,
+      "leaf": -0.32759666442871094,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "cedar",
+    "family": "tree",
+    "real": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 1.7800617218017578,
+      "top": 34.848854064941406,
+      "leaf": 38.68154335021973,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 12.307685852050781,
+      "top": 36.900625228881836,
+      "leaf": 37.22551345825195,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 29.38093090057373,
+      "top": 38.44146728515625,
+      "leaf": 33.470534324645996,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.657135009765625,
+      "top": 38.84189414978027,
+      "leaf": 1.5783519744873047,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.423744201660156,
+      "top": 38.20147132873535,
+      "leaf": 5.161619186401367,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": -0.5523700714111328,
+      "top": 9.85009479522705,
+      "leaf": -1.0101757049560547,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": -0.502166748046875,
+      "top": 14.398001670837402,
+      "leaf": -2.2190990447998047,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 6.757442474365234,
+      "top": 30.003877639770508,
+      "leaf": -0.24074745178222656,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 20.0050950050354,
+      "top": 36.02519226074219,
+      "leaf": 2.797056198120117,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.423744201660156,
+      "top": 38.20147132873535,
+      "leaf": 5.161619186401367,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "carrot",
+    "family": "vegetable",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 37.55605888366699,
+      "top": 38.024742126464844,
+      "leaf": 46.03982353210449,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.1512393951416,
+      "top": 39.391401290893555,
+      "leaf": 46.75291633605957,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.442142486572266,
+      "top": 40.95839309692383,
+      "leaf": 46.45077323913574,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.349111557006836,
+      "top": 41.240705490112305,
+      "leaf": -0.3261604309082031,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.687381744384766,
+      "top": 41.00289535522461,
+      "leaf": 1.5267009735107422,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 29.33361530303955,
+      "top": 31.75214672088623,
+      "leaf": -0.1906585693359375,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 35.64862060546875,
+      "top": 37.83857345581055,
+      "leaf": 0.9545803070068359,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 37.87245178222656,
+      "top": 39.541053771972656,
+      "leaf": 2.234905242919922,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.88766288757324,
+      "top": 40.46333885192871,
+      "leaf": 1.9554920196533203,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.687381744384766,
+      "top": 41.00289535522461,
+      "leaf": 1.5267009735107422,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "potato",
+    "family": "vegetable",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.440753936767578,
+      "top": 30.631567001342773,
+      "leaf": 26.217233657836914,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 36.941375732421875,
+      "top": 38.3092155456543,
+      "leaf": 27.810357093811035,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.3354606628418,
+      "top": 40.50729560852051,
+      "leaf": 9.917671203613281,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.05767822265625,
+      "top": 41.12062454223633,
+      "leaf": -5.215961456298828,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.21889305114746,
+      "top": 41.22161293029785,
+      "leaf": -7.696767807006836,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 27.904447555541992,
+      "top": 31.144899368286133,
+      "leaf": -7.545400619506836,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 37.26216125488281,
+      "top": 38.57057762145996,
+      "leaf": -9.253437042236328,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.34036445617676,
+      "top": 40.92603874206543,
+      "leaf": -8.280817031860352,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.71974182128906,
+      "top": 41.399658203125,
+      "leaf": -7.8947906494140625,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.21889305114746,
+      "top": 41.22161293029785,
+      "leaf": -7.696767807006836,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "onion",
+    "family": "vegetable",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 35.46632766723633,
+      "top": 31.749635696411133,
+      "leaf": 41.53548049926758,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 38.21234893798828,
+      "top": 38.84189987182617,
+      "leaf": 40.40853977203369,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.09568786621094,
+      "top": 40.934438705444336,
+      "leaf": 40.99493598937988,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.20937919616699,
+      "top": 41.23433303833008,
+      "leaf": 1.3575515747070312,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.04829978942871,
+      "top": 41.02933311462402,
+      "leaf": 0.34307289123535156,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 13.684041976928711,
+      "top": 31.320878982543945,
+      "leaf": -0.7571792602539062,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 35.94431495666504,
+      "top": 38.362836837768555,
+      "leaf": -0.17704391479492188,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.010868072509766,
+      "top": 40.73408317565918,
+      "leaf": 0.2535991668701172,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.80379295349121,
+      "top": 41.222808837890625,
+      "leaf": 0.30568504333496094,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.04829978942871,
+      "top": 41.02933311462402,
+      "leaf": 0.34307289123535156,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "cabbage",
+    "family": "vegetable",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 35.37123107910156,
+      "top": 33.78105640411377,
+      "leaf": 35.35182571411133,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 38.21694564819336,
+      "top": 38.64508628845215,
+      "leaf": 33.48114776611328,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.86556053161621,
+      "top": 40.81938362121582,
+      "leaf": 30.4305100440979,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.145328521728516,
+      "top": 41.20278549194336,
+      "leaf": 1.225942611694336,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.17202568054199,
+      "top": 41.10673713684082,
+      "leaf": 1.965982437133789,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 25.236799240112305,
+      "top": 30.180655479431152,
+      "leaf": 0.9815673828125,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 35.69944381713867,
+      "top": 37.2204532623291,
+      "leaf": 0.8043231964111328,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.263465881347656,
+      "top": 39.93521308898926,
+      "leaf": 1.4236392974853516,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.35652160644531,
+      "top": 40.81336784362793,
+      "leaf": 1.748800277709961,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.17202568054199,
+      "top": 41.10673713684082,
+      "leaf": 1.965982437133789,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "lettuce",
+    "family": "vegetable",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 27.468259811401367,
+      "top": 38.00358009338379,
+      "leaf": 43.0101318359375,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 35.847957611083984,
+      "top": 39.364322662353516,
+      "leaf": 42.492820739746094,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 38.975393295288086,
+      "top": 40.78150749206543,
+      "leaf": 42.9898796081543,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.94021797180176,
+      "top": 41.18679428100586,
+      "leaf": -0.3863792419433594,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.483463287353516,
+      "top": 41.063302993774414,
+      "leaf": 2.0652904510498047,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 28.842620849609375,
+      "top": 30.58898162841797,
+      "leaf": -2.3055057525634766,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 35.7302188873291,
+      "top": 37.276248931884766,
+      "leaf": -1.4433517456054688,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.16714286804199,
+      "top": 39.90255165100098,
+      "leaf": 0.9875335693359375,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.24327087402344,
+      "top": 40.80202102661133,
+      "leaf": 1.6472625732421875,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.483463287353516,
+      "top": 41.063302993774414,
+      "leaf": 2.0652904510498047,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "cucumber",
+    "family": "vegetable",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 33.653658866882324,
+      "top": 38.72143745422363,
+      "leaf": 47.50778579711914,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 38.22159957885742,
+      "top": 39.59831428527832,
+      "leaf": 47.16877365112305,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.14483451843262,
+      "top": 40.72111892700195,
+      "leaf": 37.33861255645752,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.24363708496094,
+      "top": 41.14580535888672,
+      "leaf": 0.014616012573242188,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.94133186340332,
+      "top": 41.20774269104004,
+      "leaf": 2.3284130096435547,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.589675903320312,
+      "top": 36.10588455200195,
+      "leaf": -1.7293529510498047,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 36.352800369262695,
+      "top": 38.129329681396484,
+      "leaf": 0.6398849487304688,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.48234748840332,
+      "top": 39.99137496948242,
+      "leaf": 2.784984588623047,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.40754318237305,
+      "top": 40.77503967285156,
+      "leaf": 2.6807193756103516,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.94133186340332,
+      "top": 41.20774269104004,
+      "leaf": 2.3284130096435547,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "eagle",
+    "family": "bird",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.35308074951172,
+      "top": 40.405540466308594,
+      "leaf": 41.28613471984863,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.07644844055176,
+      "top": 41.88311576843262,
+      "leaf": 39.7104606628418,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 45.164297103881836,
+      "top": 42.85206413269043,
+      "leaf": 36.300621032714844,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.95141410827637,
+      "top": 42.90268325805664,
+      "leaf": 1.8213672637939453,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.23666763305664,
+      "top": 42.46371078491211,
+      "leaf": -0.4365081787109375,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 2.4280872344970703,
+      "top": 21.219502449035645,
+      "leaf": -0.23702239990234375,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 22.326552391052246,
+      "top": 37.41250801086426,
+      "leaf": -1.7228126525878906,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.6993350982666,
+      "top": 41.5677604675293,
+      "leaf": -0.5694866180419922,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.90323066711426,
+      "top": 42.29965591430664,
+      "leaf": -0.27361297607421875,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.23666763305664,
+      "top": 42.46371078491211,
+      "leaf": -0.4365081787109375,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "owl",
+    "family": "bird",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 24.80228614807129,
+      "top": 40.78878974914551,
+      "leaf": 41.536481857299805,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.17005157470703,
+      "top": 42.16001319885254,
+      "leaf": 42.51280212402344,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.77642250061035,
+      "top": 42.98944091796875,
+      "leaf": 42.0860710144043,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.884103775024414,
+      "top": 42.93020439147949,
+      "leaf": 0.6575355529785156,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.491390228271484,
+      "top": 42.34547424316406,
+      "leaf": 0.5587043762207031,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 4.11505126953125,
+      "top": 9.513620376586914,
+      "leaf": 2.1221961975097656,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 37.7289924621582,
+      "top": 38.674150466918945,
+      "leaf": -0.9088077545166016,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.873172760009766,
+      "top": 42.05165672302246,
+      "leaf": 0.2172527313232422,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.61408233642578,
+      "top": 42.5064811706543,
+      "leaf": 0.4444618225097656,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.491390228271484,
+      "top": 42.34547424316406,
+      "leaf": 0.5587043762207031,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "crow",
+    "family": "bird",
+    "real": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 1.6552448272705078,
+      "top": 19.348100662231445,
+      "leaf": 26.286215782165527,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 11.918928146362305,
+      "top": 35.67141342163086,
+      "leaf": 27.03882646560669,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.35367012023926,
+      "top": 41.75169372558594,
+      "leaf": 29.470512866973877,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.72012138366699,
+      "top": 42.74216079711914,
+      "leaf": 10.226648330688477,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 45.039207458496094,
+      "top": 43.037580490112305,
+      "leaf": 7.6940765380859375,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 24.168413162231445,
+      "top": 33.18165111541748,
+      "leaf": 9.050314903259277,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.93016815185547,
+      "top": 39.5095272064209,
+      "leaf": 12.824849128723145,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 45.07986831665039,
+      "top": 42.5258731842041,
+      "leaf": 19.175915956497192,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 45.40399932861328,
+      "top": 43.05818176269531,
+      "leaf": 13.121274948120117,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 45.039207458496094,
+      "top": 43.037580490112305,
+      "leaf": 7.6940765380859375,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "pigeon",
+    "family": "bird",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.26189613342285,
+      "top": 38.34556198120117,
+      "leaf": 38.40805435180664,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.70717811584473,
+      "top": 40.13561820983887,
+      "leaf": 38.903738021850586,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.29787063598633,
+      "top": 42.11050796508789,
+      "leaf": 35.41028690338135,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.78524589538574,
+      "top": 42.779266357421875,
+      "leaf": 3.1259918212890625,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.80304145812988,
+      "top": 42.88737869262695,
+      "leaf": 0.21031761169433594,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 2.221698760986328,
+      "top": 30.702909469604492,
+      "leaf": 1.7289257049560547,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 10.303169250488281,
+      "top": 39.341691970825195,
+      "leaf": -1.756734848022461,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.23680114746094,
+      "top": 42.35135269165039,
+      "leaf": -1.7776851654052734,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.6229248046875,
+      "top": 42.96211242675781,
+      "leaf": -0.8135299682617188,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.80304145812988,
+      "top": 42.88737869262695,
+      "leaf": 0.21031761169433594,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "duck",
+    "family": "bird",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 36.12265968322754,
+      "top": 39.66366767883301,
+      "leaf": 19.449270725250244,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.84615898132324,
+      "top": 41.47214698791504,
+      "leaf": 32.12563705444336,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.45342826843262,
+      "top": 42.64828872680664,
+      "leaf": 20.552448272705078,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.80908393859863,
+      "top": 42.8587589263916,
+      "leaf": 5.738399505615234,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.72486686706543,
+      "top": 42.647756576538086,
+      "leaf": 9.585647583007812,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 4.267036437988281,
+      "top": 24.744877338409424,
+      "leaf": -5.294334411621094,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 26.736314296722412,
+      "top": 34.397507667541504,
+      "leaf": -2.480009078979492,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.36606407165527,
+      "top": 41.02085304260254,
+      "leaf": 2.465850830078125,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.19841384887695,
+      "top": 42.20211601257324,
+      "leaf": 5.4229736328125,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.72486686706543,
+      "top": 42.647756576538086,
+      "leaf": 9.585647583007812,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "salmon",
+    "family": "fish",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.020599365234375,
+      "top": 33.97177696228027,
+      "leaf": 39.622846603393555,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.49571228027344,
+      "top": 41.309892654418945,
+      "leaf": 37.633378982543945,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.86606216430664,
+      "top": 42.94406509399414,
+      "leaf": 19.575729370117188,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 45.11527442932129,
+      "top": 43.2087459564209,
+      "leaf": 2.136608123779297,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.66047477722168,
+      "top": 43.1191349029541,
+      "leaf": 2.440164566040039,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 33.673011779785156,
+      "top": 31.014761924743652,
+      "leaf": -0.7686290740966797,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.357139587402344,
+      "top": 37.81387138366699,
+      "leaf": -0.10765457153320312,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.67808532714844,
+      "top": 41.59323692321777,
+      "leaf": 1.4361572265625,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.98855400085449,
+      "top": 42.61108207702637,
+      "leaf": 2.1428489685058594,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.66047477722168,
+      "top": 43.1191349029541,
+      "leaf": 2.440164566040039,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "shark",
+    "family": "fish",
+    "real": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 5.287517547607422,
+      "top": 40.099050521850586,
+      "leaf": 43.08818054199219,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 34.8528995513916,
+      "top": 41.86610221862793,
+      "leaf": 44.105831146240234,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.884422302246094,
+      "top": 43.26169776916504,
+      "leaf": 39.86160087585449,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 45.0006103515625,
+      "top": 43.34930419921875,
+      "leaf": 6.841428756713867,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.7870979309082,
+      "top": 42.6251335144043,
+      "leaf": 4.657445907592773,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 23.235340118408203,
+      "top": 28.596908569335938,
+      "leaf": 0.0063018798828125,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 37.51925754547119,
+      "top": 36.80855369567871,
+      "leaf": 1.1426143646240234,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.432369232177734,
+      "top": 41.48103332519531,
+      "leaf": 5.434698104858398,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.43061828613281,
+      "top": 42.406503677368164,
+      "leaf": 6.619726181030273,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.7870979309082,
+      "top": 42.6251335144043,
+      "leaf": 4.657445907592773,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "trout",
+    "family": "fish",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.410505294799805,
+      "top": 40.4523811340332,
+      "leaf": 32.09744644165039,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.744571685791016,
+      "top": 42.0710563659668,
+      "leaf": 21.01766085624695,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.694766998291016,
+      "top": 43.25412940979004,
+      "leaf": 12.689064025878906,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 45.11628723144531,
+      "top": 43.31330871582031,
+      "leaf": 1.2182693481445312,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.55291175842285,
+      "top": 42.84755516052246,
+      "leaf": 0.5542812347412109,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 36.329644203186035,
+      "top": 30.475196838378906,
+      "leaf": 1.758035659790039,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.62760925292969,
+      "top": 37.54175567626953,
+      "leaf": 0.4874763488769531,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.57393264770508,
+      "top": 41.14821815490723,
+      "leaf": 0.3297843933105469,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.83881759643555,
+      "top": 42.192344665527344,
+      "leaf": 0.5500888824462891,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.55291175842285,
+      "top": 42.84755516052246,
+      "leaf": 0.5542812347412109,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "tuna",
+    "family": "fish",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 27.53336191177368,
+      "top": 1.6655902862548828,
+      "leaf": 38.322022438049316,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.41481971740723,
+      "top": 32.96970558166504,
+      "leaf": 39.1306209564209,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 44.20034599304199,
+      "top": 42.1599006652832,
+      "leaf": 41.91886901855469,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.94870185852051,
+      "top": 43.04006385803223,
+      "leaf": 0.9110050201416016,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.905277252197266,
+      "top": 43.39754295349121,
+      "leaf": 5.195703506469727,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 29.71086025238037,
+      "top": 34.034807205200195,
+      "leaf": 1.6404266357421875,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.319393157958984,
+      "top": 39.53348350524902,
+      "leaf": 1.8541145324707031,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.92496299743652,
+      "top": 42.9549617767334,
+      "leaf": 5.8163909912109375,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.946725845336914,
+      "top": 43.645477294921875,
+      "leaf": 5.914068222045898,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.905277252197266,
+      "top": 43.39754295349121,
+      "leaf": 5.195703506469727,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "cod",
+    "family": "fish",
+    "real": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 18.409350872039795,
+      "top": 12.143310546875,
+      "leaf": 4.396751880645752,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.3427848815918,
+      "top": 37.57867431640625,
+      "leaf": 7.533637285232544,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.82078170776367,
+      "top": 42.19367599487305,
+      "leaf": 15.074533939361572,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.91086387634277,
+      "top": 43.051605224609375,
+      "leaf": -13.94287109375,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.998369216918945,
+      "top": 43.41681671142578,
+      "leaf": -15.664302825927734,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 19.761380672454834,
+      "top": 20.161540031433105,
+      "leaf": 4.384612083435059,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.4681339263916,
+      "top": 36.96686363220215,
+      "leaf": 1.414351463317871,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.18941879272461,
+      "top": 42.29560089111328,
+      "leaf": -13.496025085449219,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.47665977478027,
+      "top": 43.12143898010254,
+      "leaf": -15.356531143188477,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.998369216918945,
+      "top": 43.41681671142578,
+      "leaf": -15.664302825927734,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "carp",
+    "family": "fish",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 38.67820739746094,
+      "top": 37.01651191711426,
+      "leaf": 39.6890754699707,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.23519706726074,
+      "top": 40.399160385131836,
+      "leaf": 37.98870277404785,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.80484390258789,
+      "top": 42.65944862365723,
+      "leaf": 29.869605541229248,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.87223815917969,
+      "top": 43.1660270690918,
+      "leaf": -0.33255577087402344,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 45.066240310668945,
+      "top": 43.15595054626465,
+      "leaf": -0.0008487701416015625,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 10.218944549560547,
+      "top": 18.49685001373291,
+      "leaf": 3.9072933197021484,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.7820987701416,
+      "top": 35.53092384338379,
+      "leaf": 0.8101234436035156,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.270442962646484,
+      "top": 41.4693717956543,
+      "leaf": 0.5612525939941406,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 44.482261657714844,
+      "top": 42.70367431640625,
+      "leaf": 0.6973915100097656,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 45.066240310668945,
+      "top": 43.15595054626465,
+      "leaf": -0.0008487701416015625,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "ant",
+    "family": "insect",
+    "real": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 10.055948257446289,
+      "top": 29.93340015411377,
+      "leaf": 8.563508033752441,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 23.274102210998535,
+      "top": 37.31872367858887,
+      "leaf": 10.027281761169434,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.94841766357422,
+      "top": 40.9515438079834,
+      "leaf": -0.53985595703125,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.26559066772461,
+      "top": 41.844078063964844,
+      "leaf": 0.5298728942871094,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.59721755981445,
+      "top": 42.294715881347656,
+      "leaf": 0.3367118835449219,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 8.664999008178711,
+      "top": 12.138859272003174,
+      "leaf": 1.6458759307861328,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 16.630739212036133,
+      "top": 26.809746742248535,
+      "leaf": 1.4863243103027344,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.04122543334961,
+      "top": 40.609506607055664,
+      "leaf": 0.4312744140625,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.16052436828613,
+      "top": 41.86188316345215,
+      "leaf": 0.39925193786621094,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.59721755981445,
+      "top": 42.294715881347656,
+      "leaf": 0.3367118835449219,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "bee",
+    "family": "insect",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 35.75298881530762,
+      "top": 38.70827865600586,
+      "leaf": 40.104637145996094,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.484657287597656,
+      "top": 40.86915588378906,
+      "leaf": 40.164459228515625,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.91105079650879,
+      "top": 41.99263572692871,
+      "leaf": 28.75051259994507,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.64580154418945,
+      "top": 42.07196044921875,
+      "leaf": 1.0211296081542969,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.9283504486084,
+      "top": 41.89201736450195,
+      "leaf": 5.01214599609375,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 28.382551670074463,
+      "top": 22.956420421600342,
+      "leaf": 1.3600196838378906,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.17440605163574,
+      "top": 36.32172775268555,
+      "leaf": 2.6025161743164062,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.36522102355957,
+      "top": 40.496604919433594,
+      "leaf": 3.13360595703125,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.97130012512207,
+      "top": 41.40353965759277,
+      "leaf": 3.6970481872558594,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.9283504486084,
+      "top": 41.89201736450195,
+      "leaf": 5.01214599609375,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "beetle",
+    "family": "insect",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 20.592907905578613,
+      "top": 35.96039581298828,
+      "leaf": 24.54313087463379,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 33.99562644958496,
+      "top": 40.47685432434082,
+      "leaf": 27.65143394470215,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.42355728149414,
+      "top": 41.87248420715332,
+      "leaf": 16.672435760498047,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.31637763977051,
+      "top": 42.039642333984375,
+      "leaf": 8.450117111206055,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.60523796081543,
+      "top": 41.94551658630371,
+      "leaf": 7.820609092712402,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 25.35423994064331,
+      "top": 33.682071685791016,
+      "leaf": 6.790706634521484,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 35.52194786071777,
+      "top": 39.097049713134766,
+      "leaf": 4.009552001953125,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.08628273010254,
+      "top": 41.33060073852539,
+      "leaf": 5.024168014526367,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.19801712036133,
+      "top": 41.85648727416992,
+      "leaf": 6.222936630249023,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.60523796081543,
+      "top": 41.94551658630371,
+      "leaf": 7.820609092712402,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "butterfly",
+    "family": "insect",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.23247718811035,
+      "top": 38.36710739135742,
+      "leaf": 33.72899532318115,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.12090301513672,
+      "top": 40.824920654296875,
+      "leaf": 35.30818843841553,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.48655700683594,
+      "top": 42.045433044433594,
+      "leaf": 17.110963344573975,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.56479454040527,
+      "top": 42.11140251159668,
+      "leaf": 3.5961570739746094,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.06777000427246,
+      "top": 41.75437355041504,
+      "leaf": 2.7102279663085938,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 19.179457664489746,
+      "top": 29.035594940185547,
+      "leaf": 0.5505733489990234,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 35.653533935546875,
+      "top": 37.57442855834961,
+      "leaf": -2.5975589752197266,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.959224700927734,
+      "top": 41.50347137451172,
+      "leaf": 0.4549140930175781,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.9575309753418,
+      "top": 42.00773048400879,
+      "leaf": 1.8972129821777344,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.06777000427246,
+      "top": 41.75437355041504,
+      "leaf": 2.7102279663085938,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "mosquito",
+    "family": "insect",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.1310977935791,
+      "top": 40.29099082946777,
+      "leaf": 31.05221939086914,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.058916091918945,
+      "top": 41.145368576049805,
+      "leaf": 21.810349822044373,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.68050765991211,
+      "top": 41.848567962646484,
+      "leaf": 10.341752052307129,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.601104736328125,
+      "top": 42.033002853393555,
+      "leaf": 1.6321449279785156,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.900461196899414,
+      "top": 41.85461616516113,
+      "leaf": 4.060792922973633,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 22.668517112731934,
+      "top": 31.257396697998047,
+      "leaf": 8.292853355407715,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 30.7434024810791,
+      "top": 38.37300491333008,
+      "leaf": 0.45548248291015625,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.98349571228027,
+      "top": 41.15713882446289,
+      "leaf": 0.6472568511962891,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.00580406188965,
+      "top": 41.72771072387695,
+      "leaf": 2.0516109466552734,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.900461196899414,
+      "top": 41.85461616516113,
+      "leaf": 4.060792922973633,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "moth",
+    "family": "insect",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 26.501914501190186,
+      "top": 36.91993522644043,
+      "leaf": 15.983110427856445,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 34.14849090576172,
+      "top": 40.06275177001953,
+      "leaf": 15.007533073425293,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.8115348815918,
+      "top": 41.67728805541992,
+      "leaf": 20.597589254379272,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.15487480163574,
+      "top": 41.99460983276367,
+      "leaf": 10.967989921569824,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.81534385681152,
+      "top": 42.01459884643555,
+      "leaf": 4.491178512573242,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 18.065229892730713,
+      "top": 26.8704891204834,
+      "leaf": 5.554592132568359,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 29.271271228790283,
+      "top": 35.52526664733887,
+      "leaf": 4.063203811645508,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.211503982543945,
+      "top": 41.60031318664551,
+      "leaf": 5.1367340087890625,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.77990913391113,
+      "top": 42.267995834350586,
+      "leaf": 5.280488967895508,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.81534385681152,
+      "top": 42.01459884643555,
+      "leaf": 4.491178512573242,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "hammer",
+    "family": "tool",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.797597885131836,
+      "top": 1.9870939254760742,
+      "leaf": 47.7618408203125,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.504392623901367,
+      "top": 2.578883171081543,
+      "leaf": 48.226980209350586,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 32.12923049926758,
+      "top": 2.991398811340332,
+      "leaf": 30.89365243911743,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.083723068237305,
+      "top": 3.017300605773926,
+      "leaf": 1.8655929565429688,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.739852905273438,
+      "top": 2.7857961654663086,
+      "leaf": 1.8086051940917969,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 26.5368709564209,
+      "top": 0.42973804473876953,
+      "leaf": 0.56085205078125,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 29.226743698120117,
+      "top": 1.6482820510864258,
+      "leaf": 1.4945487976074219,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 30.69540786743164,
+      "top": 2.2601308822631836,
+      "leaf": 1.6156959533691406,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.22180938720703,
+      "top": 2.520277976989746,
+      "leaf": 1.7465248107910156,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.739852905273438,
+      "top": 2.7857961654663086,
+      "leaf": 1.8086051940917969,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "wrench",
+    "family": "tool",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 29.220333099365234,
+      "top": 0.5853128433227539,
+      "leaf": 42.19156074523926,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.827194213867188,
+      "top": 1.9825410842895508,
+      "leaf": 42.360116958618164,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.792682647705078,
+      "top": 2.7821550369262695,
+      "leaf": 42.13344955444336,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.990068435668945,
+      "top": 2.960371971130371,
+      "leaf": 7.981597900390625,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.947216033935547,
+      "top": 2.8961172103881836,
+      "leaf": 4.995622634887695,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 25.828277587890625,
+      "top": 0.8102436065673828,
+      "leaf": -0.6504306793212891,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 28.98813247680664,
+      "top": 1.894425392150879,
+      "leaf": 1.737884521484375,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.167234420776367,
+      "top": 2.6213369369506836,
+      "leaf": 5.1398468017578125,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.766326904296875,
+      "top": 2.8569021224975586,
+      "leaf": 5.415048599243164,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.947216033935547,
+      "top": 2.8961172103881836,
+      "leaf": 4.995622634887695,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "drill",
+    "family": "tool",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 26.875791549682617,
+      "top": -0.16915130615234375,
+      "leaf": 24.931716918945312,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 28.89464569091797,
+      "top": 1.4367265701293945,
+      "leaf": 26.233361959457397,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.732158660888672,
+      "top": 2.364438056945801,
+      "leaf": 22.536009550094604,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.738176345825195,
+      "top": 2.8547277450561523,
+      "leaf": 7.624261856079102,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.33243751525879,
+      "top": 3.045699119567871,
+      "leaf": 0.8372077941894531,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 20.777280807495117,
+      "top": -4.064568519592285,
+      "leaf": 6.530174255371094,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 27.6767520904541,
+      "top": 0.7736177444458008,
+      "leaf": 0.9626274108886719,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 30.527587890625,
+      "top": 2.271470069885254,
+      "leaf": -0.2458343505859375,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.65549659729004,
+      "top": 2.671359062194824,
+      "leaf": 0.5016822814941406,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.33243751525879,
+      "top": 3.045699119567871,
+      "leaf": 0.8372077941894531,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "shovel",
+    "family": "tool",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.311304092407227,
+      "top": 2.6462297439575195,
+      "leaf": 47.79685401916504,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.987638473510742,
+      "top": 2.982466697692871,
+      "leaf": 48.28719902038574,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.673213958740234,
+      "top": 3.1488752365112305,
+      "leaf": 48.420724868774414,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.93916130065918,
+      "top": 3.041214942932129,
+      "leaf": -0.8433609008789062,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.036956787109375,
+      "top": 2.7816572189331055,
+      "leaf": -0.7534408569335938,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 28.147048950195312,
+      "top": 0.6052560806274414,
+      "leaf": -0.9578685760498047,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 30.52096176147461,
+      "top": 1.6279840469360352,
+      "leaf": -0.43856048583984375,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.518367767333984,
+      "top": 2.316889762878418,
+      "leaf": -0.2396259307861328,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.8717041015625,
+      "top": 2.6084794998168945,
+      "leaf": -0.486846923828125,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.036956787109375,
+      "top": 2.7816572189331055,
+      "leaf": -0.7534408569335938,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "axe",
+    "family": "tool",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.153587341308594,
+      "top": 1.0218687057495117,
+      "leaf": 45.93711471557617,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.86870574951172,
+      "top": 2.2866334915161133,
+      "leaf": 46.9708366394043,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 32.470184326171875,
+      "top": 3.071293830871582,
+      "leaf": 43.9527473449707,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.18202209472656,
+      "top": 3.041792869567871,
+      "leaf": 0.02863311767578125,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.513893127441406,
+      "top": 2.7595224380493164,
+      "leaf": -0.18673133850097656,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 24.11408042907715,
+      "top": -0.49352455139160156,
+      "leaf": 0.5096588134765625,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 28.241718292236328,
+      "top": 1.3713874816894531,
+      "leaf": -0.44771575927734375,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 30.124164581298828,
+      "top": 2.2631940841674805,
+      "leaf": 0.009857177734375,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 30.929960250854492,
+      "top": 2.5453901290893555,
+      "leaf": 0.0057582855224609375,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.513893127441406,
+      "top": 2.7595224380493164,
+      "leaf": -0.18673133850097656,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "rake",
+    "family": "tool",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 29.266572952270508,
+      "top": 0.5099325180053711,
+      "leaf": 45.10573196411133,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 30.510496139526367,
+      "top": 1.1817817687988281,
+      "leaf": 46.36745834350586,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 31.485685348510742,
+      "top": 2.2046327590942383,
+      "leaf": 47.456756591796875,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.93951988220215,
+      "top": 2.8056116104125977,
+      "leaf": -2.152688980102539,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.946168899536133,
+      "top": 3.195033073425293,
+      "leaf": -0.9188079833984375,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 25.669998168945312,
+      "top": -0.8021678924560547,
+      "leaf": 1.5065689086914062,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 29.131216049194336,
+      "top": 0.8495988845825195,
+      "leaf": -0.9555873870849609,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 30.8826904296875,
+      "top": 2.24739933013916,
+      "leaf": -1.0166511535644531,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.605819702148438,
+      "top": 2.8475751876831055,
+      "leaf": -1.004465103149414,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 31.946168899536133,
+      "top": 3.195033073425293,
+      "leaf": -0.9188079833984375,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "car",
+    "family": "vehicle",
+    "real": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": -0.6526641845703125,
+      "top": 0.3457632064819336,
+      "leaf": 42.917470932006836,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 37.51294136047363,
+      "top": 1.626509666442871,
+      "leaf": 46.92284393310547,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.259456634521484,
+      "top": 1.873194694519043,
+      "leaf": 45.15169906616211,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.520124435424805,
+      "top": 1.8412809371948242,
+      "leaf": 5.877323150634766,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.22174263000488,
+      "top": 1.886408805847168,
+      "leaf": 2.4495201110839844,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 25.07701587677002,
+      "top": 0.08876705169677734,
+      "leaf": 7.329624176025391,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 35.094841957092285,
+      "top": 1.2089166641235352,
+      "leaf": 7.021360397338867,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.50809860229492,
+      "top": 1.7067461013793945,
+      "leaf": 4.620502471923828,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.49291801452637,
+      "top": 1.8068056106567383,
+      "leaf": 3.439300537109375,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.22174263000488,
+      "top": 1.886408805847168,
+      "leaf": 2.4495201110839844,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "bus",
+    "family": "vehicle",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 34.163875579833984,
+      "top": 0.7750234603881836,
+      "leaf": 46.40081977844238,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 36.6196174621582,
+      "top": 1.356450080871582,
+      "leaf": 47.00082206726074,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 38.91239356994629,
+      "top": 1.586470603942871,
+      "leaf": 10.588940620422363,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.20340538024902,
+      "top": 1.7809629440307617,
+      "leaf": 4.446039199829102,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.794349670410156,
+      "top": 1.936995506286621,
+      "leaf": 3.3498401641845703,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 33.471731185913086,
+      "top": 1.2403945922851562,
+      "leaf": 0.037929534912109375,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 37.82378387451172,
+      "top": 1.5497465133666992,
+      "leaf": 2.1258678436279297,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.39319610595703,
+      "top": 1.496659278869629,
+      "leaf": 4.375787734985352,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.20913314819336,
+      "top": 1.6200780868530273,
+      "leaf": 4.10942268371582,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.794349670410156,
+      "top": 1.936995506286621,
+      "leaf": 3.3498401641845703,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "truck",
+    "family": "vehicle",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.21807098388672,
+      "top": 0.7386903762817383,
+      "leaf": 43.59134292602539,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.83968925476074,
+      "top": 1.3103265762329102,
+      "leaf": 43.73008346557617,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.476871490478516,
+      "top": 1.6691102981567383,
+      "leaf": 43.561201095581055,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.54874038696289,
+      "top": 1.806004524230957,
+      "leaf": 4.012434005737305,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.212974548339844,
+      "top": 1.9214849472045898,
+      "leaf": 1.7557697296142578,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 7.197183609008789,
+      "top": 1.121384620666504,
+      "leaf": -0.45721435546875,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.11106204986572,
+      "top": 1.3744850158691406,
+      "leaf": 1.4418048858642578,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.24385643005371,
+      "top": 1.5979795455932617,
+      "leaf": 2.1582508087158203,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.50408935546875,
+      "top": 1.7801275253295898,
+      "leaf": 2.0194644927978516,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.212974548339844,
+      "top": 1.9214849472045898,
+      "leaf": 1.7557697296142578,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "bicycle",
+    "family": "vehicle",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 32.639283180236816,
+      "top": 1.4720182418823242,
+      "leaf": 43.550371170043945,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 37.95115661621094,
+      "top": 1.9222288131713867,
+      "leaf": 44.110591888427734,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.216007232666016,
+      "top": 1.9984827041625977,
+      "leaf": 38.522674560546875,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.59962272644043,
+      "top": 1.902186393737793,
+      "leaf": 0.29730224609375,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.91023826599121,
+      "top": 1.6859121322631836,
+      "leaf": -0.012918472290039062,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 21.39169406890869,
+      "top": 0.020315170288085938,
+      "leaf": 0.15002059936523438,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 29.542633056640625,
+      "top": 0.6629638671875,
+      "leaf": -1.0631523132324219,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 37.40365219116211,
+      "top": 0.8830108642578125,
+      "leaf": -0.18106842041015625,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.97555923461914,
+      "top": 1.1847248077392578,
+      "leaf": 0.03643035888671875,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.91023826599121,
+      "top": 1.6859121322631836,
+      "leaf": -0.012918472290039062,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "train",
+    "family": "vehicle",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 34.90787696838379,
+      "top": 1.3818864822387695,
+      "leaf": 44.22027397155762,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 36.6160831451416,
+      "top": 1.768019676208496,
+      "leaf": 45.385934829711914,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 38.86004447937012,
+      "top": 1.818129539489746,
+      "leaf": 45.57136535644531,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.22527313232422,
+      "top": 1.8438425064086914,
+      "leaf": 1.2858562469482422,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.71103477478027,
+      "top": 1.8728456497192383,
+      "leaf": 0.0605926513671875,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 32.79349327087402,
+      "top": -1.881509780883789,
+      "leaf": -1.434762954711914,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 36.36318397521973,
+      "top": -0.7585535049438477,
+      "leaf": -1.5678157806396484,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.51340293884277,
+      "top": 0.9995718002319336,
+      "leaf": -0.317413330078125,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.77577209472656,
+      "top": 1.5592412948608398,
+      "leaf": -0.17415618896484375,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.71103477478027,
+      "top": 1.8728456497192383,
+      "leaf": 0.0605926513671875,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "tractor",
+    "family": "vehicle",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 32.55627155303955,
+      "top": 1.2668333053588867,
+      "leaf": 45.96932029724121,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 38.001304626464844,
+      "top": 1.7361021041870117,
+      "leaf": 46.41698455810547,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 40.215091705322266,
+      "top": 1.9285287857055664,
+      "leaf": 44.90596580505371,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.56388282775879,
+      "top": 1.8898725509643555,
+      "leaf": 4.988885879516602,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.00936508178711,
+      "top": 1.7188444137573242,
+      "leaf": 2.457965850830078,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": false,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 4.845041275024414,
+      "top": -0.9302663803100586,
+      "leaf": 1.3229789733886719,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 29.173812866210938,
+      "top": 0.6410188674926758,
+      "leaf": 0.024356842041015625,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 37.94230842590332,
+      "top": 1.316544532775879,
+      "leaf": 1.6804656982421875,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.20298957824707,
+      "top": 1.4703855514526367,
+      "leaf": 2.3542346954345703,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.00936508178711,
+      "top": 1.7188444137573242,
+      "leaf": 2.457965850830078,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "guitar",
+    "family": "instrument",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.95646095275879,
+      "top": 1.6685304641723633,
+      "leaf": 47.734832763671875,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.53653335571289,
+      "top": 2.3091840744018555,
+      "leaf": 48.42465019226074,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.94407653808594,
+      "top": 2.492190361022949,
+      "leaf": 42.94667625427246,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.2391414642334,
+      "top": 2.499667167663574,
+      "leaf": 0.5679187774658203,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.15193557739258,
+      "top": 2.483098030090332,
+      "leaf": 0.33146095275878906,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 37.84438514709473,
+      "top": 0.3018198013305664,
+      "leaf": -0.23509788513183594,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.309038162231445,
+      "top": 1.7236623764038086,
+      "leaf": 1.0333938598632812,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.207794189453125,
+      "top": 2.4688234329223633,
+      "leaf": 0.8246345520019531,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.90804862976074,
+      "top": 2.505496025085449,
+      "leaf": 0.4908790588378906,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.15193557739258,
+      "top": 2.483098030090332,
+      "leaf": 0.33146095275878906,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "piano",
+    "family": "instrument",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 37.127586364746094,
+      "top": 1.1097745895385742,
+      "leaf": 47.8026065826416,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.61700439453125,
+      "top": 2.2202672958374023,
+      "leaf": 48.05216026306152,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.02422523498535,
+      "top": 2.518509864807129,
+      "leaf": 36.785521507263184,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.26493453979492,
+      "top": 2.5152406692504883,
+      "leaf": -0.3485832214355469,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.11445426940918,
+      "top": 2.446688652038574,
+      "leaf": -0.4589672088623047,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 38.33098030090332,
+      "top": -0.49286365509033203,
+      "leaf": -1.409189224243164,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.789045333862305,
+      "top": 1.0140104293823242,
+      "leaf": -0.8062095642089844,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.30771827697754,
+      "top": 2.077273368835449,
+      "leaf": -0.6210956573486328,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.82290267944336,
+      "top": 2.3390722274780273,
+      "leaf": -0.54815673828125,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.11445426940918,
+      "top": 2.446688652038574,
+      "leaf": -0.4589672088623047,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "violin",
+    "family": "instrument",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.50089073181152,
+      "top": 2.525313377380371,
+      "leaf": 49.0214729309082,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.449031829833984,
+      "top": 2.8988771438598633,
+      "leaf": 48.872854232788086,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.130998611450195,
+      "top": 2.605177879333496,
+      "leaf": 7.24388313293457,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.281005859375,
+      "top": 2.5179224014282227,
+      "leaf": 2.8329410552978516,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.0876407623291,
+      "top": 2.43729305267334,
+      "leaf": 1.1493453979492188,
+      "rejects_own": false
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 38.15435791015625,
+      "top": 0.8756513595581055,
+      "leaf": 2.6497230529785156,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.356611251831055,
+      "top": 1.4981107711791992,
+      "leaf": 3.2195777893066406,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.53824043273926,
+      "top": 1.8543291091918945,
+      "leaf": 2.6891002655029297,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.52677536010742,
+      "top": 2.1324357986450195,
+      "leaf": 1.841379165649414,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 43.0876407623291,
+      "top": 2.43729305267334,
+      "leaf": 1.1493453979492188,
+      "rejects_own": false
+     }
+    }
+   },
+   {
+    "word": "drum",
+    "family": "instrument",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 37.55480766296387,
+      "top": 0.43177032470703125,
+      "leaf": 38.66440963745117,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.790353775024414,
+      "top": 1.179464340209961,
+      "leaf": 41.27199745178223,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.2625732421875,
+      "top": 1.828923225402832,
+      "leaf": 26.008532524108887,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.09817314147949,
+      "top": 2.3344297409057617,
+      "leaf": -1.615966796875,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.383155822753906,
+      "top": 2.782454490661621,
+      "leaf": -2.6504554748535156,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.30906295776367,
+      "top": -1.534688949584961,
+      "leaf": -1.6332225799560547,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.04105567932129,
+      "top": -0.28145503997802734,
+      "leaf": -2.4728565216064453,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.49841117858887,
+      "top": 2.8020620346069336,
+      "leaf": -2.0624256134033203,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.675201416015625,
+      "top": 3.006466865539551,
+      "leaf": -2.280773162841797,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.383155822753906,
+      "top": 2.782454490661621,
+      "leaf": -2.6504554748535156,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "flute",
+    "family": "instrument",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 39.569210052490234,
+      "top": 1.7195749282836914,
+      "leaf": 44.37849426269531,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.29248809814453,
+      "top": 2.417534828186035,
+      "leaf": 45.96553611755371,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.93881416320801,
+      "top": 2.695248603820801,
+      "leaf": 46.38662147521973,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.25216484069824,
+      "top": 2.5597028732299805,
+      "leaf": -0.2919654846191406,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.13298225402832,
+      "top": 2.394659996032715,
+      "leaf": -1.2083015441894531,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 38.67783546447754,
+      "top": 0.5645999908447266,
+      "leaf": -3.2316112518310547,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 40.69997596740723,
+      "top": 1.0792560577392578,
+      "leaf": -2.7014427185058594,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.73651313781738,
+      "top": 2.142460823059082,
+      "leaf": -1.1884193420410156,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.2382755279541,
+      "top": 2.356490135192871,
+      "leaf": -1.0578498840332031,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.13298225402832,
+      "top": 2.394659996032715,
+      "leaf": -1.2083015441894531,
+      "rejects_own": true
+     }
+    }
+   },
+   {
+    "word": "trumpet",
+    "family": "instrument",
+    "real": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": true,
+      "cat": 40.30846977233887,
+      "top": 1.464808464050293,
+      "leaf": 46.573198318481445,
+      "rejects_own": false
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 41.828575134277344,
+      "top": 2.249569892883301,
+      "leaf": 47.4395751953125,
+      "rejects_own": false
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": true,
+      "cat": 42.95660972595215,
+      "top": 2.5789499282836914,
+      "leaf": 47.62831687927246,
+      "rejects_own": false
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.25440788269043,
+      "top": 2.540114402770996,
+      "leaf": 0.3293342590332031,
+      "rejects_own": false
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.06247901916504,
+      "top": 2.366705894470215,
+      "leaf": -0.5318202972412109,
+      "rejects_own": true
+     }
+    },
+    "random": {
+     "1.5": {
+      "cat_ok": true,
+      "top_ok": false,
+      "leaf_ok": false,
+      "cat": 35.22806358337402,
+      "top": -0.8958206176757812,
+      "leaf": -1.3738059997558594,
+      "rejects_own": true
+     },
+     "1.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 39.62484550476074,
+      "top": 0.9413185119628906,
+      "leaf": -1.0169868469238281,
+      "rejects_own": true
+     },
+     "0.5": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 41.96810722351074,
+      "top": 2.205245018005371,
+      "leaf": -0.5437107086181641,
+      "rejects_own": true
+     },
+     "0.25": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 42.79366874694824,
+      "top": 2.3974924087524414,
+      "leaf": -0.5689163208007812,
+      "rejects_own": true
+     },
+     "0.0": {
+      "cat_ok": true,
+      "top_ok": true,
+      "leaf_ok": false,
+      "cat": 43.06247901916504,
+      "top": 2.366705894470215,
+      "leaf": -0.5318202972412109,
+      "rejects_own": true
+     }
+    }
+   }
+  ],
+  "lambdas": [
+   1.5,
+   1.0,
+   0.5,
+   0.25,
+   0.0
+  ],
+  "curve": {
+   "1.5": {
+    "real": {
+     "d_cat": {
+      "mean": -7.037668010462886,
+      "lo": -9.581391904665077,
+      "hi": -4.9055469554403555,
+      "n": 46
+     },
+     "cat_ok": 37,
+     "identity": 46
+    },
+    "random": {
+     "d_cat": {
+      "mean": -13.911855075670326,
+      "lo": -17.551936481309973,
+      "hi": -10.754806311234184,
+      "n": 46
+     },
+     "cat_ok": 33,
+     "identity": 5
+    }
+   },
+   "1.0": {
+    "real": {
+     "d_cat": {
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "n": 46
+     },
+     "cat_ok": 45,
+     "identity": 46
+    },
+    "random": {
+     "d_cat": {
+      "mean": -4.197593937749448,
+      "lo": -6.857743449833082,
+      "hi": -1.779684771662173,
+      "n": 46
+     },
+     "cat_ok": 42,
+     "identity": 1
+    }
+   },
+   "0.5": {
+    "real": {
+     "d_cat": {
+      "mean": 4.089778920878535,
+      "lo": 2.6123857498168945,
+      "hi": 5.9228650383327315,
+      "n": 46
+     },
+     "cat_ok": 46,
+     "identity": 45
+    },
+    "random": {
+     "d_cat": {
+      "mean": 2.0098296455715015,
+      "lo": 0.32752242295638373,
+      "hi": 4.074217754861583,
+      "n": 46
+     },
+     "cat_ok": 45,
+     "identity": 4
+    }
+   },
+   "0.25": {
+    "real": {
+     "d_cat": {
+      "mean": 4.749596243319304,
+      "lo": 3.097497898599376,
+      "hi": 6.8122124671936035,
+      "n": 46
+     },
+     "cat_ok": 46,
+     "identity": 9
+    },
+    "random": {
+     "d_cat": {
+      "mean": 3.7821174393529478,
+      "lo": 2.1556448625481646,
+      "hi": 5.846425989399785,
+      "n": 46
+     },
+     "cat_ok": 46,
+     "identity": 4
+    }
+   },
+   "0.0": {
+    "real": {
+     "d_cat": {
+      "mean": 4.5505897480508555,
+      "lo": 2.841375620468803,
+      "hi": 6.6411648211271865,
+      "n": 46
+     },
+     "cat_ok": 46,
+     "identity": 5
+    },
+    "random": {
+     "d_cat": {
+      "mean": 4.5505897480508555,
+      "lo": 2.841375620468803,
+      "hi": 6.6411648211271865,
+      "n": 46
+     },
+     "cat_ok": 46,
+     "identity": 5
+    }
+   }
+  }
+ },
  "B": {
   "rows": [
    {
@@ -6079,5 +10710,5 @@
   "spearman_gain_vs_overshoot_all": 0.0386390402506438,
   "perm_p_all": 0.5647176411794103
  },
- "seconds": 235.3
+ "seconds": 353.9
 }
