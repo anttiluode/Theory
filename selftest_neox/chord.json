@@ -1,0 +1,6543 @@
+{
+ "model": "stub-neox",
+ "band": [
+  -1,
+  3
+ ],
+ "centered_norm": true,
+ "families": {
+  "tree": [
+   "oak",
+   "maple",
+   "pine",
+   "elm",
+   "cedar",
+   "birch"
+  ],
+  "vegetable": [
+   "carrot",
+   "potato",
+   "onion",
+   "cabbage",
+   "lettuce",
+   "cucumber"
+  ],
+  "bird": [
+   "eagle",
+   "owl",
+   "crow",
+   "pigeon",
+   "duck",
+   "sparrow"
+  ],
+  "fish": [
+   "salmon",
+   "shark",
+   "trout",
+   "tuna",
+   "cod",
+   "carp"
+  ],
+  "insect": [
+   "ant",
+   "bee",
+   "beetle",
+   "butterfly",
+   "mosquito",
+   "moth"
+  ],
+  "tool": [
+   "hammer",
+   "wrench",
+   "drill",
+   "shovel",
+   "axe",
+   "rake"
+  ],
+  "vehicle": [
+   "car",
+   "bus",
+   "truck",
+   "bicycle",
+   "train",
+   "tractor"
+  ],
+  "instrument": [
+   "guitar",
+   "piano",
+   "violin",
+   "drum",
+   "flute",
+   "trumpet"
+  ]
+ },
+ "dropped": [],
+ "A": {
+  "rows": [
+   {
+    "word": "oak",
+    "family": "tree",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.001934051513671875,
+     "top": 0.0018949508666992188,
+     "leaf": 0.0019350051879882812,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": true,
+     "cat": -0.0006155967712402344,
+     "top": -0.0006885528564453125,
+     "leaf": -0.0005464553833007812,
+     "rejects_own": true
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0012087821960449219,
+     "top": 0.0011644363403320312,
+     "leaf": 0.0012111663818359375,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0025496482849121094,
+    "d_cat_rnd": -0.0007252693176269531
+   },
+   {
+    "word": "maple",
+    "family": "tree",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0038204193115234375,
+     "top": 0.0037775039672851562,
+     "leaf": 0.003711223602294922,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.00046443939208984375,
+     "top": -0.0005407333374023438,
+     "leaf": -0.0005211830139160156,
+     "rejects_own": true
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0031037330627441406,
+     "top": 0.0030417442321777344,
+     "leaf": 0.003021717071533203,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.004284858703613281,
+    "d_cat_rnd": -0.0007166862487792969
+   },
+   {
+    "word": "pine",
+    "family": "tree",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 2.288818359375e-05,
+     "top": 2.765655517578125e-05,
+     "leaf": 3.7670135498046875e-05,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.0007605552673339844,
+     "top": -0.0008225440979003906,
+     "leaf": -0.0007753372192382812,
+     "rejects_own": true
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.002452373504638672,
+     "top": -0.002480030059814453,
+     "leaf": -0.0024285316467285156,
+     "rejects_own": true
+    },
+    "d_cat_sib": -0.0007834434509277344,
+    "d_cat_rnd": -0.002475261688232422
+   },
+   {
+    "word": "elm",
+    "family": "tree",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0007681846618652344,
+     "top": 0.0006852149963378906,
+     "leaf": 0.00080108642578125,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.0006351470947265625,
+     "top": -0.0007123947143554688,
+     "leaf": -0.0005731582641601562,
+     "rejects_own": true
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.00012111663818359375,
+     "top": -0.00021219253540039062,
+     "leaf": -9.5367431640625e-05,
+     "rejects_own": true
+    },
+    "d_cat_sib": -0.0014033317565917969,
+    "d_cat_rnd": -0.0008893013000488281
+   },
+   {
+    "word": "cedar",
+    "family": "tree",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.010408878326416016,
+     "top": 0.010431766510009766,
+     "leaf": 0.010354995727539062,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0010581016540527344,
+     "top": 0.0009970664978027344,
+     "leaf": 0.0009455680847167969,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.012560367584228516,
+     "top": 0.012585639953613281,
+     "leaf": 0.012537956237792969,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.009350776672363281,
+    "d_cat_rnd": 0.0021514892578125
+   },
+   {
+    "word": "birch",
+    "family": "tree",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0003390312194824219,
+     "top": 0.0003504753112792969,
+     "leaf": 0.00032138824462890625,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.0008215904235839844,
+     "top": -0.0008845329284667969,
+     "leaf": -0.0008711814880371094,
+     "rejects_own": true
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.003931522369384766,
+     "top": 0.003962516784667969,
+     "leaf": 0.003934383392333984,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0011606216430664062,
+    "d_cat_rnd": 0.0035924911499023438
+   },
+   {
+    "word": "carrot",
+    "family": "vegetable",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": true,
+     "cat": 0.002644062042236328,
+     "top": 0.002647876739501953,
+     "leaf": 0.0026454925537109375,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.0005197525024414062,
+     "top": -0.0005645751953125,
+     "leaf": -0.0005517005920410156,
+     "rejects_own": true
+    },
+    "rnd": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": true,
+     "cat": 0.004927635192871094,
+     "top": 0.004912853240966797,
+     "leaf": 0.0049037933349609375,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0031638145446777344,
+    "d_cat_rnd": 0.0022835731506347656
+   },
+   {
+    "word": "potato",
+    "family": "vegetable",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.001552581787109375,
+     "top": 0.0015048980712890625,
+     "leaf": 0.0014681816101074219,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.0009050369262695312,
+     "top": -0.0009622573852539062,
+     "leaf": -0.0009703636169433594,
+     "rejects_own": true
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004709720611572266,
+     "top": 0.004716396331787109,
+     "leaf": 0.004656791687011719,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0024576187133789062,
+    "d_cat_rnd": 0.0031571388244628906
+   },
+   {
+    "word": "onion",
+    "family": "vegetable",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.008450031280517578,
+     "top": 0.008451461791992188,
+     "leaf": 0.008426666259765625,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": true,
+     "cat": 0.00016641616821289062,
+     "top": 0.00011682510375976562,
+     "leaf": 0.00019168853759765625,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": true,
+     "cat": 0.006215572357177734,
+     "top": 0.006203651428222656,
+     "leaf": 0.006253719329833984,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.008283615112304688,
+    "d_cat_rnd": -0.0022344589233398438
+   },
+   {
+    "word": "cabbage",
+    "family": "vegetable",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0023431777954101562,
+     "top": 0.0023326873779296875,
+     "leaf": 0.0022521018981933594,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.0008883476257324219,
+     "top": -0.00093841552734375,
+     "leaf": -0.0009474754333496094,
+     "rejects_own": true
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0022482872009277344,
+     "top": 0.002269268035888672,
+     "leaf": 0.0022058486938476562,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.003231525421142578,
+    "d_cat_rnd": -9.489059448242188e-05
+   },
+   {
+    "word": "lettuce",
+    "family": "vegetable",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.007237911224365234,
+     "top": 0.007244110107421875,
+     "leaf": 0.0071582794189453125,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.00010156631469726562,
+     "top": 5.2928924560546875e-05,
+     "leaf": 4.1961669921875e-05,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.011646747589111328,
+     "top": 0.011672496795654297,
+     "leaf": 0.011573314666748047,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.007136344909667969,
+    "d_cat_rnd": 0.004408836364746094
+   },
+   {
+    "word": "cucumber",
+    "family": "vegetable",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.00015783309936523438,
+     "top": 0.00011587142944335938,
+     "leaf": 0.00014400482177734375,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": -0.0013475418090820312,
+     "top": -0.0014028549194335938,
+     "leaf": -0.0013294219970703125,
+     "rejects_own": true
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.002716064453125,
+     "top": 0.0027017593383789062,
+     "leaf": 0.002681732177734375,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0015053749084472656,
+    "d_cat_rnd": 0.0025582313537597656
+   },
+   {
+    "word": "eagle",
+    "family": "bird",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0033888816833496094,
+     "top": 0.003486156463623047,
+     "leaf": 0.003467559814453125,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": true,
+     "cat": 0.006945133209228516,
+     "top": 0.0070209503173828125,
+     "leaf": 0.007053375244140625,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": true,
+     "cat": 0.006268501281738281,
+     "top": 0.00640869140625,
+     "leaf": 0.006392478942871094,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.0035562515258789062,
+    "d_cat_rnd": 0.002879619598388672
+   },
+   {
+    "word": "owl",
+    "family": "bird",
+    "own": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.007966041564941406,
+     "top": 0.008016586303710938,
+     "leaf": 0.007993698120117188,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0075740814208984375,
+     "top": 0.007640838623046875,
+     "leaf": 0.0076580047607421875,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.009336471557617188,
+     "top": 0.009407997131347656,
+     "leaf": 0.009389400482177734,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.00039196014404296875,
+    "d_cat_rnd": 0.0013704299926757812
+   },
+   {
+    "word": "crow",
+    "family": "bird",
+    "own": {
+     "cat_ok": true,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.006373882293701172,
+     "top": 0.006352424621582031,
+     "leaf": 0.006263256072998047,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0073089599609375,
+     "top": 0.007361412048339844,
+     "leaf": 0.007283687591552734,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004845619201660156,
+     "top": 0.0048465728759765625,
+     "leaf": 0.004770755767822266,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.0009350776672363281,
+    "d_cat_rnd": -0.0015282630920410156
+   },
+   {
+    "word": "pigeon",
+    "family": "bird",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.007075786590576172,
+     "top": 0.007168769836425781,
+     "leaf": 0.006993770599365234,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.007468700408935547,
+     "top": 0.00754547119140625,
+     "leaf": 0.007429599761962891,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0077381134033203125,
+     "top": 0.007814884185791016,
+     "leaf": 0.007668972015380859,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.000392913818359375,
+    "d_cat_rnd": 0.0006623268127441406
+   },
+   {
+    "word": "duck",
+    "family": "bird",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.006431102752685547,
+     "top": 0.006500720977783203,
+     "leaf": 0.006449222564697266,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.007416725158691406,
+     "top": 0.007485389709472656,
+     "leaf": 0.007409572601318359,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.003987789154052734,
+     "top": 0.0040721893310546875,
+     "leaf": 0.004013538360595703,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.0009856224060058594,
+    "d_cat_rnd": -0.0024433135986328125
+   },
+   {
+    "word": "sparrow",
+    "family": "bird",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0067615509033203125,
+     "top": 0.006890296936035156,
+     "leaf": 0.006660938262939453,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.007358551025390625,
+     "top": 0.007441520690917969,
+     "leaf": 0.00728607177734375,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0020313262939453125,
+     "top": 0.0021696090698242188,
+     "leaf": 0.001964569091796875,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.0005970001220703125,
+    "d_cat_rnd": -0.004730224609375
+   },
+   {
+    "word": "salmon",
+    "family": "fish",
+    "own": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.006075382232666016,
+     "top": 0.006152153015136719,
+     "leaf": 0.005890369415283203,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.003383636474609375,
+     "top": 0.003506183624267578,
+     "leaf": 0.003272533416748047,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0059642791748046875,
+     "top": 0.005979061126708984,
+     "leaf": 0.005795001983642578,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0026917457580566406,
+    "d_cat_rnd": -0.00011110305786132812
+   },
+   {
+    "word": "shark",
+    "family": "fish",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.006239414215087891,
+     "top": 0.006296634674072266,
+     "leaf": 0.006160736083984375,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0033974647521972656,
+     "top": 0.003517627716064453,
+     "leaf": 0.0033102035522460938,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.008256912231445312,
+     "top": 0.008362770080566406,
+     "leaf": 0.008202075958251953,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.002841949462890625,
+    "d_cat_rnd": 0.002017498016357422
+   },
+   {
+    "word": "trout",
+    "family": "fish",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.00011301040649414062,
+     "top": 0.00020122528076171875,
+     "leaf": 6.580352783203125e-05,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0020813941955566406,
+     "top": 0.0022063255310058594,
+     "leaf": 0.0020503997802734375,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.006173133850097656,
+     "top": 0.006167411804199219,
+     "leaf": 0.006110668182373047,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.0019683837890625,
+    "d_cat_rnd": 0.006060123443603516
+   },
+   {
+    "word": "tuna",
+    "family": "fish",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0041942596435546875,
+     "top": 0.0042476654052734375,
+     "leaf": 0.004115104675292969,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0031180381774902344,
+     "top": 0.003235340118408203,
+     "leaf": 0.0030603408813476562,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0033392906188964844,
+     "top": 0.003429412841796875,
+     "leaf": 0.0032939910888671875,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0010762214660644531,
+    "d_cat_rnd": -0.0008549690246582031
+   },
+   {
+    "word": "cod",
+    "family": "fish",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0063018798828125,
+     "top": 0.00632476806640625,
+     "leaf": 0.006200313568115234,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0036864280700683594,
+     "top": 0.003803253173828125,
+     "leaf": 0.0036644935607910156,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.006878852844238281,
+     "top": 0.006850719451904297,
+     "leaf": 0.006809234619140625,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0026154518127441406,
+    "d_cat_rnd": 0.0005769729614257812
+   },
+   {
+    "word": "carp",
+    "family": "fish",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.005933284759521484,
+     "top": 0.0061397552490234375,
+     "leaf": 0.005797386169433594,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0032854080200195312,
+     "top": 0.003436565399169922,
+     "leaf": 0.0031785964965820312,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0035982131958007812,
+     "top": 0.0037689208984375,
+     "leaf": 0.003501415252685547,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.002647876739501953,
+    "d_cat_rnd": -0.002335071563720703
+   },
+   {
+    "word": "ant",
+    "family": "insect",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.004437446594238281,
+     "top": 0.0044460296630859375,
+     "leaf": 0.0044307708740234375,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": true,
+     "cat": 0.0035996437072753906,
+     "top": 0.003623485565185547,
+     "leaf": 0.003620147705078125,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.006840229034423828,
+     "top": 0.0069103240966796875,
+     "leaf": 0.006916046142578125,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0008378028869628906,
+    "d_cat_rnd": 0.002402782440185547
+   },
+   {
+    "word": "bee",
+    "family": "insect",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0029592514038085938,
+     "top": 0.0029816627502441406,
+     "leaf": 0.0029926300048828125,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.003307342529296875,
+     "top": 0.0033369064331054688,
+     "leaf": 0.0032935142517089844,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0047054290771484375,
+     "top": 0.0047664642333984375,
+     "leaf": 0.004816532135009766,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.00034809112548828125,
+    "d_cat_rnd": 0.0017461776733398438
+   },
+   {
+    "word": "beetle",
+    "family": "insect",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0011816024780273438,
+     "top": 0.0012555122375488281,
+     "leaf": 0.0011219978332519531,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.003006458282470703,
+     "top": 0.00304412841796875,
+     "leaf": 0.002929210662841797,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": -0.0005364418029785156,
+     "top": -0.000499725341796875,
+     "leaf": -0.0006337165832519531,
+     "rejects_own": true
+    },
+    "d_cat_sib": 0.0018248558044433594,
+    "d_cat_rnd": -0.0017180442810058594
+   },
+   {
+    "word": "butterfly",
+    "family": "insect",
+    "own": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.00810861587524414,
+     "top": 0.008265018463134766,
+     "leaf": 0.007963180541992188,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0043182373046875,
+     "top": 0.004371166229248047,
+     "leaf": 0.0042285919189453125,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.012210369110107422,
+     "top": 0.012355804443359375,
+     "leaf": 0.012127399444580078,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0037903785705566406,
+    "d_cat_rnd": 0.004101753234863281
+   },
+   {
+    "word": "mosquito",
+    "family": "insect",
+    "own": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.004791259765625,
+     "top": 0.0048313140869140625,
+     "leaf": 0.004677295684814453,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0035753250122070312,
+     "top": 0.0036072731018066406,
+     "leaf": 0.0034646987915039062,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.006585121154785156,
+     "top": 0.006626129150390625,
+     "leaf": 0.006506443023681641,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0012159347534179688,
+    "d_cat_rnd": 0.0017938613891601562
+   },
+   {
+    "word": "moth",
+    "family": "insect",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.008318901062011719,
+     "top": 0.008394241333007812,
+     "leaf": 0.00825643539428711,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.004101276397705078,
+     "top": 0.004141330718994141,
+     "leaf": 0.004004955291748047,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": true,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.00851583480834961,
+     "top": 0.008584976196289062,
+     "leaf": 0.008413314819335938,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.004217624664306641,
+    "d_cat_rnd": 0.00019693374633789062
+   },
+   {
+    "word": "hammer",
+    "family": "tool",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004726409912109375,
+     "top": 0.0045604705810546875,
+     "leaf": 0.004656791687011719,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0025849342346191406,
+     "top": 0.002604961395263672,
+     "leaf": 0.0025424957275390625,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004580020904541016,
+     "top": 0.004475593566894531,
+     "leaf": 0.004520893096923828,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0021414756774902344,
+    "d_cat_rnd": -0.00014638900756835938
+   },
+   {
+    "word": "wrench",
+    "family": "tool",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.00893402099609375,
+     "top": 0.008923530578613281,
+     "leaf": 0.00894927978515625,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0035676956176757812,
+     "top": 0.003600597381591797,
+     "leaf": 0.0035681724548339844,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.006859302520751953,
+     "top": 0.006815910339355469,
+     "leaf": 0.006880283355712891,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.005366325378417969,
+    "d_cat_rnd": -0.002074718475341797
+   },
+   {
+    "word": "drill",
+    "family": "tool",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.007957935333251953,
+     "top": 0.007981300354003906,
+     "leaf": 0.007932186126708984,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0030059814453125,
+     "top": 0.003070354461669922,
+     "leaf": 0.002979755401611328,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.006519794464111328,
+     "top": 0.006549835205078125,
+     "leaf": 0.006449222564697266,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.004951953887939453,
+    "d_cat_rnd": -0.001438140869140625
+   },
+   {
+    "word": "shovel",
+    "family": "tool",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": -0.0020079612731933594,
+     "top": -0.00186920166015625,
+     "leaf": -0.0021262168884277344,
+     "rejects_own": true
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0010366439819335938,
+     "top": 0.0011277198791503906,
+     "leaf": 0.0010004043579101562,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004746437072753906,
+     "top": 0.0046329498291015625,
+     "leaf": 0.004643917083740234,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.003044605255126953,
+    "d_cat_rnd": 0.006754398345947266
+   },
+   {
+    "word": "axe",
+    "family": "tool",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0068492889404296875,
+     "top": 0.006920814514160156,
+     "leaf": 0.006876945495605469,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": true,
+     "cat": 0.00305938720703125,
+     "top": 0.0031151771545410156,
+     "leaf": 0.0031118392944335938,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.005150318145751953,
+     "top": 0.005187511444091797,
+     "leaf": 0.005192279815673828,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0037899017333984375,
+    "d_cat_rnd": -0.0016989707946777344
+   },
+   {
+    "word": "rake",
+    "family": "tool",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0011453628540039062,
+     "top": 0.0012664794921875,
+     "leaf": 0.0011439323425292969,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0019378662109375,
+     "top": 0.0020189285278320312,
+     "leaf": 0.0019240379333496094,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": -0.0006380081176757812,
+     "top": -0.0005044937133789062,
+     "leaf": -0.0006237030029296875,
+     "rejects_own": true
+    },
+    "d_cat_sib": 0.0007925033569335938,
+    "d_cat_rnd": -0.0017833709716796875
+   },
+   {
+    "word": "car",
+    "family": "vehicle",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.00014066696166992188,
+     "top": 0.00036716461181640625,
+     "leaf": 0.00021505355834960938,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.003043651580810547,
+     "top": 0.0031290054321289062,
+     "leaf": 0.003116607666015625,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.00276947021484375,
+     "top": 0.002868175506591797,
+     "leaf": 0.0028443336486816406,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.002902984619140625,
+    "d_cat_rnd": 0.002628803253173828
+   },
+   {
+    "word": "bus",
+    "family": "vehicle",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.010205268859863281,
+     "top": 0.010128021240234375,
+     "leaf": 0.010136127471923828,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.005253314971923828,
+     "top": 0.005270481109619141,
+     "leaf": 0.005252361297607422,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.005950450897216797,
+     "top": 0.006009101867675781,
+     "leaf": 0.005898475646972656,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.004951953887939453,
+    "d_cat_rnd": -0.004254817962646484
+   },
+   {
+    "word": "truck",
+    "family": "vehicle",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0057830810546875,
+     "top": 0.005840301513671875,
+     "leaf": 0.005802631378173828,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004365444183349609,
+     "top": 0.004417896270751953,
+     "leaf": 0.0043773651123046875,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.006289958953857422,
+     "top": 0.006392955780029297,
+     "leaf": 0.006328582763671875,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0014176368713378906,
+    "d_cat_rnd": 0.0005068778991699219
+   },
+   {
+    "word": "bicycle",
+    "family": "vehicle",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.00791788101196289,
+     "top": 0.007925987243652344,
+     "leaf": 0.007881641387939453,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004764556884765625,
+     "top": 0.0048122406005859375,
+     "leaf": 0.0047359466552734375,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.00943613052368164,
+     "top": 0.009372234344482422,
+     "leaf": 0.009396076202392578,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0031533241271972656,
+    "d_cat_rnd": 0.00151824951171875
+   },
+   {
+    "word": "train",
+    "family": "vehicle",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0010290145874023438,
+     "top": 0.001270294189453125,
+     "leaf": 0.0009980201721191406,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0033445358276367188,
+     "top": 0.0034322738647460938,
+     "leaf": 0.0033864974975585938,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.003926753997802734,
+     "top": 0.003962516784667969,
+     "leaf": 0.003938198089599609,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.002315521240234375,
+    "d_cat_rnd": 0.0028977394104003906
+   },
+   {
+    "word": "tractor",
+    "family": "vehicle",
+    "own": {
+     "cat_ok": false,
+     "top_ok": true,
+     "leaf_ok": false,
+     "cat": 0.0033121109008789062,
+     "top": 0.00336456298828125,
+     "leaf": 0.0032448768615722656,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0036873817443847656,
+     "top": 0.0037384033203125,
+     "leaf": 0.0036721229553222656,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.005626678466796875,
+     "top": 0.005655765533447266,
+     "leaf": 0.005595207214355469,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.0003752708435058594,
+    "d_cat_rnd": 0.0023145675659179688
+   },
+   {
+    "word": "guitar",
+    "family": "instrument",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": true,
+     "cat": 0.00013875961303710938,
+     "top": 0.00029468536376953125,
+     "leaf": 0.000179290771484375,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0037903785705566406,
+     "top": 0.003815174102783203,
+     "leaf": 0.0038013458251953125,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0025987625122070312,
+     "top": 0.0027480125427246094,
+     "leaf": 0.002628803253173828,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.0036516189575195312,
+    "d_cat_rnd": 0.002460002899169922
+   },
+   {
+    "word": "piano",
+    "family": "instrument",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.008016586303710938,
+     "top": 0.007983207702636719,
+     "leaf": 0.008112430572509766,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.005448341369628906,
+     "top": 0.005432605743408203,
+     "leaf": 0.005459785461425781,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.008364200592041016,
+     "top": 0.008369922637939453,
+     "leaf": 0.008460521697998047,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0025682449340820312,
+    "d_cat_rnd": 0.0003476142883300781
+   },
+   {
+    "word": "violin",
+    "family": "instrument",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.0062255859375,
+     "top": 0.0061435699462890625,
+     "leaf": 0.00632476806640625,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004923820495605469,
+     "top": 0.0049037933349609375,
+     "leaf": 0.00490570068359375,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.007132053375244141,
+     "top": 0.0070037841796875,
+     "leaf": 0.007226467132568359,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0013017654418945312,
+    "d_cat_rnd": 0.0009064674377441406
+   },
+   {
+    "word": "drum",
+    "family": "instrument",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.005208492279052734,
+     "top": 0.005255222320556641,
+     "leaf": 0.005089759826660156,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004733085632324219,
+     "top": 0.004740715026855469,
+     "leaf": 0.0046482086181640625,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.006695270538330078,
+     "top": 0.006678581237792969,
+     "leaf": 0.006589412689208984,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.0004754066467285156,
+    "d_cat_rnd": 0.0014867782592773438
+   },
+   {
+    "word": "flute",
+    "family": "instrument",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.00977468490600586,
+     "top": 0.00966501235961914,
+     "leaf": 0.009863853454589844,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": true,
+     "cat": 0.006055355072021484,
+     "top": 0.006022930145263672,
+     "leaf": 0.006106853485107422,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": true,
+     "cat": 0.008242607116699219,
+     "top": 0.008043766021728516,
+     "leaf": 0.008326053619384766,
+     "rejects_own": false
+    },
+    "d_cat_sib": -0.003719329833984375,
+    "d_cat_rnd": -0.0015320777893066406
+   },
+   {
+    "word": "trumpet",
+    "family": "instrument",
+    "own": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004142284393310547,
+     "top": 0.0040645599365234375,
+     "leaf": 0.0040721893310546875,
+     "rejects_own": false
+    },
+    "sib": {
+     "cat_ok": false,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.004559040069580078,
+     "top": 0.004535198211669922,
+     "leaf": 0.0045013427734375,
+     "rejects_own": false
+    },
+    "rnd": {
+     "cat_ok": true,
+     "top_ok": false,
+     "leaf_ok": false,
+     "cat": 0.006355762481689453,
+     "top": 0.006233692169189453,
+     "leaf": 0.006278038024902344,
+     "rejects_own": false
+    },
+    "d_cat_sib": 0.00041675567626953125,
+    "d_cat_rnd": 0.0022134780883789062
+   }
+  ],
+  "cat_up_sib": 15,
+  "cat_up_rnd": 28,
+  "d_cat_sib": {
+   "mean": -0.0016118288040161133,
+   "lo": -0.0024109184741973877,
+   "hi": -0.0008008082707722982,
+   "n": 48
+  },
+  "d_cat_rnd": {
+   "mean": 0.0006710390249888102,
+   "lo": -1.1235475540161133e-05,
+   "hi": 0.0013692180315653484,
+   "n": 48
+  },
+  "sib_minus_rnd": {
+   "mean": -0.0022828678290049234,
+   "lo": -0.0032226244608561196,
+   "hi": -0.0013904968897501628,
+   "n": 48
+  },
+  "identity_own": 2,
+  "identity_sib": 6,
+  "identity_rnd": 4,
+  "n": 48
+ },
+ "B": {
+  "rows": [
+   {
+    "family": "tree",
+    "a": "oak",
+    "b": "maple",
+    "ends": {
+     "a": 0.001934051513671875,
+     "b": 0.0038204193115234375
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0013036727905273438,
+      "over_line": -0.0011019706726074219,
+      "over_both": -0.0025167465209960938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.001434326171875,
+      "over_line": -0.0014429092407226562,
+      "over_both": -0.0023860931396484375,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0025544166564941406,
+      "over_line": -0.0007944107055664062,
+      "over_both": -0.0012660026550292969,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.245459794998169,
+     "0.5": 1.364400863647461,
+     "0.75": 1.2302415370941162
+    },
+    "synthetic": {
+     "end": 0.00018310546875,
+     "mid": -0.0003719329833984375,
+     "over_line": -0.001430511474609375,
+     "gain": 1.2498985528945923
+    }
+   },
+   {
+    "family": "tree",
+    "a": "oak",
+    "b": "pine",
+    "ends": {
+     "a": 0.001934051513671875,
+     "b": 2.288818359375e-05
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0003204345703125,
+      "over_line": -0.0011358261108398438,
+      "over_both": -0.001613616943359375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": -0.0008268356323242188,
+      "over_line": -0.0018053054809570312,
+      "over_both": -0.0027608871459960938,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.0007901191711425781,
+      "over_line": -0.0012907981872558594,
+      "over_both": -0.002724170684814453,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.2092599868774414,
+     "0.5": 1.3060721158981323,
+     "0.75": 1.1993515491485596
+    },
+    "synthetic": {
+     "end": 0.001522064208984375,
+     "mid": 0.00011157989501953125,
+     "over_line": -0.0016164779663085938,
+     "gain": 1.2494680881500244
+    }
+   },
+   {
+    "family": "tree",
+    "a": "oak",
+    "b": "elm",
+    "ends": {
+     "a": 0.001934051513671875,
+     "b": 0.0007681846618652344
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0008344650268554688,
+      "over_line": -0.0008081197738647461,
+      "over_both": -0.0010995864868164062,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": -5.14984130859375e-05,
+      "over_line": -0.0014026165008544922,
+      "over_both": -0.0019855499267578125,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -4.7206878662109375e-05,
+      "over_line": -0.001106858253479004,
+      "over_both": -0.0019812583923339844,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1777808666229248,
+     "0.5": 1.2703112363815308,
+     "0.75": 1.184277892112732
+    },
+    "synthetic": {
+     "end": 0.0006785392761230469,
+     "mid": 0.0002040863037109375,
+     "over_line": -0.0011022090911865234,
+     "gain": 1.2852004766464233
+    }
+   },
+   {
+    "family": "tree",
+    "a": "oak",
+    "b": "cedar",
+    "ends": {
+     "a": 0.001934051513671875,
+     "b": 0.010408878326416016
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.003497600555419922,
+      "over_line": -0.0005551576614379883,
+      "over_both": -0.006911277770996094,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006322383880615234,
+      "over_line": 0.00015091896057128906,
+      "over_both": -0.004086494445800781,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.00897979736328125,
+      "over_line": 0.0006896257400512695,
+      "over_both": -0.0014290809631347656,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2929353713989258,
+     "0.5": 1.4270966053009033,
+     "0.75": 1.2550334930419922
+    },
+    "synthetic": {
+     "end": 0.0026268959045410156,
+     "mid": 0.0010519027709960938,
+     "over_line": -0.0012285709381103516,
+     "gain": 1.2755248546600342
+    }
+   },
+   {
+    "family": "tree",
+    "a": "oak",
+    "b": "birch",
+    "ends": {
+     "a": 0.001934051513671875,
+     "b": 0.0003390312194824219
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0001239776611328125,
+      "over_line": -0.0014113187789916992,
+      "over_both": -0.0018100738525390625,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": -0.00121307373046875,
+      "over_line": -0.0023496150970458984,
+      "over_both": -0.003147125244140625,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.0008263587951660156,
+      "over_line": -0.0015641450881958008,
+      "over_both": -0.0027604103088378906,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.27156662940979,
+     "0.5": 1.4125783443450928,
+     "0.75": 1.2552143335342407
+    },
+    "synthetic": {
+     "end": 0.004841804504394531,
+     "mid": 0.0026116371154785156,
+     "over_line": -0.0007762908935546875,
+     "gain": 1.2545430660247803
+    }
+   },
+   {
+    "family": "tree",
+    "a": "maple",
+    "b": "pine",
+    "ends": {
+     "a": 0.0038204193115234375,
+     "b": 2.288818359375e-05
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0018634796142578125,
+      "over_line": -0.0010075569152832031,
+      "over_both": -0.001956939697265625,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.00022792816162109375,
+      "over_line": -0.0016937255859375,
+      "over_both": -0.0035924911499023438,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": -0.00022602081298828125,
+      "over_line": -0.0011982917785644531,
+      "over_both": -0.004046440124511719,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.2048885822296143,
+     "0.5": 1.3114418983459473,
+     "0.75": 1.2064276933670044
+    },
+    "synthetic": {
+     "end": -0.0002727508544921875,
+     "mid": 0.00012302398681640625,
+     "over_line": -0.0016508102416992188,
+     "gain": 1.2481266260147095
+    }
+   },
+   {
+    "family": "tree",
+    "a": "maple",
+    "b": "elm",
+    "ends": {
+     "a": 0.0038204193115234375,
+     "b": 0.0007681846618652344
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0021123886108398438,
+      "over_line": -0.000944972038269043,
+      "over_both": -0.0017080307006835938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0004892349243164062,
+      "over_line": -0.0018050670623779297,
+      "over_both": -0.0033311843872070312,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.00015306472778320312,
+      "over_line": -0.001378178596496582,
+      "over_both": -0.0036673545837402344,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1783154010772705,
+     "0.5": 1.2848255634307861,
+     "0.75": 1.1995333433151245
+    },
+    "synthetic": {
+     "end": 0.0027632713317871094,
+     "mid": 0.002583026885986328,
+     "over_line": -0.0007088184356689453,
+     "gain": 1.2160415649414062
+    }
+   },
+   {
+    "family": "tree",
+    "a": "maple",
+    "b": "cedar",
+    "ends": {
+     "a": 0.0038204193115234375,
+     "b": 0.010408878326416016
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.00476837158203125,
+      "over_line": -0.000699162483215332,
+      "over_both": -0.005640506744384766,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006571292877197266,
+      "over_line": -0.0005433559417724609,
+      "over_both": -0.00383758544921875,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.00890207290649414,
+      "over_line": 0.00014030933380126953,
+      "over_both": -0.001506805419921875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2441619634628296,
+     "0.5": 1.3619633913040161,
+     "0.75": 1.2309625148773193
+    },
+    "synthetic": {
+     "end": 0.009726524353027344,
+     "mid": 0.0063266754150390625,
+     "over_line": -0.0004467964172363281,
+     "gain": 1.2441498041152954
+    }
+   },
+   {
+    "family": "tree",
+    "a": "maple",
+    "b": "birch",
+    "ends": {
+     "a": 0.0038204193115234375,
+     "b": 0.0003390312194824219
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0018167495727539062,
+      "over_line": -0.0011333227157592773,
+      "over_both": -0.0020036697387695312,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": -0.0002474784851074219,
+      "over_line": -0.0023272037506103516,
+      "over_both": -0.004067897796630859,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.000560760498046875,
+      "over_line": -0.0017701387405395508,
+      "over_both": -0.0043811798095703125,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.2479983568191528,
+     "0.5": 1.3873628377914429,
+     "0.75": 1.2503068447113037
+    },
+    "synthetic": {
+     "end": 0.006653785705566406,
+     "mid": 0.004462242126464844,
+     "over_line": -0.0007748603820800781,
+     "gain": 1.2736294269561768
+    }
+   },
+   {
+    "family": "tree",
+    "a": "pine",
+    "b": "elm",
+    "ends": {
+     "a": 2.288818359375e-05,
+     "b": 0.0007681846618652344
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.00072479248046875,
+      "over_line": -0.0009340047836303711,
+      "over_both": -0.0014929771423339844,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": -0.0010132789611816406,
+      "over_line": -0.0014088153839111328,
+      "over_both": -0.001781463623046875,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.0004649162292480469,
+      "over_line": -0.0010467767715454102,
+      "over_both": -0.0012331008911132812,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.1672871112823486,
+     "0.5": 1.255118727684021,
+     "0.75": 1.1808202266693115
+    },
+    "synthetic": {
+     "end": -0.0016965866088867188,
+     "mid": -0.0020933151245117188,
+     "over_line": -0.0012564659118652344,
+     "gain": 1.2273263931274414
+    }
+   },
+   {
+    "family": "tree",
+    "a": "pine",
+    "b": "cedar",
+    "ends": {
+     "a": 2.288818359375e-05,
+     "b": 0.010408878326416016
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0016927719116210938,
+      "over_line": -0.0009266138076782227,
+      "over_both": -0.008716106414794922,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0047969818115234375,
+      "over_line": -0.0004189014434814453,
+      "over_both": -0.005611896514892578,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.008153915405273438,
+      "over_line": 0.0003415346145629883,
+      "over_both": -0.002254962921142578,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2299766540527344,
+     "0.5": 1.3287465572357178,
+     "0.75": 1.2082431316375732
+    },
+    "synthetic": {
+     "end": 0.0070514678955078125,
+     "mid": 0.0024008750915527344,
+     "over_line": -0.0011363029479980469,
+     "gain": 1.242902159690857
+    }
+   },
+   {
+    "family": "tree",
+    "a": "pine",
+    "b": "birch",
+    "ends": {
+     "a": 2.288818359375e-05,
+     "b": 0.0003390312194824219
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.0013394355773925781,
+      "over_line": -0.001441359519958496,
+      "over_both": -0.001678466796875,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": -0.0019683837890625,
+      "over_line": -0.002149343490600586,
+      "over_both": -0.002307415008544922,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.001140594482421875,
+      "over_line": -0.001400589942932129,
+      "over_both": -0.0014796257019042969,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.2124688625335693,
+     "0.5": 1.323020577430725,
+     "0.75": 1.214637041091919
+    },
+    "synthetic": {
+     "end": 0.004086494445800781,
+     "mid": 0.0008177757263183594,
+     "over_line": -0.0012369155883789062,
+     "gain": 1.2355848550796509
+    }
+   },
+   {
+    "family": "tree",
+    "a": "elm",
+    "b": "cedar",
+    "ends": {
+     "a": 0.0007681846618652344,
+     "b": 0.010408878326416016
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.002399444580078125,
+      "over_line": -0.0007789134979248047,
+      "over_both": -0.00800943374633789,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005359649658203125,
+      "over_line": -0.0002288818359375,
+      "over_both": -0.005049228668212891,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.008419036865234375,
+      "over_line": 0.0004203319549560547,
+      "over_both": -0.0019898414611816406,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.229377031326294,
+     "0.5": 1.3158084154129028,
+     "0.75": 1.1940348148345947
+    },
+    "synthetic": {
+     "end": 0.0036554336547851562,
+     "mid": 0.001369476318359375,
+     "over_line": -0.0008423328399658203,
+     "gain": 1.2019195556640625
+    }
+   },
+   {
+    "family": "tree",
+    "a": "elm",
+    "b": "birch",
+    "ends": {
+     "a": 0.0007681846618652344,
+     "b": 0.0003390312194824219
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.00014591217041015625,
+      "over_line": -0.0008068084716796875,
+      "over_both": -0.0009140968322753906,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": -0.0004010200500488281,
+      "over_line": -0.0009546279907226562,
+      "over_both": -0.0011692047119140625,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.00012493133544921875,
+      "over_line": -0.0005712509155273438,
+      "over_both": -0.0008931159973144531,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.1598947048187256,
+     "0.5": 1.225237488746643,
+     "0.75": 1.1489531993865967
+    },
+    "synthetic": {
+     "end": 0.005406379699707031,
+     "mid": 0.002575397491455078,
+     "over_line": -0.0005118846893310547,
+     "gain": 1.2367761135101318
+    }
+   },
+   {
+    "family": "tree",
+    "a": "cedar",
+    "b": "birch",
+    "ends": {
+     "a": 0.010408878326416016,
+     "b": 0.0003390312194824219
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.008425712585449219,
+      "over_line": 0.0005342960357666016,
+      "over_both": -0.001983165740966797,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.00522613525390625,
+      "over_line": -0.00014781951904296875,
+      "over_both": -0.005182743072509766,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0020751953125,
+      "over_line": -0.0007812976837158203,
+      "over_both": -0.008333683013916016,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1983436346054077,
+     "0.5": 1.3098247051239014,
+     "0.75": 1.2140038013458252
+    },
+    "synthetic": {
+     "end": 0.004237651824951172,
+     "mid": 0.007727622985839844,
+     "over_line": 0.00040435791015625,
+     "gain": 1.2741162776947021
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "carrot",
+    "b": "potato",
+    "ends": {
+     "a": 0.002644062042236328,
+     "b": 0.001552581787109375
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0012307167053222656,
+      "over_line": -0.0011404752731323242,
+      "over_both": -0.0014133453369140625,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0001850128173828125,
+      "over_line": -0.001913309097290039,
+      "over_both": -0.0024590492248535156,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0005125999450683594,
+      "over_line": -0.001312851905822754,
+      "over_both": -0.0021314620971679688,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2782986164093018,
+     "0.5": 1.4174059629440308,
+     "0.75": 1.2546441555023193
+    },
+    "synthetic": {
+     "end": 0.0029425621032714844,
+     "mid": 0.0014119148254394531,
+     "over_line": -0.0013813972473144531,
+     "gain": 1.2867367267608643
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "carrot",
+    "b": "onion",
+    "ends": {
+     "a": 0.002644062042236328,
+     "b": 0.008450031280517578
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0036191940307617188,
+      "over_line": -0.0004763603210449219,
+      "over_both": -0.004830837249755859,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005235195159912109,
+      "over_line": -0.00031185150146484375,
+      "over_both": -0.0032148361206054688,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.007054805755615234,
+      "over_line": 5.626678466796875e-05,
+      "over_both": -0.0013952255249023438,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2637910842895508,
+     "0.5": 1.410790205001831,
+     "0.75": 1.261430025100708
+    },
+    "synthetic": {
+     "end": 0.006367206573486328,
+     "mid": 0.003806591033935547,
+     "over_line": -0.0006990432739257812,
+     "gain": 1.254920244216919
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "carrot",
+    "b": "cabbage",
+    "ends": {
+     "a": 0.002644062042236328,
+     "b": 0.0023431777954101562
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0017733573913574219,
+      "over_line": -0.0007954835891723633,
+      "over_both": -0.0008707046508789062,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.00113677978515625,
+      "over_line": -0.0013568401336669922,
+      "over_both": -0.0015072822570800781,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0013875961303710938,
+      "over_line": -0.0010308027267456055,
+      "over_both": -0.0012564659118652344,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2007437944412231,
+     "0.5": 1.3248530626296997,
+     "0.75": 1.2319296598434448
+    },
+    "synthetic": {
+     "end": 0.001979351043701172,
+     "mid": 0.0013136863708496094,
+     "over_line": -0.0009980201721191406,
+     "gain": 1.2779189348220825
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "carrot",
+    "b": "lettuce",
+    "ends": {
+     "a": 0.002644062042236328,
+     "b": 0.007237911224365234
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0032558441162109375,
+      "over_line": -0.0005366802215576172,
+      "over_both": -0.003982067108154297,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0044803619384765625,
+      "over_line": -0.00046062469482421875,
+      "over_both": -0.002757549285888672,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005999565124511719,
+      "over_line": -8.988380432128906e-05,
+      "over_both": -0.0012383460998535156,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2409480810165405,
+     "0.5": 1.3776118755340576,
+     "0.75": 1.2476047277450562
+    },
+    "synthetic": {
+     "end": 0.0063266754150390625,
+     "mid": 0.003942966461181641,
+     "over_line": -0.0005424022674560547,
+     "gain": 1.2920753955841064
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "carrot",
+    "b": "cucumber",
+    "ends": {
+     "a": 0.002644062042236328,
+     "b": 0.00015783309936523438
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0010652542114257812,
+      "over_line": -0.0009572505950927734,
+      "over_both": -0.0015788078308105469,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": -0.00024700164794921875,
+      "over_line": -0.00164794921875,
+      "over_both": -0.002891063690185547,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.0004553794860839844,
+      "over_line": -0.0012347698211669922,
+      "over_both": -0.0030994415283203125,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.2188721895217896,
+     "0.5": 1.3286499977111816,
+     "0.75": 1.216121792793274
+    },
+    "synthetic": {
+     "end": -0.0024785995483398438,
+     "mid": -0.0018310546875,
+     "over_line": -0.0019137859344482422,
+     "gain": 1.2658629417419434
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "potato",
+    "b": "onion",
+    "ends": {
+     "a": 0.001552581787109375,
+     "b": 0.008450031280517578
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.002033233642578125,
+      "over_line": -0.0012437105178833008,
+      "over_both": -0.006416797637939453,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0036716461181640625,
+      "over_line": -0.001329660415649414,
+      "over_both": -0.004778385162353516,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006366252899169922,
+      "over_line": -0.00035941600799560547,
+      "over_both": -0.0020837783813476562,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.296875,
+     "0.5": 1.5028234720230103,
+     "0.75": 1.3233211040496826
+    },
+    "synthetic": {
+     "end": 0.00403594970703125,
+     "mid": 0.001895904541015625,
+     "over_line": -0.0008983612060546875,
+     "gain": 1.2441961765289307
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "potato",
+    "b": "cabbage",
+    "ends": {
+     "a": 0.001552581787109375,
+     "b": 0.0023431777954101562
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.001148223876953125,
+      "over_line": -0.0006020069122314453,
+      "over_both": -0.0011949539184570312,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0009965896606445312,
+      "over_line": -0.0009512901306152344,
+      "over_both": -0.001346588134765625,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0014009475708007812,
+      "over_line": -0.0007445812225341797,
+      "over_both": -0.000942230224609375,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1172726154327393,
+     "0.5": 1.1866704225540161,
+     "0.75": 1.1463963985443115
+    },
+    "synthetic": {
+     "end": 0.004314422607421875,
+     "mid": 0.0014238357543945312,
+     "over_line": -0.0015096664428710938,
+     "gain": 1.2790080308914185
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "potato",
+    "b": "lettuce",
+    "ends": {
+     "a": 0.001552581787109375,
+     "b": 0.007237911224365234
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.00197601318359375,
+      "over_line": -0.0009979009628295898,
+      "over_both": -0.005261898040771484,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.003307342529296875,
+      "over_line": -0.0010879039764404297,
+      "over_both": -0.003930568695068359,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005394935607910156,
+      "over_line": -0.0004216432571411133,
+      "over_both": -0.0018429756164550781,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2211105823516846,
+     "0.5": 1.3572286367416382,
+     "0.75": 1.247884750366211
+    },
+    "synthetic": {
+     "end": 0.0013685226440429688,
+     "mid": 7.009506225585938e-05,
+     "over_line": -0.0013904571533203125,
+     "gain": 1.2631992101669312
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "potato",
+    "b": "cucumber",
+    "ends": {
+     "a": 0.001552581787109375,
+     "b": 0.00015783309936523438
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.00016641616821289062,
+      "over_line": -0.0013703107833862305,
+      "over_both": -0.0017189979553222656,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": -0.0015230178833007812,
+      "over_line": -0.002378225326538086,
+      "over_both": -0.0030755996704101562,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.0011916160583496094,
+      "over_line": -0.001698136329650879,
+      "over_both": -0.0027441978454589844,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.2573753595352173,
+     "0.5": 1.415908694267273,
+     "0.75": 1.2766441106796265
+    },
+    "synthetic": {
+     "end": 0.00548553466796875,
+     "mid": 0.0021600723266601562,
+     "over_line": -0.0013589859008789062,
+     "gain": 1.3106164932250977
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "onion",
+    "b": "cabbage",
+    "ends": {
+     "a": 0.008450031280517578,
+     "b": 0.0023431777954101562
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007220745086669922,
+      "over_line": 0.0002974271774291992,
+      "over_both": -0.0012292861938476562,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.004931926727294922,
+      "over_line": -0.0004646778106689453,
+      "over_both": -0.0035181045532226562,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0029387474060058594,
+      "over_line": -0.0009311437606811523,
+      "over_both": -0.005511283874511719,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2743752002716064,
+     "0.5": 1.4663217067718506,
+     "0.75": 1.3120405673980713
+    },
+    "synthetic": {
+     "end": 0.005970478057861328,
+     "mid": 0.007435321807861328,
+     "over_line": 0.000225067138671875,
+     "gain": 1.329374074935913
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "onion",
+    "b": "lettuce",
+    "ends": {
+     "a": 0.008450031280517578,
+     "b": 0.007237911224365234
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.008306503295898438,
+      "over_line": 0.0001595020294189453,
+      "over_both": -0.00014352798461914062,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.008024215698242188,
+      "over_line": 0.00018024444580078125,
+      "over_both": -0.0004258155822753906,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.007644176483154297,
+      "over_line": 0.00010323524475097656,
+      "over_both": -0.0008058547973632812,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2206844091415405,
+     "0.5": 1.3427674770355225,
+     "0.75": 1.227997064590454
+    },
+    "synthetic": {
+     "end": 0.003742694854736328,
+     "mid": 0.005796909332275391,
+     "over_line": -0.0002994537353515625,
+     "gain": 1.2995455265045166
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "onion",
+    "b": "cucumber",
+    "ends": {
+     "a": 0.008450031280517578,
+     "b": 0.00015783309936523438
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.00620269775390625,
+      "over_line": -0.0001742839813232422,
+      "over_both": -0.002247333526611328,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0033998489379882812,
+      "over_line": -0.000904083251953125,
+      "over_both": -0.005050182342529297,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0012497901916503906,
+      "over_line": -0.0009810924530029297,
+      "over_both": -0.0072002410888671875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2343220710754395,
+     "0.5": 1.3614189624786377,
+     "0.75": 1.236006498336792
+    },
+    "synthetic": {
+     "end": 0.004216670989990234,
+     "mid": 0.005871772766113281,
+     "over_line": -0.000461578369140625,
+     "gain": 1.2992801666259766
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "cabbage",
+    "b": "lettuce",
+    "ends": {
+     "a": 0.0023431777954101562,
+     "b": 0.007237911224365234
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0025725364685058594,
+      "over_line": -0.0009943246841430664,
+      "over_both": -0.004665374755859375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.003818988800048828,
+      "over_line": -0.0009715557098388672,
+      "over_both": -0.0034189224243164062,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005776405334472656,
+      "over_line": -0.0002378225326538086,
+      "over_both": -0.0014615058898925781,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2529466152191162,
+     "0.5": 1.3710596561431885,
+     "0.75": 1.226426124572754
+    },
+    "synthetic": {
+     "end": -0.0035228729248046875,
+     "mid": -0.0025882720947265625,
+     "over_line": -0.001998424530029297,
+     "gain": 1.261889100074768
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "cabbage",
+    "b": "cucumber",
+    "ends": {
+     "a": 0.0023431777954101562,
+     "b": 0.00015783309936523438
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0001926422119140625,
+      "over_line": -0.0016041994094848633,
+      "over_both": -0.0021505355834960938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": -0.0013322830200195312,
+      "over_line": -0.0025827884674072266,
+      "over_both": -0.0036754608154296875,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.0009832382202148438,
+      "over_line": -0.0016874074935913086,
+      "over_both": -0.003326416015625,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.3672676086425781,
+     "0.5": 1.5677709579467773,
+     "0.75": 1.319662094116211
+    },
+    "synthetic": {
+     "end": 0.012767314910888672,
+     "mid": 0.008118629455566406,
+     "over_line": 0.0005633831024169922,
+     "gain": 1.2824132442474365
+    }
+   },
+   {
+    "family": "vegetable",
+    "a": "lettuce",
+    "b": "cucumber",
+    "ends": {
+     "a": 0.007237911224365234,
+     "b": 0.00015783309936523438
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005066871643066406,
+      "over_line": -0.0004010200500488281,
+      "over_both": -0.002171039581298828,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0022058486938476562,
+      "over_line": -0.0014920234680175781,
+      "over_both": -0.005032062530517578,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0004773139953613281,
+      "over_line": -0.0014505386352539062,
+      "over_both": -0.006760597229003906,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.312342882156372,
+     "0.5": 1.5062528848648071,
+     "0.75": 1.3124500513076782
+    },
+    "synthetic": {
+     "end": 0.003654003143310547,
+     "mid": 0.0050811767578125,
+     "over_line": -0.0003647804260253906,
+     "gain": 1.2907949686050415
+    }
+   },
+   {
+    "family": "bird",
+    "a": "eagle",
+    "b": "owl",
+    "ends": {
+     "a": 0.0033888816833496094,
+     "b": 0.007966041564941406
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004385471343994141,
+      "over_line": -0.00014770030975341797,
+      "over_both": -0.0035805702209472656,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005714893341064453,
+      "over_line": 3.743171691894531e-05,
+      "over_both": -0.002251148223876953,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0069675445556640625,
+      "over_line": 0.00014579296112060547,
+      "over_both": -0.0009984970092773438,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2034721374511719,
+     "0.5": 1.2997345924377441,
+     "0.75": 1.1957364082336426
+    },
+    "synthetic": {
+     "end": 0.007739067077636719,
+     "mid": 0.005609989166259766,
+     "over_line": 4.601478576660156e-05,
+     "gain": 1.2220871448516846
+    }
+   },
+   {
+    "family": "bird",
+    "a": "eagle",
+    "b": "crow",
+    "ends": {
+     "a": 0.0033888816833496094,
+     "b": 0.006373882293701172
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004000186920166016,
+      "over_line": -0.00013494491577148438,
+      "over_both": -0.0023736953735351562,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.004897117614746094,
+      "over_line": 1.5735626220703125e-05,
+      "over_both": -0.0014767646789550781,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005727291107177734,
+      "over_line": 9.965896606445312e-05,
+      "over_both": -0.0006465911865234375,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1864486932754517,
+     "0.5": 1.2532097101211548,
+     "0.75": 1.1597541570663452
+    },
+    "synthetic": {
+     "end": 0.005208015441894531,
+     "mid": 0.0042209625244140625,
+     "over_line": -7.748603820800781e-05,
+     "gain": 1.260817289352417
+    }
+   },
+   {
+    "family": "bird",
+    "a": "eagle",
+    "b": "pigeon",
+    "ends": {
+     "a": 0.0033888816833496094,
+     "b": 0.007075786590576172
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004061222076416016,
+      "over_line": -0.0002493858337402344,
+      "over_both": -0.0030145645141601562,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005335807800292969,
+      "over_line": 0.00010347366333007812,
+      "over_both": -0.0017399787902832031,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0064144134521484375,
+      "over_line": 0.00026035308837890625,
+      "over_both": -0.0006613731384277344,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2447834014892578,
+     "0.5": 1.3790295124053955,
+     "0.75": 1.2459081411361694
+    },
+    "synthetic": {
+     "end": 0.005768775939941406,
+     "mid": 0.004589080810546875,
+     "over_line": 1.0251998901367188e-05,
+     "gain": 1.2761090993881226
+    }
+   },
+   {
+    "family": "bird",
+    "a": "eagle",
+    "b": "duck",
+    "ends": {
+     "a": 0.0033888816833496094,
+     "b": 0.006431102752685547
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004044055938720703,
+      "over_line": -0.00010538101196289062,
+      "over_both": -0.0023870468139648438,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005043983459472656,
+      "over_line": 0.00013399124145507812,
+      "over_both": -0.0013871192932128906,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005850315093994141,
+      "over_line": 0.00017976760864257812,
+      "over_both": -0.0005807876586914062,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2493542432785034,
+     "0.5": 1.3682277202606201,
+     "0.75": 1.2298939228057861
+    },
+    "synthetic": {
+     "end": 0.01159811019897461,
+     "mid": 0.008511066436767578,
+     "over_line": 0.0010175704956054688,
+     "gain": 1.2203221321105957
+    }
+   },
+   {
+    "family": "bird",
+    "a": "eagle",
+    "b": "sparrow",
+    "ends": {
+     "a": 0.0033888816833496094,
+     "b": 0.0067615509033203125
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004116058349609375,
+      "over_line": -0.00011599063873291016,
+      "over_both": -0.0026454925537109375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0052700042724609375,
+      "over_line": 0.00019478797912597656,
+      "over_both": -0.001491546630859375,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006154060363769531,
+      "over_line": 0.00023567676544189453,
+      "over_both": -0.0006074905395507812,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2568397521972656,
+     "0.5": 1.3644142150878906,
+     "0.75": 1.2171566486358643
+    },
+    "synthetic": {
+     "end": 0.004301548004150391,
+     "mid": 0.003780364990234375,
+     "over_line": -6.4849853515625e-05,
+     "gain": 1.3000775575637817
+    }
+   },
+   {
+    "family": "bird",
+    "a": "owl",
+    "b": "crow",
+    "ends": {
+     "a": 0.007966041564941406,
+     "b": 0.006373882293701172
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007819652557373047,
+      "over_line": 0.0002516508102416992,
+      "over_both": -0.00014638900756835938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.007453441619873047,
+      "over_line": 0.0002834796905517578,
+      "over_both": -0.0005125999450683594,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006878376007080078,
+      "over_line": 0.00010645389556884766,
+      "over_both": -0.0010876655578613281,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.19062077999115,
+     "0.5": 1.2656338214874268,
+     "0.75": 1.1686681509017944
+    },
+    "synthetic": {
+     "end": 0.0005702972412109375,
+     "mid": 0.0035676956176757812,
+     "over_line": -0.0007004737854003906,
+     "gain": 1.2423022985458374
+    }
+   },
+   {
+    "family": "bird",
+    "a": "owl",
+    "b": "pigeon",
+    "ends": {
+     "a": 0.007966041564941406,
+     "b": 0.007075786590576172
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007961750030517578,
+      "over_line": 0.00021827220916748047,
+      "over_both": -4.291534423828125e-06,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.007825374603271484,
+      "over_line": 0.0003044605255126953,
+      "over_both": -0.00014066696166992188,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.007481575012207031,
+      "over_line": 0.00018322467803955078,
+      "over_both": -0.000484466552734375,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2433245182037354,
+     "0.5": 1.3814796209335327,
+     "0.75": 1.252319097518921
+    },
+    "synthetic": {
+     "end": 0.004347801208496094,
+     "mid": 0.0059795379638671875,
+     "over_line": -0.0001773834228515625,
+     "gain": 1.2332285642623901
+    }
+   },
+   {
+    "family": "bird",
+    "a": "owl",
+    "b": "duck",
+    "ends": {
+     "a": 0.007966041564941406,
+     "b": 0.006431102752685547
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.00813436508178711,
+      "over_line": 0.000552058219909668,
+      "over_both": 0.00016832351684570312,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.007880210876464844,
+      "over_line": 0.0006816387176513672,
+      "over_both": -8.58306884765625e-05,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0070648193359375,
+      "over_line": 0.0002499818801879883,
+      "over_both": -0.0009012222290039062,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2616337537765503,
+     "0.5": 1.3967220783233643,
+     "0.75": 1.2503712177276611
+    },
+    "synthetic": {
+     "end": 0.00841665267944336,
+     "mid": 0.008524417877197266,
+     "over_line": 0.0003330707550048828,
+     "gain": 1.2493257522583008
+    }
+   },
+   {
+    "family": "bird",
+    "a": "owl",
+    "b": "sparrow",
+    "ends": {
+     "a": 0.007966041564941406,
+     "b": 0.0067615509033203125
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007832050323486328,
+      "over_line": 0.0001671314239501953,
+      "over_both": -0.00013399124145507812,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.007534980773925781,
+      "over_line": 0.00017118453979492188,
+      "over_both": -0.000431060791015625,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0071201324462890625,
+      "over_line": 5.745887756347656e-05,
+      "over_both": -0.0008459091186523438,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.175755262374878,
+     "0.5": 1.2412946224212646,
+     "0.75": 1.152711272239685
+    },
+    "synthetic": {
+     "end": 0.008366584777832031,
+     "mid": 0.008344173431396484,
+     "over_line": 0.00017786026000976562,
+     "gain": 1.1810537576675415
+    }
+   },
+   {
+    "family": "bird",
+    "a": "crow",
+    "b": "pigeon",
+    "ends": {
+     "a": 0.006373882293701172,
+     "b": 0.007075786590576172
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0067138671875,
+      "over_line": 0.00016450881958007812,
+      "over_both": -0.0003619194030761719,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.007062435150146484,
+      "over_line": 0.0003376007080078125,
+      "over_both": -1.33514404296875e-05,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.007145404815673828,
+      "over_line": 0.00024509429931640625,
+      "over_both": 6.961822509765625e-05,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1890792846679688,
+     "0.5": 1.3042930364608765,
+     "0.75": 1.218014121055603
+    },
+    "synthetic": {
+     "end": 0.007426261901855469,
+     "mid": 0.007467746734619141,
+     "over_line": 0.0005676746368408203,
+     "gain": 1.2320213317871094
+    }
+   },
+   {
+    "family": "bird",
+    "a": "crow",
+    "b": "duck",
+    "ends": {
+     "a": 0.006373882293701172,
+     "b": 0.006431102752685547
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0066070556640625,
+      "over_line": 0.00021886825561523438,
+      "over_both": 0.00017595291137695312,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006772518157958984,
+      "over_line": 0.000370025634765625,
+      "over_both": 0.0003414154052734375,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006617546081542969,
+      "over_line": 0.00020074844360351562,
+      "over_both": 0.00018644332885742188,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.214529037475586,
+     "0.5": 1.3411611318588257,
+     "0.75": 1.2350407838821411
+    },
+    "synthetic": {
+     "end": 0.002686023712158203,
+     "mid": 0.004126071929931641,
+     "over_line": -0.0004038810729980469,
+     "gain": 1.2325570583343506
+    }
+   },
+   {
+    "family": "bird",
+    "a": "crow",
+    "b": "sparrow",
+    "ends": {
+     "a": 0.006373882293701172,
+     "b": 0.0067615509033203125
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.006551265716552734,
+      "over_line": 8.046627044677734e-05,
+      "over_both": -0.00021028518676757812,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006737232208251953,
+      "over_line": 0.00016951560974121094,
+      "over_both": -2.4318695068359375e-05,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006791114807128906,
+      "over_line": 0.0001264810562133789,
+      "over_both": 2.956390380859375e-05,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1535141468048096,
+     "0.5": 1.2227537631988525,
+     "0.75": 1.152082085609436
+    },
+    "synthetic": {
+     "end": 0.0022330284118652344,
+     "mid": 0.003570556640625,
+     "over_line": -0.0007328987121582031,
+     "gain": 1.180128574371338
+    }
+   },
+   {
+    "family": "bird",
+    "a": "pigeon",
+    "b": "duck",
+    "ends": {
+     "a": 0.007075786590576172,
+     "b": 0.006431102752685547
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007066249847412109,
+      "over_line": 0.00015163421630859375,
+      "over_both": -9.5367431640625e-06,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006987571716308594,
+      "over_line": 0.00023412704467773438,
+      "over_both": -8.821487426757812e-05,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006718158721923828,
+      "over_line": 0.000125885009765625,
+      "over_both": -0.00035762786865234375,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2388124465942383,
+     "0.5": 1.3546676635742188,
+     "0.75": 1.2247928380966187
+    },
+    "synthetic": {
+     "end": 0.0031795501708984375,
+     "mid": 0.004721641540527344,
+     "over_line": -0.00040602684020996094,
+     "gain": 1.258069396018982
+    }
+   },
+   {
+    "family": "bird",
+    "a": "pigeon",
+    "b": "sparrow",
+    "ends": {
+     "a": 0.007075786590576172,
+     "b": 0.0067615509033203125
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007206916809082031,
+      "over_line": 0.00020968914031982422,
+      "over_both": 0.00013113021850585938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.007189750671386719,
+      "over_line": 0.00027108192443847656,
+      "over_both": 0.00011396408081054688,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006980419158935547,
+      "over_line": 0.00014030933380126953,
+      "over_both": -9.5367431640625e-05,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1445345878601074,
+     "0.5": 1.1961485147476196,
+     "0.75": 1.1274014711380005
+    },
+    "synthetic": {
+     "end": 0.00365447998046875,
+     "mid": 0.005403995513916016,
+     "over_line": 3.886222839355469e-05,
+     "gain": 1.24526846408844
+    }
+   },
+   {
+    "family": "bird",
+    "a": "duck",
+    "b": "sparrow",
+    "ends": {
+     "a": 0.006431102752685547,
+     "b": 0.0067615509033203125
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.006637096405029297,
+      "over_line": 0.0001233816146850586,
+      "over_both": -0.00012445449829101562,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006859302520751953,
+      "over_line": 0.00026297569274902344,
+      "over_both": 9.775161743164062e-05,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.00685882568359375,
+      "over_line": 0.0001798868179321289,
+      "over_both": 9.72747802734375e-05,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2071306705474854,
+     "0.5": 1.2950559854507446,
+     "0.75": 1.1883134841918945
+    },
+    "synthetic": {
+     "end": 0.008575439453125,
+     "mid": 0.007868289947509766,
+     "over_line": 0.0003650188446044922,
+     "gain": 1.2834656238555908
+    }
+   },
+   {
+    "family": "fish",
+    "a": "salmon",
+    "b": "shark",
+    "ends": {
+     "a": 0.006075382232666016,
+     "b": 0.006239414215087891
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005733013153076172,
+      "over_line": -0.0003833770751953125,
+      "over_both": -0.0005064010620117188,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005645275115966797,
+      "over_line": -0.0005121231079101562,
+      "over_both": -0.0005941390991210938,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005944252014160156,
+      "over_line": -0.0002541542053222656,
+      "over_both": -0.0002951622009277344,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1308095455169678,
+     "0.5": 1.19597589969635,
+     "0.75": 1.1385782957077026
+    },
+    "synthetic": {
+     "end": 0.005059242248535156,
+     "mid": 0.005140781402587891,
+     "over_line": -0.0004265308380126953,
+     "gain": 1.2031499147415161
+    }
+   },
+   {
+    "family": "fish",
+    "a": "salmon",
+    "b": "trout",
+    "ends": {
+     "a": 0.006075382232666016,
+     "b": 0.00011301040649414062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004443645477294922,
+      "over_line": -0.000141143798828125,
+      "over_both": -0.0016317367553710938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0024957656860351562,
+      "over_line": -0.0005984306335449219,
+      "over_both": -0.0035796165466308594,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0008707046508789062,
+      "over_line": -0.0007328987121582031,
+      "over_both": -0.005204677581787109,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1761467456817627,
+     "0.5": 1.2768691778182983,
+     "0.75": 1.1983722448349
+    },
+    "synthetic": {
+     "end": -0.0008802413940429688,
+     "mid": 0.0012760162353515625,
+     "over_line": -0.001321554183959961,
+     "gain": 1.2125701904296875
+    }
+   },
+   {
+    "family": "fish",
+    "a": "salmon",
+    "b": "tuna",
+    "ends": {
+     "a": 0.006075382232666016,
+     "b": 0.0041942596435546875
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0051631927490234375,
+      "over_line": -0.0004419088363647461,
+      "over_both": -0.0009121894836425781,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0044727325439453125,
+      "over_line": -0.0006620883941650391,
+      "over_both": -0.0016026496887207031,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0042705535888671875,
+      "over_line": -0.00039398670196533203,
+      "over_both": -0.0018048286437988281,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.140312910079956,
+     "0.5": 1.2197474241256714,
+     "0.75": 1.160496473312378
+    },
+    "synthetic": {
+     "end": 0.0031719207763671875,
+     "mid": 0.004233360290527344,
+     "over_line": -0.0003902912139892578,
+     "gain": 1.2124019861221313
+    }
+   },
+   {
+    "family": "fish",
+    "a": "salmon",
+    "b": "cod",
+    "ends": {
+     "a": 0.006075382232666016,
+     "b": 0.0063018798828125
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.006193637847900391,
+      "over_line": 6.16312026977539e-05,
+      "over_both": -0.00010824203491210938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006477832794189453,
+      "over_line": 0.0002892017364501953,
+      "over_both": 0.00017595291137695312,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006459236145019531,
+      "over_line": 0.00021398067474365234,
+      "over_both": 0.00015735626220703125,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2610321044921875,
+     "0.5": 1.4046117067337036,
+     "0.75": 1.256638765335083
+    },
+    "synthetic": {
+     "end": 0.014517784118652344,
+     "mid": 0.011377811431884766,
+     "over_line": 0.001081228256225586,
+     "gain": 1.2667192220687866
+    }
+   },
+   {
+    "family": "fish",
+    "a": "salmon",
+    "b": "carp",
+    "ends": {
+     "a": 0.006075382232666016,
+     "b": 0.005933284759521484
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005878448486328125,
+      "over_line": -0.0001614093780517578,
+      "over_both": -0.00019693374633789062,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005597591400146484,
+      "over_line": -0.0004067420959472656,
+      "over_both": -0.00047779083251953125,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0056362152099609375,
+      "over_line": -0.0003325939178466797,
+      "over_both": -0.0004391670227050781,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2654151916503906,
+     "0.5": 1.3798372745513916,
+     "0.75": 1.228926181793213
+    },
+    "synthetic": {
+     "end": 0.0015993118286132812,
+     "mid": 0.002861499786376953,
+     "over_line": -0.0009758472442626953,
+     "gain": 1.2743874788284302
+    }
+   },
+   {
+    "family": "fish",
+    "a": "shark",
+    "b": "trout",
+    "ends": {
+     "a": 0.006239414215087891,
+     "b": 0.00011301040649414062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004126548767089844,
+      "over_line": -0.0005812644958496094,
+      "over_both": -0.002112865447998047,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0016307830810546875,
+      "over_line": -0.0015454292297363281,
+      "over_both": -0.004608631134033203,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0002574920654296875,
+      "over_line": -0.0013871192932128906,
+      "over_both": -0.005981922149658203,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2017278671264648,
+     "0.5": 1.3160423040390015,
+     "0.75": 1.2153799533843994
+    },
+    "synthetic": {
+     "end": 0.007855892181396484,
+     "mid": 0.006946086883544922,
+     "over_line": -0.00010156631469726562,
+     "gain": 1.2594537734985352
+    }
+   },
+   {
+    "family": "fish",
+    "a": "shark",
+    "b": "tuna",
+    "ends": {
+     "a": 0.006239414215087891,
+     "b": 0.0041942596435546875
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0055599212646484375,
+      "over_line": -0.00016820430755615234,
+      "over_both": -0.0006794929504394531,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.004939079284667969,
+      "over_line": -0.0002777576446533203,
+      "over_both": -0.0013003349304199219,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.004478931427001953,
+      "over_line": -0.00022661685943603516,
+      "over_both": -0.0017604827880859375,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1631639003753662,
+     "0.5": 1.2509100437164307,
+     "0.75": 1.1779730319976807
+    },
+    "synthetic": {
+     "end": 0.006573200225830078,
+     "mid": 0.006424903869628906,
+     "over_line": 1.8596649169921875e-05,
+     "gain": 1.2395039796829224
+    }
+   },
+   {
+    "family": "fish",
+    "a": "shark",
+    "b": "cod",
+    "ends": {
+     "a": 0.006239414215087891,
+     "b": 0.0063018798828125
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.006523609161376953,
+      "over_line": 0.00026857852935791016,
+      "over_both": 0.00022172927856445312,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0066661834716796875,
+      "over_line": 0.0003955364227294922,
+      "over_both": 0.0003643035888671875,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006321430206298828,
+      "over_line": 3.516674041748047e-05,
+      "over_both": 1.9550323486328125e-05,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.3379817008972168,
+     "0.5": 1.538917899131775,
+     "0.75": 1.321565866470337
+    },
+    "synthetic": {
+     "end": 0.0012903213500976562,
+     "mid": 0.0029239654541015625,
+     "over_line": -0.0008409023284912109,
+     "gain": 1.2813080549240112
+    }
+   },
+   {
+    "family": "fish",
+    "a": "shark",
+    "b": "carp",
+    "ends": {
+     "a": 0.006239414215087891,
+     "b": 0.005933284759521484
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005803108215332031,
+      "over_line": -0.0003597736358642578,
+      "over_both": -0.0004363059997558594,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005445957183837891,
+      "over_line": -0.0006403923034667969,
+      "over_both": -0.00079345703125,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005604743957519531,
+      "over_line": -0.0004050731658935547,
+      "over_both": -0.0006346702575683594,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.3240519762039185,
+     "0.5": 1.4697717428207397,
+     "0.75": 1.269734263420105
+    },
+    "synthetic": {
+     "end": 0.007034778594970703,
+     "mid": 0.006773471832275391,
+     "over_line": 0.00013637542724609375,
+     "gain": 1.2857619524002075
+    }
+   },
+   {
+    "family": "fish",
+    "a": "trout",
+    "b": "tuna",
+    "ends": {
+     "a": 0.00011301040649414062,
+     "b": 0.0041942596435546875
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.0003314018249511719,
+      "over_line": -0.0014647245407104492,
+      "over_both": -0.004525661468505859,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": 0.00041961669921875,
+      "over_line": -0.001734018325805664,
+      "over_both": -0.0037746429443359375,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0023889541625976562,
+      "over_line": -0.0007849931716918945,
+      "over_both": -0.0018053054809570312,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2397044897079468,
+     "0.5": 1.3726129531860352,
+     "0.75": 1.242765188217163
+    },
+    "synthetic": {
+     "end": 0.007396221160888672,
+     "mid": 0.0031490325927734375,
+     "over_line": -0.0006055831909179688,
+     "gain": 1.2455742359161377
+    }
+   },
+   {
+    "family": "fish",
+    "a": "trout",
+    "b": "cod",
+    "ends": {
+     "a": 0.00011301040649414062,
+     "b": 0.0063018798828125
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.00020360946655273438,
+      "over_line": -0.0018638372421264648,
+      "over_both": -0.006505489349365234,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": 0.0017151832580566406,
+      "over_line": -0.0014922618865966797,
+      "over_both": -0.004586696624755859,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.004622459411621094,
+      "over_line": -0.0001322031021118164,
+      "over_both": -0.0016794204711914062,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.3537582159042358,
+     "0.5": 1.5547401905059814,
+     "0.75": 1.3027677536010742
+    },
+    "synthetic": {
+     "end": 0.000492095947265625,
+     "mid": -0.0013709068298339844,
+     "over_line": -0.0016734600067138672,
+     "gain": 1.2490942478179932
+    }
+   },
+   {
+    "family": "fish",
+    "a": "trout",
+    "b": "carp",
+    "ends": {
+     "a": 0.00011301040649414062,
+     "b": 0.005933284759521484
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0005903244018554688,
+      "over_line": -0.0009777545928955078,
+      "over_both": -0.005342960357666016,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0021185874938964844,
+      "over_line": -0.0009045600891113281,
+      "over_both": -0.003814697265625,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.004204750061035156,
+      "over_line": -0.0002734661102294922,
+      "over_both": -0.0017285346984863281,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1612069606781006,
+     "0.5": 1.2099981307983398,
+     "0.75": 1.1287755966186523
+    },
+    "synthetic": {
+     "end": 0.002460956573486328,
+     "mid": -2.765655517578125e-05,
+     "over_line": -0.0013146400451660156,
+     "gain": 1.2875969409942627
+    }
+   },
+   {
+    "family": "fish",
+    "a": "tuna",
+    "b": "cod",
+    "ends": {
+     "a": 0.0041942596435546875,
+     "b": 0.0063018798828125
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004772186279296875,
+      "over_line": 5.1021575927734375e-05,
+      "over_both": -0.001529693603515625,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005719184875488281,
+      "over_line": 0.0004711151123046875,
+      "over_both": -0.0005826950073242188,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.00612640380859375,
+      "over_line": 0.0003514289855957031,
+      "over_both": -0.00017547607421875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2553871870040894,
+     "0.5": 1.3644737005233765,
+     "0.75": 1.2155036926269531
+    },
+    "synthetic": {
+     "end": 0.003235340118408203,
+     "mid": 0.0034780502319335938,
+     "over_line": -0.00023674964904785156,
+     "gain": 1.273198127746582
+    }
+   },
+   {
+    "family": "fish",
+    "a": "tuna",
+    "b": "carp",
+    "ends": {
+     "a": 0.0041942596435546875,
+     "b": 0.005933284759521484
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.00406646728515625,
+      "over_line": -0.0005625486373901367,
+      "over_both": -0.0018668174743652344,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0042934417724609375,
+      "over_line": -0.0007703304290771484,
+      "over_both": -0.0016398429870605469,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0050716400146484375,
+      "over_line": -0.00042688846588134766,
+      "over_both": -0.0008616447448730469,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2191176414489746,
+     "0.5": 1.2845211029052734,
+     "0.75": 1.1694469451904297
+    },
+    "synthetic": {
+     "end": 0.009943485260009766,
+     "mid": 0.007386207580566406,
+     "over_line": 0.0003173351287841797,
+     "gain": 1.2626135349273682
+    }
+   },
+   {
+    "family": "fish",
+    "a": "cod",
+    "b": "carp",
+    "ends": {
+     "a": 0.0063018798828125,
+     "b": 0.005933284759521484
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.006076335906982422,
+      "over_line": -0.00013339519500732422,
+      "over_both": -0.00022554397583007812,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0059223175048828125,
+      "over_line": -0.0001952648162841797,
+      "over_both": -0.0003795623779296875,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.00588226318359375,
+      "over_line": -0.00014317035675048828,
+      "over_both": -0.00041961669921875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2186996936798096,
+     "0.5": 1.3086259365081787,
+     "0.75": 1.193086862564087
+    },
+    "synthetic": {
+     "end": 0.006943225860595703,
+     "mid": 0.007293224334716797,
+     "over_line": 0.0006706714630126953,
+     "gain": 1.292453408241272
+    }
+   },
+   {
+    "family": "insect",
+    "a": "ant",
+    "b": "bee",
+    "ends": {
+     "a": 0.004437446594238281,
+     "b": 0.0029592514038085938
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.003730297088623047,
+      "over_line": -0.0003376007080078125,
+      "over_both": -0.0007071495056152344,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0030956268310546875,
+      "over_line": -0.00060272216796875,
+      "over_both": -0.0013418197631835938,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0028219223022460938,
+      "over_line": -0.0005068778991699219,
+      "over_both": -0.0016155242919921875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.15972101688385,
+     "0.5": 1.2375988960266113,
+     "0.75": 1.1661550998687744
+    },
+    "synthetic": {
+     "end": 0.006195068359375,
+     "mid": 0.004912853240966797,
+     "over_line": -0.00040340423583984375,
+     "gain": 1.2243820428848267
+    }
+   },
+   {
+    "family": "insect",
+    "a": "ant",
+    "b": "beetle",
+    "ends": {
+     "a": 0.004437446594238281,
+     "b": 0.0011816024780273438
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0028972625732421875,
+      "over_line": -0.0007262229919433594,
+      "over_both": -0.0015401840209960938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0013718605041503906,
+      "over_line": -0.0014376640319824219,
+      "over_both": -0.0030655860900878906,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0008454322814941406,
+      "over_line": -0.0011501312255859375,
+      "over_both": -0.0035920143127441406,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.229020357131958,
+     "0.5": 1.366233468055725,
+     "0.75": 1.2491164207458496
+    },
+    "synthetic": {
+     "end": 0.004284381866455078,
+     "mid": 0.003818035125732422,
+     "over_line": -0.0005428791046142578,
+     "gain": 1.2532731294631958
+    }
+   },
+   {
+    "family": "insect",
+    "a": "ant",
+    "b": "butterfly",
+    "ends": {
+     "a": 0.004437446594238281,
+     "b": 0.00810861587524414
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005020618438720703,
+      "over_line": -0.00033462047576904297,
+      "over_both": -0.0030879974365234375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0062255859375,
+      "over_line": -4.744529724121094e-05,
+      "over_both": -0.0018830299377441406,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.007447719573974609,
+      "over_line": 0.0002568960189819336,
+      "over_both": -0.0006608963012695312,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2460572719573975,
+     "0.5": 1.3680931329727173,
+     "0.75": 1.2327314615249634
+    },
+    "synthetic": {
+     "end": 0.002224445343017578,
+     "mid": 0.0023789405822753906,
+     "over_line": -0.0009520053863525391,
+     "gain": 1.2488006353378296
+    }
+   },
+   {
+    "family": "insect",
+    "a": "ant",
+    "b": "mosquito",
+    "ends": {
+     "a": 0.004437446594238281,
+     "b": 0.004791259765625
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004235744476318359,
+      "over_line": -0.00029015541076660156,
+      "over_both": -0.0005555152893066406,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.004102230072021484,
+      "over_line": -0.0005121231079101562,
+      "over_both": -0.0006890296936035156,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.004315853118896484,
+      "over_line": -0.00038695335388183594,
+      "over_both": -0.0004754066467285156,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1863418817520142,
+     "0.5": 1.264174222946167,
+     "0.75": 1.1682822704315186
+    },
+    "synthetic": {
+     "end": 0.004628658294677734,
+     "mid": 0.004199028015136719,
+     "over_line": -0.00033402442932128906,
+     "gain": 1.206100344657898
+    }
+   },
+   {
+    "family": "insect",
+    "a": "ant",
+    "b": "moth",
+    "ends": {
+     "a": 0.004437446594238281,
+     "b": 0.008318901062011719
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005234718322753906,
+      "over_line": -0.00017309188842773438,
+      "over_both": -0.0030841827392578125,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.00624847412109375,
+      "over_line": -0.00012969970703125,
+      "over_both": -0.0020704269409179688,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0073604583740234375,
+      "over_line": 1.1920928955078125e-05,
+      "over_both": -0.0009584426879882812,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1920887231826782,
+     "0.5": 1.253787636756897,
+     "0.75": 1.1553078889846802
+    },
+    "synthetic": {
+     "end": 0.007325172424316406,
+     "mid": 0.005572795867919922,
+     "over_line": -0.0003085136413574219,
+     "gain": 1.2416141033172607
+    }
+   },
+   {
+    "family": "insect",
+    "a": "bee",
+    "b": "beetle",
+    "ends": {
+     "a": 0.0029592514038085938,
+     "b": 0.0011816024780273438
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0016484260559082031,
+      "over_line": -0.0008664131164550781,
+      "over_both": -0.0013108253479003906,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0006108283996582031,
+      "over_line": -0.0014595985412597656,
+      "over_both": -0.0023484230041503906,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0005288124084472656,
+      "over_line": -0.0010972023010253906,
+      "over_both": -0.002430438995361328,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2322646379470825,
+     "0.5": 1.3680496215820312,
+     "0.75": 1.2470966577529907
+    },
+    "synthetic": {
+     "end": 0.0027952194213867188,
+     "mid": 0.001728057861328125,
+     "over_line": -0.0011491775512695312,
+     "gain": 1.2344080209732056
+    }
+   },
+   {
+    "family": "insect",
+    "a": "bee",
+    "b": "butterfly",
+    "ends": {
+     "a": 0.0029592514038085938,
+     "b": 0.00810861587524414
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.003914833068847656,
+      "over_line": -0.0003317594528198242,
+      "over_both": -0.004193782806396484,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005460262298583984,
+      "over_line": -7.367134094238281e-05,
+      "over_both": -0.0026483535766601562,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0070171356201171875,
+      "over_line": 0.0001958608627319336,
+      "over_both": -0.0010914802551269531,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1868531703948975,
+     "0.5": 1.2671787738800049,
+     "0.75": 1.1743234395980835
+    },
+    "synthetic": {
+     "end": 0.0028543472290039062,
+     "mid": 0.001728057861328125,
+     "over_line": -0.001178741455078125,
+     "gain": 1.249805212020874
+    }
+   },
+   {
+    "family": "insect",
+    "a": "bee",
+    "b": "mosquito",
+    "ends": {
+     "a": 0.0029592514038085938,
+     "b": 0.004791259765625
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.002814769744873047,
+      "over_line": -0.0006024837493896484,
+      "over_both": -0.001976490020751953,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0031366348266601562,
+      "over_line": -0.0007386207580566406,
+      "over_both": -0.0016546249389648438,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0039310455322265625,
+      "over_line": -0.00040221214294433594,
+      "over_both": -0.0008602142333984375,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1615476608276367,
+     "0.5": 1.220367431640625,
+     "0.75": 1.1429601907730103
+    },
+    "synthetic": {
+     "end": 0.0016913414001464844,
+     "mid": 0.0012197494506835938,
+     "over_line": -0.0011055469512939453,
+     "gain": 1.2296531200408936
+    }
+   },
+   {
+    "family": "insect",
+    "a": "bee",
+    "b": "moth",
+    "ends": {
+     "a": 0.0029592514038085938,
+     "b": 0.008318901062011719
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0036211013793945312,
+      "over_line": -0.0006780624389648438,
+      "over_both": -0.0046977996826171875,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005170345306396484,
+      "over_line": -0.0004687309265136719,
+      "over_both": -0.0031485557556152344,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006960391998291016,
+      "over_line": -1.8596649169921875e-05,
+      "over_both": -0.0013585090637207031,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2320544719696045,
+     "0.5": 1.3046472072601318,
+     "0.75": 1.1822248697280884
+    },
+    "synthetic": {
+     "end": 0.002064228057861328,
+     "mid": 0.0012025833129882812,
+     "over_line": -0.0013091564178466797,
+     "gain": 1.2209999561309814
+    }
+   },
+   {
+    "family": "insect",
+    "a": "beetle",
+    "b": "butterfly",
+    "ends": {
+     "a": 0.0011816024780273438,
+     "b": 0.00810861587524414
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.002341747283935547,
+      "over_line": -0.0005716085433959961,
+      "over_both": -0.005766868591308594,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.004495143890380859,
+      "over_line": -0.0001499652862548828,
+      "over_both": -0.0036134719848632812,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006628990173339844,
+      "over_line": 0.00025212764739990234,
+      "over_both": -0.0014796257019042969,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2321503162384033,
+     "0.5": 1.3278452157974243,
+     "0.75": 1.2008916139602661
+    },
+    "synthetic": {
+     "end": 0.013394832611083984,
+     "mid": 0.007737159729003906,
+     "over_line": 0.0004489421844482422,
+     "gain": 1.3185083866119385
+    }
+   },
+   {
+    "family": "insect",
+    "a": "beetle",
+    "b": "mosquito",
+    "ends": {
+     "a": 0.0011816024780273438,
+     "b": 0.004791259765625
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0009560585021972656,
+      "over_line": -0.0011279582977294922,
+      "over_both": -0.0038352012634277344,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.001728057861328125,
+      "over_line": -0.0012583732604980469,
+      "over_both": -0.003063201904296875,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0033273696899414062,
+      "over_line": -0.0005614757537841797,
+      "over_both": -0.0014638900756835938,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2355207204818726,
+     "0.5": 1.3207464218139648,
+     "0.75": 1.1921734809875488
+    },
+    "synthetic": {
+     "end": -0.00021314620971679688,
+     "mid": -0.0013751983642578125,
+     "over_line": -0.001859426498413086,
+     "gain": 1.2759641408920288
+    }
+   },
+   {
+    "family": "insect",
+    "a": "beetle",
+    "b": "moth",
+    "ends": {
+     "a": 0.0011816024780273438,
+     "b": 0.008318901062011719
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0022292137145996094,
+      "over_line": -0.0007367134094238281,
+      "over_both": -0.006089687347412109,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.004347324371337891,
+      "over_line": -0.0004029273986816406,
+      "over_both": -0.003971576690673828,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006641387939453125,
+      "over_line": 0.0001068115234375,
+      "over_both": -0.0016775131225585938,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.276763677597046,
+     "0.5": 1.3576977252960205,
+     "0.75": 1.2012364864349365
+    },
+    "synthetic": {
+     "end": 0.006140708923339844,
+     "mid": 0.0029969215393066406,
+     "over_line": -0.0006642341613769531,
+     "gain": 1.2622243165969849
+    }
+   },
+   {
+    "family": "insect",
+    "a": "butterfly",
+    "b": "mosquito",
+    "ends": {
+     "a": 0.00810861587524414,
+     "b": 0.004791259765625
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0074443817138671875,
+      "over_line": 0.00016510486602783203,
+      "over_both": -0.0006642341613769531,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006358146667480469,
+      "over_line": -9.179115295410156e-05,
+      "over_both": -0.0017504692077636719,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0053348541259765625,
+      "over_line": -0.00028574466705322266,
+      "over_both": -0.002773761749267578,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1963450908660889,
+     "0.5": 1.28532075881958,
+     "0.75": 1.1843842267990112
+    },
+    "synthetic": {
+     "end": 0.0008721351623535156,
+     "mid": 0.003935813903808594,
+     "over_line": -0.0005545616149902344,
+     "gain": 1.237527847290039
+    }
+   },
+   {
+    "family": "insect",
+    "a": "butterfly",
+    "b": "moth",
+    "ends": {
+     "a": 0.00810861587524414,
+     "b": 0.008318901062011719
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.00852203369140625,
+      "over_line": 0.00036084651947021484,
+      "over_both": 0.00020313262939453125,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.008481502532958984,
+      "over_line": 0.0002677440643310547,
+      "over_both": 0.00016260147094726562,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.008319854736328125,
+      "over_line": 5.352497100830078e-05,
+      "over_both": 9.5367431640625e-07,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2655757665634155,
+     "0.5": 1.3735777139663696,
+     "0.75": 1.2243077754974365
+    },
+    "synthetic": {
+     "end": 0.007158756256103516,
+     "mid": 0.007731437683105469,
+     "over_line": 9.775161743164062e-05,
+     "gain": 1.2611911296844482
+    }
+   },
+   {
+    "family": "insect",
+    "a": "mosquito",
+    "b": "moth",
+    "ends": {
+     "a": 0.004791259765625,
+     "b": 0.008318901062011719
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005341053009033203,
+      "over_line": -0.00033211708068847656,
+      "over_both": -0.0029778480529785156,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006264209747314453,
+      "over_line": -0.00029087066650390625,
+      "over_both": -0.0020546913146972656,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0073986053466796875,
+      "over_line": -3.838539123535156e-05,
+      "over_both": -0.0009202957153320312,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2190542221069336,
+     "0.5": 1.3121103048324585,
+     "0.75": 1.1969523429870605
+    },
+    "synthetic": {
+     "end": 0.004153728485107422,
+     "mid": 0.0036630630493164062,
+     "over_line": -0.0008094310760498047,
+     "gain": 1.2281944751739502
+    }
+   },
+   {
+    "family": "tool",
+    "a": "hammer",
+    "b": "wrench",
+    "ends": {
+     "a": 0.004726409912109375,
+     "b": 0.00893402099609375
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005551815032958984,
+      "over_line": -0.00022649765014648438,
+      "over_both": -0.0033822059631347656,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006872653961181641,
+      "over_line": 4.2438507080078125e-05,
+      "over_both": -0.0020613670349121094,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.008210182189941406,
+      "over_line": 0.00032806396484375,
+      "over_both": -0.0007238388061523438,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1860466003417969,
+     "0.5": 1.2914283275604248,
+     "0.75": 1.2030595541000366
+    },
+    "synthetic": {
+     "end": -0.0019459724426269531,
+     "mid": 0.0004677772521972656,
+     "over_line": -0.0009224414825439453,
+     "gain": 1.2308998107910156
+    }
+   },
+   {
+    "family": "tool",
+    "a": "hammer",
+    "b": "drill",
+    "ends": {
+     "a": 0.004726409912109375,
+     "b": 0.007957935333251953
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005225181579589844,
+      "over_line": -0.0003091096878051758,
+      "over_both": -0.0027327537536621094,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005951881408691406,
+      "over_line": -0.0003902912139892578,
+      "over_both": -0.002006053924560547,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006969928741455078,
+      "over_line": -0.00018012523651123047,
+      "over_both": -0.000988006591796875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2052838802337646,
+     "0.5": 1.3307417631149292,
+     "0.75": 1.2291456460952759
+    },
+    "synthetic": {
+     "end": 0.0014100074768066406,
+     "mid": 0.001934051513671875,
+     "over_line": -0.0011341571807861328,
+     "gain": 1.2663159370422363
+    }
+   },
+   {
+    "family": "tool",
+    "a": "hammer",
+    "b": "shovel",
+    "ends": {
+     "a": 0.004726409912109375,
+     "b": -0.0020079612731933594
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0024170875549316406,
+      "over_line": -0.0006257295608520508,
+      "over_both": -0.0023093223571777344,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 1.621246337890625e-05,
+      "over_line": -0.0013430118560791016,
+      "over_both": -0.004710197448730469,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.001522064208984375,
+      "over_line": -0.0011976957321166992,
+      "over_both": -0.00624847412109375,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.1569857597351074,
+     "0.5": 1.2158552408218384,
+     "0.75": 1.140917181968689
+    },
+    "synthetic": {
+     "end": 0.005490303039550781,
+     "mid": 0.004843711853027344,
+     "over_line": -0.0002646446228027344,
+     "gain": 1.227407455444336
+    }
+   },
+   {
+    "family": "tool",
+    "a": "hammer",
+    "b": "axe",
+    "ends": {
+     "a": 0.004726409912109375,
+     "b": 0.0068492889404296875
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004908561706542969,
+      "over_line": -0.0003485679626464844,
+      "over_both": -0.0019407272338867188,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005496025085449219,
+      "over_line": -0.0002918243408203125,
+      "over_both": -0.0013532638549804688,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006289482116699219,
+      "over_line": -2.9087066650390625e-05,
+      "over_both": -0.0005598068237304688,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2518599033355713,
+     "0.5": 1.3902819156646729,
+     "0.75": 1.2479766607284546
+    },
+    "synthetic": {
+     "end": 0.0066165924072265625,
+     "mid": 0.005379199981689453,
+     "over_line": -0.0002923011779785156,
+     "gain": 1.2658350467681885
+    }
+   },
+   {
+    "family": "tool",
+    "a": "hammer",
+    "b": "rake",
+    "ends": {
+     "a": 0.004726409912109375,
+     "b": 0.0011453628540039062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0031709671020507812,
+      "over_line": -0.0006601810455322266,
+      "over_both": -0.0015554428100585938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0015969276428222656,
+      "over_line": -0.001338958740234375,
+      "over_both": -0.0031294822692871094,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0009603500366210938,
+      "over_line": -0.0010802745819091797,
+      "over_both": -0.0037660598754882812,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2127809524536133,
+     "0.5": 1.3211123943328857,
+     "0.75": 1.2113624811172485
+    },
+    "synthetic": {
+     "end": 0.004681587219238281,
+     "mid": 0.004239559173583984,
+     "over_line": -0.00046443939208984375,
+     "gain": 1.2019238471984863
+    }
+   },
+   {
+    "family": "tool",
+    "a": "wrench",
+    "b": "drill",
+    "ends": {
+     "a": 0.00893402099609375,
+     "b": 0.007957935333251953
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.009369850158691406,
+      "over_line": 0.0006798505783081055,
+      "over_both": 0.00043582916259765625,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.009200096130371094,
+      "over_line": 0.0007541179656982422,
+      "over_both": 0.00026607513427734375,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.008452892303466797,
+      "over_line": 0.00025093555450439453,
+      "over_both": -0.0004811286926269531,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.220210313796997,
+     "0.5": 1.3398054838180542,
+     "0.75": 1.223802924156189
+    },
+    "synthetic": {
+     "end": 0.002655029296875,
+     "mid": 0.005490303039550781,
+     "over_line": -0.00030422210693359375,
+     "gain": 1.243044137954712
+    }
+   },
+   {
+    "family": "tool",
+    "a": "wrench",
+    "b": "shovel",
+    "ends": {
+     "a": 0.00893402099609375,
+     "b": -0.0020079612731933594
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005738735198974609,
+      "over_line": -0.0004597902297973633,
+      "over_both": -0.0031952857971191406,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0018186569213867188,
+      "over_line": -0.0016443729400634766,
+      "over_both": -0.007115364074707031,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": -0.0008616447448730469,
+      "over_line": -0.0015891790390014648,
+      "over_both": -0.009795665740966797,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.2371423244476318,
+     "0.5": 1.3263603448867798,
+     "0.75": 1.1937624216079712
+    },
+    "synthetic": {
+     "end": 0.012565135955810547,
+     "mid": 0.012138843536376953,
+     "over_line": 0.0013892650604248047,
+     "gain": 1.2054789066314697
+    }
+   },
+   {
+    "family": "tool",
+    "a": "wrench",
+    "b": "axe",
+    "ends": {
+     "a": 0.00893402099609375,
+     "b": 0.0068492889404296875
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.008829593658447266,
+      "over_line": 0.00041675567626953125,
+      "over_both": -0.00010442733764648438,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.008290767669677734,
+      "over_line": 0.0003991127014160156,
+      "over_both": -0.0006432533264160156,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.007510662078857422,
+      "over_line": 0.00014019012451171875,
+      "over_both": -0.0014233589172363281,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1239039897918701,
+     "0.5": 1.1684280633926392,
+     "0.75": 1.1124314069747925
+    },
+    "synthetic": {
+     "end": 0.006482601165771484,
+     "mid": 0.00801992416381836,
+     "over_line": 0.0003116130828857422,
+     "gain": 1.2349762916564941
+    }
+   },
+   {
+    "family": "tool",
+    "a": "wrench",
+    "b": "rake",
+    "ends": {
+     "a": 0.00893402099609375,
+     "b": 0.0011453628540039062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007119655609130859,
+      "over_line": 0.0001327991485595703,
+      "over_both": -0.0018143653869628906,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.004549980163574219,
+      "over_line": -0.0004897117614746094,
+      "over_both": -0.004384040832519531,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0023255348205566406,
+      "over_line": -0.0007669925689697266,
+      "over_both": -0.006608486175537109,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1870553493499756,
+     "0.5": 1.2651814222335815,
+     "0.75": 1.171373963356018
+    },
+    "synthetic": {
+     "end": 0.003559112548828125,
+     "mid": 0.006379127502441406,
+     "over_line": 0.00013256072998046875,
+     "gain": 1.2803819179534912
+    }
+   },
+   {
+    "family": "tool",
+    "a": "drill",
+    "b": "shovel",
+    "ends": {
+     "a": 0.007957935333251953,
+     "b": -0.0020079612731933594
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0044345855712890625,
+      "over_line": -0.0010318756103515625,
+      "over_both": -0.0035233497619628906,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.00019788742065429688,
+      "over_line": -0.002777099609375,
+      "over_both": -0.007760047912597656,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": -0.0017251968383789062,
+      "over_line": -0.002208709716796875,
+      "over_both": -0.00968313217163086,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.3448501825332642,
+     "0.5": 1.4903669357299805,
+     "0.75": 1.266063928604126
+    },
+    "synthetic": {
+     "end": 0.000885009765625,
+     "mid": 0.0035266876220703125,
+     "over_line": -0.0008947849273681641,
+     "gain": 1.3229936361312866
+    }
+   },
+   {
+    "family": "tool",
+    "a": "drill",
+    "b": "axe",
+    "ends": {
+     "a": 0.007957935333251953,
+     "b": 0.0068492889404296875
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007767677307128906,
+      "over_line": 8.690357208251953e-05,
+      "over_both": -0.00019025802612304688,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.007645130157470703,
+      "over_line": 0.0002415180206298828,
+      "over_both": -0.00031280517578125,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.007286548614501953,
+      "over_line": 0.00016009807586669922,
+      "over_both": -0.00067138671875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2630984783172607,
+     "0.5": 1.3828980922698975,
+     "0.75": 1.2291008234024048
+    },
+    "synthetic": {
+     "end": 0.005103588104248047,
+     "mid": 0.006293296813964844,
+     "over_line": -0.00023746490478515625,
+     "gain": 1.2920124530792236
+    }
+   },
+   {
+    "family": "tool",
+    "a": "drill",
+    "b": "rake",
+    "ends": {
+     "a": 0.007957935333251953,
+     "b": 0.0011453628540039062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005968570709228516,
+      "over_line": -0.0002862215042114258,
+      "over_both": -0.0019893646240234375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0036754608154296875,
+      "over_line": -0.0008761882781982422,
+      "over_both": -0.004282474517822266,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0019898414611816406,
+      "over_line": -0.0008586645126342773,
+      "over_both": -0.0059680938720703125,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2203534841537476,
+     "0.5": 1.314508080482483,
+     "0.75": 1.196097731590271
+    },
+    "synthetic": {
+     "end": 0.005793094635009766,
+     "mid": 0.006712913513183594,
+     "over_line": -0.00016260147094726562,
+     "gain": 1.2661912441253662
+    }
+   },
+   {
+    "family": "tool",
+    "a": "shovel",
+    "b": "axe",
+    "ends": {
+     "a": -0.0020079612731933594,
+     "b": 0.0068492889404296875
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.00156402587890625,
+      "over_line": -0.0017703771591186523,
+      "over_both": -0.008413314819335938,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": 0.0004868507385253906,
+      "over_line": -0.0019338130950927734,
+      "over_both": -0.006362438201904297,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.003961086273193359,
+      "over_line": -0.0006738901138305664,
+      "over_both": -0.002888202667236328,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2482130527496338,
+     "0.5": 1.4067178964614868,
+     "0.75": 1.2742973566055298
+    },
+    "synthetic": {
+     "end": 0.0044116973876953125,
+     "mid": -0.00017547607421875,
+     "over_line": -0.0013773441314697266,
+     "gain": 1.2578554153442383
+    }
+   },
+   {
+    "family": "tool",
+    "a": "shovel",
+    "b": "rake",
+    "ends": {
+     "a": -0.0020079612731933594,
+     "b": 0.0011453628540039062
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.0030145645141601562,
+      "over_line": -0.0017949342727661133,
+      "over_both": -0.0041599273681640625,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": -0.0029659271240234375,
+      "over_line": -0.002534627914428711,
+      "over_both": -0.004111289978027344,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.0011477470397949219,
+      "over_line": -0.0015047788619995117,
+      "over_both": -0.002293109893798828,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.2080708742141724,
+     "0.5": 1.3365696668624878,
+     "0.75": 1.234039545059204
+    },
+    "synthetic": {
+     "end": 0.011481285095214844,
+     "mid": 0.00392913818359375,
+     "over_line": -0.0008075237274169922,
+     "gain": 1.2756128311157227
+    }
+   },
+   {
+    "family": "tool",
+    "a": "axe",
+    "b": "rake",
+    "ends": {
+     "a": 0.0068492889404296875,
+     "b": 0.0011453628540039062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.00514984130859375,
+      "over_line": -0.0002734661102294922,
+      "over_both": -0.0016994476318359375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.003101825714111328,
+      "over_line": -0.0008955001831054688,
+      "over_both": -0.0037474632263183594,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.00164794921875,
+      "over_line": -0.0009233951568603516,
+      "over_both": -0.0052013397216796875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1897538900375366,
+     "0.5": 1.2860705852508545,
+     "0.75": 1.1943074464797974
+    },
+    "synthetic": {
+     "end": 0.005252838134765625,
+     "mid": 0.005710124969482422,
+     "over_line": -0.0003409385681152344,
+     "gain": 1.2372242212295532
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "car",
+    "b": "bus",
+    "ends": {
+     "a": 0.00014066696166992188,
+     "b": 0.010205268859863281
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0016961097717285156,
+      "over_line": -0.0009607076644897461,
+      "over_both": -0.008509159088134766,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005385398864746094,
+      "over_line": 0.0002124309539794922,
+      "over_both": -0.0048198699951171875,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.008544921875,
+      "over_line": 0.0008558034896850586,
+      "over_both": -0.0016603469848632812,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.4184337854385376,
+     "0.5": 1.5152993202209473,
+     "0.75": 1.250483751296997
+    },
+    "synthetic": {
+     "end": 0.0016188621520996094,
+     "mid": -0.0005993843078613281,
+     "over_line": -0.0014791488647460938,
+     "gain": 1.286002516746521
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "car",
+    "b": "truck",
+    "ends": {
+     "a": 0.00014066696166992188,
+     "b": 0.0057830810546875
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0006809234619140625,
+      "over_line": -0.0008703470230102539,
+      "over_both": -0.0051021575927734375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.002330780029296875,
+      "over_line": -0.0006310939788818359,
+      "over_both": -0.003452301025390625,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0042877197265625,
+      "over_line": -8.475780487060547e-05,
+      "over_both": -0.001495361328125,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1894543170928955,
+     "0.5": 1.239103078842163,
+     "0.75": 1.1429941654205322
+    },
+    "synthetic": {
+     "end": 0.005512237548828125,
+     "mid": 0.00171661376953125,
+     "over_line": -0.0011098384857177734,
+     "gain": 1.329021692276001
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "car",
+    "b": "bicycle",
+    "ends": {
+     "a": 0.00014066696166992188,
+     "b": 0.00791788101196289
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0008511543273925781,
+      "over_line": -0.001233816146850586,
+      "over_both": -0.0070667266845703125,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0034551620483398438,
+      "over_line": -0.0005741119384765625,
+      "over_both": -0.004462718963623047,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006245136260986328,
+      "over_line": 0.0002715587615966797,
+      "over_both": -0.0016727447509765625,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.380984902381897,
+     "0.5": 1.498565912246704,
+     "0.75": 1.2597274780273438
+    },
+    "synthetic": {
+     "end": 0.0027909278869628906,
+     "mid": -0.0005407333374023438,
+     "over_line": -0.00200653076171875,
+     "gain": 1.3405921459197998
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "car",
+    "b": "train",
+    "ends": {
+     "a": 0.00014066696166992188,
+     "b": 0.0010290145874023438
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.0011243820190429688,
+      "over_line": -0.001487135887145996,
+      "over_both": -0.0021533966064453125,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": -0.0014777183532714844,
+      "over_line": -0.002062559127807617,
+      "over_both": -0.002506732940673828,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": -0.0004215240478515625,
+      "over_line": -0.0012284517288208008,
+      "over_both": -0.0014505386352539062,
+      "rejects_both": true
+     }
+    },
+    "gain": {
+     "0.25": 1.2715030908584595,
+     "0.5": 1.3630006313323975,
+     "0.75": 1.2081336975097656
+    },
+    "synthetic": {
+     "end": 0.01279592514038086,
+     "mid": 0.007143974304199219,
+     "over_line": 0.0006756782531738281,
+     "gain": 1.2709599733352661
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "car",
+    "b": "tractor",
+    "ends": {
+     "a": 0.00014066696166992188,
+     "b": 0.0033121109008789062
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.000934600830078125,
+      "over_line": -0.001868128776550293,
+      "over_both": -0.004246711730957031,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": -0.00042819976806640625,
+      "over_line": -0.0021545886993408203,
+      "over_both": -0.0037403106689453125,
+      "rejects_both": true
+     },
+     "0.75": {
+      "cat": 0.0015416145324707031,
+      "over_line": -0.000977635383605957,
+      "over_both": -0.0017704963684082031,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.3023895025253296,
+     "0.5": 1.3852686882019043,
+     "0.75": 1.2085943222045898
+    },
+    "synthetic": {
+     "end": 0.00698089599609375,
+     "mid": 0.0026798248291015625,
+     "over_line": -0.0008809566497802734,
+     "gain": 1.3381696939468384
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "bus",
+    "b": "truck",
+    "ends": {
+     "a": 0.010205268859863281,
+     "b": 0.0057830810546875
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.009881019592285156,
+      "over_line": 0.0007812976837158203,
+      "over_both": -0.000324249267578125,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.009033203125,
+      "over_line": 0.0010390281677246094,
+      "over_both": -0.0011720657348632812,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.007351875305175781,
+      "over_line": 0.00046324729919433594,
+      "over_both": -0.0028533935546875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2305469512939453,
+     "0.5": 1.3870413303375244,
+     "0.75": 1.2684887647628784
+    },
+    "synthetic": {
+     "end": 0.00946950912475586,
+     "mid": 0.01092529296875,
+     "over_line": 0.0010879039764404297,
+     "gain": 1.2804644107818604
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "bus",
+    "b": "bicycle",
+    "ends": {
+     "a": 0.010205268859863281,
+     "b": 0.00791788101196289
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.010288715362548828,
+      "over_line": 0.0006552934646606445,
+      "over_both": 8.344650268554688e-05,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.01001882553100586,
+      "over_line": 0.0009572505950927734,
+      "over_both": -0.00018644332885742188,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.00908660888671875,
+      "over_line": 0.0005968809127807617,
+      "over_both": -0.0011186599731445312,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1786472797393799,
+     "0.5": 1.2843410968780518,
+     "0.75": 1.2032816410064697
+    },
+    "synthetic": {
+     "end": 0.004731178283691406,
+     "mid": 0.008226394653320312,
+     "over_line": 0.0007581710815429688,
+     "gain": 1.3110573291778564
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "bus",
+    "b": "train",
+    "ends": {
+     "a": 0.010205268859863281,
+     "b": 0.0010290145874023438
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.008826255798339844,
+      "over_line": 0.0009150505065917969,
+      "over_both": -0.0013790130615234375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0060100555419921875,
+      "over_line": 0.000392913818359375,
+      "over_both": -0.004195213317871094,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0026688575744628906,
+      "over_line": -0.0006542205810546875,
+      "over_both": -0.007536411285400391,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2602218389511108,
+     "0.5": 1.4551565647125244,
+     "0.75": 1.3163421154022217
+    },
+    "synthetic": {
+     "end": 0.004585742950439453,
+     "mid": 0.007678985595703125,
+     "over_line": 0.0002834796905517578,
+     "gain": 1.2656207084655762
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "bus",
+    "b": "tractor",
+    "ends": {
+     "a": 0.010205268859863281,
+     "b": 0.0033121109008789062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.008938312530517578,
+      "over_line": 0.0004563331604003906,
+      "over_both": -0.0012669563293457031,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0069065093994140625,
+      "over_line": 0.00014781951904296875,
+      "over_both": -0.0032987594604492188,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.004781246185302734,
+      "over_line": -0.0002541542053222656,
+      "over_both": -0.005424022674560547,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.160200834274292,
+     "0.5": 1.2441974878311157,
+     "0.75": 1.1736780405044556
+    },
+    "synthetic": {
+     "end": 0.003666400909423828,
+     "mid": 0.007357597351074219,
+     "over_line": 0.00042176246643066406,
+     "gain": 1.2660439014434814
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "truck",
+    "b": "bicycle",
+    "ends": {
+     "a": 0.0057830810546875,
+     "b": 0.00791788101196289
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0064220428466796875,
+      "over_line": 0.00010526180267333984,
+      "over_both": -0.0014958381652832031,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.007115364074707031,
+      "over_line": 0.00026488304138183594,
+      "over_both": -0.0008025169372558594,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.007602214813232422,
+      "over_line": 0.0002180337905883789,
+      "over_both": -0.00031566619873046875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.194963812828064,
+     "0.5": 1.2901490926742554,
+     "0.75": 1.192091703414917
+    },
+    "synthetic": {
+     "end": 0.005068778991699219,
+     "mid": 0.005572795867919922,
+     "over_line": 0.0001468658447265625,
+     "gain": 1.2694259881973267
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "truck",
+    "b": "train",
+    "ends": {
+     "a": 0.0057830810546875,
+     "b": 0.0010290145874023438
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004528045654296875,
+      "over_line": -6.651878356933594e-05,
+      "over_both": -0.001255035400390625,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0028181076049804688,
+      "over_line": -0.0005879402160644531,
+      "over_both": -0.0029649734497070312,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0014276504516601562,
+      "over_line": -0.0007898807525634766,
+      "over_both": -0.004355430603027344,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2087256908416748,
+     "0.5": 1.3209089040756226,
+     "0.75": 1.215787649154663
+    },
+    "synthetic": {
+     "end": 0.0019431114196777344,
+     "mid": 0.0037217140197753906,
+     "over_line": -0.00014138221740722656,
+     "gain": 1.276855707168579
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "truck",
+    "b": "tractor",
+    "ends": {
+     "a": 0.0057830810546875,
+     "b": 0.0033121109008789062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.004790782928466797,
+      "over_line": -0.0003745555877685547,
+      "over_both": -0.0009922981262207031,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.00357818603515625,
+      "over_line": -0.0009694099426269531,
+      "over_both": -0.00220489501953125,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0030465126037597656,
+      "over_line": -0.0008833408355712891,
+      "over_both": -0.0027365684509277344,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2420928478240967,
+     "0.5": 1.3643385171890259,
+     "0.75": 1.235418677330017
+    },
+    "synthetic": {
+     "end": 0.004817008972167969,
+     "mid": 0.005038261413574219,
+     "over_line": -0.0002617835998535156,
+     "gain": 1.2297966480255127
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "bicycle",
+    "b": "train",
+    "ends": {
+     "a": 0.00791788101196289,
+     "b": 0.0010290145874023438
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.006453514099121094,
+      "over_line": 0.00025784969329833984,
+      "over_both": -0.0014643669128417969,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.004265785217285156,
+      "over_line": -0.00020766258239746094,
+      "over_both": -0.0036520957946777344,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0021567344665527344,
+      "over_line": -0.0005944967269897461,
+      "over_both": -0.005761146545410156,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2065378427505493,
+     "0.5": 1.3201028108596802,
+     "0.75": 1.2176153659820557
+    },
+    "synthetic": {
+     "end": 0.005784511566162109,
+     "mid": 0.006988525390625,
+     "over_line": 0.0001373291015625,
+     "gain": 1.282102346420288
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "bicycle",
+    "b": "tractor",
+    "ends": {
+     "a": 0.00791788101196289,
+     "b": 0.0033121109008789062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.006877899169921875,
+      "over_line": 0.00011146068572998047,
+      "over_both": -0.0010399818420410156,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005601406097412109,
+      "over_line": -1.3589859008789062e-05,
+      "over_both": -0.0023164749145507812,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.004322528839111328,
+      "over_line": -0.00014102458953857422,
+      "over_both": -0.0035953521728515625,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1198276281356812,
+     "0.5": 1.1669981479644775,
+     "0.75": 1.115585207939148
+    },
+    "synthetic": {
+     "end": 0.0007476806640625,
+     "mid": 0.0042285919189453125,
+     "over_line": -0.00010418891906738281,
+     "gain": 1.2081708908081055
+    }
+   },
+   {
+    "family": "vehicle",
+    "a": "train",
+    "b": "tractor",
+    "ends": {
+     "a": 0.0010290145874023438,
+     "b": 0.0033121109008789062
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0004010200500488281,
+      "over_line": -0.0011987686157226562,
+      "over_both": -0.002911090850830078,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0006833076477050781,
+      "over_line": -0.0014872550964355469,
+      "over_both": -0.002628803253173828,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0019617080688476562,
+      "over_line": -0.0007796287536621094,
+      "over_both": -0.00135040283203125,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2378594875335693,
+     "0.5": 1.347705602645874,
+     "0.75": 1.2188931703567505
+    },
+    "synthetic": {
+     "end": 0.004891872406005859,
+     "mid": 0.0023956298828125,
+     "over_line": -0.0005648136138916016,
+     "gain": 1.2557281255722046
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "guitar",
+    "b": "piano",
+    "ends": {
+     "a": 0.00013875961303710938,
+     "b": 0.008016586303710938
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0015578269958496094,
+      "over_line": -0.000550389289855957,
+      "over_both": -0.006458759307861328,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.003967761993408203,
+      "over_line": -0.00010991096496582031,
+      "over_both": -0.004048824310302734,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.006326198577880859,
+      "over_line": 0.0002790689468383789,
+      "over_both": -0.0016903877258300781,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2111518383026123,
+     "0.5": 1.2575490474700928,
+     "0.75": 1.1469295024871826
+    },
+    "synthetic": {
+     "end": 0.0008978843688964844,
+     "mid": -0.0012249946594238281,
+     "over_line": -0.001743316650390625,
+     "gain": 1.2645676136016846
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "guitar",
+    "b": "violin",
+    "ends": {
+     "a": 0.00013875961303710938,
+     "b": 0.0062255859375
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0004978179931640625,
+      "over_line": -0.0011626482009887695,
+      "over_both": -0.0057277679443359375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0020546913146972656,
+      "over_line": -0.001127481460571289,
+      "over_both": -0.004170894622802734,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.004354000091552734,
+      "over_line": -0.00034987926483154297,
+      "over_both": -0.0018715858459472656,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2192589044570923,
+     "0.5": 1.3151788711547852,
+     "0.75": 1.2015012502670288
+    },
+    "synthetic": {
+     "end": -0.0005040168762207031,
+     "mid": -0.0021185874938964844,
+     "over_line": -0.0019359588623046875,
+     "gain": 1.2801287174224854
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "guitar",
+    "b": "drum",
+    "ends": {
+     "a": 0.00013875961303710938,
+     "b": 0.005208492279052734
+    },
+    "blend": {
+     "0.25": {
+      "cat": -0.0002770423889160156,
+      "over_line": -0.0016832351684570312,
+      "over_both": -0.00548553466796875,
+      "rejects_both": true
+     },
+     "0.5": {
+      "cat": 0.0010294914245605469,
+      "over_line": -0.001644134521484375,
+      "over_both": -0.0041790008544921875,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0034074783325195312,
+      "over_line": -0.0005335807800292969,
+      "over_both": -0.0018010139465332031,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.3903154134750366,
+     "0.5": 1.5489966869354248,
+     "0.75": 1.2906060218811035
+    },
+    "synthetic": {
+     "end": 0.0012536048889160156,
+     "mid": -0.00048828125,
+     "over_line": -0.0011844635009765625,
+     "gain": 1.227379560470581
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "guitar",
+    "b": "flute",
+    "ends": {
+     "a": 0.00013875961303710938,
+     "b": 0.00977468490600586
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0018782615661621094,
+      "over_line": -0.0006694793701171875,
+      "over_both": -0.00789642333984375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.00494384765625,
+      "over_line": -1.2874603271484375e-05,
+      "over_both": -0.004830837249755859,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.00795125961303711,
+      "over_line": 0.0005855560302734375,
+      "over_both": -0.00182342529296875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.236173391342163,
+     "0.5": 1.3599698543548584,
+     "0.75": 1.2238696813583374
+    },
+    "synthetic": {
+     "end": 0.0081329345703125,
+     "mid": 0.003795146942138672,
+     "over_line": -0.0003407001495361328,
+     "gain": 1.2268990278244019
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "guitar",
+    "b": "trumpet",
+    "ends": {
+     "a": 0.00013875961303710938,
+     "b": 0.004142284393310547
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.00012826919555664062,
+      "over_line": -0.0010113716125488281,
+      "over_both": -0.004014015197753906,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0009555816650390625,
+      "over_line": -0.0011849403381347656,
+      "over_both": -0.0031867027282714844,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0025229454040527344,
+      "over_line": -0.0006184577941894531,
+      "over_both": -0.0016193389892578125,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.1670161485671997,
+     "0.5": 1.2307169437408447,
+     "0.75": 1.151580810546875
+    },
+    "synthetic": {
+     "end": 0.009235382080078125,
+     "mid": 0.004405975341796875,
+     "over_line": -0.0002810955047607422,
+     "gain": 1.2504223585128784
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "piano",
+    "b": "violin",
+    "ends": {
+     "a": 0.008016586303710938,
+     "b": 0.0062255859375
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007582187652587891,
+      "over_line": 1.33514404296875e-05,
+      "over_both": -0.0004343986511230469,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0070972442626953125,
+      "over_line": -2.384185791015625e-05,
+      "over_both": -0.000919342041015625,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0066928863525390625,
+      "over_line": 1.9550323486328125e-05,
+      "over_both": -0.001323699951171875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2478678226470947,
+     "0.5": 1.4600775241851807,
+     "0.75": 1.3429644107818604
+    },
+    "synthetic": {
+     "end": 0.010159969329833984,
+     "mid": 0.00965261459350586,
+     "over_line": 0.0005643367767333984,
+     "gain": 1.2603638172149658
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "piano",
+    "b": "drum",
+    "ends": {
+     "a": 0.008016586303710938,
+     "b": 0.005208492279052734
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007358551025390625,
+      "over_line": 4.398822784423828e-05,
+      "over_both": -0.0006580352783203125,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0064334869384765625,
+      "over_line": -0.00017905235290527344,
+      "over_both": -0.001583099365234375,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005631923675537109,
+      "over_line": -0.0002785921096801758,
+      "over_both": -0.002384662628173828,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2290452718734741,
+     "0.5": 1.3801898956298828,
+     "0.75": 1.2636091709136963
+    },
+    "synthetic": {
+     "end": 0.0020232200622558594,
+     "mid": 0.004556179046630859,
+     "over_line": -0.00046372413635253906,
+     "gain": 1.2579619884490967
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "piano",
+    "b": "flute",
+    "ends": {
+     "a": 0.008016586303710938,
+     "b": 0.00977468490600586
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.008737564086914062,
+      "over_line": 0.00028145313262939453,
+      "over_both": -0.0010371208190917969,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.009694099426269531,
+      "over_line": 0.0007984638214111328,
+      "over_both": -8.058547973632812e-05,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.01012277603149414,
+      "over_line": 0.0007876157760620117,
+      "over_both": 0.00034809112548828125,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.174806833267212,
+     "0.5": 1.309631586074829,
+     "0.75": 1.243614673614502
+    },
+    "synthetic": {
+     "end": 0.009391307830810547,
+     "mid": 0.008816719055175781,
+     "over_line": 0.00011277198791503906,
+     "gain": 1.248975396156311
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "piano",
+    "b": "trumpet",
+    "ends": {
+     "a": 0.008016586303710938,
+     "b": 0.004142284393310547
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007180213928222656,
+      "over_line": 0.0001322031021118164,
+      "over_both": -0.0008363723754882812,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.006098270416259766,
+      "over_line": 1.8835067749023438e-05,
+      "over_both": -0.0019183158874511719,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.004940986633300781,
+      "over_line": -0.00016987323760986328,
+      "over_both": -0.0030755996704101562,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.184030532836914,
+     "0.5": 1.3183106184005737,
+     "0.75": 1.245296597480774
+    },
+    "synthetic": {
+     "end": 0.00847768783569336,
+     "mid": 0.008806705474853516,
+     "over_line": 0.0005595684051513672,
+     "gain": 1.3203532695770264
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "violin",
+    "b": "drum",
+    "ends": {
+     "a": 0.0062255859375,
+     "b": 0.005208492279052734
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005813121795654297,
+      "over_line": -0.00015819072723388672,
+      "over_both": -0.0004124641418457031,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.005344867706298828,
+      "over_line": -0.00037217140197753906,
+      "over_both": -0.0008807182312011719,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005174160003662109,
+      "over_line": -0.0002886056900024414,
+      "over_both": -0.0010514259338378906,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.340087652206421,
+     "0.5": 1.4990613460540771,
+     "0.75": 1.28287672996521
+    },
+    "synthetic": {
+     "end": 0.008484363555908203,
+     "mid": 0.007606029510498047,
+     "over_line": 0.0002510547637939453,
+     "gain": 1.2935245037078857
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "violin",
+    "b": "flute",
+    "ends": {
+     "a": 0.0062255859375,
+     "b": 0.00977468490600586
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.007266998291015625,
+      "over_line": 0.00015413761138916016,
+      "over_both": -0.0025076866149902344,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.008614063262939453,
+      "over_line": 0.0006139278411865234,
+      "over_both": -0.0011606216430664062,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.009539127349853516,
+      "over_line": 0.0006517171859741211,
+      "over_both": -0.00023555755615234375,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2342277765274048,
+     "0.5": 1.3680989742279053,
+     "0.75": 1.2432057857513428
+    },
+    "synthetic": {
+     "end": 0.003681659698486328,
+     "mid": 0.004494667053222656,
+     "over_line": -0.0004589557647705078,
+     "gain": 1.2960546016693115
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "violin",
+    "b": "trumpet",
+    "ends": {
+     "a": 0.0062255859375,
+     "b": 0.004142284393310547
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.005295753479003906,
+      "over_line": -0.00040900707244873047,
+      "over_both": -0.0009298324584960938,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.004417896270751953,
+      "over_line": -0.0007660388946533203,
+      "over_both": -0.0018076896667480469,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0040760040283203125,
+      "over_line": -0.0005871057510375977,
+      "over_both": -0.0021495819091796875,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2127251625061035,
+     "0.5": 1.320496916770935,
+     "0.75": 1.2112209796905518
+    },
+    "synthetic": {
+     "end": 0.005564212799072266,
+     "mid": 0.005725860595703125,
+     "over_line": -0.0001690387725830078,
+     "gain": 1.274664282798767
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "drum",
+    "b": "flute",
+    "ends": {
+     "a": 0.005208492279052734,
+     "b": 0.00977468490600586
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.006333827972412109,
+      "over_line": -1.621246337890625e-05,
+      "over_both": -0.00344085693359375,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.00810384750366211,
+      "over_line": 0.0006122589111328125,
+      "over_both": -0.00167083740234375,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.009439468383789062,
+      "over_line": 0.0008063316345214844,
+      "over_both": -0.0003352165222167969,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2276989221572876,
+     "0.5": 1.3953166007995605,
+     "0.75": 1.282670021057129
+    },
+    "synthetic": {
+     "end": 0.010979652404785156,
+     "mid": 0.008347511291503906,
+     "over_line": 0.00025343894958496094,
+     "gain": 1.282855749130249
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "drum",
+    "b": "trumpet",
+    "ends": {
+     "a": 0.005208492279052734,
+     "b": 0.004142284393310547
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.0044841766357421875,
+      "over_line": -0.000457763671875,
+      "over_both": -0.0007243156433105469,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0035233497619628906,
+      "over_line": -0.00115203857421875,
+      "over_both": -0.0016851425170898438,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.0034666061401367188,
+      "over_line": -0.000942230224609375,
+      "over_both": -0.0017418861389160156,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.3277604579925537,
+     "0.5": 1.5818127393722534,
+     "0.75": 1.3731577396392822
+    },
+    "synthetic": {
+     "end": -0.0029726028442382812,
+     "mid": 0.00017309188842773438,
+     "over_line": -0.0009448528289794922,
+     "gain": 1.3435990810394287
+    }
+   },
+   {
+    "family": "instrument",
+    "a": "flute",
+    "b": "trumpet",
+    "ends": {
+     "a": 0.00977468490600586,
+     "b": 0.004142284393310547
+    },
+    "blend": {
+     "0.25": {
+      "cat": 0.008877277374267578,
+      "over_line": 0.0005106925964355469,
+      "over_both": -0.0008974075317382812,
+      "rejects_both": false
+     },
+     "0.5": {
+      "cat": 0.0072784423828125,
+      "over_line": 0.0003199577331542969,
+      "over_both": -0.0024962425231933594,
+      "rejects_both": false
+     },
+     "0.75": {
+      "cat": 0.005391120910644531,
+      "over_line": -0.00015926361083984375,
+      "over_both": -0.004383563995361328,
+      "rejects_both": false
+     }
+    },
+    "gain": {
+     "0.25": 1.2801132202148438,
+     "0.5": 1.432222604751587,
+     "0.75": 1.2665265798568726
+    },
+    "synthetic": {
+     "end": 0.003410816192626953,
+     "mid": 0.0067920684814453125,
+     "over_line": 0.00019931793212890625,
+     "gain": 1.2898327112197876
+    }
+   }
+  ],
+  "n_pairs": 120,
+  "over_line_mid": {
+   "mean": -0.0005964120229085286,
+   "lo": -0.0007548928260803223,
+   "hi": -0.0004417757193247477,
+   "n": 120
+  },
+  "over_both_mid": 7,
+  "rejects_both_mid": 14,
+  "spearman_gain_vs_overshoot": -0.08735328842280714,
+  "perm_p": 0.3488255872063968,
+  "gain_mid": {
+   "mean": 1.3423865576585134,
+   "lo": 1.3269209921360017,
+   "hi": 1.3579620192448298,
+   "n": 120
+  }
+ },
+ "C": {
+  "real_over_line": {
+   "mean": -0.0005964120229085286,
+   "lo": -0.0007548928260803223,
+   "hi": -0.0004417757193247477,
+   "n": 120
+  },
+  "synthetic_over_line": {
+   "mean": -0.00048021078109741213,
+   "lo": -0.0006093541781107584,
+   "hi": -0.00035135547320048013,
+   "n": 120
+  },
+  "real_minus_synthetic": {
+   "mean": -0.00011620124181111653,
+   "lo": -0.0002755701541900635,
+   "hi": 3.4481287002563477e-05,
+   "n": 120
+  },
+  "real_gain": {
+   "mean": 1.3423865576585134,
+   "lo": 1.3269209921360017,
+   "hi": 1.3579620192448298,
+   "n": 120
+  },
+  "synthetic_gain": {
+   "mean": 1.2603671242793402,
+   "lo": 1.254629601041476,
+   "hi": 1.2662744710842768,
+   "n": 120
+  },
+  "spearman_gain_vs_overshoot_all": -0.04417177381551763,
+  "perm_p_all": 0.496751624187906
+ },
+ "seconds": 19.5
+}
