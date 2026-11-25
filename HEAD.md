@@ -223,8 +223,8 @@ token, among them cottage/swiss/cake itself).
 
    Zooming out does not make the thought move more. From k = 4 up, change is flat. Zooming in
    (one neighbour) is what makes it jump. So "too stable → zoom out" cannot cure stability, and "too
-   jumpy → zoom in" makes it jumpier. Both ends are absorbing: k sits at 32 on 31–37% of steps
-   and ends there in about half the trails, or locks at 1 (iron, atom). In a frozen model's state space the
+   jumpy → zoom in" makes it jumpier. Both ends are absorbing: k sits at 32 on 36–43% of steps
+   and ends there in 25–40 of 60 trails, or locks at 1 (iron, atom). In a frozen model's state space the
    **average is the brake and the single neighbour is the accelerator**, the opposite of what the
    coupler rule assumed. Regulated walks are worse than fixed ones in both engines (loop − loop_fixed
    −0.048 [−0.092, −0.005]).
