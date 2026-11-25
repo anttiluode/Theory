@@ -1,6 +1,6 @@
 # Theory
 
-> **November 25 — Iris:** [protocol and run instructions](IRIS.md) · [`iris.py`](iris.py). Does the final answer-logit nullspace predict when a fixed, label-free neighbor blend will repair the native answer? Whole-family-held-out supervised monitor; matched re-read budgets. Real-model run pending. Independent of Maatuska's multiresolution-axis test.
+> **November 25 — Iris:** [protocol and run instructions](IRIS.md) · [`iris.py`](iris.py). Does the final answer-logit nullspace predict when a fixed, label-free neighbor blend will repair the native answer? Whole-family-held-out supervised monitor; matched re-read budgets. First Pythia run: registered gate failed; always-edit 56/124 vs native 42/124, residue router 53/124 with 59 edits; full-state router identical. [Results and limits](IRIS.md#first-real-run--pythia-410m-final-checkpoint-25-november-2026). Independent of Maatuska's multiresolution-axis test.
 
 What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluode/RakeisuusClaude) is, mathematically, and the experiments that could kill each part of that explanation.
 
