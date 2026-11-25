@@ -82,3 +82,51 @@ python head3.py --device cuda --norms "strength.SWOW-EN.R123.20180827.csv"
 ```
 
 About 1,100 forward passes: a few minutes. Output: `runs/head3_<model>/REPORT.md` and `head3.json`.
+
+## Result — Qwen3-1.7B, float32, 25 November 2026
+
+Full report: [`runs/head3_Qwen_Qwen3-1.7B/REPORT.md`](runs/head3_Qwen_Qwen3-1.7B/REPORT.md). 16,477 candidates;
+the solution is a candidate for all 144 items; 924 forward passes.
+
+**G1 PASS**: `prod_pmi` − `native` **+0.069 [+0.028, +0.118]**. **G2 PASS**: `prod_pmi` − `mix`
+**+0.104 [+0.056, +0.160]**. The head line's first passed gate on a task the model fails natively.
+
+| condition | correct | rank 1–3 | top 10 | top 100 |
+|---|---:|---:|---:|---:|
+| native (asked directly) | 7/144 (4.9%) | – | – | – |
+| prod_raw (λ = 0) | 4 | 18 | 34 | 83 |
+| prod_l1 (λ = 1) | 13 | 20 | **41** | **85** |
+| **prod_pmi (λ = 2)** | **17 (11.8%)** | **23** | 37 | 74 |
+| mix (union) | 2 | 2 | 12 | 33 |
+
+### What it shows
+
+1. **Qwen's separate associations hold answers its single prompt misses.** Three plain forward passes
+   and a sum of logs solve 17 items against 7. The intersection nearly contains the prompt: 6 of the 7
+   native solutions are among the 17 (union 18).
+2. **Intersection, not union.** The same three distributions mixed (summed probabilities, what a
+   blend does) solve 2. This is the distribution-level form of Experiment 001's finding that a
+   blend is a winner-take-most mixture.
+3. **The Bayes correction is needed, and λ = 2 is the predicted value.** Without it, words every cue
+   likes win (light 8, medical 8, pain 7, water 7) and accuracy falls to 4. λ = 2 is best at rank 1;
+   λ = 1 is best for top 10 and top 100: the full correction over-promotes rare words further down the
+   list.
+4. **Usually one cue does not know the answer.** One cue alone (best cue) has the solution in its top 10
+   on 33 items, median rank 37; the worst cue's median rank is 990, and all three cues have it in their
+   top 100 on only 10 items. A remote associate is remote from at least one cue for this model. That is
+   the job Neon's per-cue iris would have: widen only the cue that disagrees.
+5. **The model finds hard what people find hard.** Spearman between the human 15-second solve rate and
+   the solution's rank: **+0.367** over 144 items.
+6. **The frame leaks.** The shot word *needle* wins 3 items and *medical* (from doctor → nurse) wins 8
+   under λ = 0. Shot words were kept out of the items but not out of the candidates. This costs the
+   product, it does not help it.
+
+People solve these items 31% of the time in 15 seconds on average; the intersection reaches 11.8% at
+rank 1 and 26% (37/144) in its top 10.
+
+### Verdict
+
+Keeping the three cues apart and deciding by intersection is the first version of the head that beats the
+model talking, on a task the model fails. Nothing here loops or breathes: it is three readings and one
+decision. A per-cue head now has a baseline to beat, at equal forward passes: `prod_pmi`, 17/144, and
+top 10 for 37.
