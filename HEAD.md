@@ -202,3 +202,76 @@ every walk, whether the solution was the **first** spoken word.
 
 Prediction (Claude), before the rerun: L1 passes (the loop finds compound partners the static map
 cannot); L4 still fails against `native`; L3 is open.
+
+## First real run — Qwen3-1.7B, float32, 25 November 2026 (with amendment 1)
+
+Full report: [`runs/head_Qwen_Qwen3-1.7B/REPORT.md`](runs/head_Qwen_Qwen3-1.7B/REPORT.md). Norms: SWOW-EN
+R123 (2018-08-27). 60 scored free starts, 130 of the 144 RAT items (14 dropped because a cue is not one
+token, among them cottage/swiss/cake itself).
+
+**P0 PASS** (copy 1.000, blend 0.925). **F0 PASS** (head − random +0.141 [+0.103, +0.183]).
+**F1, LF, H1, H2, L1, L2, L3, L4: all FAIL.** By the kill rule, the static word-level head ends here.
+
+### What the failures show
+
+1. **The regulator was wired with the wrong sign for this system.** Mean surprise by grain:
+
+   | k | 1 | 2 | 4 | 8 | 16 | 32 |
+   |---|---:|---:|---:|---:|---:|---:|
+   | static head | 0.116 | 0.099 | 0.056 | 0.050 | 0.062 | 0.061 |
+   | loop | 0.240 | 0.205 | 0.140 | 0.124 | 0.126 | 0.130 |
+
+   Zooming out does not make the thought move more. From k = 4 up, change is flat. Zooming in
+   (one neighbour) is what makes it jump. So "too stable → zoom out" cannot cure stability, and "too
+   jumpy → zoom in" makes it jumpier. Both ends are absorbing: k sits at 32 on 31–37% of steps
+   and ends there in about half the trails, or locks at 1 (iron, atom). In a frozen model's state space the
+   **average is the brake and the single neighbour is the accelerator**, the opposite of what the
+   coupler rule assumed. Regulated walks are worse than fixed ones in both engines (loop − loop_fixed
+   −0.048 [−0.092, −0.005]).
+2. **Letting Qwen's upper layers propose the move is the largest effect of the run.** Loop − head
+   associate rate **+0.273 [+0.212, +0.335]** (reported in the LF block, not itself a gate). Examples:
+   bread → jam → spread → plate; tank → ship → sea → lake; procedure → process → rule → law. The static
+   map drifts to look-alikes and sinks. Qwen's own token chain is still far ahead (0.780 vs 0.427).
+3. **The voice lags.** With α = 0.5 the previous word keeps the largest weight, so the voice repeats it.
+   The first spoken word is the start word in 60/60 static and 51/60 loop trails, and 26–36% of all
+   steps repeat the previous word. These count as misses. With repeats removed (approximate):
+   head 0.25, fixed 0.33, loop 0.62, loop_fixed 0.64, nn 0.66, native 0.78. `nn` scores well only by
+   ping-pong (cake ↔ pie, distinct words 0.16), so the associate rate must always be read beside
+   distinct words.
+4. **Every system has sinks.** The static walk falls into tableware (cup, plate, bowl) and office nouns
+   (recognition, permission, regulation). The loop falls into sky words (sun, moon, day, night) and
+   get/lose/find. Qwen's own chain falls into water → wine → vinegar → lemon → lime → sour → sweet → bitter
+   in 5 of 11 demo chains, and copies its few-shot pair needle → thread.
+5. **RAT is at floor for this model, so the goal gates measure nothing.** Native Qwen solves 6/130
+   (4.6%); the published human 15-second solve rate averages 31% on these items. Every condition is
+   between 0 and 5%. This is the opposite end of the Ocular problem (96% ceiling). Native and reasoning
+   solve almost disjoint items (only *candle* shared): 11/130 together.
+6. **A blend is a dominance mixture, not an intersection.** P0 already showed it: a 50/50 blend is read as
+   one of the two words 92.5% of the time. In goal mode one cue takes over (duck/fold/dollar →
+   coin → bank → note). A remote associate is the word that is associated with all three cues: a
+   product of three association distributions (the multiply-constrained search of Smith, Huber & Vul
+   2013), not a mixture of three states.
+
+### Flaws in this protocol (mine)
+
+- `reason` stopped at its first newline after 11–16 passes, far below its budget, so "equal passes"
+  never applied and `reason_loop` is identical to `reason` on all 130 items.
+- The cue ban only blocks a cue's first token. Reasoning answered with a cue-derived word on 65/130
+  items (skateboard, wagons, combs); its "Thinking" paired cues with each other. The task frame did not
+  land for a 1.7B model.
+- The answer rule (maximum of minimum cosine in the static map) threw away hits the walks did speak.
+  `loop_fixed` said the solution on 7 items and answered 0 correctly. That rule suits similarity and
+  works against compounds.
+- The demo word *sauna* was not in the pool.
+
+### Verdict
+
+The head, as a word-level free-reign walk over a frozen model's own states, does not beat a fixed
+average, a lookup or the model talking. Three things survive and are measured:
+
+- Qwen's upper layers are far better at proposing a next thought than its static middle-layer map.
+- In this state space, averaging calms and the single neighbour jumps. Any homeostat built here needs
+  that sign.
+- Blends behave as dominance mixtures.
+
+Those three would be the starting rules for any later version. None of them is a result about thinking.
