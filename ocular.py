@@ -215,7 +215,7 @@ def report(res):
     f = lambda v: "–" if v is None else f"{v:.3f}"
     L = [f"# Ocular report — {res['model']}", "",
          f"{res['n_words']} words, {len(res['families'])} families; generic pool {res['n_pool']} words; "
-         f"selection layer {res['selection_layer']}; clamp band {res['band']}. Rules: OCULAR.md.", "",
+         f"selection layer {res['selection_layer']}; clamp band {res['band']}; dtype {res.get('dtype', 'float32')}. Rules: OCULAR.md.", "",
          f"**O1 inductive ocular repair: {'PASS' if g['O1_inductive_repair']['pass'] else 'FAIL'}**  ",
          "band4_vocab − rand16_vocab: {:+.3f} [{:+.3f}, {:+.3f}]  ".format(*g["O1_inductive_repair"]["primary_minus_rand16_vocab_ci"]),
          "band4_vocab − native: {:+.3f} [{:+.3f}, {:+.3f}]  ".format(*g["O1_inductive_repair"]["primary_minus_native_ci"]),
@@ -285,6 +285,8 @@ def main():
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     p.add_argument("--frame", choices=C.FRAMES, default="shots")
     p.add_argument("--n-pool", type=int, default=N_POOL)
+    p.add_argument("--dtype", choices=["float32", "bfloat16", "float16"], default="float32",
+                   help="float32 is the protocol; bfloat16 halves memory (a recorded deviation)")
     p.add_argument("--self-test", action="store_true")
     p.add_argument("--report-from", default=None, help="rewrite REPORT.md from a saved ocular.json")
     a = p.parse_args()
@@ -296,8 +298,11 @@ def main():
         (src.parent / "REPORT.md").write_text(report(res), encoding="utf-8")
         return print(report(res))
     revision = a.revision or ("step143000" if "pythia" in a.model.lower() else None)
-    r = C.load(a.model, a.device, torch.float32, revision=revision, frame=a.frame)
+    print(f"loading {a.model} as {a.dtype} ...", flush=True)
+    r = C.load(a.model, a.device, getattr(torch, a.dtype), revision=revision, frame=a.frame)
+    print("loaded", flush=True)
     res = run(r, n_pool=a.n_pool)
+    res["dtype"] = a.dtype
     out = Path("runs") / ("ocular_" + a.model.replace("/", "_") + "_" + a.frame +
                           ("_" + revision if revision else ""))
     out.mkdir(parents=True, exist_ok=True)

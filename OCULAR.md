@@ -145,3 +145,7 @@ descriptive. Here the rule is fixed in advance.
 - Identity change under `full_vocab` is reported with its interval. O1–O3 are still computed by the
   same code and reported mechanically.
 - Q1 is also printed for the Pythia report, but there it is post hoc, not a test.
+
+Note, 25 November 2026: the first Qwen attempt exited silently while loading the float32 checkpoint
+(no traceback, no output). `--dtype` was added so the run can fall back to bfloat16. The protocol is
+still float32. Any bfloat16 run is a recorded deviation, and its report prints the dtype.
