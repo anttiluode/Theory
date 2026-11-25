@@ -23,6 +23,40 @@ POOLS = ("bank", "vocab")
 CONDITIONS = (["native", "iris"] + [f"{s}_{p}" for p in POOLS for s in SPACES] + ["random3_vocab"])
 
 
+@torch.no_grad()
+def margins_lean(r, word, questions, targets=None):
+    """Same numbers as common.Reader.margins, but the output head is applied only at each
+    prompt's last position. The full-sequence logits (batch x tokens x 152k for Qwen) ran the
+    12 GB GPU out of memory. Uses the base model (which includes the final norm) and the
+    model's own output embedding; clamp hooks are Theory's own (Reader._hooks)."""
+    encs = [r.prompt(word, q) for _, q in questions]
+    pos = encs[0][1]
+    assert pos is not None and all(p == pos for _, p in encs)
+    n = max(len(ids) for ids, _ in encs)
+    x = torch.full((len(encs), n), r.pad, dtype=torch.long)
+    mask = torch.zeros((len(encs), n), dtype=torch.long)
+    for b, (ids, _) in enumerate(encs):
+        x[b, :len(ids)] = torch.tensor(ids)
+        mask[b, :len(ids)] = 1
+    last = (mask.sum(1) - 1).to(r.device)
+    hooks = r._hooks(pos, targets)
+    try:
+        h = r.model.base_model(input_ids=x.to(r.device), attention_mask=mask.to(r.device)).last_hidden_state
+    finally:
+        for hk in hooks:
+            hk.remove()
+    hl = h[torch.arange(len(encs), device=h.device), last]
+    lp = torch.log_softmax(r.model.get_output_embeddings()(hl).float(), -1)
+    m = torch.logsumexp(lp[:, r.yes], -1) - torch.logsumexp(lp[:, r.no], -1)
+    return {k: float(v) for (k, _), v in zip(questions, m.cpu())}
+
+
+def answer(r, w, qs, keys, neutral, targets=None):
+    m = margins_lean(r, w, qs, targets)
+    z = torch.tensor([m[k] for k, _ in qs]) - torch.tensor([neutral[k] for k, _ in qs])
+    return keys[int(z.argmax())]
+
+
 def generic_pool(r, exclude, n):
     """Single-token words, lowercase or title-case, 3+ letters, disjoint from bank and shots."""
     shot = {w.lower() for w in C.SHOTS.replace(".", " ").replace("?", " ").split()}
@@ -112,6 +146,8 @@ def run(r, n_pool=N_POOL, seed=43, log=print):
         for w, t in r.states(allw[s0:s0 + 500]).items():
             S[w] = t[:keep].clone()
         log(f"states {min(s0 + 500, len(allw))}/{len(allw)}")
+    if str(r.device).startswith("cuda"):
+        torch.cuda.empty_cache()
     Xb = torch.stack([S[w][sel + 1] for w in words])
     Xv = torch.stack([S[w][sel + 1] for w in pool])
     mu, proj = selection_spaces(Xv, Xb.shape[1])
@@ -133,7 +169,7 @@ def run(r, n_pool=N_POOL, seed=43, log=print):
     allq = fam_qs + [(w, C.leaf_q(w)) for w in words]
     neutral = {}
     for s0 in range(0, len(allq), 24):
-        neutral.update(r.margins(C.SLOT, allq[s0:s0 + 24]))
+        neutral.update(margins_lean(r, C.SLOT, allq[s0:s0 + 24]))
 
     acc = {c: {"category": [], "identity": [], "coherence": [], "family_hits": []} for c in CONDITIONS}
     records = []
@@ -167,8 +203,8 @@ def run(r, n_pool=N_POOL, seed=43, log=print):
                 if c == "iris" or c.endswith("_bank"):
                     hits = sum(groups[words.index(n)] == g for n in names) / 3
                 targets = C.blend(S, [(0.5, S[w])] + [(0.5 / 3, S[n]) for n in names], band)
-            cat = B.answer(r, w, fam_qs, fam_keys, neutral, targets)
-            ide = B.answer(r, w, leaf_qs, leaf_keys, neutral, targets)
+            cat = answer(r, w, fam_qs, fam_keys, neutral, targets)
+            ide = answer(r, w, leaf_qs, leaf_keys, neutral, targets)
             acc[c]["category"].append(float(cat == g))
             acc[c]["identity"].append(float(ide == w))
             if coh is not None:
@@ -264,6 +300,14 @@ def self_test():
     pool = generic_pool(r, words, 200)
     assert "Pooltitle" in pool and "fox" in pool and "Oslo" in pool, "title-case and 3-letter words must be allowed"
     assert not {w.lower() for w in pool} & {w.lower() for w in words}, "pool must exclude bank words"
+    for stub in (r, C.load_stub("qwen", extra=extra)):
+        _, fw, _ = B.bank_words(stub)
+        Sx = stub.states(fw[:4])
+        qs = [(k, C.family_q(k)) for k in list(I.BANK)[:5]]
+        tg = C.blend(Sx, [(0.5, Sx[fw[0]]), (0.5, Sx[fw[1]])], stub.band())
+        for t in (None, tg):
+            a1, a2 = stub.margins(fw[0], qs, t), margins_lean(stub, fw[0], qs, t)
+            assert max(abs(a1[k] - a2[k]) for k in a1) < 1e-4, "lean margins differ from Theory's"
     res = run(r, n_pool=80, log=lambda *_: None)
     assert set(res["summary"]) == set(CONDITIONS)
     # the iris row must use exactly Iris's neighbour function

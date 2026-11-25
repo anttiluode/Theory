@@ -155,3 +155,10 @@ Note 2, 25 November 2026: the float32 Qwen run then loaded, but ran out of CPU R
 method. PCA is now computed by eigendecomposition of the D × D covariance, which gives the same
 directions; checked to 1e-15 on random data. States are captured in chunks of 500 and only the rows
 the run uses are kept (embedding through max(band end, selection layer)).
+
+Note 3, 25 November 2026: the Qwen run then captured all 8138 states, and ran the 12 GB GPU out of
+memory in the first margins call. The model's full-sequence logits (batch × tokens × 152k vocabulary,
+float32) do not fit beside the model. `ocular.py` now computes the same yes/no evidence by applying
+the output head only at each prompt's last position (`margins_lean`). The self-test checks that it
+matches Theory's `Reader.margins` to 1e-4 on NeoX and Qwen stubs, with and without a clamp.
+`common.py` is unchanged, so Iris and the other scripts are not affected.
