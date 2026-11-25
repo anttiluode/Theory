@@ -2,6 +2,8 @@
 
 > **November 25 — Iris:** [protocol and run instructions](IRIS.md) · [`iris.py`](iris.py). Does the final answer-logit nullspace predict when a fixed, label-free neighbor blend will repair the native answer? Whole-family-held-out supervised monitor; matched re-read budgets. First Pythia run: registered gate failed; always-edit 56/124 vs native 42/124, residue router 53/124 with 59 edits; full-state router identical. [Results and limits](IRIS.md#first-real-run--pythia-410m-final-checkpoint-25-november-2026). Independent of Maatuska's multiresolution-axis test.
 
+> **November 25 — Bridge:** [protocol](BRIDGE.md) · [`bridge.py`](bridge.py). Can [Maatuska](https://github.com/anttiluode/Maatuska)'s label-free PCA prefix (fitted on unlabeled vocabulary, no neighbour bank) repair the same 124 Iris answers? Against random subspaces, equally long random moves and Iris's 3-NN blend, with identity questions as the cost side. Gates frozen before any run; not yet run.
+
 What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluode/RakeisuusClaude) is, mathematically, and the experiments that could kill each part of that explanation.
 
 ## Did we find something? The blunt version
