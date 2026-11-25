@@ -162,3 +162,40 @@ float32) do not fit beside the model. `ocular.py` now computes the same yes/no e
 the output head only at each prompt's last position (`margins_lean`). The self-test checks that it
 matches Theory's `Reader.margins` to 1e-4 on NeoX and Qwen stubs, with and without a clamp.
 `common.py` is unchanged, so Iris and the other scripts are not affected.
+
+## Qwen3-1.7B run (amendment 1), 25 November 2026
+
+Full table: [`runs/ocular_Qwen_Qwen3-1.7B_shots/REPORT.md`](runs/ocular_Qwen_Qwen3-1.7B_shots/REPORT.md).
+Float32, 8000-word pool, as preregistered after the three memory notes above (no method change).
+
+**Q1 full-width inductive repair: FAIL.** `full_vocab` 0.935 vs native 0.964 (−0.029 [−0.072, +0.014]):
+2 rescued, 6 harmed. O1, O2: FAIL. O3: `band4_bank` 4.3 points below Iris.
+
+**Why: there is almost nothing to repair.** Qwen answers 133/138 category questions and every identity
+question correctly on its own. Every edit, including Iris's bank blend (0.949, 2 rescued, 4 harmed), can
+only cost. The 5 native errors are mostly real ambiguity: *Amazon*, *Congo* (river or country), *China*,
+*duck* (said fish), *shovel* (said metal).
+
+The harms are also informative:
+
+- **Spelling neighbours.** In the generic pool Qwen's layer-14 state still picks look-alikes for short
+  words: *van* → *ban, vac, san* (answer "language"), *franc* → *franch, fran, merc*.
+- **A "metal" sink.** *hammer* with *knife, sword, keyboard* and *trumpet* with *sword, triangle, pipe*
+  become "metal". This is the Qwen counterpart of Pythia's "profession" sink.
+- **The band picks code.** Qwen's pool includes code tokens. Through components 5–20, *zinc* picks
+  *nonatomic, Intel, sqrt* and *tennis* picks *Sony, programming, marketing*. The coarse axes there
+  are text domain, not taxonomy.
+- Identity stays at 1.000 under every edit. With half of its own state kept, Qwen still knows exactly
+  which word it is.
+
+### Conclusion of the ocular line
+
+- Neighbour blending repairs an **under-read** model (Pythia: map well above its own answers) and has
+  no room to work on a model that already reads its own map (Qwen: 96%) on this task.
+- Choosing neighbours through a narrow PCA window is worse than choosing with the full state, in both
+  models and both pools.
+- What still stands from the day is Maatuska's measurement. It is a label-free coarse-to-fine reading
+  axis in three models, with a lid of scaffolding over it. It is a way to look, not a way to choose or
+  to write.
+- Untested: hard questions where a strong model does fail natively (Neon's strong-model cliff
+  proper), and contextual multi-token meaning.
