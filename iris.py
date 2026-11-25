@@ -6,7 +6,6 @@ No training of the LM. See IRIS.md for the locked protocol and limits.
 """
 import argparse
 import json
-import math
 from pathlib import Path
 
 import torch
@@ -153,24 +152,28 @@ def out_of_fold(conf, read, res, full, y, groups, seed=17):
 def evaluate(scores, native, edited, groups, fraction=0.5, seed=19):
     n = len(native)
     gain = edited - native
-    k = max(1, int(n * fraction))
-    selected = {}
-    for name, s in scores.items():
-        order = torch.argsort(s, descending=True, stable=True)
+    families = sorted(set(groups))
+    ids = [torch.tensor([i for i, g in enumerate(groups) if g == f]) for f in families]
+    budgets = [max(1, int(len(ix)*fraction)) for ix in ids]
+    k = sum(budgets)
+    def choose(s):
+        # Rank only within the held-out fold. Cross-fold ranking could let
+        # a test target influence another fold and hence its own selection.
         mask = torch.zeros(n)
-        mask[order[:k]] = 1
-        selected[name] = mask
+        for ix, b in zip(ids, budgets):
+            order = torch.argsort(s[ix], descending=True, stable=True)
+            mask[ix[order[:b]]] = 1
+        return mask
+    selected = {name: choose(s) for name,s in scores.items()}
     def stat(mask):
         return float((native + mask * gain).mean())
     values = {name: stat(mask) for name, mask in selected.items()}
     values.update(never=float(native.mean()), always=float(edited.mean()),
-                  random_expected=float(native.mean() + (k/n) * gain.mean()),
-                  oracle=stat((torch.arange(n)[:,None] == torch.argsort(
-                      gain, descending=True, stable=True)[:k][None,:]).any(1).float()))
+                  random_expected=float(native.mean() + sum(
+                      float(gain[ix].mean())*b for ix,b in zip(ids,budgets))/n),
+                  oracle=stat(choose(gain)))
     # Paired family bootstrap; masks/rankings fixed, no refit. Descriptive CI.
     rng = torch.Generator().manual_seed(seed)
-    families = sorted(set(groups))
-    ids = [torch.tensor([i for i, g in enumerate(groups) if g == f]) for f in families]
     delta = (selected["output_residue"] - selected["output"]) * gain
     draws = []
     for _ in range(3000):
@@ -179,6 +182,7 @@ def evaluate(scores, native, edited, groups, fraction=0.5, seed=19):
     ci = torch.quantile(torch.tensor(draws), torch.tensor([.025, .975])).tolist()
     return dict(n=n, budget=k, accuracy=values, residue_minus_output_ci=ci,
                 rescued=int((gain==1).sum()), harmed=int((gain==-1).sum()),
+                budget_by_family=dict(zip(families,budgets)),
                 choices={a: b.bool().tolist() for a,b in selected.items()})
 
 
@@ -239,16 +243,15 @@ def run(r):
     native, edited = torch.tensor(native), torch.tensor(edited)
     scores = out_of_fold(*map(torch.stack, (conf, read, res, full)),
                          edited-native, groups)
+    # Fixed direct uncertainty rule, matched per-fold re-read budget.
+    # Include direct confidence in the same per-fold evaluation budget.
+    scores["lowest_margin"] = -torch.tensor([rec["margin"] for rec in records])
     result = evaluate(scores, native, edited, groups)
-    # Fixed direct uncertainty rule, matched global re-read budget.
-    order = sorted(range(len(words)), key=lambda i: (records[i]["margin"],i))
-    mask = torch.zeros(len(words)); mask[order[:result["budget"]]] = 1
-    result["accuracy"]["lowest_margin"] = float((native+mask*(edited-native)).mean())
-    result["choices"]["lowest_margin"] = mask.bool().tolist()
     a = result["accuracy"]
     result["gate"] = bool(result["rescued"] >= 5 and result["harmed"] >= 5
         and a["output_residue"] >= max(a["output"], a["lowest_margin"],
-            a["random_expected"], a["always"], a["never"]) + .05
+            a["random_expected"], a["always"], a["never"],
+            a["output_read"], a["output_shuffled_residue"]) + .05
         and result["residue_minus_output_ci"][0] > 0)
     result.update(model=r.name, family_counts={k:len(v) for k,v in fam.items()},
                   band=list(band), neighbor_layer=l, row_rank=len(basis),
