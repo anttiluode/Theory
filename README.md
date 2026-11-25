@@ -6,11 +6,112 @@
 
 > **November 25 — Ocular:** [protocol](OCULAR.md) · [`ocular.py`](ocular.py). Choose the 3 neighbours through Maatuska's lid-lifted PCA band (components 5–20), carry their full states as Iris does. Bank pool vs an 8000-word generic unlabeled pool (the inductive test). First run: **O1 and O2 FAIL**. The band chooses worse neighbours than the full state (true-family 0.62 vs 0.86); full-width choice from generic words finds good neighbours (oak → wood, tree) and repairs a little (+3 points, CI crosses 0) at a small identity cost. Harms come from Pythia's 'profession' sink, not from bad neighbours. [Results](OCULAR.md#first-real-run--pythia-410m-step143000-25-november-2026). Qwen3-1.7B (preregistered Q1): **FAIL** — Qwen already answers 96% natively, so every edit can only cost; the repair is a remedy for under-read models. [Qwen results](OCULAR.md#qwen3-17b-run-amendment-1-25-november-2026).
 
-> **November 25 — Head:** [protocol](HEAD.md) · [`head.py`](head.py). The four parts of today's runs put into one loop outside frozen Qwen3-1.7B: a thought held as a weighted set of real middle-layer word states, read at full width against 8000 generic words, breathing between one neighbour (zoom in) and the average of many (zoom out), with fatigue, a slow residue, and the ECG coupler's regulator holding change inside a band. Qwen speaks the thought as one word per step. Tested against human free-association norms (free mode) and the 144 Remote Associates problems (goal mode), against a fixed-grain walk, a fixed average, a pure lookup, Qwen asked directly, and Qwen reasoning at equal forward passes. [Amendment 1](HEAD.md#amendment-1--recorded-25-november-2026-after-a-crash-and-before-any-scored-result): a prune bug fixed after the first run crashed (P0 had passed: copy 1.000, blend 0.925), and a second, closed-loop engine where Qwen's own upper layers propose each move (Neon and Sol's critique). [First run](HEAD.md#first-real-run--qwen3-17b-float32-25-november-2026-with-amendment-1): every gate after the sanity check **FAILS**. Qwen-proposed moves beat the static map on human associations (+0.27), but stay far below Qwen's own token chain (0.43 vs 0.78). The regulator had the wrong sign: in this state space averaging calms and a single neighbour jumps. RAT is at floor for a 1.7B model (native 6/130).
+> **November 25 — The head, three experiments:** a thought held outside a frozen Qwen3-1.7B that moves by itself, then a head that keeps what it looks for apart from what it looks at. Two failures, one pass. [Write-up below](#the-head-three-experiments-25-november-2026) · [HEAD.md](HEAD.md) · [HEAD2.md](HEAD2.md) · [HEAD3.md](HEAD3.md).
 
-> **November 25 — Head experiment 002:** [protocol](HEAD2.md) · [`head2.py`](head2.py). Free mode only, closed loop, no residue. Separates how widely the head looks (k) from how far it moves (α) on a 6 × 2 grid, measures the knobs causally from 200 identical saved thoughts, and asks first whether any regulator could help (held-out per-trail choice vs one global setting), then tests the sign-corrected regulator and a pure word chain. [Result](HEAD2.md#result--qwen3-17b-float32-25-november-2026): **all three gates FAIL**, as predicted. Sharpest and fastest is best at every setting (0.773). Choosing per trail loses to one setting (−0.079). The best head equals a plain word chain (0.783) and Qwen's own chain (0.780). Widening acts like a temperature: more variety across trails, weaker steps. Breathing for free association is closed.
+## The head: three experiments (25 November 2026)
 
-> **November 25 — Head experiment 003:** [protocol](HEAD3.md) · [`head3.py`](head3.py). Remote associates with the three cues kept apart: Qwen's association distribution for each cue, intersected with a Bayes base-rate correction (λ = n − 1 = 2), against Qwen asked directly and against the union. No loop, no states, all 144 items. [Result](HEAD3.md#result--qwen3-17b-float32-25-november-2026): **both gates PASS.** 17/144 against native 7/144 (+0.069 [+0.028, +0.118]). The union of the same distributions solves 2. The model finds hard what people find hard (Spearman +0.37).
+Built and run in one evening by Antti with Claude (Opus 5.5), Sol (ChatGPT) and Neon (Gemini). All three
+protocols fixed their gates before any run. Model: Qwen3-1.7B, float32, frozen, on an RTX 3060.
+
+**The idea.** A "head" outside the model holds a thought as real middle-layer states of the model's own
+words, and moves it: zoom out (blend toward the average of many neighbours), zoom in (toward one), with
+fatigue, a slow residue and the homeostatic rule of the 2025 PerceptionLab ECG loop (too stable: widen;
+too jumpy: narrow). Qwen speaks each thought as one word. Tested against human free associations (Small
+World of Words) and the 144 remote associates problems of Bowden & Jung-Beeman (2003)
+(cottage / swiss / cake → cheese).
+
+### Experiment 001 — the self-moving head ([HEAD.md](HEAD.md)): FAIL
+
+- Every performance gate failed. Only the plumbing passed: Qwen read a clamped word back 200/200 times,
+  and named one of the two words in a 50/50 blend 92.5% of the time.
+- **Letting Qwen's upper layers propose each move beats walking a static similarity map:** 0.43 against
+  0.15 human-associate rate (+0.27 [+0.21, +0.34]). Neon's correction to the design; the largest effect of
+  that run.
+- **The regulator had the wrong sign.** In this state space, averaging many neighbours barely moves the
+  thought and moving to one neighbour jumps. "Stuck → zoom out" only made it more stuck; k latched at 1
+  or 32.
+- **A blend is a winner-take-most mixture, not an intersection.** On remote associates one cue took over
+  (duck / fold / dollar → coin → bank → note). Every condition sat at 0–5%; Qwen asked directly got 6/130.
+
+### Experiment 002 — the knobs, measured ([HEAD2.md](HEAD2.md)): FAIL, as predicted
+
+Free association only. How widely the head looks (k) separated from how far it moves (α), on a 6 × 2 grid;
+the corrected regulator; random k; a plain word chain.
+
+- **Sharper and faster is better at every setting.** Best: one word, move 85% → 0.773. Wider is worse at
+  every step (0.448 at 32 words).
+- **Nothing for a regulator to find.** Choosing a setting per trail from its first half loses to one global
+  setting on the second half (−0.079 [−0.138, −0.018]). The sign-corrected regulator breathes properly
+  over the whole range, and still loses: holding the *amount* of change in a band is not what makes good
+  associations.
+- **The best head is the model's own chain.** Best blend 0.773, plain word chain 0.783, Qwen talking 0.780,
+  all within noise.
+- **What the knobs do, from 200 identical saved thoughts:** a wider blend moves the thought less and makes
+  Qwen less sure of its next word (entropy 1.73 → 2.04). It buys variety across trails at a cost in each
+  step, like a sampling temperature (not tested against one).
+
+### Experiment 003 — three cues kept apart ([HEAD3.md](HEAD3.md)): PASS
+
+Sol's turn: keep what the head is looking for apart from what it looks at, then decide. No loop, no states.
+For each problem, ask Qwen once per cue (`Item: <cue>. Association:`), keep the three distributions apart, and
+score each word by
+
+  S(w) = Σⱼ log p(w | cⱼ) − 2 · log p₀(w)
+
+The correction is Neon's: under Bayes' rule with three cues independent given the answer, the base rate
+p₀ (Qwen's average association over 200 unrelated words) is subtracted n − 1 = 2 times, so words every
+cue likes (light, water, pain) stop winning.
+
+| | correct (of 144) | solution in top 10 |
+|---|---:|---:|
+| Qwen asked directly | 7 (4.9%) | – |
+| intersection, no correction | 4 | 34 |
+| intersection, λ = 1 | 13 | **41** |
+| **intersection, λ = 2 (gated)** | **17 (11.8%)** | 37 |
+| union of the same three distributions | 2 | 12 |
+
+- **G1 PASS:** intersection − native +0.069 [+0.028, +0.118]. **G2 PASS:** intersection − union +0.104
+  [+0.056, +0.160]. The first gate the head series has passed on a task the model fails natively.
+- It keeps 6 of native's 7 and finds 11 more (Sol's count; exact McNemar p = 0.006): boat, watch, party,
+  tape, salt, cart, brush, top, face, terminal, farm. *Measure / worm / video → tape* uses three different
+  senses of one word.
+- **Weak in every reading, first when combined.** For illness / bus / computer → terminal, the
+  solution ranks 357, 107 and 62 under the three cues alone, and 1 under the intersection.
+- **Usually one cue does not know the answer.** All three cues have it in their top 100 on only 10
+  problems. Neon's examples: *comb* reads as hair, not honeycomb; *mobile* as phone, not snowflake.
+- The model finds hard what people find hard (Spearman +0.37 with the published 15-second solve rates;
+  people average 31%).
+
+**Limits** (Sol's and Neon's, checked in the data):
+- **Different readers:** native has a different prompt and answer space, and averages about 2 forward
+  passes against the intersection's 3 (plus 200 shared ones for the base rate).
+- **The full correction over-corrects down the list.** Common true answers sink (*tree*: rank 2 at λ = 1,
+  22 at λ = 2; *fast* 4 → 93), and fragments such as *apr*, *jan*, *pap* rise. λ = 2 is best at rank 1;
+  λ = 1 is best in the top 10.
+- **The frame leaked:** the example words *needle* and *medical* (from doctor → nurse) won items before
+  the correction.
+- **The cues are not truly independent,** and p₀ is an estimate of the prior, not the true one.
+- **The mathematics is standard** (multiply-constrained search, Smith, Huber & Vul 2013). What is new
+  here is only that it works on a frozen 1.7B model's own associations and beats asking it.
+
+### What the evening says about the head
+
+Stirring a frozen model's states together and letting the mixture wander does not make it think better;
+at its best it reproduces what the model already does with tokens. **Keeping separate observations apart
+and combining their evidence does.** The head that worked has no breathing, no residue and no loop: three
+readings and one decision.
+
+### If this continues
+
+- **Clean the floor first:** a compound-word frame instead of the association frame (Qwen now offers
+  *slippery*, *icy*, *ice* for cream / skate / water: associations, not compounds), and a smoothed base rate
+  so λ = 2 stops sinking common answers.
+- **Then give the iris a job.** Retrieval is already there: across λ = 0, 1, 2 the solution is in some
+  top 10 on 50 of 144 problems. Either verify candidates (score cue + word and word + cue as compounds), or
+  re-read only the cue that disagrees.
+- The bar for either, at equal forward passes, is 17/144 at rank 1 and 41/144 in the top 10.
+
+---
 
 What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluode/RakeisuusClaude) is, mathematically, and the experiments that could kill each part of that explanation.
 
