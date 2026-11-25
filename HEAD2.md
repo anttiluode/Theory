@@ -150,10 +150,24 @@ All three predictions were right.
 5. **The start fades fast.** Cosine with the start at step 12 is 0.06–0.20 in every condition, highest
    where the thought moves least. Nothing here keeps an early thought alive (Sol's question stays open).
 
+### Caveats found after the run
+
+- **k also sets how many words are fatigued per step** (k words for 6 steps each), so in the trail grid
+  a wide k both averages more and masks more destinations (Sol). The control surface, one step from
+  identical thoughts with no fatigue, is free of this. The grid is not a pure test of averaging.
+- The variety gain from wider k (unique share 0.64–0.65 against 0.51–0.54) was not compared with any
+  other way of buying variety, such as sampling the word chain at a temperature. Until it is, it is not
+  evidence that blending does something sampling cannot. Highway share is noisy across cells (at α 0.5:
+  0.071, 0.142, 0.039, 0.149, 0.101, 0.250 for k = 1…32).
+- The start trace is highest where the thought moves least (α 0.5, wide k). A head that never moved would
+  score 1.0, so it is not memory.
+
 ### Verdict
 
-In free association, the head's grain has nothing to regulate. One fixed setting (sharpest, fastest)
-is best, choosing per trail loses, and that best setting is the model's own word chain written in
-states instead of tokens. Breathing as a way to make a frozen model associate better is closed by
+In free association, the head's grain has nothing to regulate that a trail's own first six steps can
+find. One fixed setting (sharpest, fastest) is best, choosing per trail from the first half loses, and
+that best setting is the model's own word chain written in states instead of tokens. (G1 tests one
+family of policies, choosing from earlier behaviour of the same trail; it does not rule out every
+adaptive policy. Sol's correction.) Breathing as a way to make a frozen model associate better is closed by
 experiments 001 and 002. What remains is a measured fact about the knob: k behaves like a temperature
 (wider: less certain next step, more varied trails, weaker single steps).
