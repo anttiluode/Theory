@@ -114,3 +114,46 @@ python head2.py --device cuda --norms "strength.SWOW-EN.R123.20180827.csv"
 
 Output: `runs/head2_<model>/REPORT.md` and `head2.json`. About 45,000 forward passes, roughly an hour on
 an RTX 3060 at the pace of Experiment 001.
+
+## Result — Qwen3-1.7B, float32, 25 November 2026
+
+Full report: [`runs/head2_Qwen_Qwen3-1.7B/REPORT.md`](runs/head2_Qwen_Qwen3-1.7B/REPORT.md).
+
+**G1 FAIL**: per-start choice − one global setting, held out: **−0.079 [−0.138, −0.018]**. Choosing
+per trail is *worse* than one setting. The best setting on first halves and overall is the same cell,
+`k1_a0.85`. **G2 FAIL**: flip − k4 −0.012 [−0.046, +0.021], flip − randk +0.005 [−0.046, +0.059],
+flip − best cell −0.150. **G3 FAIL**: `k1_a0.85` − `discrete` −0.010 [−0.048, +0.028].
+All three predictions were right.
+
+### What it shows
+
+1. **The grid is monotone.** Sharper is better at every α, and moving further is better at every k.
+   Collapsed rate from 0.445 (k = 32, α = 0.5) up to **0.773 (k = 1, α = 0.85)**. α = 0.85 removes the
+   voice lag (repeats 0.000–0.062, against 0.044–0.401 at α = 0.5).
+2. **The best head is Qwen's own association chain.** `k1_a0.85` 0.773, `discrete` 0.783, `native`
+   0.780. None of these differences is outside noise (native − best cell +0.007 [−0.044, +0.061]).
+   `k1_a0.85` and `discrete` share their first 5.2 words on average and give the identical trail on
+   14 of 60 starts. Closing the loop through real states, sharp and fast, reproduces what the model
+   already does with tokens. It does not improve on it.
+3. **The knobs now work causally and in the expected directions.** From 200 identical saved
+   thoughts: movement falls with k (α 0.85: 0.495 at k = 1 → 0.313 at k = 32) and rises with α. The
+   entropy of Qwen's next proposal rises with k (1.73 → 2.04 nats at α 0.5): a wider blend makes the
+   model less sure of the next word. The sign-corrected regulator no longer latches; it breathes over
+   the whole range (mean k 7.1 at α 0.85). It just breathes around the wrong place: holding *change*
+   in a band is not what association quality needs.
+4. **Widening buys variety across trails, at a cost in each step.** Unique words across the 60
+   trails: `k1_a0.85` 0.536, `discrete` 0.506, against 0.64–0.65 for k = 2–4 at α 0.85, `flip` and
+   `randk`. The pure word chain converges most (26.8% of its words are shared by 5 or more trails;
+   light, bright, dim). This is the trade-off a sampling temperature gives on tokens, and it may be
+   no more than that. It was not gated, and it was not compared with temperature sampling of the
+   token chain.
+5. **The start fades fast.** Cosine with the start at step 12 is 0.06–0.20 in every condition, highest
+   where the thought moves least. Nothing here keeps an early thought alive (Sol's question stays open).
+
+### Verdict
+
+In free association, the head's grain has nothing to regulate. One fixed setting (sharpest, fastest)
+is best, choosing per trail loses, and that best setting is the model's own word chain written in
+states instead of tokens. Breathing as a way to make a frozen model associate better is closed by
+experiments 001 and 002. What remains is a measured fact about the knob: k behaves like a temperature
+(wider: less certain next step, more varied trails, weaker single steps).
