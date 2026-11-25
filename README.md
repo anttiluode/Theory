@@ -4,6 +4,8 @@
 
 > **November 25 — Bridge:** [protocol](BRIDGE.md) · [`bridge.py`](bridge.py). Can [Maatuska](https://github.com/anttiluode/Maatuska)'s label-free PCA prefix (fitted on unlabeled vocabulary, no neighbour bank) repair the same 124 Iris answers? Against random subspaces, equally long random moves and Iris's 3-NN blend, with identity questions as the cost side. First run: **B1 FAIL**, the global PCA knob does not repair when written back (0.306 vs native 0.339, same as a random move). The 3-NN blend reproduced Iris (0.452), random neighbours harmed (0.234), and the blend costs 18 points of identity. [Results](BRIDGE.md#first-real-run--pythia-410m-step143000-25-november-2026).
 
+> **November 25 — Ocular:** [protocol](OCULAR.md) · [`ocular.py`](ocular.py). Choose the 3 neighbours through Maatuska's lid-lifted PCA band (components 5–20), carry their full states as Iris does. Bank pool vs an 8000-word generic unlabeled pool (the inductive test). Gates frozen before any run; not yet run.
+
 What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluode/RakeisuusClaude) is, mathematically, and the experiments that could kill each part of that explanation.
 
 ## Did we find something? The blunt version
