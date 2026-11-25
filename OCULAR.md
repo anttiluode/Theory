@@ -149,3 +149,9 @@ descriptive. Here the rule is fixed in advance.
 Note, 25 November 2026: the first Qwen attempt exited silently while loading the float32 checkpoint
 (no traceback, no output). `--dtype` was added so the run can fall back to bfloat16. The protocol is
 still float32. Any bfloat16 run is a recorded deviation, and its report prints the dtype.
+
+Note 2, 25 November 2026: the float32 Qwen run then loaded, but ran out of CPU RAM at the pool PCA
+(`bad allocation` in an 8000 × 2048 double SVD). Two memory changes, neither touching the
+method. PCA is now computed by eigendecomposition of the D × D covariance, which gives the same
+directions; checked to 1e-15 on random data. States are captured in chunks of 500 and only the rows
+the run uses are kept (embedding through max(band end, selection layer)).

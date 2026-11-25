@@ -49,8 +49,12 @@ def generic_pool(r, exclude, n):
 def selection_spaces(Xpool, layer_dim, seed=41):
     """Label-free projections fitted on the generic pool only."""
     mu = Xpool.double().mean(0)
-    _, _, vh = torch.linalg.svd(Xpool.double() - mu, full_matrices=False)
-    V = vh.T
+    # PCA through the D x D covariance (eigh) instead of an N x D SVD: same directions,
+    # far less memory (the SVD ran out of RAM on Windows for Qwen: 8000 x 2048)
+    Z = Xpool.double() - mu
+    _, evecs = torch.linalg.eigh(Z.T @ Z)
+    V = evecs.flip(1)
+    del Z
     g = torch.Generator().manual_seed(seed)
     q, rr = torch.linalg.qr(torch.randn(layer_dim, layer_dim, generator=g, dtype=torch.float64))
     R = q * torch.sign(torch.diagonal(rr))
@@ -100,7 +104,14 @@ def run(r, n_pool=N_POOL, seed=43, log=print):
     sel = r.n_layers // 2
     log(f"{len(words)} bank words in {len(fam)} families; generic pool {len(pool)} words; "
         f"selection layer {sel}; clamp band {band}")
-    S = r.states(words + pool)
+    # Keep only the rows the run uses (token embedding .. max(band end, selection layer)),
+    # captured in chunks, so all 8000 pool states fit in RAM for 2048-wide models.
+    keep = max(band[1], sel) + 2
+    S, allw = {}, words + pool
+    for s0 in range(0, len(allw), 500):
+        for w, t in r.states(allw[s0:s0 + 500]).items():
+            S[w] = t[:keep].clone()
+        log(f"states {min(s0 + 500, len(allw))}/{len(allw)}")
     Xb = torch.stack([S[w][sel + 1] for w in words])
     Xv = torch.stack([S[w][sel + 1] for w in pool])
     mu, proj = selection_spaces(Xv, Xb.shape[1])
