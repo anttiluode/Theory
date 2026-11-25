@@ -86,3 +86,43 @@ for scoring only. Every chosen neighbour is logged per word.
 - **O2 FAIL:** the band reads families better in Maatuska's kNN test but does not choose better
   carriers. Reading quality and causal usefulness come apart.
 - Pythia-410m only, one frame, 124 words.
+
+## First real run — Pythia-410m step143000, 25 November 2026
+
+Full table and neighbour samples: [`runs/ocular_EleutherAI_pythia-410m_shots_step143000/REPORT.md`](runs/ocular_EleutherAI_pythia-410m_shots_step143000/REPORT.md).
+
+**O1 inductive ocular repair: FAIL.** `band4_vocab` 0.347 vs native 0.339
+(+0.008 [−0.056, +0.073]). It beats three random generic words (+0.081 [+0.024, +0.137]) but not a
+random 16-dim window by the preregistered margin (+0.065 [−0.008, +0.137]).
+**O2: FAIL.** Choosing through the band is not better than choosing at full width (−0.024 [−0.089, +0.032]).
+**O3:** `band4_bank` is 8.9 points below Iris. The `iris` row reproduced 56/124, so the plumbing is right.
+
+### What it shows
+
+1. **The narrow window chooses worse neighbours than the full state, in both pools.** With the
+   bank, the share of chosen neighbours in the word's true family is 0.855 at full width, 0.621
+   through components 5–20, 0.605 through 1–16, and 0.411 through a random window. Maatuska's result
+   holds (PCA beats random at equal width), but equal width was never the comparison that mattered here.
+   Maatuska's K3 had already failed: truncating never improved neighbourhoods. That predicted O2,
+   and the protocol should have taken it into account.
+2. **In an open pool, the band's coarse axes are not the taxonomy.** Through components 5–20, `oak`
+   picks *breast, elder, leather* and `salmon` picks *Turkey, carcinoma, Muslim*. Sixteen numbers
+   carry several coarse axes at once (anatomy and medicine, food, nationality). Inside Maatuska's
+   curated 192 words only the taxonomy could show. Among 8000 generic words, the other axes take over.
+   This is PEEL's non-nesting in practice: a short prefix gives a different tree.
+3. **Full-width selection from the generic pool finds good neighbours.** Examples: oak → *wood, tree*;
+   violin → *instrument, viol*; zinc → *calcium, sodium, silicon*; anger → *angry, anxiety, emotion*;
+   Nile → *River, river, Egypt*. Often the category word itself is chosen.
+4. **Inductive repair exists, but is small (descriptive, not preregistered).** `full_vocab` is
+   +0.032 [−0.024, +0.089] over native and +0.105 [+0.040, +0.169] over random words. It costs only
+   5.6 points of identity, against Iris's 17.7.
+5. **The harms are not bad neighbours.** `tennis` with *basketball, football, baseball* and `Japan` with
+   *Korea, Russia, India* both turn into "profession". This is Pythia's default sink (it answers
+   profession for 45/124 words natively). The limit has moved from finding neighbours to the
+   small model's answer reader.
+
+The generic pool also contains word-start fragments (*con, pro, whe, res, comp*) because 3-letter
+tokens were allowed. Full-width selection avoided them in the samples shown.
+
+**Verdict on the ocular:** as a narrow *selector* it is killed here. The PCA band remains a label-free
+compressed reading, better than random at equal width, but the full state chooses carriers better.
