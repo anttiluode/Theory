@@ -187,6 +187,12 @@ def run(r, n_pool=N_POOL, seed=43, log=print):
               and s[PRIMARY]["category"] >= s["random3_vocab"]["category"] + 0.03
               and ci_rand[1] > 0)
     ci_full = B.paired_ci(p, acc["full_vocab"]["category"])
+    # Q1 (OCULAR.md amendment 1, preregistered before the Qwen run): inductive full-width repair
+    fv = acc["full_vocab"]["category"]
+    ci_fv_nat = B.paired_ci(fv, nat)
+    q1 = bool(s["full_vocab"]["category"] >= s["native"]["category"] + 0.03
+              and s["full_vocab"]["category"] >= s["random3_vocab"]["category"] + 0.03
+              and ci_fv_nat[1] > 0)
     gates = {
         "O1_inductive_repair": {"pass": o1, "primary_minus_rand16_vocab_ci": ci_rand,
                                 "primary_minus_native_ci": B.paired_ci(p, nat),
@@ -194,6 +200,10 @@ def run(r, n_pool=N_POOL, seed=43, log=print):
         "O2_band_beats_full_inductive": {"pass": bool(ci_full[1] > 0), "primary_minus_full_vocab_ci": ci_full},
         "O3_transductive": {"band4_bank_minus_iris_ci": B.paired_ci(acc["band4_bank"]["category"],
                                                                      acc["iris"]["category"])},
+        "Q1_full_width_inductive": {"pass": q1, "full_vocab_minus_native_ci": ci_fv_nat,
+                                    "full_vocab_minus_random3_ci": B.paired_ci(fv, acc["random3_vocab"]["category"]),
+                                    "identity_change_ci": B.paired_ci(acc["full_vocab"]["identity"],
+                                                                      acc["native"]["identity"])},
     }
     return dict(model=r.name, n_words=len(words), n_pool=len(pool), selection_layer=sel,
                 band=list(band), families={k: len(v) for k, v in fam.items()},
@@ -215,6 +225,11 @@ def report(res):
          "  band4_vocab − full_vocab: {:+.3f} [{:+.3f}, {:+.3f}]".format(*g["O2_band_beats_full_inductive"]["primary_minus_full_vocab_ci"]),
          "",
          "**O3 band4_bank − iris:** {:+.3f} [{:+.3f}, {:+.3f}]".format(*g["O3_transductive"]["band4_bank_minus_iris_ci"]),
+         "",
+         f"**Q1 full-width inductive repair (amendment 1): {'PASS' if g['Q1_full_width_inductive']['pass'] else 'FAIL'}**  ",
+         "full_vocab − native: {:+.3f} [{:+.3f}, {:+.3f}]  ".format(*g["Q1_full_width_inductive"]["full_vocab_minus_native_ci"]),
+         "full_vocab − random3_vocab: {:+.3f} [{:+.3f}, {:+.3f}]  ".format(*g["Q1_full_width_inductive"]["full_vocab_minus_random3_ci"]),
+         "identity change: {:+.3f} [{:+.3f}, {:+.3f}]".format(*g["Q1_full_width_inductive"]["identity_change_ci"]),
          "", "| condition | category | identity | rescued | harmed | neighbour coherence | true-family neighbours |",
          "|---|---:|---:|---:|---:|---:|---:|"]
     for c in CONDITIONS:
@@ -255,7 +270,12 @@ def self_test():
     for layer in r.layers:
         assert not layer._forward_hooks and not layer._forward_pre_hooks, "hook left behind"
     report(res)
-    print("Ocular self-test passed (random stub model; plumbing only).")
+    rq = C.load_stub("qwen", extra=extra)
+    assert not rq.centered, "Qwen stub should use RMSNorm geometry"
+    resq = run(rq, n_pool=80, log=lambda *_: None)
+    assert "Q1_full_width_inductive" in resq["gates"]
+    report(resq)
+    print("Ocular self-test passed (random NeoX and Qwen stub models; plumbing only).")
 
 
 def main():

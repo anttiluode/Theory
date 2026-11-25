@@ -126,3 +126,22 @@ tokens were allowed. Full-width selection avoided them in the samples shown.
 
 **Verdict on the ocular:** as a narrow *selector* it is killed here. The PCA band remains a label-free
 compressed reading, better than random at equal width, but the full state chooses carriers better.
+
+## Amendment 1 — Qwen3-1.7B run (recorded 25 November 2026, before running)
+
+After the Pythia run the narrow-window selector is killed (O1, O2), so the Qwen run tests a
+different, now primary, question. Does the **inductive full-width** repair, with neighbours from the
+generic pool chosen with the full state, help a stronger model that does not have Pythia's
+"profession" sink? This is Neon's strong-model cliff. Pythia's +3.2 points on this row were
+descriptive. Here the rule is fixed in advance.
+
+- Model `Qwen/Qwen3-1.7B`, few-shot frame (`--frame shots`, as in Pythia and chord.py),
+  float32. Same words, pool rule (8000 words), selection layer n_layers // 2 = 14, clamp band
+  `band()` = (−1, 12), and blend.
+- **Q1 — full-width inductive repair. PASS** if `full_vocab` category accuracy is:
+  - at least native + 3 points, **and**
+  - at least `random3_vocab` + 3 points, **and**
+  - with the paired bootstrap 95% lower bound of (`full_vocab` − native) above 0.
+- Identity change under `full_vocab` is reported with its interval. O1–O3 are still computed by the
+  same code and reported mechanically.
+- Q1 is also printed for the Pythia report, but there it is post hoc, not a test.
