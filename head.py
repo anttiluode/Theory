@@ -22,6 +22,12 @@ import ocular as O
 NAME_SHOTS = ("Item: rose. One word: rose\nItem: lion. One word: lion\n"
               "Item: chair. One word: chair\nItem: cup. One word: cup\n")
 NAME_Q = "One word:"
+# Amendment 1 (HEAD.md): the frame the closed-loop engine thinks in. States are captured in it
+# separately, so a clamped thought is always made of real states of this very frame.
+ASSOC_FRAME = ("Item: salt. Association: pepper\nItem: needle. Association: thread\n"
+               "Item: king. Association: queen\n")
+ASSOC_Q = "Association:"
+FRAMES_H = {"name": (NAME_SHOTS, NAME_Q), "assoc": (ASSOC_FRAME, ASSOC_Q)}
 ASSOC_SHOTS = ("Word: salt. Association: pepper\nWord: needle. Association: thread\n"
                "Word: king. Association: queen\n")
 RAT_INTRO = ("Each puzzle gives three words. Find one word that forms a compound word or a common "
@@ -35,16 +41,28 @@ RAT_SHOT_ITEMS = [("skunk", "kings", "boiled", "cabbage",
 N_POOL = 8000
 T = 12
 ALPHA, F, BETA, RHO, K0, KMAX, PRUNE, MAXW = 0.5, 6, 0.3, 0.2, 4, 32, 0.02, 48
+BETA_L = 2.0      # amendment 1: residue tilt for the loop engine, nats per unit cosine
 N_CAL, N_STARTS, N_P0 = 20, 60, 200
 SEED_CAL, SEED_START, SEED_P0, SEED_RAND = 7, 11, 5, 13
 DEMO = ["oak", "river", "bread", "winter", "iron", "music", "sauna"]
 POLICIES = {
-    "head": dict(adapt=True, k0=K0, alpha=ALPHA, fat=F, beta=BETA, rho=RHO),
-    "fixed": dict(adapt=False, k0=K0, alpha=ALPHA, fat=F, beta=BETA, rho=RHO),
-    "nn": dict(adapt=False, k0=1, alpha=1.0, fat=0, beta=0.0, rho=0.0),
+    "head": dict(engine="static", adapt=True, k0=K0, alpha=ALPHA, fat=F, beta=BETA, rho=RHO),
+    "fixed": dict(engine="static", adapt=False, k0=K0, alpha=ALPHA, fat=F, beta=BETA, rho=RHO),
+    "nn": dict(engine="static", adapt=False, k0=1, alpha=1.0, fat=0, beta=0.0, rho=0.0),
+    # amendment 1: Qwen's own upper layers choose the next blend
+    "loop": dict(engine="loop", adapt=True, k0=K0, alpha=ALPHA, fat=F, beta=BETA_L, rho=RHO),
+    "loop_fixed": dict(engine="loop", adapt=False, k0=K0, alpha=ALPHA, fat=F, beta=BETA_L, rho=RHO),
+    "loop_nores": dict(engine="loop", adapt=True, k0=K0, alpha=ALPHA, fat=F, beta=0.0, rho=0.0),
 }
-FREE_CONDS = ["head", "fixed", "nn", "random", "native"]
-GOAL_CONDS = ["head", "walk_fixed", "fixed_avg", "nearest_min", "native", "reason"]
+FREE_CONDS = ["head", "fixed", "nn", "loop", "loop_fixed", "loop_nores", "random", "native"]
+GOAL_WALKS = [("head", "head"), ("walk_fixed", "fixed"), ("loop", "loop"), ("loop_fixed", "loop_fixed"),
+              ("loop_nores", "loop_nores")]
+GOAL_CONDS = ["head", "walk_fixed", "loop", "loop_fixed", "loop_nores", "fixed_avg", "nearest_min",
+              "native", "reason", "reason_loop"]
+
+
+def engine_band(bands, policy):
+    return bands["loop" if POLICIES[policy]["engine"] == "loop" else "static"]
 
 
 class _Stop(Exception):
@@ -134,10 +152,13 @@ class Head:
         self.text = text + [""] * (V - n_tok)
         self.start_mask = torch.tensor([bool(re.fullmatch(r" [A-Za-z]+", t)) for t in self.text])
         self.cont_mask = torch.tensor([bool(re.fullmatch(r"[a-z]+", t)) for t in self.text])
-        self.S = {}
-        pool = [w for w in pool if self.name_prompt(w)[1] is not None]
+        self.S, self.SA = {}, {}      # naming-frame states, association-frame states
+        pool = [w for w in pool if self.name_prompt(w)[1] is not None
+                and self.name_prompt(w, "assoc")[1] is not None]
         self.capture(pool)
-        self.pool = [w for w in pool if w in self.S]
+        self.capture(pool, "assoc")
+        self.pool = [w for w in pool if w in self.S and w in self.SA]
+        self.pool_tok = torch.tensor([self.name_prompt(w)[0][self.name_prompt(w)[1]] for w in self.pool])
         self.index = {w: i for i, w in enumerate(self.pool)}
         self.lower_index = {}
         for i, w in enumerate(self.pool):
@@ -150,8 +171,9 @@ class Head:
         self.passes = 0
 
     # ---- prompts
-    def name_prompt(self, word):
-        text = NAME_SHOTS + f"Item: {word}. {NAME_Q}"
+    def name_prompt(self, word, frame="name"):
+        shots, q = FRAMES_H[frame]
+        text = shots + f"Item: {word}. {q}"
         ws = text.rindex("Item: " + word + ".") + len("Item: ")
         we = ws + len(word)
         enc = self.r.tok(text, add_special_tokens=False, return_offsets_mapping=True)
@@ -164,11 +186,12 @@ class Head:
 
     # ---- states, captured in the naming frame, batched, stopped after the last needed layer
     @torch.no_grad()
-    def capture(self, words, bs=32):
-        r, need = self.r, [w for w in words if w not in self.S]
+    def capture(self, words, frame="name", bs=32):
+        dest = self.S if frame == "name" else self.SA
+        r, need = self.r, [w for w in words if w not in dest]
         groups = {}
         for w in need:
-            ids, pos = self.name_prompt(w)
+            ids, pos = self.name_prompt(w, frame)
             if pos is not None:
                 groups.setdefault((len(ids), pos), []).append((w, ids))
         last = self.keep - 2
@@ -196,20 +219,21 @@ class Head:
                     for h in hooks:
                         h.remove()
                 for b, (w, _) in enumerate(chunk):
-                    self.S[w] = torch.stack([store[l][b] for l in range(-1, last + 1)])
+                    dest[w] = torch.stack([store[l][b] for l in range(-1, last + 1)])
                 done += len(chunk)
                 if done % 1000 < bs:
-                    self.log(f"states {done}/{len(need)}")
+                    self.log(f"states ({frame} frame) {done}/{len(need)}")
         if str(r.device).startswith("cuda"):
             torch.cuda.empty_cache()
 
     def has_state(self, w):
-        if w in self.S:
+        if w in self.S and w in self.SA:
             return True
-        if self.name_prompt(w)[1] is None:
+        if self.name_prompt(w)[1] is None or self.name_prompt(w, "assoc")[1] is None:
             return False
         self.capture([w])
-        return w in self.S
+        self.capture([w], "assoc")
+        return w in self.S and w in self.SA
 
     # ---- geometry
     def vec(self, thought):
@@ -218,8 +242,26 @@ class Head:
             raw = raw - raw.mean()
         return O.C_unit((raw - self.mu).unsqueeze(0))[0].float()
 
-    def targets(self, thought):
-        return C.blend(self.S, [(c, self.S[w]) for w, c in thought.items()], self.band)
+    def targets(self, thought, frame="name"):
+        S = self.S if frame == "name" else self.SA
+        assert thought, "empty thought"
+        return C.blend(S, [(c, S[w]) for w, c in thought.items()], self.band)
+
+    @torch.no_grad()
+    def associate(self, thought):
+        """Amendment 1: clamp the thought into `Item: thing. Association:` and let Qwen's upper
+        layers run. Returns log-probabilities over the pool words (renormalised over the pool)."""
+        r = self.r
+        ids, pos = self.name_prompt(C.SLOT, "assoc")
+        hooks = r._hooks(pos, self.targets(thought, "assoc"))
+        try:
+            h = r.model.base_model(input_ids=torch.tensor([ids], device=r.device)).last_hidden_state[0, -1]
+        finally:
+            for hk in hooks:
+                hk.remove()
+        self.passes += 1
+        lg = r.model.get_output_embeddings()(h).float().cpu()
+        return torch.log_softmax(lg[self.pool_tok], -1)
 
     # ---- the voice
     def ban_ids(self, words):
@@ -289,23 +331,48 @@ class Head:
         resid = q_prev.clone()
         rho = 0.0 if anchor_fixed else p["rho"]
         trail, ks, surprises, passes = [], [], [], 0
+        loop = p.get("engine") == "loop"
         for t in range(steps):
-            sim = self.Xn @ q_prev
+            if loop:                     # Qwen's upper layers propose; amendment 1
+                lp = self.associate(thought)
+                passes += 1
+                sim = lp.clone()
+            else:                        # the static map proposes
+                sim = self.Xn @ q_prev
             if p["beta"]:
                 sim = sim + p["beta"] * (self.Xn @ O.C_unit(resid.unsqueeze(0))[0])
-            mask = set(excl) | {i for i, e in fatigue.items() if e > t}
-            mask |= {self.index[w] for w in thought if w in self.index}
-            if mask:
-                sim[list(mask)] = -float("inf")
+            base = sim
+            # mask fatigued words and the thought's own words; if nothing is left (tiny pools only),
+            # fatigue is lifted first, then the thought's own words
+            for layers in ((True, True), (False, True), (False, False)):
+                mask = set(excl)
+                if layers[0]:
+                    mask |= {i for i, e in fatigue.items() if e > t}
+                if layers[1]:
+                    mask |= {self.index[w] for w in thought if w in self.index}
+                sim = base.clone()
+                if mask:
+                    sim[list(mask)] = -float("inf")
+                if torch.isfinite(sim).any():
+                    break
             kk = min(k, int(torch.isfinite(sim).sum()))
             top = torch.topk(sim, kk).indices.tolist()
-            new = {w: (1 - p["alpha"]) * c for w, c in thought.items()}
-            for j in top:
-                w = self.pool[j]
-                new[w] = new.get(w, 0.0) + p["alpha"] / kk
-            new = {w: c for w, c in sorted(new.items(), key=lambda x: -x[1])[:MAXW] if c >= PRUNE}
-            z = sum(new.values())
-            thought = {w: c / z for w, c in new.items()}
+            if loop:                     # Qwen's own probabilities shape the blend
+                tw = torch.softmax(lp[top], -1).tolist()
+            else:
+                tw = [1.0 / kk] * kk
+            # carry-over below PRUNE is dropped; this step's targets are always kept (fix, HEAD.md
+            # amendment 1: at k = 32, alpha / k = 0.016 < PRUNE emptied the thought)
+            new = {w: (1 - p["alpha"]) * c for w, c in thought.items() if (1 - p["alpha"]) * c >= PRUNE}
+            tgt = {}
+            for j, wt in zip(top, tw):
+                tgt[self.pool[j]] = tgt.get(self.pool[j], 0.0) + p["alpha"] * wt
+            for w, c in tgt.items():
+                new[w] = new.get(w, 0.0) + c
+            rest = sorted((w for w in new if w not in tgt), key=lambda w: -new[w])
+            keep = set(tgt) | set(rest[:max(0, MAXW - len(tgt))])
+            z = sum(new[w] for w in keep)
+            thought = {w: new[w] / z for w in keep}
             if p["fat"]:
                 for j in top:
                     fatigue[j] = t + 1 + p["fat"]
@@ -348,10 +415,10 @@ def p0(H, n=None):
                 passed=bool(copy / len(words) >= 0.9 and blend / len(words) >= 0.5))
 
 
-def calibrate(H, starts):
+def calibrate(H, starts, policy="fixed"):
     s = []
     for w in starts:
-        s += H.walk({w: 1.0}, "fixed", speak=False)["surprise"]
+        s += H.walk({w: 1.0}, policy, speak=False)["surprise"]
     s = sorted(s)
     q = lambda f: s[min(len(s) - 1, int(f * len(s)))]
     return [q(0.25), q(0.75)]
@@ -386,7 +453,7 @@ def native_chain(H, start, steps=T):
     return dict(trail=trail, passes=passes)
 
 
-def run_free(H, band, norms, n_starts=N_STARTS, cal=(), steps=T, log=print):
+def run_free(H, bands, norms, n_starts=N_STARTS, cal=(), steps=T, log=print):
     lower = [w for w in H.pool if w.islower() and w not in set(cal)]
     if norms is not None:
         cand = [w for w in lower if w in norms]
@@ -399,7 +466,7 @@ def run_free(H, band, norms, n_starts=N_STARTS, cal=(), steps=T, log=print):
     for i, w in enumerate(starts + demo):
         for c in FREE_CONDS:
             if c in POLICIES:
-                res = H.walk({w: 1.0}, c, band=band, steps=steps)
+                res = H.walk({w: 1.0}, c, band=engine_band(bands, c), steps=steps)
             elif c == "random":
                 trail, passes = [], 0
                 for _ in range(steps):
@@ -416,7 +483,7 @@ def run_free(H, band, norms, n_starts=N_STARTS, cal=(), steps=T, log=print):
     return out
 
 
-def run_goal(H, items, band, steps=T, log=print):
+def run_goal(H, items, bands, steps=T, log=print):
     kept, dropped = [], []
     for it in items:
         (kept if all(H.has_state(c) for c in it[:3]) else dropped).append(it)
@@ -447,11 +514,13 @@ def run_goal(H, items, band, steps=T, log=print):
             return (best if best is not None else (trail[-1] if trail else "")), extra
 
         start = {x: 1 / 3 for x in cues}
-        for name, pol in (("head", "head"), ("walk_fixed", "fixed")):
-            res = H.walk(start, pol, band=band, steps=steps, exclude=excl, ban=ban, anchor_fixed=True)
+        for name, pol in GOAL_WALKS:
+            res = H.walk(start, pol, band=engine_band(bands, pol), steps=steps, exclude=excl, ban=ban,
+                         anchor_fixed=True)
             ans, extra = pick(res["trail"])
             rec[name] = dict(answer=ans, trail=res["trail"], k=res["k"], passes=res["passes"] + extra,
-                             hit_trail=any(correct(x, sol) for x in res["trail"]))
+                             hit_trail=any(correct(x, sol) for x in res["trail"]),
+                             first_correct=bool(res["trail"]) and correct(res["trail"][0], sol))
         word, n = H.speak(start, ban)
         rec["fixed_avg"] = dict(answer=word, passes=n)
         sim = (H.Xn @ cue_v.T).min(1).values
@@ -465,6 +534,11 @@ def run_goal(H, items, band, steps=T, log=print):
         thinking = H.r.tok.decode(gen)
         word, n2 = H.say(p_ids + gen + H.ids("\nAnswer:" if "\n" not in thinking else "Answer:"), ban=ban)
         rec["reason"] = dict(answer=word, passes=n1 + n2, budget=budget, thinking=thinking.strip())
+        budget = max(8, rec["loop"]["passes"] - 3)         # amendment 1: matched to the loop engine
+        gen, n1 = H.generate(p_ids, budget)
+        thinking = H.r.tok.decode(gen)
+        word, n2 = H.say(p_ids + gen + H.ids("\nAnswer:" if "\n" not in thinking else "Answer:"), ban=ban)
+        rec["reason_loop"] = dict(answer=word, passes=n1 + n2, budget=budget, thinking=thinking.strip())
         for cnd in GOAL_CONDS:
             rec[cnd]["correct"] = correct(rec[cnd]["answer"], sol)
         recs.append(rec)
@@ -491,6 +565,11 @@ def gates(res):
         f1 = paired("head", "fixed")
         dist_h, dist_f = series("head", "distinct"), series("fixed", "distinct")
         g["F0_sanity"] = dict(pass_=bool(f0[1] is not None and f0[1] > 0), head_minus_random=f0)
+        lf = paired("loop", "loop_fixed")
+        g["LF_loop_regulator_free"] = dict(pass_=bool(lf[1] is not None and lf[1] > 0),
+                                           loop_minus_loop_fixed=lf, loop_minus_head=paired("loop", "head"),
+                                           loop_minus_loop_nores=paired("loop", "loop_nores"),
+                                           loop_minus_native=paired("loop", "native"))
         g["F1_regulator_free"] = dict(pass_=bool(f1[1] is not None and f1[1] > 0
                                                  and sum(dist_h) >= sum(dist_f)),
                                       head_minus_fixed=f1, head_minus_nn=paired("head", "nn"),
@@ -506,6 +585,16 @@ def gates(res):
                                          **{f"head_minus_{k}": v for k, v in h1.items()})
         g["H2_walk_beats_tokens"] = dict(pass_=all(v[1] > 0 for v in h2.values()),
                                          **{f"head_minus_{k}": v for k, v in h2.items()})
+        d = lambda c: B.paired_ci(acc["loop"], acc[c])
+        g["L1_loop_beats_static"] = dict(pass_=d("head")[1] > 0, loop_minus_head=d("head"))
+        l2 = {c: d(c) for c in ("fixed_avg", "nearest_min")}
+        g["L2_loop_beats_lookup"] = dict(pass_=all(v[1] > 0 for v in l2.values()),
+                                         **{f"loop_minus_{k}": v for k, v in l2.items()})
+        g["L3_breathing_goal"] = dict(pass_=d("loop_fixed")[1] > 0, loop_minus_loop_fixed=d("loop_fixed"),
+                                      loop_minus_loop_nores=d("loop_nores"))
+        l4 = {c: d(c) for c in ("native", "reason_loop")}
+        g["L4_loop_beats_tokens"] = dict(pass_=all(v[1] > 0 for v in l4.values()),
+                                         **{f"loop_minus_{k}": v for k, v in l4.items()})
     return g
 
 
@@ -516,15 +605,17 @@ def run(r, norms=None, norms_name=None, items=(), n_pool=N_POOL, n_starts=N_STAR
     voice = p0(H)
     log(f"P0 voice: copy {voice['copy']:.3f}, blend {voice['blend']:.3f}")
     cal = random.Random(SEED_CAL).sample([w for w in H.pool if w.islower()], N_CAL)
-    band = calibrate(H, cal)
-    log(f"regulator band lo {band[0]:.4f}, hi {band[1]:.4f}")
-    free = run_free(H, band, norms, n_starts, cal, steps, log)
-    goal = run_goal(H, items, band, steps, log)
+    bands = {"static": calibrate(H, cal, "fixed"), "loop": calibrate(H, cal, "loop_fixed")}
+    for e, b in bands.items():
+        log(f"regulator band ({e}) lo {b[0]:.4f}, hi {b[1]:.4f}")
+    free = run_free(H, bands, norms, n_starts, cal, steps, log)
+    goal = run_goal(H, items, bands, steps, log)
     res = dict(model=r.name, n_pool=len(H.pool), selection_layer=H.sel, band=list(H.band),
-               regulator_band=band, calibration_starts=cal, norms=norms_name, steps=steps,
+               regulator_band=bands["static"], regulator_bands=bands, calibration_starts=cal,
+               norms=norms_name, steps=steps,
                P0=voice, free=free, goal=goal,
                constants=dict(alpha=ALPHA, fatigue=F, beta=BETA, rho=RHO, k0=K0, kmax=KMAX, prune=PRUNE,
-                              max_words=MAXW))
+                              max_words=MAXW, beta_loop=BETA_L))
     res["gates"] = gates(res)
     return res
 
@@ -537,11 +628,14 @@ def report(res):
     P = lambda k: "PASS" if g[k]["pass_"] else "FAIL"
     L = [f"# Head report — {res['model']}", "",
          f"Pool {res['n_pool']} words; selection layer {res['selection_layer']}; clamp band {res['band']}; "
-         f"dtype {res.get('dtype', 'float32')}; {res['steps']} steps; regulator band "
-         f"[{res['regulator_band'][0]:.4f}, {res['regulator_band'][1]:.4f}] (fixed-walk quartiles on "
-         f"{len(res['calibration_starts'])} calibration words). Norms: {res['norms'] or 'none'}. Rules: HEAD.md.",
-         "", "The 8000 pool states are a one-time memory shared by head, walk_fixed, fixed_avg and "
-         "nearest_min; they are not charged per item.", "",
+         f"dtype {res.get('dtype', 'float32')}; {res['steps']} steps; regulator bands (fixed-walk quartiles on "
+         f"{len(res['calibration_starts'])} calibration words): " +
+         "; ".join(f"{e} [{b[0]:.4f}, {b[1]:.4f}]" for e, b in
+                   res.get("regulator_bands", {"static": res["regulator_band"]}).items()) +
+         f". Norms: {res['norms'] or 'none'}. Rules: HEAD.md (with amendment 1).",
+         "", "The pool states (naming and association frames) are a one-time memory shared by every walk, "
+         "fixed_avg and nearest_min; they are not charged per item. A loop step costs one forward pass "
+         "(Qwen proposes) plus the voice.", "",
          f"**P0 voice: {P('P0_voice')}**  copy {g['P0_voice']['copy']:.3f} (≥ 0.90), "
          f"blend → one of the two {g['P0_voice']['blend']:.3f} (≥ 0.50)"
          + ("" if g["P0_voice"]["pass_"] else " — *voice unreliable: trails may not say what the thought holds*"), ""]
@@ -552,8 +646,14 @@ def report(res):
               f"{g['F1_regulator_free']['distinct_head']:.3f} vs fixed {g['F1_regulator_free']['distinct_fixed']:.3f}  ",
               f"head − nn: {ci(g['F1_regulator_free']['head_minus_nn'])}; head − native (reference): "
               f"{ci(g['F1_regulator_free']['head_minus_native'])}", ""]
+        if "LF_loop_regulator_free" in g:
+            lf = g["LF_loop_regulator_free"]
+            L += [f"**LF loop regulator earns its keep (free): {P('LF_loop_regulator_free')}**  loop − loop_fixed: "
+                  f"{ci(lf['loop_minus_loop_fixed'])}  ",
+                  f"loop − head {ci(lf['loop_minus_head'])}; loop − loop_nores {ci(lf['loop_minus_loop_nores'])}; "
+                  f"loop − native (reference) {ci(lf['loop_minus_native'])}", ""]
     else:
-        L += ["F0, F1: not scored (no association norms given).", ""]
+        L += ["F0, F1, LF: not scored (no association norms given).", ""]
     if "H1_walk_beats_lookup" in g:
         h1, h2 = g["H1_walk_beats_lookup"], g["H2_walk_beats_tokens"]
         L += [f"**H1 walk beats the lookup (goal): {P('H1_walk_beats_lookup')}**  ",
@@ -563,6 +663,19 @@ def report(res):
               f"**H2 walk beats the model's own tokens: {P('H2_walk_beats_tokens')}**  ",
               f"head − native {ci(h2['head_minus_native'])}  ",
               f"head − reason (equal passes) {ci(h2['head_minus_reason'])}", ""]
+    if "L1_loop_beats_static" in g:
+        L += ["### Amendment 1: the closed-loop engine", "",
+              f"**L1 Qwen-driven moves beat the static map: {P('L1_loop_beats_static')}**  loop − head "
+              f"{ci(g['L1_loop_beats_static']['loop_minus_head'])}", "",
+              f"**L2 loop beats the lookup: {P('L2_loop_beats_lookup')}**  loop − fixed_avg "
+              f"{ci(g['L2_loop_beats_lookup']['loop_minus_fixed_avg'])}; loop − nearest_min "
+              f"{ci(g['L2_loop_beats_lookup']['loop_minus_nearest_min'])}", "",
+              f"**L3 breathing earns its keep (goal): {P('L3_breathing_goal')}**  loop − loop_fixed "
+              f"{ci(g['L3_breathing_goal']['loop_minus_loop_fixed'])}; loop − loop_nores (reported) "
+              f"{ci(g['L3_breathing_goal']['loop_minus_loop_nores'])}", "",
+              f"**L4 loop beats the model's own tokens: {P('L4_loop_beats_tokens')}**  loop − native "
+              f"{ci(g['L4_loop_beats_tokens']['loop_minus_native'])}; loop − reason_loop (equal passes) "
+              f"{ci(g['L4_loop_beats_tokens']['loop_minus_reason_loop'])}", ""]
     free = res["free"]
     L += ["## Free mode", "", "| condition | associate rate | strength | distinct words | longest repeat | back-tracks | passes/trail |",
           "|---|---:|---:|---:|---:|---:|---:|"]
@@ -577,7 +690,7 @@ def report(res):
     for i in dict.fromkeys(show):
         L.append(f"**{free['head'][i]['start']}**  ")
         for c in FREE_CONDS:
-            extra = f"  (k: {' '.join(map(str, free[c][i]['k']))})" if c == "head" else ""
+            extra = f"  (k: {' '.join(map(str, free[c][i]['k']))})" if c in ("head", "loop") else ""
             L.append(f"- {c}: " + " → ".join(free[c][i]["trail"]) + extra)
         L.append("")
     recs = res["goal"]["records"]
@@ -590,18 +703,19 @@ def report(res):
         for c in GOAL_CONDS:
             k = sum(r_[c]["correct"] for r_ in recs)
             L.append(f"| {c} | {k}/{n} | {k / n:.3f} | {sum(r_[c]['passes'] for r_ in recs) / n:.1f} |")
-        L += ["", f"Solution spoken anywhere in the head's trail: {sum(r_['head']['hit_trail'] for r_ in recs)}/{n}; "
-              f"walk_fixed: {sum(r_['walk_fixed']['hit_trail'] for r_ in recs)}/{n}.", "",
-              "| cues | solution | head | walk_fixed | fixed_avg | nearest_min | native | reason |",
-              "|---|---|---|---|---|---|---|---|"]
+        L += ["", "Solution spoken anywhere in the trail / as the first spoken word (descriptive): " +
+              "; ".join(f"{c} {sum(r_[c]['hit_trail'] for r_ in recs)}/{sum(r_[c]['first_correct'] for r_ in recs)}"
+                        for c, _ in GOAL_WALKS) + f" (of {n}).", "",
+              "| cues | solution | " + " | ".join(GOAL_CONDS) + " |", "|---|---|" + "---|" * len(GOAL_CONDS)]
         for r_ in recs[:20]:
             L.append(f"| {', '.join(r_['cues'])} | {r_['solution']} | " +
                      " | ".join(("**" + r_[c]["answer"] + "**") if r_[c]["correct"] else r_[c]["answer"]
                                 for c in GOAL_CONDS) + " |")
-        L += ["", "Head trails for the first 5 items:", ""]
+        L += ["", "Trails for the first 5 items (head, then loop):", ""]
         for r_ in recs[:5]:
-            L.append(f"- {', '.join(r_['cues'])} → " + " → ".join(r_["head"]["trail"]) +
-                     f"  (k: {' '.join(map(str, r_['head']['k']))})")
+            for c in ("head", "loop"):
+                L.append(f"- {c}: {', '.join(r_['cues'])} → " + " → ".join(r_[c]["trail"]) +
+                         f"  (k: {' '.join(map(str, r_[c]['k']))})")
     return "\n".join(L) + "\n"
 
 
@@ -611,7 +725,7 @@ def self_test():
                   ["oak", "tree", "wood", "river", "water", "bread", "cottage", "swiss", "cake", "cheese",
                    "cream", "skate", "ice", "Oslo", "One", "word", "Word", "Association", "Answer",
                    "Thinking", "Words", "Each", "puzzle", "gives"])
-    texts = [NAME_SHOTS, NAME_Q, ASSOC_SHOTS, RAT_INTRO, rat_prompt("x", "y", "z", True),
+    texts = [NAME_SHOTS, NAME_Q, ASSOC_SHOTS, ASSOC_FRAME, ASSOC_Q, RAT_INTRO, rat_prompt("x", "y", "z", True),
              rat_prompt("x", "y", "z")] + stub_words
     for arch in ("neox", "qwen"):
         r = C.load_stub(arch, extra=texts)
@@ -634,6 +748,20 @@ def self_test():
                 for hk in hooks:
                     hk.remove()
         assert (a - b).abs().max() < 1e-4, "clamping a word's own state into the slot is not exact"
+        ia, pa = H.name_prompt(w, "assoc")
+        isl, psl = H.name_prompt(C.SLOT, "assoc")
+        with torch.no_grad():
+            a2 = r.model.base_model(input_ids=torch.tensor([ia])).last_hidden_state[0, -1]
+            hooks = r._hooks(psl, H.targets({w: 1.0}, "assoc"))
+            try:
+                b2 = r.model.base_model(input_ids=torch.tensor([isl])).last_hidden_state[0, -1]
+            finally:
+                for hk in hooks:
+                    hk.remove()
+        assert (a2 - b2).abs().max() < 1e-4, "association-frame clamp is not exact"
+        lp = H.associate({w: 1.0})
+        assert lp.shape[0] == len(H.pool) and abs(float(lp.exp().sum()) - 1) < 1e-4
+        assert int(H.pool_tok[3]) == H.name_prompt(w)[0][H.name_prompt(w)[1]]
         # batched capture equals one-at-a-time capture
         one = H.S[w].clone()
         del H.S[w]
@@ -648,6 +776,10 @@ def self_test():
         assert res["k"] == [4, 8, 16, 32, 32], "regulator should widen when change is below the band"
         res = H.walk({w: 1.0}, "head", band=[-2.0, -1.0], steps=4, speak=False)
         assert res["k"] == [4, 2, 1, 1], "regulator should narrow when change is above the band"
+        res = H.walk({w: 1.0}, "head", band=[5.0, 6.0], steps=7)   # reaches k = 32 while speaking
+        assert len(res["trail"]) == 7 and res["k"][-1] == KMAX       # (the crash of the first real run)
+        res = H.walk({w: 1.0}, "loop", band=[5.0, 6.0], steps=7)
+        assert len(res["trail"]) == 7 and res["k"][-1] == KMAX and res["passes"] >= 14
         res = H.walk({w: 1.0}, "head", band=[5.0, 6.0], steps=3)
         assert len(res["trail"]) == 3 and res["passes"] >= 3
         nn = H.walk({w: 1.0}, "nn", steps=6, speak=False)
@@ -687,7 +819,9 @@ def self_test():
         assert rec["reason"]["passes"] <= max(8, rec["head"]["passes"] - 3) + 3
     json.dumps(res)
     txt = report(res)
-    assert "H1 walk beats the lookup" in txt and "F1 regulator" in txt
+    assert "H1 walk beats the lookup" in txt and "F1 regulator" in txt and "L4 loop" in txt and "LF loop" in txt
+    for rec in res["goal"]["records"]:
+        assert rec["reason_loop"]["passes"] <= max(8, rec["loop"]["passes"] - 3) + 3
     rat = load_rat(Path(__file__).with_name("data") / "rat144.tsv")
     assert len(rat) == 144 and rat[0] == ("cottage", "swiss", "cake", "cheese")
     shot_words = {w for it in RAT_SHOT_ITEMS for w in it[:4]}
