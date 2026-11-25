@@ -290,8 +290,8 @@ def main():
     out = Path("runs") / ("bridge_" + a.model.replace("/", "_") + "_" + a.frame +
                           ("_" + revision if revision else ""))
     out.mkdir(parents=True, exist_ok=True)
-    (out / "bridge.json").write_text(json.dumps(res, indent=1))
-    (out / "REPORT.md").write_text(report(res))
+    (out / "bridge.json").write_text(json.dumps(res, indent=1), encoding="utf-8")
+    (out / "REPORT.md").write_text(report(res), encoding="utf-8")
     print(report(res))
     print("saved", out)
 
