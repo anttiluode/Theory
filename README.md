@@ -1,5 +1,7 @@
 # Theory
 
+> **November 25 — Iris:** [protocol and run instructions](IRIS.md) · [`iris.py`](iris.py). Does the final answer-logit nullspace predict when a fixed, label-free neighbor blend will repair the native answer? Whole-family-held-out supervised monitor; matched re-read budgets. Real-model run pending. Independent of Maatuska's multiresolution-axis test.
+
 What the sibling-average result in [RakeisuusClaude](https://github.com/anttiluode/RakeisuusClaude) is, mathematically, and the experiments that could kill each part of that explanation.
 
 ## Did we find something? The blunt version
