@@ -107,3 +107,65 @@ this specific repair, not its expected success.
 Not a new error-probing method or a claim of biological equivalence. The narrow
 question is whether the answer-nullspace predicts the *causal benefit of a
 particular repair* beyond output-only and ordinary hidden-state controls.
+
+## First real run — Pythia-410m final checkpoint, 25 November 2026
+
+[Receipt, commit 062a030](runs/iris_EleutherAI_pythia-410m_shots_step143000/iris.json).
+124 words in 20 families, 59 selective edits. **Registered gate: FAIL.**
+
+| Policy | Correct / 124 | Accuracy |
+|---|---:|---:|
+| Never edit | 42 | 33.87% |
+| Random selection (expectation) | — | 39.04% |
+| Output only | 49 | 39.52% |
+| Output + row space | 49 | 39.52% |
+| Output + shuffled residue | 49 | 39.52% |
+| Lowest native margin | 51 | 41.13% |
+| Output + residue | 53 | 42.74% |
+| Output + full state | 53 | 42.74% |
+| Always edit | 56 | 45.16% |
+| Budget-matched oracle | 56 | 45.16% |
+
+15 rescues, 1 harm; the minimum-five-harms criterion fails. The residue
+advantage over output alone is 4 words (+3.23 percentage points), below
+the five-point requirement, with descriptive family-bootstrap interval
+[0, 7.03] percentage points. Full-state and residue policies selected
+exactly the same items. No specific advantage for the nullspace projection
+is established. The residue policy used 59 of 124 edits and rescued 11 of
+15, harming none, but always editing achieved greater accuracy.
+
+Numerical checks passed on the real checkpoint: row rank 4, maximum
+logit reconstruction error 4.01e-5, maximum candidate-logit nullspace
+leak 1.10e-6.
+
+### Post-hoc audit (not a registered test)
+
+Using the evaluation labels only AFTER the run, count how many of the
+three neighbors share the item's true family:
+
+| Same-family neighbors | Items | Native correct | Edited correct | Rescues / harms |
+|---:|---:|---:|---:|---:|
+| 0 | 3 | 0 | 0 | 0 / 0 |
+| 1 | 6 | 0 | 0 | 0 / 0 |
+| 2 | 29 | 5 | 5 | 0 / 0 |
+| 3 | 86 | 37 | 51 | 15 / 1 |
+
+Examples: mosquito (profession → insect), tin (country → metal), table
+(metal → furniture), Nile (sport → river). Canada is the sole harm
+(country → profession). Seven families remained at zero correct after
+editing. Native prediction was heavily skewed: profession 45/124,
+country 18/124; after editing these are 41 and 13. The label-free neighbor
+selection accesses useful geometry, but the vocabulary bank is transductive,
+candidate family questions are supplied, and there is no matched random
+repair intervention in this pilot. Do not attribute the gain uniquely to
+semantic smoothing or infer robust self-correction.
+
+### Decision
+
+Keep the failed gate. Before training a more elaborate reader, compare
+the repair itself against a same-length random move, random-neighbor
+blend, norm-matched controls and a direct category-name reader on the
+same 124 words and same candidate names. Check alternate native answer
+formats and a separate vocabulary bank. If the cheap fixed repair is
+usually beneficial, a learned regulator is unnecessary for accuracy in
+this setting; cost-constrained routing is a separate question.
