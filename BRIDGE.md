@@ -84,3 +84,51 @@ All other rows are descriptive. Choosing the best row after the fact is not a re
   operation is local, needing neighbours. The next step would be neighbours found inside the
   PCA prefix instead of the full space.
 - Pythia-410m only, one frame, 124 words. Ambiguous words (tin, lead, pound…) remain, as in Iris.
+
+## First real run — Pythia-410m step143000, 25 November 2026
+
+Full table: [`runs/bridge_EleutherAI_pythia-410m_shots_step143000/REPORT.md`](runs/bridge_EleutherAI_pythia-410m_shots_step143000/REPORT.md).
+The run crashed while writing REPORT.md on Windows (cp1252 could not encode "−"), after
+`bridge.json` was complete. The report was regenerated from that JSON with
+`--report-from`. No numbers changed.
+
+**B1 inductive repair: FAIL.** The primary edit (`pca16_l0.5`) scored 0.306 on category against
+0.339 native: 5 rescued, 9 harmed. It was not distinguishable from a random 16-dim subspace
+(+0.024 [−0.024, +0.081]) or from an equally long random move (−0.008 [−0.073, +0.048]).
+**B2:** identity fell 0.815 → 0.750 (costly). **B3:** 14.5 points below the 3-NN blend.
+
+Plumbing check passed: `nn3_l0.5` reproduced Iris exactly (0.452, 15 rescued, 1 harmed).
+
+Descriptive rows that matter:
+
+| edit | category | identity | rescued / harmed |
+|---|---:|---:|---|
+| native | 0.339 | 0.815 | – |
+| `nn3_l0.5` (Iris, transductive) | **0.452** | 0.637 | 15 / 1 |
+| `nn3_random_l0.5` (3 random bank words) | 0.234 | 0.750 | 2 / 15 |
+| `pca16_l0.5` (primary) | 0.306 | 0.750 | 5 / 9 |
+| `pca64_l0.5` | 0.339 | 0.734 | 6 / 6 |
+| `lid1_l1.0` | 0.339 | 0.823 | 1 / 1 |
+| `pca16_l1.0` | 0.210 | 0.355 | 4 / 20 |
+
+What this says:
+
+1. **Iris's repair is semantic.** Blending with 3 *random* bank words harms 15 answers and
+   rescues 2, while the 3 nearest neighbours rescue 15 and harm 1, at the same blend strength.
+   This settles the open control in IRIS.md.
+2. **Iris's repair has a price.** It costs 18 points of identity (0.815 → 0.637). Category goes
+   up, identity goes down, so "always repair" is no longer free. A regulator now has
+   two regimes to choose between, which is the situation it needs.
+3. **The global label-free knob does not repair when written back.** Maatuska shows that a
+   16-component PCA prefix *reads* family neighbourhoods better than random directions. Forcing
+   the word's own state halfway onto that prefix inside the forward pass behaves like any
+   random displacement of the same size. Neighbours work because they move the state toward
+   other real word states, which the later layers know how to read. A projection moves it
+   toward a shadow that no real word has.
+4. Lifting the lid alone (`lid1`) does nothing in this band (layers 0–10). That matches
+   Maatuska, where Pythia's lid matters in the upper layers, not in the clamp band.
+
+Next, not yet run: use the PCA prefix only to **choose** the neighbours (where Maatuska
+says it is better than full width), and keep blending real full states. Done once with the
+bank and once with the 3000 unlabeled vocabulary words as the neighbour pool. The second is the
+inductive version: no siblings are guaranteed to be there.

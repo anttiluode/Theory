@@ -275,6 +275,7 @@ def self_test():
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--report-from", default=None, help="rewrite REPORT.md from a saved bridge.json")
     p.add_argument("--model", default="EleutherAI/pythia-410m")
     p.add_argument("--revision", default=None)
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
@@ -284,6 +285,11 @@ def main():
     a = p.parse_args()
     if a.self_test:
         return self_test()
+    if a.report_from:
+        src = Path(a.report_from)
+        res = json.loads(src.read_text(encoding="utf-8"))
+        (src.parent / "REPORT.md").write_text(report(res), encoding="utf-8")
+        return print(report(res))
     revision = a.revision or ("step143000" if "pythia" in a.model.lower() else None)
     r = C.load(a.model, a.device, torch.float32, revision=revision, frame=a.frame)
     res = run(r, n_vocab=a.n_vocab)
