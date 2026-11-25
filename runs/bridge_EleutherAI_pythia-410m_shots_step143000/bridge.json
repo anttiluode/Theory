@@ -1,0 +1,6084 @@
+{
+ "model": "EleutherAI/pythia-410m@step143000",
+ "n_words": 124,
+ "n_vocab": 3000,
+ "band": [
+  -1,
+  10
+ ],
+ "families": {
+  "tree": 3,
+  "vegetable": 6,
+  "bird": 3,
+  "fish": 5,
+  "insect": 5,
+  "tool": 4,
+  "vehicle": 8,
+  "instrument": 4,
+  "fruit": 6,
+  "metal": 8,
+  "color": 8,
+  "sport": 8,
+  "furniture": 7,
+  "clothing": 8,
+  "emotion": 8,
+  "profession": 8,
+  "river": 5,
+  "country": 8,
+  "language": 8,
+  "currency": 4
+ },
+ "summary": {
+  "native": {
+   "category": 0.3387096774193548,
+   "identity": 0.8145161290322581,
+   "rescued": 0,
+   "harmed": 0
+  },
+  "pca16_l0.5": {
+   "category": 0.3064516129032258,
+   "identity": 0.75,
+   "rescued": 5,
+   "harmed": 9
+  },
+  "pca16_l1.0": {
+   "category": 0.20967741935483872,
+   "identity": 0.3548387096774194,
+   "rescued": 4,
+   "harmed": 20
+  },
+  "pca64_l0.5": {
+   "category": 0.3387096774193548,
+   "identity": 0.7338709677419355,
+   "rescued": 6,
+   "harmed": 6
+  },
+  "lidpre16_l0.5": {
+   "category": 0.29838709677419356,
+   "identity": 0.7419354838709677,
+   "rescued": 4,
+   "harmed": 9
+  },
+  "lid1_l1.0": {
+   "category": 0.3387096774193548,
+   "identity": 0.8225806451612904,
+   "rescued": 1,
+   "harmed": 1
+  },
+  "lid3_l1.0": {
+   "category": 0.28225806451612906,
+   "identity": 0.7741935483870968,
+   "rescued": 0,
+   "harmed": 7
+  },
+  "rand16_l0.5": {
+   "category": 0.28225806451612906,
+   "identity": 0.75,
+   "rescued": 2,
+   "harmed": 9
+  },
+  "pca16_l0.5_matched": {
+   "category": 0.31451612903225806,
+   "identity": 0.8225806451612904,
+   "rescued": 1,
+   "harmed": 4
+  },
+  "nn3_l0.5": {
+   "category": 0.45161290322580644,
+   "identity": 0.6370967741935484,
+   "rescued": 15,
+   "harmed": 1
+  },
+  "nn3_random_l0.5": {
+   "category": 0.23387096774193547,
+   "identity": 0.75,
+   "rescued": 2,
+   "harmed": 15
+  }
+ },
+ "gates": {
+  "B1_inductive_repair": {
+   "pass": false,
+   "primary_minus_rand16_ci": [
+    0.024193548387096774,
+    -0.024193548387096774,
+    0.08064516129032258
+   ],
+   "primary_minus_native_ci": [
+    -0.03225806451612903,
+    -0.08870967741935484,
+    0.024193548387096774
+   ],
+   "primary_minus_matched_ci": [
+    -0.008064516129032258,
+    -0.07258064516129033,
+    0.04838709677419355
+   ]
+  },
+  "B2_identity_cost": {
+   "identity_change": -0.06451612903225812,
+   "cheap": false
+  },
+  "B3_vs_transductive": {
+   "primary_minus_nn3_ci": [
+    -0.14516129032258066,
+    -0.20987903225806445,
+    -0.08064516129032258
+   ]
+  }
+ },
+ "records": [
+  {
+   "word": "oak",
+   "family": "tree",
+   "native": [
+    "country",
+    "oak"
+   ],
+   "pca16_l0.5": [
+    "country",
+    "oak"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "pine"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "oak"
+   ],
+   "lidpre16_l0.5": [
+    "country",
+    "oak"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "oak"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "oak"
+   ],
+   "rand16_l0.5": [
+    "country",
+    "oak"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "oak"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "oak"
+   ],
+   "nn3_random_l0.5": [
+    "country",
+    "oak"
+   ]
+  },
+  {
+   "word": "maple",
+   "family": "tree",
+   "native": [
+    "country",
+    "maple"
+   ],
+   "pca16_l0.5": [
+    "country",
+    "maple"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "maple"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "maple"
+   ],
+   "lidpre16_l0.5": [
+    "country",
+    "maple"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "maple"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "maple"
+   ],
+   "rand16_l0.5": [
+    "country",
+    "maple"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "maple"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "maple"
+   ],
+   "nn3_random_l0.5": [
+    "country",
+    "maple"
+   ]
+  },
+  {
+   "word": "pine",
+   "family": "tree",
+   "native": [
+    "country",
+    "pine"
+   ],
+   "pca16_l0.5": [
+    "country",
+    "pine"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "pine"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "pine"
+   ],
+   "lidpre16_l0.5": [
+    "country",
+    "pine"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "pine"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "pine"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "pine"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "pine"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "pine"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "pine"
+   ]
+  },
+  {
+   "word": "carrot",
+   "family": "vegetable",
+   "native": [
+    "profession",
+    "carrot"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "carrot"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "carrot"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "carrot"
+   ],
+   "lidpre16_l0.5": [
+    "currency",
+    "carrot"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "carrot"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "carrot"
+   ],
+   "rand16_l0.5": [
+    "currency",
+    "carrot"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "carrot"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "carrot"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "carrot"
+   ]
+  },
+  {
+   "word": "potato",
+   "family": "vegetable",
+   "native": [
+    "country",
+    "potato"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "potato"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "onion"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "potato"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "potato"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "potato"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "potato"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "potato"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "potato"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "potato"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "potato"
+   ]
+  },
+  {
+   "word": "onion",
+   "family": "vegetable",
+   "native": [
+    "country",
+    "onion"
+   ],
+   "pca16_l0.5": [
+    "emotion",
+    "onion"
+   ],
+   "pca16_l1.0": [
+    "emotion",
+    "cabbage"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "onion"
+   ],
+   "lidpre16_l0.5": [
+    "emotion",
+    "onion"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "onion"
+   ],
+   "lid3_l1.0": [
+    "emotion",
+    "onion"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "onion"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "onion"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "onion"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "onion"
+   ]
+  },
+  {
+   "word": "cabbage",
+   "family": "vegetable",
+   "native": [
+    "country",
+    "cabbage"
+   ],
+   "pca16_l0.5": [
+    "country",
+    "cabbage"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "carrot"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "cabbage"
+   ],
+   "lidpre16_l0.5": [
+    "country",
+    "cabbage"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "cabbage"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "cabbage"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "cabbage"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "cabbage"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "cabbage"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "cabbage"
+   ]
+  },
+  {
+   "word": "lettuce",
+   "family": "vegetable",
+   "native": [
+    "vegetable",
+    "potato"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "cabbage"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "cabbage"
+   ],
+   "pca64_l0.5": [
+    "vegetable",
+    "cabbage"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "cabbage"
+   ],
+   "lid1_l1.0": [
+    "vegetable",
+    "cabbage"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "cabbage"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "cabbage"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "potato"
+   ],
+   "nn3_l0.5": [
+    "vegetable",
+    "cabbage"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "cabbage"
+   ]
+  },
+  {
+   "word": "garlic",
+   "family": "vegetable",
+   "native": [
+    "profession",
+    "garlic"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "garlic"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "cabbage"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "garlic"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "garlic"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "garlic"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "garlic"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "garlic"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "garlic"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "garlic"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "garlic"
+   ]
+  },
+  {
+   "word": "eagle",
+   "family": "bird",
+   "native": [
+    "emotion",
+    "eagle"
+   ],
+   "pca16_l0.5": [
+    "emotion",
+    "eagle"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "duck"
+   ],
+   "pca64_l0.5": [
+    "emotion",
+    "eagle"
+   ],
+   "lidpre16_l0.5": [
+    "emotion",
+    "eagle"
+   ],
+   "lid1_l1.0": [
+    "emotion",
+    "eagle"
+   ],
+   "lid3_l1.0": [
+    "emotion",
+    "eagle"
+   ],
+   "rand16_l0.5": [
+    "emotion",
+    "eagle"
+   ],
+   "pca16_l0.5_matched": [
+    "emotion",
+    "eagle"
+   ],
+   "nn3_l0.5": [
+    "emotion",
+    "eagle"
+   ],
+   "nn3_random_l0.5": [
+    "emotion",
+    "eagle"
+   ]
+  },
+  {
+   "word": "crow",
+   "family": "bird",
+   "native": [
+    "emotion",
+    "crow"
+   ],
+   "pca16_l0.5": [
+    "emotion",
+    "crow"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "crow"
+   ],
+   "pca64_l0.5": [
+    "emotion",
+    "crow"
+   ],
+   "lidpre16_l0.5": [
+    "emotion",
+    "crow"
+   ],
+   "lid1_l1.0": [
+    "emotion",
+    "crow"
+   ],
+   "lid3_l1.0": [
+    "emotion",
+    "crow"
+   ],
+   "rand16_l0.5": [
+    "emotion",
+    "crow"
+   ],
+   "pca16_l0.5_matched": [
+    "emotion",
+    "crow"
+   ],
+   "nn3_l0.5": [
+    "emotion",
+    "crow"
+   ],
+   "nn3_random_l0.5": [
+    "emotion",
+    "crow"
+   ]
+  },
+  {
+   "word": "duck",
+   "family": "bird",
+   "native": [
+    "profession",
+    "duck"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "duck"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "duck"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "duck"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "duck"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "duck"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "duck"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "duck"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "duck"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "duck"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "duck"
+   ]
+  },
+  {
+   "word": "salmon",
+   "family": "fish",
+   "native": [
+    "country",
+    "salmon"
+   ],
+   "pca16_l0.5": [
+    "country",
+    "salmon"
+   ],
+   "pca16_l1.0": [
+    "language",
+    "salmon"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "salmon"
+   ],
+   "lidpre16_l0.5": [
+    "country",
+    "salmon"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "salmon"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "salmon"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "salmon"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "salmon"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "trout"
+   ],
+   "nn3_random_l0.5": [
+    "country",
+    "salmon"
+   ]
+  },
+  {
+   "word": "shark",
+   "family": "fish",
+   "native": [
+    "emotion",
+    "shark"
+   ],
+   "pca16_l0.5": [
+    "emotion",
+    "shark"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "shark"
+   ],
+   "pca64_l0.5": [
+    "emotion",
+    "shark"
+   ],
+   "lidpre16_l0.5": [
+    "emotion",
+    "shark"
+   ],
+   "lid1_l1.0": [
+    "emotion",
+    "shark"
+   ],
+   "lid3_l1.0": [
+    "sport",
+    "shark"
+   ],
+   "rand16_l0.5": [
+    "currency",
+    "shark"
+   ],
+   "pca16_l0.5_matched": [
+    "emotion",
+    "shark"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "shark"
+   ],
+   "nn3_random_l0.5": [
+    "currency",
+    "shark"
+   ]
+  },
+  {
+   "word": "trout",
+   "family": "fish",
+   "native": [
+    "country",
+    "trout"
+   ],
+   "pca16_l0.5": [
+    "country",
+    "trout"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "salmon"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "trout"
+   ],
+   "lidpre16_l0.5": [
+    "country",
+    "trout"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "trout"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "trout"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "trout"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "trout"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "trout"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "trout"
+   ]
+  },
+  {
+   "word": "cod",
+   "family": "fish",
+   "native": [
+    "profession",
+    "carp"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "carp"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "shark"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "carp"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "carp"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "carp"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "carp"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "cod"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "carp"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "cod"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "cod"
+   ]
+  },
+  {
+   "word": "carp",
+   "family": "fish",
+   "native": [
+    "vehicle",
+    "carp"
+   ],
+   "pca16_l0.5": [
+    "vehicle",
+    "carp"
+   ],
+   "pca16_l1.0": [
+    "vehicle",
+    "carp"
+   ],
+   "pca64_l0.5": [
+    "vehicle",
+    "carp"
+   ],
+   "lidpre16_l0.5": [
+    "vehicle",
+    "carp"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "carp"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "carp"
+   ],
+   "rand16_l0.5": [
+    "vehicle",
+    "carp"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "carp"
+   ],
+   "nn3_l0.5": [
+    "vehicle",
+    "carp"
+   ],
+   "nn3_random_l0.5": [
+    "vehicle",
+    "carp"
+   ]
+  },
+  {
+   "word": "ant",
+   "family": "insect",
+   "native": [
+    "profession",
+    "ant"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "ant"
+   ],
+   "pca16_l1.0": [
+    "language",
+    "butterfly"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "ant"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "ant"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "ant"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "ant"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "ant"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "ant"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "ant"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "ant"
+   ]
+  },
+  {
+   "word": "bee",
+   "family": "insect",
+   "native": [
+    "profession",
+    "bee"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "bee"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "ant"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "bee"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "bee"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "bee"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "bee"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "bee"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "bee"
+   ],
+   "nn3_l0.5": [
+    "emotion",
+    "bee"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "bee"
+   ]
+  },
+  {
+   "word": "butterfly",
+   "family": "insect",
+   "native": [
+    "emotion",
+    "butterfly"
+   ],
+   "pca16_l0.5": [
+    "insect",
+    "butterfly"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "moth"
+   ],
+   "pca64_l0.5": [
+    "emotion",
+    "butterfly"
+   ],
+   "lidpre16_l0.5": [
+    "emotion",
+    "butterfly"
+   ],
+   "lid1_l1.0": [
+    "emotion",
+    "butterfly"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "butterfly"
+   ],
+   "rand16_l0.5": [
+    "emotion",
+    "butterfly"
+   ],
+   "pca16_l0.5_matched": [
+    "emotion",
+    "butterfly"
+   ],
+   "nn3_l0.5": [
+    "emotion",
+    "butterfly"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "butterfly"
+   ]
+  },
+  {
+   "word": "mosquito",
+   "family": "insect",
+   "native": [
+    "profession",
+    "mosquito"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "mosquito"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "butterfly"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "mosquito"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "mosquito"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "mosquito"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "ant"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "mosquito"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "ant"
+   ],
+   "nn3_l0.5": [
+    "insect",
+    "mosquito"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "mosquito"
+   ]
+  },
+  {
+   "word": "moth",
+   "family": "insect",
+   "native": [
+    "tree",
+    "moth"
+   ],
+   "pca16_l0.5": [
+    "insect",
+    "moth"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "butterfly"
+   ],
+   "pca64_l0.5": [
+    "insect",
+    "moth"
+   ],
+   "lidpre16_l0.5": [
+    "tree",
+    "moth"
+   ],
+   "lid1_l1.0": [
+    "tree",
+    "moth"
+   ],
+   "lid3_l1.0": [
+    "tree",
+    "moth"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "moth"
+   ],
+   "pca16_l0.5_matched": [
+    "tree",
+    "moth"
+   ],
+   "nn3_l0.5": [
+    "insect",
+    "butterfly"
+   ],
+   "nn3_random_l0.5": [
+    "emotion",
+    "butterfly"
+   ]
+  },
+  {
+   "word": "hammer",
+   "family": "tool",
+   "native": [
+    "metal",
+    "hammer"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "hammer"
+   ],
+   "pca16_l1.0": [
+    "metal",
+    "hammer"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "hammer"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "hammer"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "hammer"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "hammer"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "hammer"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "hammer"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "hammer"
+   ],
+   "nn3_random_l0.5": [
+    "metal",
+    "hammer"
+   ]
+  },
+  {
+   "word": "drill",
+   "family": "tool",
+   "native": [
+    "profession",
+    "drill"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "drill"
+   ],
+   "pca16_l1.0": [
+    "metal",
+    "drill"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "drill"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "drill"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "drill"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "drill"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "drill"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "drill"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "drill"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "drill"
+   ]
+  },
+  {
+   "word": "shovel",
+   "family": "tool",
+   "native": [
+    "fruit",
+    "shovel"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "shovel"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "drill"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "shovel"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "shovel"
+   ],
+   "lid1_l1.0": [
+    "fruit",
+    "shovel"
+   ],
+   "lid3_l1.0": [
+    "river",
+    "shovel"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "shovel"
+   ],
+   "pca16_l0.5_matched": [
+    "fruit",
+    "shovel"
+   ],
+   "nn3_l0.5": [
+    "fruit",
+    "shovel"
+   ],
+   "nn3_random_l0.5": [
+    "country",
+    "shovel"
+   ]
+  },
+  {
+   "word": "axe",
+   "family": "tool",
+   "native": [
+    "metal",
+    "axe"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "axe"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "shovel"
+   ],
+   "pca64_l0.5": [
+    "vehicle",
+    "axe"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "axe"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "axe"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "axe"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "axe"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "axe"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "axe"
+   ],
+   "nn3_random_l0.5": [
+    "vehicle",
+    "axe"
+   ]
+  },
+  {
+   "word": "car",
+   "family": "vehicle",
+   "native": [
+    "vehicle",
+    "car"
+   ],
+   "pca16_l0.5": [
+    "vehicle",
+    "car"
+   ],
+   "pca16_l1.0": [
+    "vehicle",
+    "bus"
+   ],
+   "pca64_l0.5": [
+    "vehicle",
+    "car"
+   ],
+   "lidpre16_l0.5": [
+    "vehicle",
+    "car"
+   ],
+   "lid1_l1.0": [
+    "vehicle",
+    "car"
+   ],
+   "lid3_l1.0": [
+    "vehicle",
+    "car"
+   ],
+   "rand16_l0.5": [
+    "vehicle",
+    "car"
+   ],
+   "pca16_l0.5_matched": [
+    "vehicle",
+    "car"
+   ],
+   "nn3_l0.5": [
+    "vehicle",
+    "car"
+   ],
+   "nn3_random_l0.5": [
+    "vehicle",
+    "car"
+   ]
+  },
+  {
+   "word": "bus",
+   "family": "vehicle",
+   "native": [
+    "vehicle",
+    "bus"
+   ],
+   "pca16_l0.5": [
+    "vehicle",
+    "bus"
+   ],
+   "pca16_l1.0": [
+    "vehicle",
+    "bus"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "bus"
+   ],
+   "lidpre16_l0.5": [
+    "vehicle",
+    "bus"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "bus"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "bus"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "bus"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "bus"
+   ],
+   "nn3_l0.5": [
+    "vehicle",
+    "bus"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "bus"
+   ]
+  },
+  {
+   "word": "truck",
+   "family": "vehicle",
+   "native": [
+    "vehicle",
+    "truck"
+   ],
+   "pca16_l0.5": [
+    "vehicle",
+    "truck"
+   ],
+   "pca16_l1.0": [
+    "vehicle",
+    "truck"
+   ],
+   "pca64_l0.5": [
+    "vehicle",
+    "tractor"
+   ],
+   "lidpre16_l0.5": [
+    "vehicle",
+    "truck"
+   ],
+   "lid1_l1.0": [
+    "vehicle",
+    "truck"
+   ],
+   "lid3_l1.0": [
+    "vehicle",
+    "truck"
+   ],
+   "rand16_l0.5": [
+    "vehicle",
+    "truck"
+   ],
+   "pca16_l0.5_matched": [
+    "vehicle",
+    "truck"
+   ],
+   "nn3_l0.5": [
+    "vehicle",
+    "tractor"
+   ],
+   "nn3_random_l0.5": [
+    "vehicle",
+    "truck"
+   ]
+  },
+  {
+   "word": "bicycle",
+   "family": "vehicle",
+   "native": [
+    "vehicle",
+    "bicycle"
+   ],
+   "pca16_l0.5": [
+    "vehicle",
+    "bicycle"
+   ],
+   "pca16_l1.0": [
+    "vehicle",
+    "bicycle"
+   ],
+   "pca64_l0.5": [
+    "vehicle",
+    "bicycle"
+   ],
+   "lidpre16_l0.5": [
+    "vehicle",
+    "bicycle"
+   ],
+   "lid1_l1.0": [
+    "vehicle",
+    "bicycle"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "bicycle"
+   ],
+   "rand16_l0.5": [
+    "vehicle",
+    "bicycle"
+   ],
+   "pca16_l0.5_matched": [
+    "vehicle",
+    "bicycle"
+   ],
+   "nn3_l0.5": [
+    "vehicle",
+    "bicycle"
+   ],
+   "nn3_random_l0.5": [
+    "vehicle",
+    "bicycle"
+   ]
+  },
+  {
+   "word": "train",
+   "family": "vehicle",
+   "native": [
+    "profession",
+    "train"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "train"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "bicycle"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "train"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "train"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "train"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "train"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "train"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "train"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "train"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "train"
+   ]
+  },
+  {
+   "word": "tractor",
+   "family": "vehicle",
+   "native": [
+    "vehicle",
+    "tractor"
+   ],
+   "pca16_l0.5": [
+    "vehicle",
+    "tractor"
+   ],
+   "pca16_l1.0": [
+    "vehicle",
+    "tractor"
+   ],
+   "pca64_l0.5": [
+    "vehicle",
+    "tractor"
+   ],
+   "lidpre16_l0.5": [
+    "vehicle",
+    "tractor"
+   ],
+   "lid1_l1.0": [
+    "vehicle",
+    "tractor"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "tractor"
+   ],
+   "rand16_l0.5": [
+    "vehicle",
+    "tractor"
+   ],
+   "pca16_l0.5_matched": [
+    "vehicle",
+    "tractor"
+   ],
+   "nn3_l0.5": [
+    "vehicle",
+    "tractor"
+   ],
+   "nn3_random_l0.5": [
+    "vehicle",
+    "tractor"
+   ]
+  },
+  {
+   "word": "van",
+   "family": "vehicle",
+   "native": [
+    "vehicle",
+    "van"
+   ],
+   "pca16_l0.5": [
+    "vehicle",
+    "van"
+   ],
+   "pca16_l1.0": [
+    "vehicle",
+    "van"
+   ],
+   "pca64_l0.5": [
+    "vehicle",
+    "van"
+   ],
+   "lidpre16_l0.5": [
+    "vehicle",
+    "van"
+   ],
+   "lid1_l1.0": [
+    "vehicle",
+    "van"
+   ],
+   "lid3_l1.0": [
+    "vehicle",
+    "van"
+   ],
+   "rand16_l0.5": [
+    "vehicle",
+    "van"
+   ],
+   "pca16_l0.5_matched": [
+    "vehicle",
+    "van"
+   ],
+   "nn3_l0.5": [
+    "vehicle",
+    "truck"
+   ],
+   "nn3_random_l0.5": [
+    "vehicle",
+    "van"
+   ]
+  },
+  {
+   "word": "taxi",
+   "family": "vehicle",
+   "native": [
+    "vehicle",
+    "taxi"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "taxi"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "bus"
+   ],
+   "pca64_l0.5": [
+    "vehicle",
+    "taxi"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "taxi"
+   ],
+   "lid1_l1.0": [
+    "vehicle",
+    "taxi"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "taxi"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "taxi"
+   ],
+   "pca16_l0.5_matched": [
+    "vehicle",
+    "taxi"
+   ],
+   "nn3_l0.5": [
+    "vehicle",
+    "bus"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "taxi"
+   ]
+  },
+  {
+   "word": "guitar",
+   "family": "instrument",
+   "native": [
+    "currency",
+    "guitar"
+   ],
+   "pca16_l0.5": [
+    "emotion",
+    "guitar"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "piano"
+   ],
+   "pca64_l0.5": [
+    "emotion",
+    "guitar"
+   ],
+   "lidpre16_l0.5": [
+    "emotion",
+    "guitar"
+   ],
+   "lid1_l1.0": [
+    "currency",
+    "guitar"
+   ],
+   "lid3_l1.0": [
+    "currency",
+    "guitar"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "guitar"
+   ],
+   "pca16_l0.5_matched": [
+    "emotion",
+    "guitar"
+   ],
+   "nn3_l0.5": [
+    "sport",
+    "guitar"
+   ],
+   "nn3_random_l0.5": [
+    "emotion",
+    "guitar"
+   ]
+  },
+  {
+   "word": "piano",
+   "family": "instrument",
+   "native": [
+    "profession",
+    "piano"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "piano"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "drum"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "piano"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "piano"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "piano"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "piano"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "piano"
+   ],
+   "pca16_l0.5_matched": [
+    "currency",
+    "piano"
+   ],
+   "nn3_l0.5": [
+    "currency",
+    "piano"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "piano"
+   ]
+  },
+  {
+   "word": "violin",
+   "family": "instrument",
+   "native": [
+    "language",
+    "violin"
+   ],
+   "pca16_l0.5": [
+    "language",
+    "violin"
+   ],
+   "pca16_l1.0": [
+    "metal",
+    "piano"
+   ],
+   "pca64_l0.5": [
+    "language",
+    "violin"
+   ],
+   "lidpre16_l0.5": [
+    "language",
+    "violin"
+   ],
+   "lid1_l1.0": [
+    "language",
+    "violin"
+   ],
+   "lid3_l1.0": [
+    "language",
+    "violin"
+   ],
+   "rand16_l0.5": [
+    "language",
+    "violin"
+   ],
+   "pca16_l0.5_matched": [
+    "language",
+    "violin"
+   ],
+   "nn3_l0.5": [
+    "sport",
+    "guitar"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "violin"
+   ]
+  },
+  {
+   "word": "drum",
+   "family": "instrument",
+   "native": [
+    "profession",
+    "drum"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "drum"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "drum"
+   ],
+   "pca64_l0.5": [
+    "emotion",
+    "drum"
+   ],
+   "lidpre16_l0.5": [
+    "emotion",
+    "drum"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "drum"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "drum"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "drum"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "drum"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "drum"
+   ],
+   "nn3_random_l0.5": [
+    "emotion",
+    "drum"
+   ]
+  },
+  {
+   "word": "apple",
+   "family": "fruit",
+   "native": [
+    "profession",
+    "apple"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "apple"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "pear"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "apple"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "apple"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "apple"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "apple"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "apple"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "apple"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "pear"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "apple"
+   ]
+  },
+  {
+   "word": "pear",
+   "family": "fruit",
+   "native": [
+    "country",
+    "pear"
+   ],
+   "pca16_l0.5": [
+    "country",
+    "pear"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "pear"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "pear"
+   ],
+   "lidpre16_l0.5": [
+    "country",
+    "pear"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "pear"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "apple"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "pear"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "pear"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "pear"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "pear"
+   ]
+  },
+  {
+   "word": "plum",
+   "family": "fruit",
+   "native": [
+    "country",
+    "apple"
+   ],
+   "pca16_l0.5": [
+    "country",
+    "apple"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "apple"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "pear"
+   ],
+   "lidpre16_l0.5": [
+    "country",
+    "apple"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "apple"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "apple"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "apple"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "apple"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "pear"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "apple"
+   ]
+  },
+  {
+   "word": "orange",
+   "family": "fruit",
+   "native": [
+    "color",
+    "orange"
+   ],
+   "pca16_l0.5": [
+    "color",
+    "orange"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "pear"
+   ],
+   "pca64_l0.5": [
+    "color",
+    "orange"
+   ],
+   "lidpre16_l0.5": [
+    "color",
+    "orange"
+   ],
+   "lid1_l1.0": [
+    "color",
+    "orange"
+   ],
+   "lid3_l1.0": [
+    "color",
+    "orange"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "apple"
+   ],
+   "pca16_l0.5_matched": [
+    "color",
+    "orange"
+   ],
+   "nn3_l0.5": [
+    "color",
+    "orange"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "orange"
+   ]
+  },
+  {
+   "word": "grape",
+   "family": "fruit",
+   "native": [
+    "profession",
+    "grape"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "grape"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "grape"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "grape"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "grape"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "grape"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "apple"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "grape"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "grape"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "grape"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "grape"
+   ]
+  },
+  {
+   "word": "lemon",
+   "family": "fruit",
+   "native": [
+    "profession",
+    "lemon"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "lemon"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "apple"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "lemon"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "lemon"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "lemon"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "apple"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "lemon"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "lemon"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "lemon"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "lemon"
+   ]
+  },
+  {
+   "word": "iron",
+   "family": "metal",
+   "native": [
+    "metal",
+    "iron"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "iron"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "iron"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "iron"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "iron"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "nn3_random_l0.5": [
+    "metal",
+    "iron"
+   ]
+  },
+  {
+   "word": "gold",
+   "family": "metal",
+   "native": [
+    "metal",
+    "steel"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "lead"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "lead"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "lead"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "steel"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "steel"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "steel"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "nn3_random_l0.5": [
+    "metal",
+    "steel"
+   ]
+  },
+  {
+   "word": "silver",
+   "family": "metal",
+   "native": [
+    "metal",
+    "steel"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "tin"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "lead"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "tin"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "tin"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "steel"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "steel"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "steel"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "nn3_random_l0.5": [
+    "metal",
+    "steel"
+   ]
+  },
+  {
+   "word": "copper",
+   "family": "metal",
+   "native": [
+    "metal",
+    "tin"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "tin"
+   ],
+   "pca16_l1.0": [
+    "metal",
+    "iron"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "tin"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "tin"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "tin"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "tin"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "lead"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "tin"
+   ],
+   "nn3_random_l0.5": [
+    "metal",
+    "steel"
+   ]
+  },
+  {
+   "word": "zinc",
+   "family": "metal",
+   "native": [
+    "metal",
+    "iron"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "pca16_l1.0": [
+    "metal",
+    "iron"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "iron"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "iron"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "iron"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "iron"
+   ]
+  },
+  {
+   "word": "steel",
+   "family": "metal",
+   "native": [
+    "metal",
+    "iron"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "pca16_l1.0": [
+    "metal",
+    "steel"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "iron"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "iron"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "steel"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "iron"
+   ],
+   "nn3_random_l0.5": [
+    "metal",
+    "steel"
+   ]
+  },
+  {
+   "word": "tin",
+   "family": "metal",
+   "native": [
+    "country",
+    "tin"
+   ],
+   "pca16_l0.5": [
+    "country",
+    "tin"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "tin"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "tin"
+   ],
+   "lidpre16_l0.5": [
+    "currency",
+    "tin"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "tin"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "steel"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "tin"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "tin"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "tin"
+   ],
+   "nn3_random_l0.5": [
+    "country",
+    "tin"
+   ]
+  },
+  {
+   "word": "lead",
+   "family": "metal",
+   "native": [
+    "metal",
+    "steel"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "steel"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "steel"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "steel"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "steel"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "steel"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "lead"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "steel"
+   ]
+  },
+  {
+   "word": "red",
+   "family": "color",
+   "native": [
+    "color",
+    "red"
+   ],
+   "pca16_l0.5": [
+    "color",
+    "red"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "yellow"
+   ],
+   "pca64_l0.5": [
+    "color",
+    "red"
+   ],
+   "lidpre16_l0.5": [
+    "color",
+    "red"
+   ],
+   "lid1_l1.0": [
+    "color",
+    "red"
+   ],
+   "lid3_l1.0": [
+    "color",
+    "yellow"
+   ],
+   "rand16_l0.5": [
+    "color",
+    "yellow"
+   ],
+   "pca16_l0.5_matched": [
+    "color",
+    "red"
+   ],
+   "nn3_l0.5": [
+    "color",
+    "blue"
+   ],
+   "nn3_random_l0.5": [
+    "emotion",
+    "yellow"
+   ]
+  },
+  {
+   "word": "blue",
+   "family": "color",
+   "native": [
+    "profession",
+    "blue"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "blue"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "yellow"
+   ],
+   "pca64_l0.5": [
+    "color",
+    "blue"
+   ],
+   "lidpre16_l0.5": [
+    "color",
+    "blue"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "blue"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "blue"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "blue"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "blue"
+   ],
+   "nn3_l0.5": [
+    "color",
+    "blue"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "blue"
+   ]
+  },
+  {
+   "word": "green",
+   "family": "color",
+   "native": [
+    "color",
+    "green"
+   ],
+   "pca16_l0.5": [
+    "color",
+    "yellow"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "yellow"
+   ],
+   "pca64_l0.5": [
+    "color",
+    "green"
+   ],
+   "lidpre16_l0.5": [
+    "color",
+    "yellow"
+   ],
+   "lid1_l1.0": [
+    "color",
+    "green"
+   ],
+   "lid3_l1.0": [
+    "color",
+    "green"
+   ],
+   "rand16_l0.5": [
+    "color",
+    "yellow"
+   ],
+   "pca16_l0.5_matched": [
+    "color",
+    "green"
+   ],
+   "nn3_l0.5": [
+    "color",
+    "green"
+   ],
+   "nn3_random_l0.5": [
+    "color",
+    "yellow"
+   ]
+  },
+  {
+   "word": "yellow",
+   "family": "color",
+   "native": [
+    "color",
+    "yellow"
+   ],
+   "pca16_l0.5": [
+    "color",
+    "yellow"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "yellow"
+   ],
+   "pca64_l0.5": [
+    "color",
+    "yellow"
+   ],
+   "lidpre16_l0.5": [
+    "color",
+    "yellow"
+   ],
+   "lid1_l1.0": [
+    "color",
+    "yellow"
+   ],
+   "lid3_l1.0": [
+    "color",
+    "yellow"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "yellow"
+   ],
+   "pca16_l0.5_matched": [
+    "color",
+    "yellow"
+   ],
+   "nn3_l0.5": [
+    "color",
+    "yellow"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "yellow"
+   ]
+  },
+  {
+   "word": "purple",
+   "family": "color",
+   "native": [
+    "profession",
+    "purple"
+   ],
+   "pca16_l0.5": [
+    "color",
+    "purple"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "yellow"
+   ],
+   "pca64_l0.5": [
+    "color",
+    "purple"
+   ],
+   "lidpre16_l0.5": [
+    "color",
+    "purple"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "purple"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "purple"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "purple"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "purple"
+   ],
+   "nn3_l0.5": [
+    "color",
+    "purple"
+   ],
+   "nn3_random_l0.5": [
+    "country",
+    "purple"
+   ]
+  },
+  {
+   "word": "black",
+   "family": "color",
+   "native": [
+    "profession",
+    "black"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "black"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "yellow"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "black"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "black"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "black"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "black"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "black"
+   ],
+   "pca16_l0.5_matched": [
+    "emotion",
+    "black"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "black"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "black"
+   ]
+  },
+  {
+   "word": "white",
+   "family": "color",
+   "native": [
+    "profession",
+    "yellow"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "yellow"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "yellow"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "yellow"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "yellow"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "blue"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "yellow"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "yellow"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "yellow"
+   ],
+   "nn3_l0.5": [
+    "color",
+    "white"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "yellow"
+   ]
+  },
+  {
+   "word": "pink",
+   "family": "color",
+   "native": [
+    "color",
+    "pink"
+   ],
+   "pca16_l0.5": [
+    "color",
+    "pink"
+   ],
+   "pca16_l1.0": [
+    "color",
+    "yellow"
+   ],
+   "pca64_l0.5": [
+    "color",
+    "pink"
+   ],
+   "lidpre16_l0.5": [
+    "color",
+    "pink"
+   ],
+   "lid1_l1.0": [
+    "color",
+    "pink"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "pink"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "yellow"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "red"
+   ],
+   "nn3_l0.5": [
+    "color",
+    "pink"
+   ],
+   "nn3_random_l0.5": [
+    "color",
+    "pink"
+   ]
+  },
+  {
+   "word": "tennis",
+   "family": "sport",
+   "native": [
+    "sport",
+    "swimming"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lid1_l1.0": [
+    "sport",
+    "swimming"
+   ],
+   "lid3_l1.0": [
+    "sport",
+    "swimming"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l0.5_matched": [
+    "sport",
+    "swimming"
+   ],
+   "nn3_l0.5": [
+    "sport",
+    "soccer"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "swimming"
+   ]
+  },
+  {
+   "word": "golf",
+   "family": "sport",
+   "native": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "swimming"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "swimming"
+   ]
+  },
+  {
+   "word": "soccer",
+   "family": "sport",
+   "native": [
+    "sport",
+    "swimming"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lid1_l1.0": [
+    "sport",
+    "soccer"
+   ],
+   "lid3_l1.0": [
+    "sport",
+    "soccer"
+   ],
+   "rand16_l0.5": [
+    "sport",
+    "swimming"
+   ],
+   "pca16_l0.5_matched": [
+    "sport",
+    "soccer"
+   ],
+   "nn3_l0.5": [
+    "sport",
+    "swimming"
+   ],
+   "nn3_random_l0.5": [
+    "sport",
+    "swimming"
+   ]
+  },
+  {
+   "word": "rugby",
+   "family": "sport",
+   "native": [
+    "profession",
+    "rugby"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "rugby"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "rugby"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l0.5_matched": [
+    "sport",
+    "rugby"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "swimming"
+   ]
+  },
+  {
+   "word": "boxing",
+   "family": "sport",
+   "native": [
+    "profession",
+    "boxing"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "boxing"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "boxing"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "boxing"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "boxing"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "boxing"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "boxing"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "swimming"
+   ]
+  },
+  {
+   "word": "hockey",
+   "family": "sport",
+   "native": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "swimming"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "swimming"
+   ]
+  },
+  {
+   "word": "skiing",
+   "family": "sport",
+   "native": [
+    "sport",
+    "skiing"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "skiing"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "pca64_l0.5": [
+    "sport",
+    "skiing"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "skiing"
+   ],
+   "lid1_l1.0": [
+    "sport",
+    "skiing"
+   ],
+   "lid3_l1.0": [
+    "sport",
+    "skiing"
+   ],
+   "rand16_l0.5": [
+    "sport",
+    "skiing"
+   ],
+   "pca16_l0.5_matched": [
+    "sport",
+    "skiing"
+   ],
+   "nn3_l0.5": [
+    "sport",
+    "swimming"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "swimming"
+   ]
+  },
+  {
+   "word": "swimming",
+   "family": "sport",
+   "native": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l1.0": [
+    "vehicle",
+    "swimming"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "swimming"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "swimming"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "swimming"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "swimming"
+   ]
+  },
+  {
+   "word": "table",
+   "family": "furniture",
+   "native": [
+    "metal",
+    "table"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "table"
+   ],
+   "pca16_l1.0": [
+    "metal",
+    "table"
+   ],
+   "pca64_l0.5": [
+    "furniture",
+    "table"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "table"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "table"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "table"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "table"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "table"
+   ],
+   "nn3_l0.5": [
+    "furniture",
+    "bench"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "table"
+   ]
+  },
+  {
+   "word": "bed",
+   "family": "furniture",
+   "native": [
+    "clothing",
+    "bench"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "bench"
+   ],
+   "pca16_l1.0": [
+    "fruit",
+    "bed"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "bench"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "bench"
+   ],
+   "lid1_l1.0": [
+    "clothing",
+    "bench"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "bed"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "bench"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "bed"
+   ],
+   "nn3_l0.5": [
+    "furniture",
+    "bench"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "bed"
+   ]
+  },
+  {
+   "word": "desk",
+   "family": "furniture",
+   "native": [
+    "furniture",
+    "table"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "table"
+   ],
+   "pca16_l1.0": [
+    "vegetable",
+    "bed"
+   ],
+   "pca64_l0.5": [
+    "furniture",
+    "table"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "table"
+   ],
+   "lid1_l1.0": [
+    "furniture",
+    "table"
+   ],
+   "lid3_l1.0": [
+    "furniture",
+    "desk"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "desk"
+   ],
+   "pca16_l0.5_matched": [
+    "furniture",
+    "table"
+   ],
+   "nn3_l0.5": [
+    "furniture",
+    "table"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "desk"
+   ]
+  },
+  {
+   "word": "sofa",
+   "family": "furniture",
+   "native": [
+    "furniture",
+    "sofa"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "sofa"
+   ],
+   "pca16_l1.0": [
+    "vegetable",
+    "bed"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "sofa"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "sofa"
+   ],
+   "lid1_l1.0": [
+    "furniture",
+    "sofa"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "sofa"
+   ],
+   "rand16_l0.5": [
+    "furniture",
+    "sofa"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "sofa"
+   ],
+   "nn3_l0.5": [
+    "furniture",
+    "table"
+   ],
+   "nn3_random_l0.5": [
+    "metal",
+    "sofa"
+   ]
+  },
+  {
+   "word": "stool",
+   "family": "furniture",
+   "native": [
+    "clothing",
+    "stool"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "stool"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "stool"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "stool"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "stool"
+   ],
+   "lid1_l1.0": [
+    "clothing",
+    "stool"
+   ],
+   "lid3_l1.0": [
+    "clothing",
+    "stool"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "stool"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "stool"
+   ],
+   "nn3_l0.5": [
+    "furniture",
+    "bench"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "stool"
+   ]
+  },
+  {
+   "word": "bench",
+   "family": "furniture",
+   "native": [
+    "metal",
+    "bench"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "bench"
+   ],
+   "pca16_l1.0": [
+    "metal",
+    "bench"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "bench"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "bench"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "bench"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "bench"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "bench"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "bench"
+   ],
+   "nn3_l0.5": [
+    "furniture",
+    "bench"
+   ],
+   "nn3_random_l0.5": [
+    "metal",
+    "bench"
+   ]
+  },
+  {
+   "word": "cabinet",
+   "family": "furniture",
+   "native": [
+    "metal",
+    "cabinet"
+   ],
+   "pca16_l0.5": [
+    "metal",
+    "cabinet"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "cabinet"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "cabinet"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "cabinet"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "cabinet"
+   ],
+   "lid3_l1.0": [
+    "metal",
+    "cabinet"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "cabinet"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "cabinet"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "cabinet"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "cabinet"
+   ]
+  },
+  {
+   "word": "shirt",
+   "family": "clothing",
+   "native": [
+    "clothing",
+    "pants"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "hat"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "lid1_l1.0": [
+    "clothing",
+    "pants"
+   ],
+   "lid3_l1.0": [
+    "clothing",
+    "pants"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "pants"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "pants"
+   ],
+   "nn3_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "hat"
+   ]
+  },
+  {
+   "word": "coat",
+   "family": "clothing",
+   "native": [
+    "clothing",
+    "coat"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "skirt"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "jacket"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "lid1_l1.0": [
+    "clothing",
+    "coat"
+   ],
+   "lid3_l1.0": [
+    "clothing",
+    "coat"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "coat"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "coat"
+   ],
+   "nn3_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "coat"
+   ]
+  },
+  {
+   "word": "dress",
+   "family": "clothing",
+   "native": [
+    "clothing",
+    "dress"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "dress"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "lid1_l1.0": [
+    "clothing",
+    "dress"
+   ],
+   "lid3_l1.0": [
+    "clothing",
+    "dress"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "dress"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "dress"
+   ],
+   "nn3_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "skirt"
+   ]
+  },
+  {
+   "word": "skirt",
+   "family": "clothing",
+   "native": [
+    "clothing",
+    "skirt"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "skirt"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "lid1_l1.0": [
+    "clothing",
+    "skirt"
+   ],
+   "lid3_l1.0": [
+    "clothing",
+    "skirt"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "skirt"
+   ],
+   "nn3_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "skirt"
+   ]
+  },
+  {
+   "word": "pants",
+   "family": "clothing",
+   "native": [
+    "clothing",
+    "pants"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "pants"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "hat"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "pants"
+   ],
+   "lid1_l1.0": [
+    "clothing",
+    "pants"
+   ],
+   "lid3_l1.0": [
+    "clothing",
+    "pants"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "pants"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "pants"
+   ],
+   "nn3_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "hat"
+   ]
+  },
+  {
+   "word": "socks",
+   "family": "clothing",
+   "native": [
+    "profession",
+    "socks"
+   ],
+   "pca16_l0.5": [
+    "currency",
+    "pants"
+   ],
+   "pca16_l1.0": [
+    "currency",
+    "hat"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "socks"
+   ],
+   "lidpre16_l0.5": [
+    "currency",
+    "pants"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "socks"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "dress"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "pants"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "socks"
+   ],
+   "nn3_l0.5": [
+    "clothing",
+    "pants"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "hat"
+   ]
+  },
+  {
+   "word": "hat",
+   "family": "clothing",
+   "native": [
+    "country",
+    "hat"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "pants"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "hat"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "hat"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "hat"
+   ],
+   "nn3_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "nn3_random_l0.5": [
+    "country",
+    "hat"
+   ]
+  },
+  {
+   "word": "jacket",
+   "family": "clothing",
+   "native": [
+    "clothing",
+    "jacket"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "jacket"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "coat"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "hat"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "jacket"
+   ],
+   "lid1_l1.0": [
+    "clothing",
+    "jacket"
+   ],
+   "lid3_l1.0": [
+    "clothing",
+    "jacket"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "jacket"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "jacket"
+   ],
+   "nn3_l0.5": [
+    "clothing",
+    "skirt"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "jacket"
+   ]
+  },
+  {
+   "word": "joy",
+   "family": "emotion",
+   "native": [
+    "language",
+    "joy"
+   ],
+   "pca16_l0.5": [
+    "language",
+    "joy"
+   ],
+   "pca16_l1.0": [
+    "currency",
+    "joy"
+   ],
+   "pca64_l0.5": [
+    "language",
+    "joy"
+   ],
+   "lidpre16_l0.5": [
+    "language",
+    "joy"
+   ],
+   "lid1_l1.0": [
+    "language",
+    "joy"
+   ],
+   "lid3_l1.0": [
+    "language",
+    "joy"
+   ],
+   "rand16_l0.5": [
+    "language",
+    "joy"
+   ],
+   "pca16_l0.5_matched": [
+    "language",
+    "joy"
+   ],
+   "nn3_l0.5": [
+    "language",
+    "joy"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "joy"
+   ]
+  },
+  {
+   "word": "anger",
+   "family": "emotion",
+   "native": [
+    "tree",
+    "anger"
+   ],
+   "pca16_l0.5": [
+    "sport",
+    "anger"
+   ],
+   "pca16_l1.0": [
+    "sport",
+    "anger"
+   ],
+   "pca64_l0.5": [
+    "tree",
+    "anger"
+   ],
+   "lidpre16_l0.5": [
+    "tree",
+    "anger"
+   ],
+   "lid1_l1.0": [
+    "tree",
+    "anger"
+   ],
+   "lid3_l1.0": [
+    "sport",
+    "anger"
+   ],
+   "rand16_l0.5": [
+    "insect",
+    "anger"
+   ],
+   "pca16_l0.5_matched": [
+    "tree",
+    "anger"
+   ],
+   "nn3_l0.5": [
+    "tree",
+    "anger"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "anger"
+   ]
+  },
+  {
+   "word": "fear",
+   "family": "emotion",
+   "native": [
+    "tree",
+    "fear"
+   ],
+   "pca16_l0.5": [
+    "tree",
+    "shame"
+   ],
+   "pca16_l1.0": [
+    "insect",
+    "sadness"
+   ],
+   "pca64_l0.5": [
+    "tree",
+    "shame"
+   ],
+   "lidpre16_l0.5": [
+    "tree",
+    "shame"
+   ],
+   "lid1_l1.0": [
+    "tree",
+    "fear"
+   ],
+   "lid3_l1.0": [
+    "tree",
+    "fear"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "shame"
+   ],
+   "pca16_l0.5_matched": [
+    "sport",
+    "fear"
+   ],
+   "nn3_l0.5": [
+    "tree",
+    "shame"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "fear"
+   ]
+  },
+  {
+   "word": "sadness",
+   "family": "emotion",
+   "native": [
+    "tree",
+    "sadness"
+   ],
+   "pca16_l0.5": [
+    "tree",
+    "sadness"
+   ],
+   "pca16_l1.0": [
+    "tree",
+    "sadness"
+   ],
+   "pca64_l0.5": [
+    "tree",
+    "sadness"
+   ],
+   "lidpre16_l0.5": [
+    "tree",
+    "sadness"
+   ],
+   "lid1_l1.0": [
+    "tree",
+    "sadness"
+   ],
+   "lid3_l1.0": [
+    "tool",
+    "sadness"
+   ],
+   "rand16_l0.5": [
+    "tree",
+    "sadness"
+   ],
+   "pca16_l0.5_matched": [
+    "tree",
+    "sadness"
+   ],
+   "nn3_l0.5": [
+    "tree",
+    "shame"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "sadness"
+   ]
+  },
+  {
+   "word": "shame",
+   "family": "emotion",
+   "native": [
+    "insect",
+    "shame"
+   ],
+   "pca16_l0.5": [
+    "insect",
+    "shame"
+   ],
+   "pca16_l1.0": [
+    "currency",
+    "sadness"
+   ],
+   "pca64_l0.5": [
+    "insect",
+    "shame"
+   ],
+   "lidpre16_l0.5": [
+    "insect",
+    "shame"
+   ],
+   "lid1_l1.0": [
+    "insect",
+    "shame"
+   ],
+   "lid3_l1.0": [
+    "insect",
+    "shame"
+   ],
+   "rand16_l0.5": [
+    "insect",
+    "shame"
+   ],
+   "pca16_l0.5_matched": [
+    "insect",
+    "shame"
+   ],
+   "nn3_l0.5": [
+    "insect",
+    "shame"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "shame"
+   ]
+  },
+  {
+   "word": "pride",
+   "family": "emotion",
+   "native": [
+    "clothing",
+    "pride"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "pride"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "pride"
+   ],
+   "pca64_l0.5": [
+    "clothing",
+    "pride"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "pride"
+   ],
+   "lid1_l1.0": [
+    "clothing",
+    "pride"
+   ],
+   "lid3_l1.0": [
+    "clothing",
+    "pride"
+   ],
+   "rand16_l0.5": [
+    "clothing",
+    "pride"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "pride"
+   ],
+   "nn3_l0.5": [
+    "insect",
+    "pride"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "pride"
+   ]
+  },
+  {
+   "word": "envy",
+   "family": "emotion",
+   "native": [
+    "insect",
+    "envy"
+   ],
+   "pca16_l0.5": [
+    "insect",
+    "envy"
+   ],
+   "pca16_l1.0": [
+    "language",
+    "sadness"
+   ],
+   "pca64_l0.5": [
+    "insect",
+    "envy"
+   ],
+   "lidpre16_l0.5": [
+    "insect",
+    "envy"
+   ],
+   "lid1_l1.0": [
+    "insect",
+    "envy"
+   ],
+   "lid3_l1.0": [
+    "insect",
+    "envy"
+   ],
+   "rand16_l0.5": [
+    "insect",
+    "envy"
+   ],
+   "pca16_l0.5_matched": [
+    "insect",
+    "envy"
+   ],
+   "nn3_l0.5": [
+    "insect",
+    "envy"
+   ],
+   "nn3_random_l0.5": [
+    "insect",
+    "envy"
+   ]
+  },
+  {
+   "word": "grief",
+   "family": "emotion",
+   "native": [
+    "tree",
+    "grief"
+   ],
+   "pca16_l0.5": [
+    "tree",
+    "grief"
+   ],
+   "pca16_l1.0": [
+    "tree",
+    "sadness"
+   ],
+   "pca64_l0.5": [
+    "tree",
+    "grief"
+   ],
+   "lidpre16_l0.5": [
+    "tree",
+    "grief"
+   ],
+   "lid1_l1.0": [
+    "tree",
+    "grief"
+   ],
+   "lid3_l1.0": [
+    "tree",
+    "grief"
+   ],
+   "rand16_l0.5": [
+    "language",
+    "grief"
+   ],
+   "pca16_l0.5_matched": [
+    "tree",
+    "grief"
+   ],
+   "nn3_l0.5": [
+    "tree",
+    "sadness"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "grief"
+   ]
+  },
+  {
+   "word": "doctor",
+   "family": "profession",
+   "native": [
+    "profession",
+    "doctor"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "doctor"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "teacher"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "doctor"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "doctor"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "doctor"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "doctor"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "doctor"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "doctor"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "doctor"
+   ]
+  },
+  {
+   "word": "nurse",
+   "family": "profession",
+   "native": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "teacher"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "teacher"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "teacher"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "teacher"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "teacher"
+   ]
+  },
+  {
+   "word": "teacher",
+   "family": "profession",
+   "native": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "lawyer"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "teacher"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "teacher"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "teacher"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "teacher"
+   ]
+  },
+  {
+   "word": "lawyer",
+   "family": "profession",
+   "native": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "teacher"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "teacher"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "teacher"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "teacher"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "lawyer"
+   ]
+  },
+  {
+   "word": "pilot",
+   "family": "profession",
+   "native": [
+    "profession",
+    "pilot"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "pilot"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "pilot"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "pilot"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "pilot"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "pilot"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "pilot"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "pilot"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "pilot"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "pilot"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "pilot"
+   ]
+  },
+  {
+   "word": "chef",
+   "family": "profession",
+   "native": [
+    "profession",
+    "chef"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "chef"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "pilot"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "chef"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "chef"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "chef"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "chef"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "chef"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "chef"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "chef"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "chef"
+   ]
+  },
+  {
+   "word": "farmer",
+   "family": "profession",
+   "native": [
+    "country",
+    "farmer"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "farmer"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "farmer"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "farmer"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "farmer"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "farmer"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "farmer"
+   ],
+   "rand16_l0.5": [
+    "fruit",
+    "farmer"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "farmer"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "farmer"
+   ]
+  },
+  {
+   "word": "dentist",
+   "family": "profession",
+   "native": [
+    "profession",
+    "doctor"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "doctor"
+   ],
+   "pca16_l1.0": [
+    "currency",
+    "teacher"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "doctor"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "doctor"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "doctor"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "doctor"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "doctor"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "teacher"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "teacher"
+   ]
+  },
+  {
+   "word": "Nile",
+   "family": "river",
+   "native": [
+    "sport",
+    "Nile"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "Thames"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "Thames"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "Thames"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "Thames"
+   ],
+   "lid1_l1.0": [
+    "sport",
+    "Nile"
+   ],
+   "lid3_l1.0": [
+    "sport",
+    "Nile"
+   ],
+   "rand16_l0.5": [
+    "sport",
+    "Thames"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Thames"
+   ],
+   "nn3_l0.5": [
+    "river",
+    "Nile"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Thames"
+   ]
+  },
+  {
+   "word": "Amazon",
+   "family": "river",
+   "native": [
+    "profession",
+    "Amazon"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Amazon"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Amazon"
+   ],
+   "pca64_l0.5": [
+    "currency",
+    "Amazon"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Amazon"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Amazon"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Amazon"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Amazon"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Amazon"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Amazon"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Amazon"
+   ]
+  },
+  {
+   "word": "Thames",
+   "family": "river",
+   "native": [
+    "river",
+    "Thames"
+   ],
+   "pca16_l0.5": [
+    "river",
+    "Thames"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "Thames"
+   ],
+   "pca64_l0.5": [
+    "river",
+    "Thames"
+   ],
+   "lidpre16_l0.5": [
+    "river",
+    "Thames"
+   ],
+   "lid1_l1.0": [
+    "river",
+    "Thames"
+   ],
+   "lid3_l1.0": [
+    "river",
+    "Thames"
+   ],
+   "rand16_l0.5": [
+    "river",
+    "Thames"
+   ],
+   "pca16_l0.5_matched": [
+    "river",
+    "Thames"
+   ],
+   "nn3_l0.5": [
+    "river",
+    "Thames"
+   ],
+   "nn3_random_l0.5": [
+    "river",
+    "Thames"
+   ]
+  },
+  {
+   "word": "Mississippi",
+   "family": "river",
+   "native": [
+    "profession",
+    "Mississippi"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Mississippi"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Congo"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Mississippi"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Mississippi"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Mississippi"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Mississippi"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Mississippi"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Mississippi"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Mississippi"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Mississippi"
+   ]
+  },
+  {
+   "word": "Congo",
+   "family": "river",
+   "native": [
+    "country",
+    "Congo"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Congo"
+   ],
+   "pca16_l1.0": [
+    "language",
+    "Congo"
+   ],
+   "pca64_l0.5": [
+    "currency",
+    "Congo"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Congo"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Congo"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Congo"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Congo"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "Congo"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Congo"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Congo"
+   ]
+  },
+  {
+   "word": "France",
+   "family": "country",
+   "native": [
+    "profession",
+    "France"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "France"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Canada"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "France"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "France"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "France"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "France"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "France"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "France"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "France"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "France"
+   ]
+  },
+  {
+   "word": "Germany",
+   "family": "country",
+   "native": [
+    "profession",
+    "Germany"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Germany"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Germany"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Germany"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Germany"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Germany"
+   ]
+  },
+  {
+   "word": "Spain",
+   "family": "country",
+   "native": [
+    "profession",
+    "Spain"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Spain"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "Germany"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Spain"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Spain"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Spain"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Spain"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Spain"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Spain"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Spain"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Spain"
+   ]
+  },
+  {
+   "word": "Italy",
+   "family": "country",
+   "native": [
+    "profession",
+    "Italy"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Italy"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "Germany"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Italy"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Italy"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Italy"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Italy"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Italy"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Italy"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Italy"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Italy"
+   ]
+  },
+  {
+   "word": "Japan",
+   "family": "country",
+   "native": [
+    "country",
+    "Japan"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Japan"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Germany"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Japan"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Japan"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "Japan"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "Japan"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Japan"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "Japan"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "Japan"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Japan"
+   ]
+  },
+  {
+   "word": "China",
+   "family": "country",
+   "native": [
+    "profession",
+    "China"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "China"
+   ],
+   "pca16_l1.0": [
+    "metal",
+    "Germany"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "China"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "China"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "China"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "China"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "China"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Germany"
+   ]
+  },
+  {
+   "word": "Canada",
+   "family": "country",
+   "native": [
+    "country",
+    "Germany"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Germany"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "Germany"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "Germany"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "Canada"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Germany"
+   ]
+  },
+  {
+   "word": "Brazil",
+   "family": "country",
+   "native": [
+    "profession",
+    "Brazil"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "pca16_l1.0": [
+    "clothing",
+    "Germany"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Brazil"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Brazil"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Germany"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Brazil"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Brazil"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Italy"
+   ]
+  },
+  {
+   "word": "English",
+   "family": "language",
+   "native": [
+    "language",
+    "English"
+   ],
+   "pca16_l0.5": [
+    "language",
+    "English"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Russian"
+   ],
+   "pca64_l0.5": [
+    "language",
+    "English"
+   ],
+   "lidpre16_l0.5": [
+    "language",
+    "English"
+   ],
+   "lid1_l1.0": [
+    "language",
+    "English"
+   ],
+   "lid3_l1.0": [
+    "language",
+    "English"
+   ],
+   "rand16_l0.5": [
+    "language",
+    "English"
+   ],
+   "pca16_l0.5_matched": [
+    "language",
+    "English"
+   ],
+   "nn3_l0.5": [
+    "language",
+    "English"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "English"
+   ]
+  },
+  {
+   "word": "French",
+   "family": "language",
+   "native": [
+    "profession",
+    "French"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "French"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "German"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "French"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "French"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "French"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "French"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "French"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "French"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "French"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "French"
+   ]
+  },
+  {
+   "word": "German",
+   "family": "language",
+   "native": [
+    "country",
+    "German"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "German"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Japanese"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "German"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "German"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "German"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "German"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "German"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "German"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "German"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "German"
+   ]
+  },
+  {
+   "word": "Spanish",
+   "family": "language",
+   "native": [
+    "profession",
+    "Spanish"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Spanish"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "German"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Spanish"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Spanish"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Spanish"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Spanish"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Spanish"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "Spanish"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Spanish"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Spanish"
+   ]
+  },
+  {
+   "word": "Italian",
+   "family": "language",
+   "native": [
+    "profession",
+    "Italian"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Italian"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "German"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Italian"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Italian"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Italian"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Italian"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Italian"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Italian"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Italian"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Italian"
+   ]
+  },
+  {
+   "word": "Japanese",
+   "family": "language",
+   "native": [
+    "country",
+    "Japanese"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Japanese"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Japanese"
+   ],
+   "pca64_l0.5": [
+    "country",
+    "Japanese"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Japanese"
+   ],
+   "lid1_l1.0": [
+    "country",
+    "Japanese"
+   ],
+   "lid3_l1.0": [
+    "country",
+    "Japanese"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Japanese"
+   ],
+   "pca16_l0.5_matched": [
+    "country",
+    "Japanese"
+   ],
+   "nn3_l0.5": [
+    "country",
+    "Japanese"
+   ],
+   "nn3_random_l0.5": [
+    "country",
+    "Japanese"
+   ]
+  },
+  {
+   "word": "Arabic",
+   "family": "language",
+   "native": [
+    "profession",
+    "Arabic"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Arabic"
+   ],
+   "pca16_l1.0": [
+    "language",
+    "Russian"
+   ],
+   "pca64_l0.5": [
+    "language",
+    "Arabic"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Arabic"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Arabic"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Arabic"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Arabic"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Arabic"
+   ],
+   "nn3_l0.5": [
+    "language",
+    "Arabic"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Arabic"
+   ]
+  },
+  {
+   "word": "Russian",
+   "family": "language",
+   "native": [
+    "profession",
+    "Russian"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "Russian"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "Russian"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "Russian"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "Russian"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "Russian"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "Russian"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "Russian"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "Russian"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "Russian"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "Russian"
+   ]
+  },
+  {
+   "word": "dollar",
+   "family": "currency",
+   "native": [
+    "currency",
+    "pound"
+   ],
+   "pca16_l0.5": [
+    "currency",
+    "euro"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "euro"
+   ],
+   "pca64_l0.5": [
+    "currency",
+    "euro"
+   ],
+   "lidpre16_l0.5": [
+    "currency",
+    "euro"
+   ],
+   "lid1_l1.0": [
+    "currency",
+    "pound"
+   ],
+   "lid3_l1.0": [
+    "currency",
+    "euro"
+   ],
+   "rand16_l0.5": [
+    "currency",
+    "euro"
+   ],
+   "pca16_l0.5_matched": [
+    "currency",
+    "pound"
+   ],
+   "nn3_l0.5": [
+    "currency",
+    "euro"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "euro"
+   ]
+  },
+  {
+   "word": "euro",
+   "family": "currency",
+   "native": [
+    "clothing",
+    "euro"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "euro"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "euro"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "euro"
+   ],
+   "lidpre16_l0.5": [
+    "metal",
+    "euro"
+   ],
+   "lid1_l1.0": [
+    "currency",
+    "euro"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "dollar"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "euro"
+   ],
+   "pca16_l0.5_matched": [
+    "clothing",
+    "euro"
+   ],
+   "nn3_l0.5": [
+    "clothing",
+    "euro"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "pound"
+   ]
+  },
+  {
+   "word": "pound",
+   "family": "currency",
+   "native": [
+    "metal",
+    "euro"
+   ],
+   "pca16_l0.5": [
+    "clothing",
+    "euro"
+   ],
+   "pca16_l1.0": [
+    "country",
+    "euro"
+   ],
+   "pca64_l0.5": [
+    "metal",
+    "euro"
+   ],
+   "lidpre16_l0.5": [
+    "clothing",
+    "euro"
+   ],
+   "lid1_l1.0": [
+    "metal",
+    "euro"
+   ],
+   "lid3_l1.0": [
+    "clothing",
+    "euro"
+   ],
+   "rand16_l0.5": [
+    "metal",
+    "euro"
+   ],
+   "pca16_l0.5_matched": [
+    "metal",
+    "euro"
+   ],
+   "nn3_l0.5": [
+    "metal",
+    "euro"
+   ],
+   "nn3_random_l0.5": [
+    "clothing",
+    "euro"
+   ]
+  },
+  {
+   "word": "franc",
+   "family": "currency",
+   "native": [
+    "profession",
+    "franc"
+   ],
+   "pca16_l0.5": [
+    "profession",
+    "franc"
+   ],
+   "pca16_l1.0": [
+    "profession",
+    "franc"
+   ],
+   "pca64_l0.5": [
+    "profession",
+    "franc"
+   ],
+   "lidpre16_l0.5": [
+    "profession",
+    "franc"
+   ],
+   "lid1_l1.0": [
+    "profession",
+    "franc"
+   ],
+   "lid3_l1.0": [
+    "profession",
+    "franc"
+   ],
+   "rand16_l0.5": [
+    "profession",
+    "franc"
+   ],
+   "pca16_l0.5_matched": [
+    "profession",
+    "franc"
+   ],
+   "nn3_l0.5": [
+    "profession",
+    "franc"
+   ],
+   "nn3_random_l0.5": [
+    "profession",
+    "franc"
+   ]
+  }
+ ]
+}
